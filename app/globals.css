@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  --background: #fbf9f5;
+  --foreground: #121d19;
+  --primary: #0a3326;
+  --primary-foreground: #ffffff;
+  --secondary: #4a4542;
+  --secondary-foreground: #ffffff;
+  --accent: #b38f42;
+  --accent-foreground: #ffffff;
+  --border: #e5e0d6;
+  --ring: #b38f42;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+
+  --font-sans: 'Inter', var(--font-geist-sans), sans-serif;
+  --font-serif: 'Playfair Display', serif;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Custom premium card system - Glassmorphism + Soft Gold Accent borders */
+.premium-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(179, 143, 66, 0.12);
+  box-shadow: 0 8px 32px -4px rgba(10, 51, 38, 0.03), 0 1px 3px rgba(0, 0, 0, 0.01);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.premium-card:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(179, 143, 66, 0.35);
+  box-shadow: 0 20px 48px -8px rgba(179, 143, 66, 0.12), 0 4px 12px rgba(10, 51, 38, 0.02);
+  transform: translateY(-3px);
+}
+
+/* Technical dot grids representing engineering/scientific precision */
+.bg-dot-grid {
+  background-image: radial-gradient(rgba(179, 143, 66, 0.12) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+}
+
+/* Fine-grid line styling for background decorations */
+.technical-grid-lines {
+  background-image: 
+    linear-gradient(to right, rgba(179, 143, 66, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(179, 143, 66, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Liquid blur container helper */
+.liquid-blur {
+  filter: blur(100px);
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+/* Smooth selections */
+::selection {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+}
+
+/* Custom scrollbars matching premium gold theme */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Active click feedback utility */
+.active-press:active {
+  transform: scale(0.98);
+}
+.active-press-sm:active {
+  transform: scale(0.96);
+}
+
