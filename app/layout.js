@@ -1,4 +1,3 @@
-import { ThemeProvider } from '../components/ThemeContext';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import "./globals.css";
@@ -64,13 +63,11 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground transition-colors duration-300">
-        <ThemeProvider>
-          <Navbar />
-          <main className="flex-grow pt-16">
-            {children}
-          </main>
-          <Footer />
-        </ThemeProvider>
+        <Navbar />
+        <main className="flex-grow pt-16">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );

@@ -37,23 +37,30 @@ const productsData = {
     desc: 'A hard, crystalline, high-melting vegetable wax obtained during the winterization of crude rice bran oil. Used extensively in cosmetics, pharmaceuticals, and industrial polishes as a natural, safe alternative to synthetic waxes.',
     specs: { 'Appearance': 'Hard brownish wax', 'Melting Point': '75-82°C', 'Saponification Value': '75-120', 'Nature': '100% Vegetable Derived' }
   },
-  'fatty-acid': {
-    title: 'Rice Bran Fatty Acids',
-    tag: 'Industrial Chemicals',
+  'fatty-acids-spent-earth': {
+    title: 'Fatty Acids & Spent Bleaching Earth',
+    tag: 'Industrial By-Products',
     img: '/refinery_plant.png',
-    desc: 'This fatty acid is extensively used in the production of paper coatings, textiles, confectionery, pharmaceuticals, fruit & vegetable coatings, candles, electric insulation, waterproofing, lubricants, crayons, and various other products. Rice Fatty is distillate and recovered while refining Rice Bran Oil.',
-    specs: { 'Colour & Appearance': 'White and semi-solid', 'Acid Value (mg KOH/gm)': '180-185', 'Saponification Value': '192 –198', 'Moisture & Impurities': '0.2% Max.', 'Total Fatty Matter': '99.5% Max', 'Other Impurities': 'Free from any mineral acids' }
-  },
-  'spent-earth': {
-    title: 'Spent Bleaching Earth',
-    tag: 'Agriculture / Industrial',
-    img: '/refinery_plant.png',
-    desc: 'Spent Earth is a solid waste material produced due to the bleaching method undertaken as part of the physical refining process. Bleaching is done to lighten the color of the oil. The de-oiled Spent Bleaching Earth is safe for disposal in landfills and can also be used as a fuel in boilers. Anhydrous clay can be used in cement manufacturing or as a soil conditioner as it poses no harm to the soil.',
-    specs: { MOISTURE: '10%', OIL: '20%' }
+    desc: 'AB Udyog recovers high-yield fatty acids and bleaching clays during the physical refining process. Rice Bran Fatty Acids are distilled derivatives used extensively in manufacturing paper coatings, candles, electric insulation, crayons, and industrial lubricants. Spent Bleaching Earth is a silicate clay residue collected after oil bleaching, which is recycled for cement manufacturing, boiler fuel mixture, or soil conditioning.',
+    specs: {
+      'Fatty Acid - Appearance': 'White semi-solid',
+      'Fatty Acid - Acid Value': '180 - 185 mg KOH/gm',
+      'Fatty Acid - Saponification': '192 – 198',
+      'Fatty Acid - Total Fatty Matter': '99.5% Min',
+      'Spent Earth - Moisture': '10% Max',
+      'Spent Earth - Oil Content': '20% Max',
+      'Spent Earth - Form': 'Dry clay powder'
+    }
   }
 };
 
 const slugAlias = {
+  'de-oiled-rice-bran': 'dorb',
+  'rice-bran-wax': 'wax',
+  'rice-bran-gums': 'gums',
+  'rice-bran-lecithin': 'lecithin',
+  'fatty-acid': 'fatty-acids-spent-earth',
+  'spent-earth': 'fatty-acids-spent-earth',
   'lecithine': 'lecithin'
 };
 

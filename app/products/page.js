@@ -8,46 +8,39 @@ import ScrollReveal from '../../components/ScrollReveal';
 export default function ProductsMaster() {
   const b2bProducts = [
     {
-      slug: 'dorb',
+      slug: 'de-oiled-rice-bran',
       title: 'De-Oiled Rice Bran (DORB)',
       tag: 'Industrial / Feed',
       img: '/dorb_feed.png',
       desc: 'Extracted raw rice bran processed into high-protein animal feed pellets and powder. Essential for fish, poultry, and cattle nutrition.'
     },
     {
-      slug: 'wax',
+      slug: 'rice-bran-wax',
       title: 'Rice Bran Wax',
       tag: 'Cosmetics / Polishes',
       img: '/rice_bran_wax.png',
       desc: 'Hard, high-melting natural vegetable wax obtained during physical winterization. Safe alternative for cosmetics and industrial polishes.'
     },
     {
-      slug: 'gums',
+      slug: 'rice-bran-gums',
       title: 'Rice Bran Gums',
       tag: 'Cosmetics / Detergents',
       img: '/rice_bran_lecithin.png',
       desc: 'Purified natural thickening, stabilizing, and emulsifying agents used in detergents, lubricants, and cosmetic conditioners.'
     },
     {
-      slug: 'lecithin',
+      slug: 'rice-bran-lecithin',
       title: 'Rice Bran Lecithin',
       tag: 'Nutraceuticals / Bakery',
       img: '/rice_bran_lecithin.png',
       desc: 'Non-GMO vegetable emulsifier rich in natural antioxidants and phospholipids, ideal for food, baking, and pharmaceutical uses.'
     },
     {
-      slug: 'fatty-acid',
-      title: 'Rice Bran Fatty Acids',
+      slug: 'fatty-acids-spent-earth',
+      title: 'Fatty Acids & Spent Earth',
       tag: 'Industrial Chemicals',
       img: '/refinery_plant.png',
-      desc: 'Distilled fatty acid recovery by-product used in manufacturing paper coatings, electric insulation, candles, and lubricants.'
-    },
-    {
-      slug: 'spent-earth',
-      title: 'Spent Bleaching Earth',
-      tag: 'Agriculture / Cement',
-      img: '/refinery_plant.png',
-      desc: 'De-oiled silicate clay waste recycled for boiler fuel mixtures, soil conditioning, or cement factory raw additives.'
+      desc: 'Distilled fatty acid recovery by-product used in manufacturing candles and lubricants, combined with de-oiled bleaching earth for soil conditioning and concrete mixtures.'
     }
   ];
 
