@@ -79,13 +79,7 @@ const galleryItems = [
 const categories = ["All", "Refinery", "Laboratory", "Sourcing", "Derivatives"];
 
 export default function Gallery() {
-  const [activeFilter, setActiveFilter] = useState("All");
   const [lightboxIndex, setLightboxIndex] = useState(null);
-
-  // Filter items
-  const filteredItems = activeFilter === "All" 
-    ? galleryItems 
-    : galleryItems.filter(item => item.category === activeFilter);
 
   // Lightbox controls
   const openLightbox = (index) => {
@@ -101,8 +95,8 @@ export default function Gallery() {
     if (lightboxIndex === null) return;
     let newIndex = lightboxIndex + direction;
     if (newIndex < 0) {
-      newIndex = filteredItems.length - 1;
-    } else if (newIndex >= filteredItems.length) {
+      newIndex = galleryItems.length - 1;
+    } else if (newIndex >= galleryItems.length) {
       newIndex = 0;
     }
     setLightboxIndex(newIndex);
@@ -118,7 +112,7 @@ export default function Gallery() {
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [lightboxIndex, filteredItems]);
+  }, [lightboxIndex]);
 
   return (
     <div style={{ background: 'var(--cream)', minHeight: '100vh' }}>
@@ -141,50 +135,12 @@ export default function Gallery() {
         </div>
       </section>
 
-      {/* ══ FILTER & GALLERY GRID ══ */}
+      {/* ══ GALLERY GRID ══ */}
       <section style={{ padding: '80px 8%', position: 'relative' }}>
         
-        {/* Filter Bar */}
-        <div style={{
-          display: 'flex',
-          justifyContent: 'center',
-          flexWrap: 'wrap',
-          gap: '12px',
-          marginBottom: '50px',
-          zIndex: 10,
-          position: 'relative'
-        }}>
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => {
-                setActiveFilter(cat);
-                setLightboxIndex(null); // Reset lightbox to avoid index misalignment
-              }}
-              style={{
-                padding: '12px 24px',
-                borderRadius: '30px',
-                border: '1px solid rgba(200, 153, 42, 0.2)',
-                background: activeFilter === cat ? 'var(--green-deep)' : 'var(--white)',
-                color: activeFilter === cat ? 'var(--gold-light)' : 'var(--green-deep)',
-                fontFamily: 'var(--font-outfit), sans-serif',
-                fontSize: '13px',
-                fontWeight: 600,
-                letterSpacing: '0.05em',
-                textTransform: 'uppercase',
-                cursor: 'pointer',
-                boxShadow: activeFilter === cat ? '0 10px 20px rgba(18, 53, 30, 0.15)' : '0 4px 10px rgba(0, 0, 0, 0.02)',
-                transition: 'all 0.3s ease'
-              }}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-
         {/* Gallery Grid */}
         <div className="gallery-grid">
-          {filteredItems.map((item, idx) => (
+          {galleryItems.map((item, idx) => (
             <div 
               key={item.id}
               onClick={() => openLightbox(idx)}
@@ -202,20 +158,14 @@ export default function Gallery() {
                 />
               </div>
 
-              {/* Category Badge */}
-              <span className="gallery-category-badge">{item.category}</span>
-
               {/* Dark Linear Gradient Overlay (always visible for contrast) */}
               <div className="gallery-overlay-gradient"></div>
 
               {/* Card Content (Visible hover reveal) */}
-              <div className="gallery-card-content">
-                <h3 className="gallery-card-title">{item.title}</h3>
-                <p className="gallery-card-description">{item.description}</p>
-                
-                <div className="gallery-card-footer">
+              <div className="gallery-card-content" style={{ justifyContent: 'center', alignItems: 'center' }}>
+                <div className="gallery-card-footer" style={{ marginTop: 0 }}>
                   <span className="gallery-view-btn">
-                    View Details <Eye size={14} style={{ marginLeft: '6px' }} />
+                    View Image <Eye size={14} style={{ marginLeft: '6px' }} aria-hidden="true" />
                   </span>
                 </div>
               </div>
@@ -224,200 +174,6 @@ export default function Gallery() {
         </div>
 
       </section>
-
-      {/* Inject custom CSS rules for hover effects, grid and lightbox */}
-      <style dangerouslySetInnerHTML={{ __html: `
-        .gallery-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-          gap: 24px;
-        }
-        .gallery-card {
-          position: relative;
-          width: 100%;
-          aspect-ratio: 16 / 11;
-          overflow: hidden;
-          cursor: pointer;
-          background: var(--green-deep);
-          border: none;
-          border-radius: 0;
-          box-shadow: none;
-          transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .gallery-card:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 20px 40px rgba(13, 43, 26, 0.2), 0 0 30px rgba(200, 153, 42, 0.15);
-        }
-        .gallery-img-container {
-          position: absolute;
-          inset: 0;
-          width: 100%;
-          height: 100%;
-          z-index: 1;
-        }
-        .gallery-img-container img {
-          transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
-        }
-        .gallery-card:hover .gallery-img-container img {
-          transform: scale(1.08);
-        }
-        .gallery-category-badge {
-          position: absolute;
-          top: 16px;
-          left: 16px;
-          background: rgba(13, 43, 26, 0.85);
-          backdrop-filter: blur(8px);
-          color: var(--gold-light);
-          font-size: 9px;
-          font-weight: 600;
-          letter-spacing: 0.1em;
-          text-transform: uppercase;
-          padding: 6px 12px;
-          border: 1px solid rgba(200, 153, 42, 0.25);
-          z-index: 3;
-          transition: all 0.3s ease;
-        }
-        .gallery-card:hover .gallery-category-badge {
-          background: var(--gold);
-          color: var(--white);
-          border-color: var(--gold);
-        }
-        .gallery-overlay-gradient {
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(to top, rgba(10, 31, 19, 0.95) 0%, rgba(10, 31, 19, 0.45) 55%, transparent 100%);
-          z-index: 2;
-          transition: background 0.4s ease;
-        }
-        .gallery-card:hover .gallery-overlay-gradient {
-          background: linear-gradient(to top, rgba(10, 31, 19, 0.98) 0%, rgba(10, 31, 19, 0.6) 50%, rgba(10, 31, 19, 0.2) 100%);
-        }
-        .gallery-card-content {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          padding: 24px;
-          z-index: 3;
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-end;
-          transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .gallery-card-title {
-          font-family: var(--font-cormorant), serif;
-          font-size: 26px;
-          font-weight: 300;
-          color: var(--white);
-          line-height: 1.2;
-          margin-bottom: 0px;
-          transition: color 0.3s ease, margin-bottom 0.4s ease;
-        }
-        .gallery-card:hover .gallery-card-title {
-          color: var(--gold-light);
-          margin-bottom: 6px;
-        }
-        .gallery-card-description {
-          font-size: 13px;
-          color: rgba(255, 255, 255, 0.75);
-          line-height: 1.6;
-          margin-bottom: 0;
-          max-height: 0;
-          opacity: 0;
-          overflow: hidden;
-          transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, margin-bottom 0.4s ease;
-        }
-        .gallery-card:hover .gallery-card-description {
-          max-height: 80px;
-          opacity: 1;
-          margin-bottom: 12px;
-        }
-        .gallery-card-footer {
-          display: flex;
-          align-items: center;
-          opacity: 0;
-          transform: translateY(10px);
-          transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-        .gallery-card:hover .gallery-card-footer {
-          opacity: 1;
-          transform: translateY(0);
-          transition-delay: 0.1s;
-        }
-        .gallery-view-btn {
-          display: inline-flex;
-          align-items: center;
-          font-size: 10px;
-          font-weight: 600;
-          letter-spacing: 0.1em;
-          text-transform: uppercase;
-          color: var(--gold-light);
-          transition: color 0.3s ease;
-        }
-        .gallery-card:hover .gallery-view-btn {
-          color: var(--white);
-        }
-        .gallery-card:hover .gallery-view-btn svg {
-          transform: translateX(4px);
-        }
-        .lightbox-overlay {
-          animation: fadeIn 0.3s ease;
-        }
-        .lightbox-content {
-          animation: scaleIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-        .lightbox-nav-btn {
-          position: fixed;
-          top: 50%;
-          transform: translateY(-50%);
-          background: rgba(255, 255, 255, 0.05);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          color: var(--white);
-          width: 56px;
-          height: 56px;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-          z-index: 10002;
-          transition: all 0.3s ease;
-        }
-        .lightbox-nav-btn:hover {
-          background: rgba(255, 255, 255, 0.15);
-          color: var(--gold-light);
-          border-color: var(--gold-light);
-        }
-        .lightbox-nav-btn.prev {
-          left: 40px;
-        }
-        .lightbox-nav-btn.next {
-          right: 40px;
-        }
-        @media (max-width: 768px) {
-          .lightbox-nav-btn {
-            width: 48px;
-            height: 48px;
-            top: auto;
-            bottom: 24px;
-            transform: none;
-          }
-          .lightbox-nav-btn.prev {
-            left: 24px;
-          }
-          .lightbox-nav-btn.next {
-            right: 24px;
-          }
-        }
-        @keyframes fadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-        @keyframes scaleIn {
-          from { transform: scale(0.95); opacity: 0; }
-          to { transform: scale(1); opacity: 1; }
-        }
-      `}} />
 
       {/* ══ LIGHTBOX MODAL ══ */}
       {lightboxIndex !== null && (
@@ -431,9 +187,9 @@ export default function Gallery() {
             zIndex: 10000,
             display: 'flex',
             flexDirection: 'column',
-            justifyContent: 'flex-start',
+            justifyContent: 'center',
             alignItems: 'center',
-            padding: '100px 24px 60px 24px',
+            padding: '24px',
             overflowY: 'auto'
           }}
           onClick={closeLightbox}
@@ -462,7 +218,7 @@ export default function Gallery() {
             onMouseOut={(e) => { e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)'; e.currentTarget.style.color = 'var(--white)'; }}
             aria-label="Close Gallery Lightbox"
           >
-            <X size={20} />
+            <X size={20} aria-hidden="true" />
           </button>
 
           {/* Navigation controls */}
@@ -471,7 +227,7 @@ export default function Gallery() {
             className="lightbox-nav-btn prev"
             aria-label="Previous Image"
           >
-            <ChevronLeft size={28} />
+            <ChevronLeft size={28} aria-hidden="true" />
           </button>
 
           <button
@@ -479,7 +235,7 @@ export default function Gallery() {
             className="lightbox-nav-btn next"
             aria-label="Next Image"
           >
-            <ChevronRight size={28} />
+            <ChevronRight size={28} aria-hidden="true" />
           </button>
 
           {/* Lightbox Content Container */}
@@ -507,46 +263,11 @@ export default function Gallery() {
               border: '1px solid rgba(200, 153, 42, 0.25)'
             }}>
               <Image
-                src={filteredItems[lightboxIndex].src}
-                alt={filteredItems[lightboxIndex].title}
+                src={galleryItems[lightboxIndex].src}
+                alt={galleryItems[lightboxIndex].title}
                 fill
-                style={{ objectFit: 'cover' }}
+                style={{ objectFit: 'contain', background: '#000' }}
               />
-            </div>
-
-            {/* Info overlay */}
-            <div style={{
-              textAlign: 'center',
-              color: 'var(--white)',
-              marginTop: '24px',
-              maxWidth: '700px'
-            }}>
-              <span style={{
-                fontSize: '11px',
-                fontWeight: 600,
-                color: 'var(--gold-light)',
-                letterSpacing: '0.15em',
-                textTransform: 'uppercase',
-                display: 'block',
-                marginBottom: '6px'
-              }}>
-                {filteredItems[lightboxIndex].category}
-              </span>
-              <h2 style={{
-                fontFamily: 'var(--font-cormorant), serif',
-                fontSize: '32px',
-                fontWeight: 300,
-                marginBottom: '10px'
-              }}>
-                {filteredItems[lightboxIndex].title}
-              </h2>
-              <p style={{
-                fontSize: '14px',
-                color: 'rgba(255, 255, 255, 0.7)',
-                lineHeight: '1.6'
-              }}>
-                {filteredItems[lightboxIndex].description}
-              </p>
             </div>
           </div>
         </div>

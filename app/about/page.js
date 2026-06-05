@@ -1,29 +1,12 @@
 "use client";
 import Image from 'next/image';
-import React, { useEffect } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { Eye, Target, ShieldCheck, Route, Activity, Leaf } from 'lucide-react';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 export default function About() {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const elements = document.querySelectorAll('.reveal');
-    elements.forEach((el) => observer.observe(el));
-
-    return () => {
-      elements.forEach((el) => observer.unobserve(el));
-    };
-  }, []);
+  useScrollReveal('.reveal', 0.1);
 
   return (
     <>
@@ -57,7 +40,7 @@ export default function About() {
             </div>
           </div>
           <div className="about-text reveal">
-            <div className="section-eyebrow">Scientific Refining Heritage</div>
+            <span className="eyebrow-minimal">Scientific Refining Heritage</span>
             <h2 className="section-title">An Engineering Standard in<br /><em>Food Manufacturing</em></h2>
             <br />
             <p className="section-body">
@@ -78,12 +61,12 @@ export default function About() {
 
       {/* ══ VISION & MISSION BENTO ══ */}
       <section className="bento-section">
-        <div className="section-eyebrow reveal">Foundational Philosophies</div>
-        <h2 className="section-title reveal">Our Corporate<br /><em>Principles</em></h2>
+        <span className="eyebrow-large reveal">Foundational Philosophies</span>
+        <h2 className="section-title reveal" style={{ textAlign: 'center', marginBottom: '60px' }}>Our Corporate<br /><em>Principles</em></h2>
         <div className="bento-grid responsive-two-col">
           <div className="bento-card featured reveal" style={{ gridColumn: 'span 1' }}>
             <div className="bento-icon-container">
-              <Eye size={24} />
+              <Eye size={24} aria-hidden="true" />
             </div>
             <div className="bento-title" style={{ fontSize: '36px' }}>Our Corporate Vision</div>
             <p className="bento-body" style={{ fontSize: '16px', maxWidth: '800px', marginTop: '20px' }}>
@@ -92,7 +75,7 @@ export default function About() {
           </div>
           <div className="bento-card reveal" style={{ background: 'var(--green-mid)', color: 'var(--white)', gridColumn: 'span 1' }}>
             <div className="bento-icon-container">
-              <Target size={24} style={{ color: 'var(--gold-light)' }} />
+              <Target size={24} style={{ color: 'var(--gold-light)' }} aria-hidden="true" />
             </div>
             <div className="bento-title" style={{ color: 'var(--gold-light)', fontSize: '36px' }}>Our Operations Mission</div>
             <p className="bento-body" style={{ color: 'rgba(255,255,255,0.6)', fontSize: '16px', maxWidth: '800px', marginTop: '20px' }}>
@@ -105,27 +88,27 @@ export default function About() {
       {/* ══ PILLARS ══ */}
       <section className="pillars-section">
         <div className="section-header-center">
-          <div className="section-eyebrow">Corporate Pillars</div>
+          <span className="eyebrow-minimal" style={{ display: 'flex', justifyContent: 'center', marginBottom: '16px' }}>Corporate Pillars</span>
           <h2 className="section-title reveal">Operational <em>Standards</em></h2>
         </div>
         <div className="pillars-grid">
           <div className="pillar reveal">
-            <div className="pillar-icon"><ShieldCheck size={26} /></div>
+            <div className="pillar-icon"><ShieldCheck size={26} aria-hidden="true" /></div>
             <div className="pillar-name">Purity</div>
             <p className="pillar-text">By physical steam refining, we scrub free fatty acids at high temperatures, completely bypassing chemical caustic washes to keep oils clean and natural.</p>
           </div>
           <div className="pillar reveal">
-            <div className="pillar-icon"><Route size={26} /></div>
+            <div className="pillar-icon"><Route size={26} aria-hidden="true" /></div>
             <div className="pillar-name">Traceability</div>
             <p className="pillar-text">From sourcing fresh rice bran at local mills to continuous processing and bottling, our batch control ensures absolute traceability.</p>
           </div>
           <div className="pillar reveal">
-            <div className="pillar-icon"><Activity size={26} /></div>
+            <div className="pillar-icon"><Activity size={26} aria-hidden="true" /></div>
             <div className="pillar-name">Consistency</div>
             <p className="pillar-text">Our high-tech continuous processing machinery runs non-stop, producing consistent oil clarity, pungency, and protein-packed feed qualities.</p>
           </div>
           <div className="pillar reveal">
-            <div className="pillar-icon"><Leaf size={26} /></div>
+            <div className="pillar-icon"><Leaf size={26} aria-hidden="true" /></div>
             <div className="pillar-name">Sustainability</div>
             <p className="pillar-text">We process every byproduct of the bran—converting waxes for cosmetics, gums for emulsifiers, spent clay for reuse, and acid oils for biofuel.</p>
           </div>

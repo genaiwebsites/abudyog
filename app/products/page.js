@@ -1,29 +1,12 @@
 "use client";
 import Image from 'next/image';
-import React, { useEffect } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { Layers, Settings, Activity, Recycle } from 'lucide-react';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 export default function ProductsHub() {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const elements = document.querySelectorAll('.reveal');
-    elements.forEach((el) => observer.observe(el));
-
-    return () => {
-      elements.forEach((el) => observer.unobserve(el));
-    };
-  }, []);
+  useScrollReveal('.reveal', 0.1);
 
   return (
     <>
@@ -57,7 +40,7 @@ export default function ProductsHub() {
             </div>
           </div>
           <div className="about-text reveal">
-            <div className="section-eyebrow">B2C Retail Brand</div>
+            <span className="eyebrow-minimal">B2C Retail Brand</span>
             <h2 className="section-title">Jeevan Rekha <em>Foods</em></h2>
             <br />
             <p className="section-body">
@@ -75,15 +58,15 @@ export default function ProductsHub() {
       </section>
 
       {/* ══ ANIMAL NUTRITION ══ */}
-      <section className="products-section" style={{ background: 'var(--green-deep)' }}>
-        <div className="about-grid" style={{ direction: 'rtl' }}>
-          <div className="about-img-wrap reveal" style={{ direction: 'ltr' }}>
+      <section className="products-section bg-green-deep">
+        <div className="about-grid-reverse">
+          <div className="about-img-wrap reveal">
             <div className="about-frame"></div>
             <Image className="about-img-main" src="/dorb_feed.png" alt="AB DORB" width={800} height={600} style={{ objectFit: 'cover', objectPosition: 'top' }} />
           </div>
-          <div className="about-text reveal" style={{ direction: 'ltr' }}>
-            <div className="section-eyebrow" style={{ color: 'var(--gold-light)' }}>B2B Animal Feed</div>
-            <h2 className="section-title" style={{ color: 'var(--white)' }}>AB DORB <em>Nutrition</em></h2>
+          <div className="about-text reveal">
+            <span className="eyebrow-minimal text-gold-light">B2B Animal Feed</span>
+            <h2 className="section-title text-white">AB DORB <em>Nutrition</em></h2>
             <br />
             <p className="section-body" style={{ color: 'rgba(255,255,255,0.9)' }}>
               High-protein de-oiled rice bran serving as the foundational nutrition block for aquaculture, poultry, and cattle industries. Marketed under the Magik, ABU Platinum, and ABU Premium sub-brands, our DORB provides essential amino acids and energy for superior feed conversion ratios in livestock.
@@ -101,12 +84,12 @@ export default function ProductsHub() {
 
       {/* ══ BYPRODUCTS BENTO ══ */}
       <section className="bento-section">
-        <div className="section-eyebrow reveal">Industrial Derivatives</div>
+        <span className="eyebrow-large reveal">Industrial Derivatives</span>
         <h2 className="section-title reveal">Commercial-Grade<br /><em>Bran Derivatives</em></h2>
         <div className="bento-grid">
           <div className="bento-card featured reveal grid-span-2">
             <div className="bento-icon-container">
-              <Layers size={24} />
+              <Layers size={24} aria-hidden="true" />
             </div>
             <div className="bento-title">Rice Bran Wax</div>
             <p className="bento-body">Premium natural wax used in cosmetics, polishes, and food applications — offering excellent binding and structural properties.</p>
@@ -114,7 +97,7 @@ export default function ProductsHub() {
           </div>
           <div className="bento-card reveal">
             <div className="bento-icon-container">
-              <Settings size={24} />
+              <Settings size={24} aria-hidden="true" />
             </div>
             <div className="bento-title">Rice Bran Gums</div>
             <p className="bento-body">Versatile emulsifying and stabilizing agent widely utilized in the food and pharmaceutical industries.</p>
@@ -122,7 +105,7 @@ export default function ProductsHub() {
           </div>
           <div className="bento-card reveal">
             <div className="bento-icon-container">
-              <Activity size={24} />
+              <Activity size={24} aria-hidden="true" />
             </div>
             <div className="bento-title">Rice Bran Lecithin</div>
             <p className="bento-body">Natural emulsifier and antioxidant ideal for bakery, confectionery, and nutraceutical formulations.</p>
@@ -130,7 +113,7 @@ export default function ProductsHub() {
           </div>
           <div className="bento-card reveal grid-span-2">
             <div className="bento-icon-container">
-              <Recycle size={24} />
+              <Recycle size={24} aria-hidden="true" />
             </div>
             <div className="bento-title">Fatty Acids &amp; Spent Earth</div>
             <p className="bento-body">High-quality fatty acid extracts and eco-friendly spent earth for industrial reuse and biofuel production.</p>

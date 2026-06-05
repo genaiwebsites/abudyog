@@ -95,51 +95,44 @@ export default function Navbar() {
 
       {/* Mobile Links Drawer */}
       <ul className={`nav-links-mobile ${mobileOpen ? 'open' : ''}`}>
-        <li><Link href="/" onClick={() => setMobileOpen(false)}>Home</Link></li>
+        <li><Link href="/" onClick={() => setMobileOpen(false)}>HOME</Link></li>
         
-        <li>
-          <div className="nav-item-dropdown">
-            <button className="dropdown-trigger" onClick={() => setAboutOpen(!aboutOpen)} style={{ background: 'none', border: 'none', display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }}>
-              About Us <ChevronDown size={16} style={{ transform: aboutOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.3s' }} />
-            </button>
-            {aboutOpen && (
-              <div className="dropdown-menu">
-                <Link href="/about" onClick={() => setMobileOpen(false)}>Company Profile</Link>
-                <Link href="/csr" onClick={() => setMobileOpen(false)}>CSR</Link>
-              </div>
-            )}
+        <li className="mobile-dropdown-wrapper">
+          <button className="mobile-dropdown-trigger" onClick={() => setAboutOpen(!aboutOpen)}>
+            ABOUT US <ChevronDown size={16} className={`chevron ${aboutOpen ? 'open' : ''}`} />
+          </button>
+          <div className={`mobile-dropdown-menu ${aboutOpen ? 'open' : ''}`}>
+            <Link href="/about" onClick={() => setMobileOpen(false)}>COMPANY PROFILE</Link>
+            <Link href="/csr" onClick={() => setMobileOpen(false)}>CSR</Link>
           </div>
         </li>
 
-        <li>
-          <div className="nav-item-dropdown">
-            <button className="dropdown-trigger" onClick={() => setProductsOpen(!productsOpen)} style={{ background: 'none', border: 'none', display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }}>
-              Products <ChevronDown size={16} style={{ transform: productsOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.3s' }} />
-            </button>
-            {productsOpen && (
-              <div className="dropdown-menu">
-                <Link href="/products" onClick={() => setMobileOpen(false)} style={{ color: 'var(--gold)' }}>View All Products</Link>
-                <div className="dropdown-group-title" style={{ fontSize: '10px', color: 'var(--gold)', marginTop: '8px' }}>Retail Brands</div>
-                <Link href="/products/jeevan-rekha" onClick={() => setMobileOpen(false)}>Jeevan Rekha Rice Bran Oil</Link>
-                <Link href="/products/jeevan-rekha#mustard" onClick={() => setMobileOpen(false)}>Jeevan Rekha Mustard Oil</Link>
-                <Link href="/products/ab-health" onClick={() => setMobileOpen(false)}>AB Health</Link>
-                
-                <div className="dropdown-group-title" style={{ fontSize: '10px', color: 'var(--gold)', marginTop: '8px' }}>Industrial</div>
-                <Link href="/products/de-oiled-rice-bran" onClick={() => setMobileOpen(false)}>De-Oiled Rice Bran</Link>
-                <Link href="/products/rice-bran-gums" onClick={() => setMobileOpen(false)}>Rice Bran Gums</Link>
-                <Link href="/products/rice-bran-wax" onClick={() => setMobileOpen(false)}>Rice Bran Wax</Link>
-                <Link href="/products/rice-bran-lecithin" onClick={() => setMobileOpen(false)}>Rice Bran Lecithin</Link>
-                <Link href="/products/fatty-acids-spent-earth" onClick={() => setMobileOpen(false)}>Fatty Acids &amp; Spent Earth</Link>
-              </div>
-            )}
+        <li className="mobile-dropdown-wrapper">
+          <button className="mobile-dropdown-trigger" onClick={() => setProductsOpen(!productsOpen)}>
+            PRODUCTS <ChevronDown size={16} className={`chevron ${productsOpen ? 'open' : ''}`} />
+          </button>
+          <div className={`mobile-dropdown-menu ${productsOpen ? 'open' : ''}`}>
+            <Link href="/products" onClick={() => setMobileOpen(false)} style={{ color: 'var(--gold-light)' }}>VIEW ALL PRODUCTS</Link>
+            
+            <div className="mobile-group-title">RETAIL BRANDS</div>
+            <Link href="/products/jeevan-rekha" onClick={() => setMobileOpen(false)}>JEEVAN REKHA RICE BRAN OIL</Link>
+            <Link href="/products/jeevan-rekha#mustard" onClick={() => setMobileOpen(false)}>JEEVAN REKHA MUSTARD OIL</Link>
+            <Link href="/products/ab-health" onClick={() => setMobileOpen(false)}>AB HEALTH</Link>
+            
+            <div className="mobile-group-title">INDUSTRIAL</div>
+            <Link href="/products/de-oiled-rice-bran" onClick={() => setMobileOpen(false)}>DE-OILED RICE BRAN</Link>
+            <Link href="/products/rice-bran-gums" onClick={() => setMobileOpen(false)}>RICE BRAN GUMS</Link>
+            <Link href="/products/rice-bran-wax" onClick={() => setMobileOpen(false)}>RICE BRAN WAX</Link>
+            <Link href="/products/rice-bran-lecithin" onClick={() => setMobileOpen(false)}>RICE BRAN LECITHIN</Link>
+            <Link href="/products/fatty-acids-spent-earth" onClick={() => setMobileOpen(false)}>FATTY ACIDS & SPENT EARTH</Link>
           </div>
         </li>
 
-        <li><Link href="/manufacturing" onClick={() => setMobileOpen(false)}>Infra &amp; Quality</Link></li>
-        <li><Link href="/gallery" onClick={() => setMobileOpen(false)}>Gallery</Link></li>
-        <li><Link href="/contact" onClick={() => setMobileOpen(false)}>Contact</Link></li>
+        <li><Link href="/manufacturing" onClick={() => setMobileOpen(false)}>INFRA & QUALITY</Link></li>
+        <li><Link href="/gallery" onClick={() => setMobileOpen(false)}>GALLERY</Link></li>
+        <li><Link href="/contact" onClick={() => setMobileOpen(false)}>CONTACT</Link></li>
         <li>
-          <a href="mailto:info@abudyog.in" className="btn-dark" onClick={() => setMobileOpen(false)} style={{ padding: '12px 24px', fontSize: '11px', marginTop: '16px' }}>Partner With Us</a>
+          <a href="mailto:info@abudyog.in" className="btn-dark" onClick={() => setMobileOpen(false)} style={{ padding: '12px 24px', fontSize: '11px', marginTop: '24px' }}>PARTNER WITH US</a>
         </li>
       </ul>
     </nav>

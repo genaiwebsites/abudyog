@@ -1,27 +1,10 @@
 "use client";
-import React, { useEffect } from 'react';
+import React from 'react';
 import { MapPin, Mail, Phone, Clock, ArrowRight } from 'lucide-react';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 export default function Contact() {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const elements = document.querySelectorAll('.reveal');
-    elements.forEach((el) => observer.observe(el));
-
-    return () => {
-      elements.forEach((el) => observer.unobserve(el));
-    };
-  }, []);
+  useScrollReveal('.reveal', 0.1);
 
   return (
     <div style={{ background: 'var(--cream)' }}>
@@ -49,7 +32,7 @@ export default function Contact() {
           
           <div className="contact-card-premium reveal">
             <div className="contact-card-icon-container">
-              <MapPin size={26} />
+              <MapPin size={26} aria-hidden="true" />
             </div>
             <h3 className="contact-card-title">Corporate Office</h3>
             <p className="contact-card-body">
@@ -58,13 +41,13 @@ export default function Contact() {
               West Bengal, India
             </p>
             <a href="https://maps.google.com/?q=AB+Udyog+11A+Rawdon+Street+Kolkata" target="_blank" rel="noopener noreferrer" className="contact-card-link">
-              Get Directions <ArrowRight size={14} />
+              Get Directions <ArrowRight size={14} aria-hidden="true" />
             </a>
           </div>
 
           <div className="contact-card-premium reveal">
             <div className="contact-card-icon-container">
-              <Mail size={26} />
+              <Mail size={26} aria-hidden="true" />
             </div>
             <h3 className="contact-card-title">Email Address</h3>
             <p className="contact-card-body">
@@ -73,13 +56,13 @@ export default function Contact() {
               <strong style={{ color: 'var(--green-deep)' }}>General:</strong> info@abudyog.in
             </p>
             <a href="mailto:info@abudyog.in" className="contact-card-link">
-              Send Email <ArrowRight size={14} />
+              Send Email <ArrowRight size={14} aria-hidden="true" />
             </a>
           </div>
 
           <div className="contact-card-premium reveal">
             <div className="contact-card-icon-container">
-              <Phone size={26} />
+              <Phone size={26} aria-hidden="true" />
             </div>
             <h3 className="contact-card-title">Phone Support</h3>
             <p className="contact-card-body">
@@ -88,7 +71,7 @@ export default function Contact() {
               <strong style={{ color: 'var(--green-deep)' }}>Sales:</strong> +91 74392 89709
             </p>
             <a href="tel:+917439289709" className="contact-card-link">
-              Call Now <ArrowRight size={14} />
+              Call Now <ArrowRight size={14} aria-hidden="true" />
             </a>
           </div>
 
@@ -115,7 +98,7 @@ export default function Contact() {
 
           {/* Form Side */}
           <div className="contact-form-card">
-            <div className="section-eyebrow">Direct Inquiry</div>
+            <span className="eyebrow-minimal">Direct Inquiry</span>
             <h3 style={{ fontFamily: "var(--font-cormorant), serif", fontSize: '40px', color: 'var(--green-deep)', marginBottom: '32px', lineHeight: 1.1 }}>Send us a Message</h3>
             
             <form>

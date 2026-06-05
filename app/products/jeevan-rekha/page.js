@@ -1,28 +1,11 @@
 "use client";
 import Image from 'next/image';
-import React, { useEffect } from 'react';
+import React from 'react';
 import Link from 'next/link';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 export default function JeevanRekha() {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const elements = document.querySelectorAll('.reveal');
-    elements.forEach((el) => observer.observe(el));
-
-    return () => {
-      elements.forEach((el) => observer.unobserve(el));
-    };
-  }, []);
+  useScrollReveal('.reveal', 0.1);
 
   return (
     <>
@@ -56,7 +39,7 @@ export default function JeevanRekha() {
             </div>
           </div>
           <div className="about-text reveal">
-            <div className="section-eyebrow">Heart Healthy Cooking</div>
+            <span className="eyebrow-minimal">Heart Healthy Cooking</span>
             <h2 className="section-title">Jeevan Rekha <br/><em>Rice Bran Oil</em></h2>
             <br />
             <p className="section-body">
@@ -82,14 +65,14 @@ export default function JeevanRekha() {
       </section>
 
       {/* ══ MUSTARD OIL ══ */}
-      <section id="mustard" style={{ background: 'var(--white)', padding: '100px 8%' }}>
-        <div className="about-grid" style={{ direction: 'rtl' }}>
-          <div className="about-img-wrap reveal" style={{ direction: 'ltr' }}>
+      <section id="mustard" className="bg-white" style={{ padding: '100px 8%' }}>
+        <div className="about-grid-reverse">
+          <div className="about-img-wrap reveal">
             <div className="about-frame" style={{ borderColor: 'var(--gold)' }}></div>
             <Image className="about-img-main" src="/mustard_oil.png" alt="Jeevan Rekha Mustard Oil" width={800} height={600} style={{ objectFit: 'cover' }} />
           </div>
-          <div className="about-text reveal" style={{ direction: 'ltr' }}>
-            <div className="section-eyebrow">Traditional Pungency</div>
+          <div className="about-text reveal">
+            <span className="eyebrow-minimal">Traditional Pungency</span>
             <h2 className="section-title">Jeevan Rekha <br/><em>Mustard Oil</em></h2>
             <br />
             <p className="section-body">

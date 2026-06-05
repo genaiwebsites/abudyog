@@ -1,8 +1,9 @@
 "use client";
 import Image from 'next/image';
-import React, { useEffect, use } from 'react';
+import React, { use } from 'react';
 import Link from 'next/link';
 import { ArrowLeft, Check, ShieldCheck, FileText, Settings, Droplet, HelpCircle, Layers } from 'lucide-react';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 const productData = {
   'ab-health': {
@@ -148,25 +149,7 @@ export default function ProductDetail({ params }) {
   const { slug } = unwrappedParams;
   const product = productData[slug];
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const elements = document.querySelectorAll('.reveal');
-    elements.forEach((el) => observer.observe(el));
-
-    return () => {
-      elements.forEach((el) => observer.unobserve(el));
-    };
-  }, [slug]);
+  useScrollReveal('.reveal', 0.1);
 
   if (!product) {
     return (
@@ -200,13 +183,13 @@ export default function ProductDetail({ params }) {
       <section style={{ background: 'var(--cream)', padding: '80px 8%' }}>
         <div style={{ marginBottom: '40px' }}>
           <Link href="/products" className="btn-ghost" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '10px 20px', fontSize: '11px', borderColor: 'rgba(13, 43, 26, 0.15)' }}>
-            <ArrowLeft size={14} /> Back to All Products
+            <ArrowLeft size={14} aria-hidden="true" /> Back to All Products
           </Link>
         </div>
 
         <div className="about-grid">
           <div className="about-text reveal" style={{ paddingLeft: '0' }}>
-            <div className="section-eyebrow">Product Overview</div>
+            <span className="eyebrow-minimal">Product Overview</span>
             <h2 className="section-title">{product.shortName} <br/><em>Specifications</em></h2>
             <br />
             <p className="section-body">
@@ -217,7 +200,7 @@ export default function ProductDetail({ params }) {
             <div className="responsive-two-col" style={{ marginTop: '20px' }}>
               <div>
                 <h4 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '24px', color: 'var(--green-deep)', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <ShieldCheck size={20} style={{ color: 'var(--gold)' }} /> Key Features
+                  <ShieldCheck size={20} style={{ color: 'var(--gold)' }} aria-hidden="true" /> Key Features
                 </h4>
                 <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '12px' }}>
                   {product.features.map((feature, i) => (
@@ -231,7 +214,7 @@ export default function ProductDetail({ params }) {
               
               <div>
                 <h4 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '24px', color: 'var(--green-deep)', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <Droplet size={20} style={{ color: 'var(--gold)' }} /> Applications
+                  <Droplet size={20} style={{ color: 'var(--gold)' }} aria-hidden="true" /> Applications
                 </h4>
                 <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '12px' }}>
                   {product.applications.map((app, i) => (
@@ -261,7 +244,7 @@ export default function ProductDetail({ params }) {
       <section style={{ background: 'var(--white)', padding: '80px 8%', borderTop: '1px solid var(--border)' }}>
         <div className="reveal" style={{ maxWidth: '800px', margin: '0 auto' }}>
           <div className="section-header-center" style={{ marginBottom: '48px' }}>
-            <div className="section-eyebrow">B2B Quality Assurance</div>
+            <span className="eyebrow-minimal" style={{ display: 'flex', justifyContent: 'center', marginBottom: '16px' }}>B2B Quality Assurance</span>
             <h2 className="section-title">Technical <em>Specifications</em></h2>
             <p className="section-body" style={{ margin: '16px auto 0 auto', textAlign: 'center' }}>
               Verified laboratory parameters supporting bulk order formulation and industrial application compliance.
@@ -296,7 +279,7 @@ export default function ProductDetail({ params }) {
               {product.grades.map((grade, idx) => (
                 <div key={idx} className="spec-grade-block">
                   <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '28px', color: 'var(--green-deep)', marginBottom: '16px', borderBottom: '1px solid rgba(200, 153, 42, 0.2)', paddingBottom: '8px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <Layers size={18} style={{ color: 'var(--gold)' }} /> {grade.name}
+                    <Layers size={18} style={{ color: 'var(--gold)' }} aria-hidden="true" /> {grade.name}
                   </h3>
                   <div className="spec-table-container">
                     <table className="spec-table">
@@ -327,7 +310,7 @@ export default function ProductDetail({ params }) {
               {product.subproducts.map((sub, idx) => (
                 <div key={idx} className="spec-grade-block">
                   <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '28px', color: 'var(--green-deep)', marginBottom: '16px', borderBottom: '1px solid rgba(200, 153, 42, 0.2)', paddingBottom: '8px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <Settings size={18} style={{ color: 'var(--gold)' }} /> {sub.name}
+                    <Settings size={18} style={{ color: 'var(--gold)' }} aria-hidden="true" /> {sub.name}
                   </h3>
                   <div className="spec-table-container">
                     <table className="spec-table">
@@ -354,7 +337,7 @@ export default function ProductDetail({ params }) {
 
           <div style={{ marginTop: '40px', padding: '24px', background: 'var(--cream)', borderLeft: '3px solid var(--gold)', borderRadius: '0 4px 4px 0' }}>
             <h4 style={{ fontFamily: "'Outfit', sans-serif", fontSize: '14px', fontWeight: 600, color: 'var(--green-deep)', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '6px' }}>
-              <Settings size={16} /> Batch Certification (COA)
+              <Settings size={16} aria-hidden="true" /> Batch Certification (COA)
             </h4>
             <p className="section-body" style={{ margin: 0, fontSize: '13px' }}>
               We supply complete Certificates of Analysis (COA) and gas chromatography testing reports with every commercial shipment. Contact our sales department to request specific documentation or samples.

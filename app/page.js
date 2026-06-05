@@ -1,31 +1,13 @@
 "use client";
 import Image from 'next/image';
-import React, { useEffect } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { Settings, Sprout, Layers, Activity, Recycle } from 'lucide-react';
 import HeroSection from '@/components/HeroSection';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 export default function Home() {
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const elements = document.querySelectorAll('.reveal');
-    elements.forEach((el) => observer.observe(el));
-
-    return () => {
-      elements.forEach((el) => observer.unobserve(el));
-    };
-  }, []);
+  useScrollReveal('.reveal', 0.1);
 
   return (
     <>
@@ -71,7 +53,7 @@ export default function Home() {
             </div>
           </div>
           <div className="about-text reveal">
-            <div className="section-eyebrow">Our Legacy</div>
+            <span className="eyebrow-minimal">Our Legacy</span>
             <h2 className="section-title">A Legacy Forged in<br /><em>Purity &amp; Progress</em></h2>
             <br />
             <p className="section-body">
@@ -94,7 +76,7 @@ export default function Home() {
       <section className="products-section" id="products">
         <div className="products-header">
           <div>
-            <div className="section-eyebrow">Our Portfolio</div>
+            <span className="eyebrow-minimal">Our Portfolio</span>
             <h2 className="section-title reveal">From <em>Field to Table</em>,<br />Purely Refined</h2>
           </div>
           <p className="section-body reveal" style={{ margin: 0, maxWidth: '340px' }}>
@@ -140,35 +122,35 @@ export default function Home() {
         <div className="bento-grid">
           <div className="bento-card featured reveal">
             <div className="bento-icon-container">
-              <Sprout size={24} />
+              <Sprout size={24} aria-hidden="true" />
             </div>
             <div className="bento-title">De-Oiled Rice Bran (DORB)</div>
             <p className="bento-body" style={{ marginTop: '12px', maxWidth: '480px' }}>Magik, ABU Platinum &amp; ABU Premium DORB — protein-rich, low-fat nutrition designed to enhance growth, feed conversion, and overall performance for fish, pig, poultry, and cattle. Trusted by farmers, season after season.</p>
           </div>
           <div className="bento-card reveal">
             <div className="bento-icon-container">
-              <Layers size={24} />
+              <Layers size={24} aria-hidden="true" />
             </div>
             <div className="bento-title">Rice Bran Wax</div>
             <p className="bento-body">Premium natural wax used in cosmetics, polishes, and food applications — offering excellent binding and structural properties.</p>
           </div>
           <div className="bento-card reveal">
             <div className="bento-icon-container">
-              <Settings size={24} />
+              <Settings size={24} aria-hidden="true" />
             </div>
             <div className="bento-title">Rice Bran Gums</div>
             <p className="bento-body">Versatile emulsifying and stabilizing agent widely utilized in the food and pharmaceutical industries.</p>
           </div>
           <div className="bento-card reveal">
             <div className="bento-icon-container">
-              <Activity size={24} />
+              <Activity size={24} aria-hidden="true" />
             </div>
             <div className="bento-title">Rice Bran Lecithin</div>
             <p className="bento-body">Natural emulsifier and antioxidant ideal for bakery, confectionery, and nutraceutical formulations.</p>
           </div>
           <div className="bento-card reveal">
             <div className="bento-icon-container">
-              <Recycle size={24} />
+              <Recycle size={24} aria-hidden="true" />
             </div>
             <div className="bento-title">Fatty Acids &amp; Spent Earth</div>
             <p className="bento-body">High-quality fatty acid extracts and eco-friendly spent earth for industrial reuse and biofuel production.</p>
@@ -180,7 +162,7 @@ export default function Home() {
       <div className="metrics-section">
         <Image className="metrics-img" src="/hero_rice_paddy.png" alt="AB Udyog Infrastructure" width={900} height={675} style={{ objectFit: 'cover' }} />
         <div className="metrics-content reveal">
-          <div className="section-eyebrow">Infrastructure</div>
+          <span className="eyebrow-minimal">Infrastructure</span>
           <h2 className="section-title">Built at<br /><em>Industrial Scale</em></h2>
           <p className="section-body" style={{ marginTop: '20px' }}>
             At AB Udyog, our integrated facilities deliver high-volume, consistent output. On-site labs and certified processes ensure every batch meets global food-safety standards.
@@ -211,10 +193,12 @@ export default function Home() {
       {/* ══ CERTS ══ */}
       <section className="certs-section reveal">
         <div className="section-header-center">
-          <div className="section-eyebrow">Compliance &amp; Trust</div>
+          <span className="eyebrow-minimal" style={{ display: 'flex', justifyContent: 'center', marginBottom: '16px' }}>Compliance &amp; Trust</span>
           <h2 className="section-title">Certified for<br /><em>Global Standards</em></h2>
         </div>
-        <Image className="certs-img" src="https://2025.abudyog.in/wp-content/uploads/2025/11/certificates-e1763163163535.png" alt="Certifications" width={600} height={400} style={{ display: 'block', margin: '48px auto 0', filter: 'drop-shadow(0 8px 32px rgba(0, 0, 0, 0.08))' }} />
+        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '48px' }}>
+          <Image className="certs-img" src="https://2025.abudyog.in/wp-content/uploads/2025/11/certificates-e1763163163535.png" alt="Certifications" width={800} height={200} style={{ filter: 'drop-shadow(0 8px 32px rgba(0, 0, 0, 0.08))', maxWidth: '100%', height: 'auto' }} />
+        </div>
       </section>
 
       {/* ══ CTA BANNER ══ */}

@@ -1,28 +1,12 @@
 "use client";
-import React, { useEffect } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { Heart, Sprout, GraduationCap, ShieldCheck, Leaf, Users, Award, TrendingUp } from 'lucide-react';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
+import Image from 'next/image';
 
 export default function CSRPage() {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const elements = document.querySelectorAll('.reveal');
-    elements.forEach((el) => observer.observe(el));
-
-    return () => {
-      elements.forEach((el) => observer.unobserve(el));
-    };
-  }, []);
+  useScrollReveal('.reveal', 0.1);
 
   return (
     <>
@@ -48,8 +32,8 @@ export default function CSRPage() {
       <section style={{ background: 'var(--cream)', padding: '100px 8%' }}>
         <div className="about-grid">
           <div className="about-text reveal" style={{ paddingLeft: '0' }}>
-            <div className="section-eyebrow">Corporate Citizenship</div>
-            <h2 className="section-title">A Sustainable Vision for<br /><em>Agro-Based Progress</em></h2>
+            <span className="eyebrow-minimal">Corporate Citizenship</span>
+            <h2 className="section-title">A Sustainable Vision <br />for <em>Agro-Based Progress</em></h2>
             <br />
             <p className="section-body">
               For over forty years, our operations have integrated with the agricultural communities of West Bengal. We believe that modern manufacturing must build up, rather than deplete, the environments and societies it touches.
@@ -62,7 +46,7 @@ export default function CSRPage() {
           
           <div className="about-img-wrap reveal">
             <div className="about-frame" style={{ borderColor: 'var(--gold)' }}></div>
-            <img className="about-img-main" src="/quality_lab.png" alt="CSR scientific environmental monitoring" />
+            <Image className="about-img-main" src="/quality_lab.png" alt="CSR scientific environmental monitoring" width={800} height={600} style={{ objectFit: 'cover' }} />
             <div className="about-img-badge">
               <div className="about-badge-num">100%</div>
               <div className="about-badge-label">Closed-Loop<br />Operations</div>
@@ -72,10 +56,10 @@ export default function CSRPage() {
       </section>
 
       {/* ══ IMPACT METRICS BOARD ══ */}
-      <section style={{ background: 'var(--green-deep)', color: 'var(--white)', padding: '80px 8%' }}>
+      <section className="bg-green-deep text-white" style={{ padding: '80px 8%' }}>
         <div className="section-header-center reveal" style={{ marginBottom: '60px' }}>
-          <div className="section-eyebrow" style={{ color: 'var(--gold-light)' }}>Measuring Progress</div>
-          <h2 className="section-title" style={{ color: 'var(--white)' }}>Our Key Social <em>Metrics</em></h2>
+          <span className="eyebrow-minimal" style={{ color: 'var(--gold-light)', display: 'flex', justifyContent: 'center', marginBottom: '16px' }}>Measuring Progress</span>
+          <h2 className="section-title text-white">Our Key Social <em>Metrics</em></h2>
           <p className="section-body" style={{ color: 'rgba(255,255,255,0.7)', margin: '16px auto 0 auto', maxWidth: '600px' }}>
             We back our sustainability commitments with measurable actions that positively impact livelihoods and ecosystems.
           </p>
@@ -85,7 +69,7 @@ export default function CSRPage() {
           
           <div className="bento-card reveal" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', padding: '40px 32px', textAlign: 'center' }}>
             <div style={{ color: 'var(--gold-light)', display: 'flex', justifyContent: 'center', marginBottom: '16px' }}>
-              <Users size={32} />
+              <Users size={32} aria-hidden="true" />
             </div>
             <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '48px', color: 'var(--gold-light)', fontWeight: 300, lineHeight: 1 }}>5,000+</div>
             <h4 style={{ fontFamily: "'Outfit', sans-serif", fontSize: '13px', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase', color: 'var(--white)', marginTop: '16px' }}>Farmers Supported</h4>
@@ -94,7 +78,7 @@ export default function CSRPage() {
 
           <div className="bento-card reveal" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', padding: '40px 32px', textAlign: 'center' }}>
             <div style={{ color: 'var(--gold-light)', display: 'flex', justifyContent: 'center', marginBottom: '16px' }}>
-              <Leaf size={32} />
+              <Leaf size={32} aria-hidden="true" />
             </div>
             <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '48px', color: 'var(--gold-light)', fontWeight: 300, lineHeight: 1 }}>100%</div>
             <h4 style={{ fontFamily: "'Outfit', sans-serif", fontSize: '13px', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase', color: 'var(--white)', marginTop: '16px' }}>Chemical Free</h4>
@@ -103,7 +87,7 @@ export default function CSRPage() {
 
           <div className="bento-card reveal" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', padding: '40px 32px', textAlign: 'center' }}>
             <div style={{ color: 'var(--gold-light)', display: 'flex', justifyContent: 'center', marginBottom: '16px' }}>
-              <GraduationCap size={32} />
+              <GraduationCap size={32} aria-hidden="true" />
             </div>
             <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '48px', color: 'var(--gold-light)', fontWeight: 300, lineHeight: 1 }}>10+</div>
             <h4 style={{ fontFamily: "'Outfit', sans-serif", fontSize: '13px', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase', color: 'var(--white)', marginTop: '16px' }}>Schools Sponsored</h4>
@@ -112,7 +96,7 @@ export default function CSRPage() {
 
           <div className="bento-card reveal" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', padding: '40px 32px', textAlign: 'center' }}>
             <div style={{ color: 'var(--gold-light)', display: 'flex', justifyContent: 'center', marginBottom: '16px' }}>
-              <Heart size={32} />
+              <Heart size={32} aria-hidden="true" />
             </div>
             <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '48px', color: 'var(--gold-light)', fontWeight: 300, lineHeight: 1 }}>100k+</div>
             <h4 style={{ fontFamily: "'Outfit', sans-serif", fontSize: '13px', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase', color: 'var(--white)', marginTop: '16px' }}>Liters Distributed</h4>
@@ -123,9 +107,9 @@ export default function CSRPage() {
       </section>
 
       {/* ══ THE FOUR CSR PILLARS ══ */}
-      <section style={{ background: 'var(--white)', padding: '100px 8%' }}>
+      <section className="bg-white" style={{ padding: '100px 8%' }}>
         <div className="section-header-center reveal" style={{ marginBottom: '60px' }}>
-          <div className="section-eyebrow">Key Commitments</div>
+          <span className="eyebrow-minimal" style={{ display: 'flex', justifyContent: 'center', marginBottom: '16px' }}>Key Commitments</span>
           <h2 className="section-title">Pillars of Our <em>CSR Charter</em></h2>
           <p className="section-body" style={{ margin: '16px auto 0 auto', maxWidth: '600px' }}>
             Our corporate citizenship activities are organized under four strategic, long-term programs.
@@ -137,7 +121,7 @@ export default function CSRPage() {
           <div className="bento-card featured reveal grid-span-2">
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px' }}>
               <div className="bento-icon-container" style={{ marginBottom: 0, width: '48px', height: '48px' }}>
-                <Sprout size={22} />
+                <Sprout size={22} aria-hidden="true" />
               </div>
               <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '28px', color: 'var(--gold-light)', margin: 0 }}>Farmer Empowerment &amp; Fair Sourcing</h3>
             </div>
@@ -146,10 +130,10 @@ export default function CSRPage() {
             </p>
           </div>
 
-          <div className="bento-card reveal">
+          <div className="bento-card reveal" style={{ background: 'var(--cream-warm)' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px' }}>
               <div className="bento-icon-container" style={{ marginBottom: 0, width: '48px', height: '48px' }}>
-                <ShieldCheck size={22} />
+                <ShieldCheck size={22} aria-hidden="true" />
               </div>
               <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '24px', color: 'var(--green-deep)', margin: 0 }}>Zero-Waste Circularity</h3>
             </div>
@@ -158,10 +142,10 @@ export default function CSRPage() {
             </p>
           </div>
 
-          <div className="bento-card reveal">
+          <div className="bento-card reveal" style={{ background: 'var(--cream-warm)' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px' }}>
               <div className="bento-icon-container" style={{ marginBottom: 0, width: '48px', height: '48px' }}>
-                <Heart size={22} />
+                <Heart size={22} aria-hidden="true" />
               </div>
               <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '24px', color: 'var(--green-deep)', margin: 0 }}>Nutrition &amp; Welfare</h3>
             </div>
@@ -173,7 +157,7 @@ export default function CSRPage() {
           <div className="bento-card featured reveal grid-span-2" style={{ background: 'var(--green-deep)', color: 'var(--white)' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px' }}>
               <div className="bento-icon-container" style={{ marginBottom: 0, width: '48px', height: '48px' }}>
-                <GraduationCap size={22} />
+                <GraduationCap size={22} aria-hidden="true" />
               </div>
               <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '28px', color: 'var(--gold-light)', margin: 0 }}>Educational Support Sponsoring</h3>
             </div>
@@ -194,7 +178,7 @@ export default function CSRPage() {
             <span style={{ fontSize: '72px', position: 'absolute', bottom: '-80px', right: '0', opacity: 0.1, fontFamily: 'serif' }}>”</span>
           </p>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px', marginTop: '30px' }}>
-            <Award size={20} style={{ color: 'var(--gold)' }} />
+            <Award size={20} style={{ color: 'var(--gold)' }} aria-hidden="true" />
             <span style={{ fontSize: '12px', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--green-deep)' }}>The Board of Directors, AB Udyog Pvt. Ltd.</span>
           </div>
         </div>
