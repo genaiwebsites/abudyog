@@ -2,7 +2,8 @@
 import Image from 'next/image';
 import React, { useEffect } from 'react';
 import Link from 'next/link';
-import { ArrowRight, Droplet, ShieldCheck, Settings, Leaf, Sprout, Layers, Activity, Recycle } from 'lucide-react';
+import { Settings, Sprout, Layers, Activity, Recycle } from 'lucide-react';
+import HeroSection from '@/components/HeroSection';
 
 export default function Home() {
 
@@ -28,48 +29,8 @@ export default function Home() {
 
   return (
     <>
-      {/* ══ HERO (HOMEPAGE COVER BLEND) ══ */}
-      <section className="hero-home" id="hero">
-        <div className="hero-bg"></div>
-        <div className="hero-glow"></div>
-        
-        <div className="hero-content">
-          <div className="hero-eyebrow">
-            <span>Since 1994 · Eastern India's Finest</span>
-          </div>
-          <h1 className="hero-title">
-            Rooted in Quality,<br />
-            <em>Driven by Innovation</em>
-          </h1>
-          <p className="hero-subtitle">
-            A fully integrated rice bran processing facility delivering consistent, high-grade products to households and industries at scale.
-          </p>
-          <div className="hero-actions">
-            <Link href="/products" className="btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>Explore Products <ArrowRight size={16} /></Link>
-            <Link href="/about" className="btn-ghost" style={{ borderColor: 'rgba(255, 255, 255, 0.3)', color: 'var(--white)' }}>Our Story</Link>
-          </div>
-          
-          <div className="hero-stats">
-            <div>
-              <div className="hero-stat-num">300<span style={{ fontSize: '22px' }}>+</span></div>
-              <div className="hero-stat-label">TPD Extraction</div>
-            </div>
-            <div>
-              <div className="hero-stat-num">150<span style={{ fontSize: '22px' }}>+</span></div>
-              <div className="hero-stat-label">TPD Refinery</div>
-            </div>
-            <div>
-              <div className="hero-stat-num">30<span style={{ fontSize: '22px' }}>+</span></div>
-              <div className="hero-stat-label">Years Legacy</div>
-            </div>
-          </div>
-        </div>
-
-        <div className="hero-scroll">
-          <div className="scroll-line"></div>
-          <span>Scroll</span>
-        </div>
-      </section>
+      {/* ══ HERO (ANIMATED — FRAMER MOTION) ══ */}
+      <HeroSection />
 
       {/* ══ TICKER ══ */}
       <div className="ticker">
