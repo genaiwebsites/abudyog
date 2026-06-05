@@ -214,7 +214,7 @@ export default function ProductDetail({ params }) {
             </p>
             <br />
             
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', marginTop: '20px' }}>
+            <div className="responsive-two-col" style={{ marginTop: '20px' }}>
               <div>
                 <h4 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '24px', color: 'var(--green-deep)', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <ShieldCheck size={20} style={{ color: 'var(--gold)' }} /> Key Features

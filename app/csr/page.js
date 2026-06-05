@@ -134,7 +134,7 @@ export default function CSRPage() {
 
         <div className="bento-grid">
           
-          <div className="bento-card featured reveal" style={{ gridColumn: 'span 2', padding: '48px' }}>
+          <div className="bento-card featured reveal grid-span-2">
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px' }}>
               <div className="bento-icon-container" style={{ marginBottom: 0, width: '48px', height: '48px' }}>
                 <Sprout size={22} />
@@ -146,7 +146,7 @@ export default function CSRPage() {
             </p>
           </div>
 
-          <div className="bento-card reveal" style={{ padding: '48px' }}>
+          <div className="bento-card reveal">
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px' }}>
               <div className="bento-icon-container" style={{ marginBottom: 0, width: '48px', height: '48px' }}>
                 <ShieldCheck size={22} />
@@ -158,7 +158,7 @@ export default function CSRPage() {
             </p>
           </div>
 
-          <div className="bento-card reveal" style={{ padding: '48px' }}>
+          <div className="bento-card reveal">
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px' }}>
               <div className="bento-icon-container" style={{ marginBottom: 0, width: '48px', height: '48px' }}>
                 <Heart size={22} />
@@ -170,7 +170,7 @@ export default function CSRPage() {
             </p>
           </div>
 
-          <div className="bento-card featured reveal" style={{ gridColumn: 'span 2', background: 'var(--green-deep)', color: 'var(--white)', padding: '48px' }}>
+          <div className="bento-card featured reveal grid-span-2" style={{ background: 'var(--green-deep)', color: 'var(--white)' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px' }}>
               <div className="bento-icon-container" style={{ marginBottom: 0, width: '48px', height: '48px' }}>
                 <GraduationCap size={22} />

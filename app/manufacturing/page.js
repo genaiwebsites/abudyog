@@ -72,7 +72,7 @@ export default function Manufacturing() {
         <div className="section-eyebrow reveal">The AB Udyog Process</div>
         <h2 className="section-title reveal">How We Maintain<br /><em>Purity at Scale</em></h2>
         <div className="bento-grid">
-          <div className="bento-card featured reveal" style={{ gridColumn: 'span 3', padding: '48px' }}>
+          <div className="bento-card featured reveal grid-span-3">
             <div className="bento-icon-container">
               <Package size={24} />
             </div>
@@ -81,7 +81,7 @@ export default function Manufacturing() {
               We source raw rice bran from local mills immediately after harvest. Fresh bran degrades rapidly due to natural enzymes, so we stabilize and extract it within hours to preserve the crucial 10,000+ PPM of Oryzanol.
             </p>
           </div>
-          <div className="bento-card reveal" style={{ gridColumn: 'span 3', background: 'var(--green-mid)', color: 'var(--white)', padding: '48px' }}>
+          <div className="bento-card reveal grid-span-3" style={{ background: 'var(--green-mid)', color: 'var(--white)' }}>
             <div className="bento-icon-container">
               <Settings size={24} style={{ color: 'var(--gold-light)' }} />
             </div>
@@ -90,7 +90,7 @@ export default function Manufacturing() {
               Using state-of-the-art continuous extraction machinery, we efficiently separate the raw oil from the bran. The remaining high-protein solid becomes our signature AB DORB animal feed, maintaining exceptional nutritional density.
             </p>
           </div>
-          <div className="bento-card featured reveal" style={{ gridColumn: 'span 3', background: 'var(--white)', color: 'var(--charcoal)', padding: '48px' }}>
+          <div className="bento-card featured reveal grid-span-3" style={{ background: 'var(--white)', color: 'var(--charcoal)' }}>
             <div className="bento-icon-container">
               <Flame size={24} style={{ color: 'var(--green-deep)' }} />
             </div>

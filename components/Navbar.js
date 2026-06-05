@@ -6,6 +6,8 @@ import { ChevronDown, Menu, X } from 'lucide-react';
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
+  const [productsOpen, setProductsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -97,30 +99,39 @@ export default function Navbar() {
         
         <li>
           <div className="nav-item-dropdown">
-            <span className="dropdown-trigger">About Us</span>
-            <div className="dropdown-menu">
-              <Link href="/about" onClick={() => setMobileOpen(false)}>Company Profile</Link>
-              <Link href="/csr" onClick={() => setMobileOpen(false)}>CSR</Link>
-            </div>
+            <button className="dropdown-trigger" onClick={() => setAboutOpen(!aboutOpen)} style={{ background: 'none', border: 'none', display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }}>
+              About Us <ChevronDown size={16} style={{ transform: aboutOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.3s' }} />
+            </button>
+            {aboutOpen && (
+              <div className="dropdown-menu">
+                <Link href="/about" onClick={() => setMobileOpen(false)}>Company Profile</Link>
+                <Link href="/csr" onClick={() => setMobileOpen(false)}>CSR</Link>
+              </div>
+            )}
           </div>
         </li>
 
         <li>
           <div className="nav-item-dropdown">
-            <Link href="/products" onClick={() => setMobileOpen(false)} className="dropdown-trigger" style={{ textDecoration: 'none' }}>Products</Link>
-            <div className="dropdown-menu">
-              <div className="dropdown-group-title" style={{ fontSize: '10px', color: 'var(--gold)' }}>Retail Brands</div>
-              <Link href="/products/jeevan-rekha" onClick={() => setMobileOpen(false)}>Jeevan Rekha Rice Bran Oil</Link>
-              <Link href="/products/jeevan-rekha#mustard" onClick={() => setMobileOpen(false)}>Jeevan Rekha Mustard Oil</Link>
-              <Link href="/products/ab-health" onClick={() => setMobileOpen(false)}>AB Health</Link>
-              
-              <div className="dropdown-group-title" style={{ fontSize: '10px', color: 'var(--gold)', marginTop: '8px' }}>Industrial</div>
-              <Link href="/products/de-oiled-rice-bran" onClick={() => setMobileOpen(false)}>De-Oiled Rice Bran</Link>
-              <Link href="/products/rice-bran-gums" onClick={() => setMobileOpen(false)}>Rice Bran Gums</Link>
-              <Link href="/products/rice-bran-wax" onClick={() => setMobileOpen(false)}>Rice Bran Wax</Link>
-              <Link href="/products/rice-bran-lecithin" onClick={() => setMobileOpen(false)}>Rice Bran Lecithin</Link>
-              <Link href="/products/fatty-acids-spent-earth" onClick={() => setMobileOpen(false)}>Fatty Acids &amp; Spent Earth</Link>
-            </div>
+            <button className="dropdown-trigger" onClick={() => setProductsOpen(!productsOpen)} style={{ background: 'none', border: 'none', display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }}>
+              Products <ChevronDown size={16} style={{ transform: productsOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.3s' }} />
+            </button>
+            {productsOpen && (
+              <div className="dropdown-menu">
+                <Link href="/products" onClick={() => setMobileOpen(false)} style={{ color: 'var(--gold)' }}>View All Products</Link>
+                <div className="dropdown-group-title" style={{ fontSize: '10px', color: 'var(--gold)', marginTop: '8px' }}>Retail Brands</div>
+                <Link href="/products/jeevan-rekha" onClick={() => setMobileOpen(false)}>Jeevan Rekha Rice Bran Oil</Link>
+                <Link href="/products/jeevan-rekha#mustard" onClick={() => setMobileOpen(false)}>Jeevan Rekha Mustard Oil</Link>
+                <Link href="/products/ab-health" onClick={() => setMobileOpen(false)}>AB Health</Link>
+                
+                <div className="dropdown-group-title" style={{ fontSize: '10px', color: 'var(--gold)', marginTop: '8px' }}>Industrial</div>
+                <Link href="/products/de-oiled-rice-bran" onClick={() => setMobileOpen(false)}>De-Oiled Rice Bran</Link>
+                <Link href="/products/rice-bran-gums" onClick={() => setMobileOpen(false)}>Rice Bran Gums</Link>
+                <Link href="/products/rice-bran-wax" onClick={() => setMobileOpen(false)}>Rice Bran Wax</Link>
+                <Link href="/products/rice-bran-lecithin" onClick={() => setMobileOpen(false)}>Rice Bran Lecithin</Link>
+                <Link href="/products/fatty-acids-spent-earth" onClick={() => setMobileOpen(false)}>Fatty Acids &amp; Spent Earth</Link>
+              </div>
+            )}
           </div>
         </li>
 

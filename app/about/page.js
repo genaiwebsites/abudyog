@@ -80,8 +80,8 @@ export default function About() {
       <section className="bento-section">
         <div className="section-eyebrow reveal">Foundational Philosophies</div>
         <h2 className="section-title reveal">Our Corporate<br /><em>Principles</em></h2>
-        <div className="bento-grid">
-          <div className="bento-card featured reveal" style={{ gridColumn: 'span 3', padding: '36px 28px' }}>
+        <div className="bento-grid responsive-two-col">
+          <div className="bento-card featured reveal" style={{ gridColumn: 'span 1' }}>
             <div className="bento-icon-container">
               <Eye size={24} />
             </div>
@@ -90,7 +90,7 @@ export default function About() {
               To be India's most reliable partner for premium agro-products and industrial derivatives. We aim to establish Jeevan Rekha as a household brand for purity and wellness while leading the industry in physical steam refining scaling and zero-waste circular operations.
             </p>
           </div>
-          <div className="bento-card reveal" style={{ gridColumn: 'span 3', background: 'var(--green-mid)', color: 'var(--white)', padding: '36px 28px' }}>
+          <div className="bento-card reveal" style={{ background: 'var(--green-mid)', color: 'var(--white)', gridColumn: 'span 1' }}>
             <div className="bento-icon-container">
               <Target size={24} style={{ color: 'var(--gold-light)' }} />
             </div>

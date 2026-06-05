@@ -48,6 +48,13 @@ export const metadata = {
   },
 };
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
+};
+
+
 export default function RootLayout({ children }) {
   // Structured data markup (JSON-LD) for SEO
   const jsonLd = {

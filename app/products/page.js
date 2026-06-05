@@ -104,7 +104,7 @@ export default function ProductsHub() {
         <div className="section-eyebrow reveal">Industrial Derivatives</div>
         <h2 className="section-title reveal">Commercial-Grade<br /><em>Bran Derivatives</em></h2>
         <div className="bento-grid">
-          <div className="bento-card featured reveal" style={{ gridColumn: 'span 2' }}>
+          <div className="bento-card featured reveal grid-span-2">
             <div className="bento-icon-container">
               <Layers size={24} />
             </div>
@@ -128,7 +128,7 @@ export default function ProductsHub() {
             <p className="bento-body">Natural emulsifier and antioxidant ideal for bakery, confectionery, and nutraceutical formulations.</p>
             <Link href="/products/rice-bran-lecithin" className="btn-primary" style={{ marginTop: '24px', padding: '10px 20px' }}>View Product</Link>
           </div>
-          <div className="bento-card reveal" style={{ gridColumn: 'span 2' }}>
+          <div className="bento-card reveal grid-span-2">
             <div className="bento-icon-container">
               <Recycle size={24} />
             </div>
