@@ -1,6 +1,23 @@
+import { Cormorant_Garamond, Outfit } from 'next/font/google';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import AuditHud from '../components/AuditHud';
 import "./globals.css";
+
+const cormorant = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600'],
+  style: ['normal', 'italic'],
+  variable: '--font-cormorant',
+  display: 'swap',
+});
+
+const outfit = Outfit({
+  subsets: ['latin'],
+  weight: ['200', '300', '400', '500', '600'],
+  variable: '--font-outfit',
+  display: 'swap',
+});
 
 export const metadata = {
   title: {
@@ -55,19 +72,18 @@ export default function RootLayout({ children }) {
   };
 
   return (
-    <html lang="en" className="h-full antialiased" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={`${cormorant.variable} ${outfit.variable}`}>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-background text-foreground transition-colors duration-300">
+      <body>
         <Navbar />
-        <main className="flex-grow pt-16">
-          {children}
-        </main>
+        {children}
         <Footer />
+        <AuditHud />
       </body>
     </html>
   );

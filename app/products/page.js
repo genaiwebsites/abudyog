@@ -1,153 +1,154 @@
 "use client";
-import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, Box, Sparkles } from 'lucide-react';
-import ScrollReveal from '../../components/ScrollReveal';
+import React, { useEffect } from 'react';
+import Link from 'next/link';
+import { Layers, Settings, Activity, Recycle } from 'lucide-react';
 
-export default function ProductsMaster() {
-  const b2bProducts = [
-    {
-      slug: 'de-oiled-rice-bran',
-      title: 'De-Oiled Rice Bran (DORB)',
-      tag: 'Industrial / Feed',
-      img: '/dorb_feed.png',
-      desc: 'Extracted raw rice bran processed into high-protein animal feed pellets and powder. Essential for fish, poultry, and cattle nutrition.'
-    },
-    {
-      slug: 'rice-bran-wax',
-      title: 'Rice Bran Wax',
-      tag: 'Cosmetics / Polishes',
-      img: '/rice_bran_wax.png',
-      desc: 'Hard, high-melting natural vegetable wax obtained during physical winterization. Safe alternative for cosmetics and industrial polishes.'
-    },
-    {
-      slug: 'rice-bran-gums',
-      title: 'Rice Bran Gums',
-      tag: 'Cosmetics / Detergents',
-      img: '/rice_bran_lecithin.png',
-      desc: 'Purified natural thickening, stabilizing, and emulsifying agents used in detergents, lubricants, and cosmetic conditioners.'
-    },
-    {
-      slug: 'rice-bran-lecithin',
-      title: 'Rice Bran Lecithin',
-      tag: 'Nutraceuticals / Bakery',
-      img: '/rice_bran_lecithin.png',
-      desc: 'Non-GMO vegetable emulsifier rich in natural antioxidants and phospholipids, ideal for food, baking, and pharmaceutical uses.'
-    },
-    {
-      slug: 'fatty-acids-spent-earth',
-      title: 'Fatty Acids & Spent Earth',
-      tag: 'Industrial Chemicals',
-      img: '/refinery_plant.png',
-      desc: 'Distilled fatty acid recovery by-product used in manufacturing candles and lubricants, combined with de-oiled bleaching earth for soil conditioning and concrete mixtures.'
-    }
-  ];
+export default function ProductsHub() {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = document.querySelectorAll('.reveal');
+    elements.forEach((el) => observer.observe(el));
+
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
 
   return (
-    <div className="w-full pt-12 pb-24 bg-dot-grid">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 space-y-16">
-        {/* Header Block */}
-        <div className="text-center max-w-2xl mx-auto space-y-4">
-          <ScrollReveal direction="up" delay={0.1}>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-accent/20 bg-accent/5 text-[10px] font-mono font-bold tracking-widest text-accent uppercase">
-              <Box size={12} /> Master Portfolios
-            </div>
-          </ScrollReveal>
-          <ScrollReveal direction="up" delay={0.2}>
-            <h1 className="text-4xl md:text-5xl font-serif text-foreground">
-              Integrated Product Divisions
-            </h1>
-          </ScrollReveal>
-          <ScrollReveal direction="up" delay={0.3}>
-            <p className="text-foreground/75 font-light text-sm md:text-base leading-relaxed">
-              Explore Jeevan Rekha, our consumer healthy cooking oils, and AB Udyog&apos;s certified B2B industrial rice bran derivatives.
-            </p>
-          </ScrollReveal>
+    <>
+      {/* ══ HERO BANNER ══ */}
+      <section className="hero-subpage">
+        <div className="hero-bg" style={{ backgroundImage: "url('https://2025.abudyog.in/wp-content/uploads/2025/11/RAJA8723-scaled.jpg')", opacity: 0.25 }}></div>
+        <div className="hero-accent"></div>
+        <div className="hero-content">
+          <div className="hero-eyebrow">
+            <span>Our Portfolio</span>
+          </div>
+          <h1 className="hero-title">
+            From Field to Table,<br />
+            <em>Purely Refined.</em>
+          </h1>
+          <p className="hero-subtitle">
+            Three distinct product lines spanning edible oils, animal nutrition, and premium industrial derivatives. Explore the diverse applications of rice bran and mustard seeds.
+          </p>
         </div>
+      </section>
 
-        {/* B2C Flagship Highlight Card */}
-        <ScrollReveal direction="up" delay={0.2}>
-          <div className="group relative rounded-[2.5rem] overflow-hidden border border-accent/15 shadow-md flex flex-col justify-end min-h-[380px] md:min-h-[440px] w-full p-8 md:p-12 hover:shadow-2xl hover:border-accent/40 transition-all duration-700">
-            <Image 
-              src="/mustard_oil.png" 
-              alt="Jeevan Rekha B2C premium oil flagship lineup display" 
-              fill
-              sizes="100vw"
-              className="object-cover transform group-hover:scale-[1.02] transition-transform duration-[1200ms]"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/75 to-transparent" />
-            
-            <div className="relative z-10 max-w-2xl space-y-6 text-white text-left">
-              <div className="bg-accent text-white text-[9px] font-mono font-bold uppercase tracking-widest inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full shadow-md">
-                <Sparkles size={10} className="animate-pulse" /> Consumer Division (B2C)
-              </div>
-              <div className="space-y-3">
-                <h3 className="text-4xl md:text-5xl font-serif text-accent font-bold">Jeevan Rekha</h3>
-                <p className="font-light text-white/95 text-sm md:text-base leading-relaxed">
-                  100% physically refined Rice Bran Oil containing 10,000+ PPM Oryzanol and pure Kachi Ghani Mustard Oil. Chemical-free health protection directly for your dining table.
-                </p>
-              </div>
-              <div className="pt-2">
-                <Link 
-                  href="/products/jeevan-rekha" 
-                  className="inline-flex items-center gap-2 bg-accent hover:bg-white text-white hover:text-primary px-6 py-3.5 rounded-full font-bold text-xs tracking-widest uppercase shadow-md transition-all duration-300 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-accent active-press"
-                >
-                  Explore Consumer Flagships <ArrowRight size={14} />
-                </Link>
-              </div>
+      {/* ══ CONSUMER FOODS ══ */}
+      <section style={{ background: 'var(--cream)' }}>
+        <div className="about-grid">
+          <div className="about-img-wrap reveal">
+            <div className="about-frame" style={{ borderColor: 'var(--gold)' }}></div>
+            <Image className="about-img-main" src="/premium_cooking_oil.png" alt="Rice Bran Oil" width={800} height={600} style={{ objectFit: 'cover' }} />
+            <div className="about-img-badge" style={{ background: 'var(--green-deep)' }}>
+              <div className="about-badge-num" style={{ color: 'var(--gold-light)' }}>10k</div>
+              <div className="about-badge-label" style={{ color: 'var(--white)' }}>PPM<br/>Oryzanol</div>
             </div>
           </div>
-        </ScrollReveal>
-
-        {/* B2B Products Section */}
-        <div className="space-y-8 pt-8">
-          <ScrollReveal direction="up" delay={0.1}>
-            <div className="border-b border-border pb-4 flex items-center gap-2.5">
-              <h3 className="text-2xl md:text-3xl font-serif text-foreground">
-                Industrial Derivatives & By-Products (B2B)
-              </h3>
+          <div className="about-text reveal">
+            <div className="section-eyebrow">B2C Retail Brand</div>
+            <h2 className="section-title">Jeevan Rekha <em>Foods</em></h2>
+            <br />
+            <p className="section-body">
+              Physically refined Rice Bran Oil and cold-pressed Kachhi Ghani Mustard Oil — crafted for purity, flavor, and healthier everyday living. High in natural Oryzanol and heart-healthy fats, Jeevan Rekha Rice Bran Oil is physically refined without the use of harsh chemicals, ensuring the retention of natural antioxidants.
+            </p>
+            <div className="about-tags">
+              <span className="about-tag">Zero Trans Fat</span>
+              <span className="about-tag">High Smoke Point</span>
+              <span className="about-tag">Cold Pressed</span>
             </div>
-          </ScrollReveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {b2bProducts.map((product, idx) => (
-              <ScrollReveal key={idx} direction="up" delay={0.1 * (idx % 3)} className="h-full">
-                <Link 
-                  href={`/products/${product.slug}`}
-                  className="group premium-card rounded-[2rem] overflow-hidden flex flex-col h-full focus:outline-none focus-visible:ring-4 focus-visible:ring-accent"
-                >
-                  <div className="h-48 overflow-hidden relative">
-                    <div className="absolute inset-0 bg-primary/5 group-hover:bg-transparent transition-colors z-10" />
-                    <Image 
-                      src={product.img} 
-                      alt={`${product.title} B2B product visual`}
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 360px"
-                      className="object-cover transform group-hover:scale-[1.04] transition-transform duration-[1000ms] grayscale group-hover:grayscale-0"
-                    />
-                    <div className="absolute top-4 left-4 z-20 bg-primary/75 backdrop-blur-md text-white text-[8px] font-mono font-bold uppercase tracking-wider px-2.5 py-1.5 rounded-full border border-white/10">
-                      {product.tag}
-                    </div>
-                  </div>
-                  
-                  <div className="p-6 md:p-8 flex flex-col flex-grow space-y-4">
-                    <h4 className="text-lg md:text-xl font-serif font-bold text-foreground group-hover:text-accent transition-colors duration-300 leading-snug">
-                      {product.title}
-                    </h4>
-                    <p className="text-foreground/75 font-light text-xs md:text-sm leading-relaxed flex-grow">
-                      {product.desc}
-                    </p>
-                    <div className="pt-2 flex items-center gap-1.5 font-bold text-xs tracking-widest uppercase text-accent group-hover:text-primary transition-colors duration-300 mt-auto">
-                      View Technical Specifications <ArrowRight size={12} className="transform group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </div>
-                </Link>
-              </ScrollReveal>
-            ))}
+            <br /><br />
+            <Link href="/products/jeevan-rekha" className="btn-primary" style={{ background: 'var(--green-deep)', color: 'var(--white)' }}>View Jeevan Rekha Products</Link>
           </div>
+        </div>
+      </section>
+
+      {/* ══ ANIMAL NUTRITION ══ */}
+      <section className="products-section" style={{ background: 'var(--green-deep)' }}>
+        <div className="about-grid" style={{ direction: 'rtl' }}>
+          <div className="about-img-wrap reveal" style={{ direction: 'ltr' }}>
+            <div className="about-frame"></div>
+            <Image className="about-img-main" src="/dorb_feed.png" alt="AB DORB" width={800} height={600} style={{ objectFit: 'cover', objectPosition: 'top' }} />
+          </div>
+          <div className="about-text reveal" style={{ direction: 'ltr' }}>
+            <div className="section-eyebrow" style={{ color: 'var(--gold-light)' }}>B2B Animal Feed</div>
+            <h2 className="section-title" style={{ color: 'var(--white)' }}>AB DORB <em>Nutrition</em></h2>
+            <br />
+            <p className="section-body" style={{ color: 'rgba(255,255,255,0.9)' }}>
+              High-protein de-oiled rice bran serving as the foundational nutrition block for aquaculture, poultry, and cattle industries. Marketed under the Magik, ABU Platinum, and ABU Premium sub-brands, our DORB provides essential amino acids and energy for superior feed conversion ratios in livestock.
+            </p>
+            <div className="about-tags">
+              <span className="about-tag" style={{ borderColor: 'rgba(255,255,255,0.2)', color: 'var(--gold-light)' }}>Aquaculture</span>
+              <span className="about-tag" style={{ borderColor: 'rgba(255,255,255,0.2)', color: 'var(--gold-light)' }}>Poultry</span>
+              <span className="about-tag" style={{ borderColor: 'rgba(255,255,255,0.2)', color: 'var(--gold-light)' }}>Cattle</span>
+            </div>
+            <br /><br />
+            <Link href="/products/de-oiled-rice-bran" className="btn-primary">Explore AB DORB</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ══ BYPRODUCTS BENTO ══ */}
+      <section className="bento-section">
+        <div className="section-eyebrow reveal">Industrial Derivatives</div>
+        <h2 className="section-title reveal">Commercial-Grade<br /><em>Bran Derivatives</em></h2>
+        <div className="bento-grid">
+          <div className="bento-card featured reveal" style={{ gridColumn: 'span 2' }}>
+            <div className="bento-icon-container">
+              <Layers size={24} />
+            </div>
+            <div className="bento-title">Rice Bran Wax</div>
+            <p className="bento-body">Premium natural wax used in cosmetics, polishes, and food applications — offering excellent binding and structural properties.</p>
+            <Link href="/products/rice-bran-wax" className="btn-light-ghost" style={{ marginTop: '24px' }}>View Product</Link>
+          </div>
+          <div className="bento-card reveal">
+            <div className="bento-icon-container">
+              <Settings size={24} />
+            </div>
+            <div className="bento-title">Rice Bran Gums</div>
+            <p className="bento-body">Versatile emulsifying and stabilizing agent widely utilized in the food and pharmaceutical industries.</p>
+            <Link href="/products/rice-bran-gums" className="btn-primary" style={{ marginTop: '24px', padding: '10px 20px' }}>View Product</Link>
+          </div>
+          <div className="bento-card reveal">
+            <div className="bento-icon-container">
+              <Activity size={24} />
+            </div>
+            <div className="bento-title">Rice Bran Lecithin</div>
+            <p className="bento-body">Natural emulsifier and antioxidant ideal for bakery, confectionery, and nutraceutical formulations.</p>
+            <Link href="/products/rice-bran-lecithin" className="btn-primary" style={{ marginTop: '24px', padding: '10px 20px' }}>View Product</Link>
+          </div>
+          <div className="bento-card reveal" style={{ gridColumn: 'span 2' }}>
+            <div className="bento-icon-container">
+              <Recycle size={24} />
+            </div>
+            <div className="bento-title">Fatty Acids &amp; Spent Earth</div>
+            <p className="bento-body">High-quality fatty acid extracts and eco-friendly spent earth for industrial reuse and biofuel production.</p>
+            <Link href="/products/fatty-acids-spent-earth" className="btn-primary" style={{ marginTop: '24px', padding: '10px 20px' }}>View Product</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ══ CTA BANNER ══ */}
+      <div className="cta-banner">
+        <div className="cta-text">
+          <h2>Partner With Us for<br />Premium Rice-Bran Products</h2>
+          <p>Delivered globally with reliability, traceability, and scale.</p>
+        </div>
+        <div className="cta-action">
+          <Link href="/contact" className="btn-dark">Contact Our Team</Link>
         </div>
       </div>
-    </div>
+    </>
   );
 }
