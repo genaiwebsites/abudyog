@@ -32,7 +32,7 @@ export default function JeevanRekha() {
         <div className="about-grid">
           <div className="about-img-wrap reveal">
             <div className="about-frame" style={{ borderColor: 'var(--gold)' }}></div>
-            <Image className="about-img-main" src="/premium_cooking_oil.png" alt="Jeevan Rekha Rice Bran Oil" width={800} height={600} style={{ objectFit: 'cover' }} />
+            <Image className="about-img-main" src="/jr_rbo.png" alt="Jeevan Rekha Rice Bran Oil" width={800} height={600} style={{ objectFit: 'cover' }} />
             <div className="about-img-badge" style={{ background: 'var(--green-deep)' }}>
               <div className="about-badge-num" style={{ color: 'var(--gold-light)' }}>10k</div>
               <div className="about-badge-label" style={{ color: 'var(--white)' }}>PPM<br/>Oryzanol</div>
@@ -63,13 +63,13 @@ export default function JeevanRekha() {
           </div>
         </div>
       </section>
-
+ 
       {/* ══ MUSTARD OIL ══ */}
       <section id="mustard" className="bg-white" style={{ padding: '100px 8%' }}>
         <div className="about-grid-reverse">
           <div className="about-img-wrap reveal">
             <div className="about-frame" style={{ borderColor: 'var(--gold)' }}></div>
-            <Image className="about-img-main" src="/mustard_oil.png" alt="Jeevan Rekha Mustard Oil" width={800} height={600} style={{ objectFit: 'cover' }} />
+            <Image className="about-img-main" src="/jr_kgmo.png" alt="Jeevan Rekha Mustard Oil" width={800} height={600} style={{ objectFit: 'cover' }} />
           </div>
           <div className="about-text reveal">
             <span className="eyebrow-minimal">Traditional Pungency</span>

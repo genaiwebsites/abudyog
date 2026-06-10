@@ -172,8 +172,8 @@ nav.scrolled {
 /* ── HERO (HOMEPAGE COVER BLEND) ── */
 .hero-home {
   position: relative;
-  min-height: 100vh;
-  min-height: 680px;
+  min-height: calc(100vh - 44px);
+  min-height: calc(100dvh - 44px);
   display: flex;
   align-items: center;
   background: var(--green-deep);
@@ -545,9 +545,10 @@ nav.scrolled {
 /* ── TICKER ── */
 .ticker {
   background: var(--gold);
-  padding: 14px 0;
+  height: 44px;
   overflow: hidden;
   display: flex;
+  align-items: center;
 }
 .ticker-track {
   display: flex;
@@ -1267,7 +1268,8 @@ footer {
 
   /* ── Hero homepage — centred on mobile ── */
   .hero-home {
-    min-height: auto;
+    min-height: calc(100vh - 44px);
+    min-height: calc(100dvh - 44px);
     padding-top: 100px;
     padding-bottom: 48px;
     align-items: center;

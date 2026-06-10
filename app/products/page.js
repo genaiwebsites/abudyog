@@ -33,7 +33,7 @@ export default function ProductsHub() {
         <div className="about-grid">
           <div className="about-img-wrap reveal">
             <div className="about-frame" style={{ borderColor: 'var(--gold)' }}></div>
-            <Image className="about-img-main" src="/premium_cooking_oil.png" alt="Rice Bran Oil" width={800} height={600} style={{ objectFit: 'cover' }} />
+            <Image className="about-img-main" src="/jr_oil_combo.png" alt="Jeevan Rekha Rice Bran & Mustard Oil" width={800} height={600} style={{ objectFit: 'cover' }} />
             <div className="about-img-badge" style={{ background: 'var(--green-deep)' }}>
               <div className="about-badge-num" style={{ color: 'var(--gold-light)' }}>10k</div>
               <div className="about-badge-label" style={{ color: 'var(--white)' }}>PPM<br/>Oryzanol</div>
@@ -56,13 +56,13 @@ export default function ProductsHub() {
           </div>
         </div>
       </section>
-
+ 
       {/* ══ ANIMAL NUTRITION ══ */}
       <section className="products-section bg-green-deep">
         <div className="about-grid-reverse">
           <div className="about-img-wrap reveal">
             <div className="about-frame"></div>
-            <Image className="about-img-main" src="/dorb_feed.png" alt="AB DORB" width={800} height={600} style={{ objectFit: 'cover', objectPosition: 'top' }} />
+            <Image className="about-img-main" src="/abu_dorb_combo.svg" alt="AB DORB" width={800} height={600} style={{ objectFit: 'cover' }} />
           </div>
           <div className="about-text reveal">
             <span className="eyebrow-minimal text-gold-light">B2B Animal Feed</span>

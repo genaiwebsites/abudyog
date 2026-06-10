@@ -46,7 +46,7 @@ export default function Home() {
         <div className="about-grid">
           <div className="about-img-wrap reveal">
             <div className="about-frame"></div>
-            <Image className="about-img-main" src="/refinery_plant.png" alt="AB Udyog Facility" width={800} height={600} style={{ objectFit: 'cover' }} />
+            <Image className="about-img-main" src="/factory1.webp" alt="AB Udyog Facility" width={800} height={600} style={{ objectFit: 'cover' }} />
             <div className="about-img-badge">
               <div className="about-badge-num">30+</div>
               <div className="about-badge-label">Years of<br />Excellence</div>
@@ -86,7 +86,7 @@ export default function Home() {
 
         <div className="products-grid">
           <Link href="/products/jeevan-rekha" className="product-card reveal">
-            <Image className="product-img" src="/premium_cooking_oil.png" alt="Rice Bran Oil" width={600} height={800} style={{ objectFit: 'cover' }} />
+            <Image className="product-img" src="/jr_oil_combo.png" alt="Jeevan Rekha Rice Bran & Mustard Oil" width={600} height={800} style={{ objectFit: 'cover' }} />
             <div className="product-overlay">
               <div className="product-tag">Jeevan Rekha Foods</div>
               <div className="product-name">Rice Bran<br />&amp; Mustard Oil</div>
@@ -95,7 +95,7 @@ export default function Home() {
             </div>
           </Link>
           <Link href="/products/de-oiled-rice-bran" className="product-card reveal">
-            <Image className="product-img" src="/dorb_feed.png" alt="DORB" width={600} height={800} style={{ objectFit: 'cover', objectPosition: 'top' }} />
+            <Image className="product-img" src="/abu_dorb_combo.svg" alt="AB DORB" width={600} height={800} style={{ objectFit: 'cover' }} />
             <div className="product-overlay">
               <div className="product-tag">Animal Feed · DORB</div>
               <div className="product-name">AB DORB</div>
@@ -160,7 +160,7 @@ export default function Home() {
 
       {/* ══ METRICS ══ */}
       <div className="metrics-section">
-        <Image className="metrics-img" src="/hero_rice_paddy.png" alt="AB Udyog Infrastructure" width={900} height={675} style={{ objectFit: 'cover' }} />
+        <Image className="metrics-img" src="/DJI_0140.jpg" alt="AB Udyog Infrastructure" width={900} height={675} style={{ objectFit: 'cover' }} />
         <div className="metrics-content reveal">
           <span className="eyebrow-minimal">Infrastructure</span>
           <h2 className="section-title">Built at<br /><em>Industrial Scale</em></h2>

@@ -27,7 +27,7 @@ const productData = {
     shortName: 'AB DORB',
     desc: 'High-protein, low-fat animal feed foundation.',
     fullDesc: 'After crude oil has been extracted from the hard outer brown layer of rice after chaff (rice husk), De-Oiled Rice Bran (DORB) is obtained. DORB is widely used in the manufacture of poultry feed, cattle feed, and fish feed, as well as industrial applications like sodium silicate, silica gel, and insulation bricks. We market it under three premium sub-brands: Magik, ABU Platinum, and ABU Premium.',
-    image: '/dorb_feed.png',
+    image: '/abu_dorb_combo.svg',
     features: ['High Protein Content', 'Optimized Fiber Grades', 'Excellent Digestibility', 'Rich in Vitamins & Minerals'],
     applications: ['Aquaculture (Fish & Shrimp)', 'Poultry Feed Sourcing', 'Cattle & Swine Feed', 'Industrial Silica & Bricks'],
     grades: [

@@ -33,7 +33,7 @@ export default function About() {
         <div className="about-grid">
           <div className="about-img-wrap reveal">
             <div className="about-frame"></div>
-            <Image className="about-img-main" src="/refinery_plant.png" alt="Kolkata physical refinement refinery plant" width={800} height={600} style={{ objectFit: 'cover' }} />
+            <Image className="about-img-main" src="/factory1.webp" alt="Kolkata physical refinement refinery plant" width={800} height={600} style={{ objectFit: 'cover' }} />
             <div className="about-img-badge">
               <div className="about-badge-num">40+</div>
               <div className="about-badge-label">Years of<br />Agro Scale</div>
