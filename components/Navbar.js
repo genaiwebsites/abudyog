@@ -44,7 +44,7 @@ export default function Navbar() {
                 <div className="dropdown-group-title">Consumer</div>
                 <Link href="https://jeevanrekhafoods.com/products/rice-bran-oil" target="_blank" rel="noopener noreferrer">Jeevan Rekha Rice Bran Oil</Link>
                 <Link href="https://jeevanrekhafoods.com/products/mustard-oil" target="_blank" rel="noopener noreferrer">Jeevan Rekha Mustard Oil</Link>
-                <Link href="/products/ab-health">AB Health Gamma Oryzanol</Link>
+                <Link href="/products/ab-health">AB Health Edible Oils</Link>
               </div>
               <div className="dropdown-col">
                 <div className="dropdown-group-title">Industrial</div>
@@ -108,7 +108,7 @@ export default function Navbar() {
             <div className="mobile-group-title">CONSUMER</div>
             <Link href="https://jeevanrekhafoods.com/products/rice-bran-oil" target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}>JEEVAN REKHA RICE BRAN OIL</Link>
             <Link href="https://jeevanrekhafoods.com/products/mustard-oil" target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}>JEEVAN REKHA MUSTARD OIL</Link>
-            <Link href="/products/ab-health" onClick={() => setMobileOpen(false)}>AB HEALTH</Link>
+            <Link href="/products/ab-health" onClick={() => setMobileOpen(false)}>AB HEALTH EDIBLE OILS</Link>
             
             <div className="mobile-group-title">INDUSTRIAL</div>
             <Link href="/products/de-oiled-rice-bran" onClick={() => setMobileOpen(false)}>DE-OILED RICE BRAN</Link>

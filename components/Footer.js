@@ -59,7 +59,7 @@ export default function Footer() {
           <ul>
             <li><Link href="https://jeevanrekhafoods.com/products/rice-bran-oil" target="_blank" rel="noopener noreferrer">Jeevan Rekha Rice Bran Oil</Link></li>
             <li><Link href="https://jeevanrekhafoods.com/products/mustard-oil" target="_blank" rel="noopener noreferrer">Jeevan Rekha Mustard Oil</Link></li>
-            <li><Link href="/products/ab-health">AB Health Gamma Oryzanol</Link></li>
+            <li><Link href="/products/ab-health">AB Health Edible Oils</Link></li>
           </ul>
         </div>
 
