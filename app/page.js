@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import React from 'react';
 import Link from 'next/link';
-import { Settings, Sprout, Layers, Activity, Recycle } from 'lucide-react';
+import { Wheat, Sparkles, FlaskConical, Microscope, Fuel } from 'lucide-react';
 import HeroSection from '@/components/HeroSection';
 import CtaBanner from '@/components/CtaBanner';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
@@ -120,35 +120,35 @@ export default function Home() {
         <div className="bento-grid">
           <div className="bento-card featured reveal">
             <div className="bento-icon-container">
-              <Sprout size={24} aria-hidden="true" />
+              <Wheat size={24} aria-hidden="true" />
             </div>
             <div className="bento-title">De-Oiled Rice Bran (DORB)</div>
             <p className="bento-body" style={{ marginTop: '12px', maxWidth: '480px' }}>Magik, ABU Platinum &amp; ABU Premium DORB — protein-rich, low-fat nutrition designed to enhance growth, feed conversion, and overall performance for fish, pig, poultry, and cattle. Trusted by farmers, season after season.</p>
           </div>
           <div className="bento-card reveal">
             <div className="bento-icon-container">
-              <Layers size={24} aria-hidden="true" />
+              <Sparkles size={24} aria-hidden="true" />
             </div>
             <div className="bento-title">Rice Bran Wax</div>
             <p className="bento-body">Premium natural wax used in cosmetics, polishes, and food applications — offering excellent binding and structural properties.</p>
           </div>
           <div className="bento-card reveal">
             <div className="bento-icon-container">
-              <Settings size={24} aria-hidden="true" />
+              <FlaskConical size={24} aria-hidden="true" />
             </div>
             <div className="bento-title">Rice Bran Gums</div>
             <p className="bento-body">Versatile emulsifying and stabilizing agent widely utilized in the food and pharmaceutical industries.</p>
           </div>
           <div className="bento-card reveal">
             <div className="bento-icon-container">
-              <Activity size={24} aria-hidden="true" />
+              <Microscope size={24} aria-hidden="true" />
             </div>
             <div className="bento-title">Rice Bran Lecithin</div>
             <p className="bento-body">Natural emulsifier and antioxidant ideal for bakery, confectionery, and nutraceutical formulations.</p>
           </div>
           <div className="bento-card reveal">
             <div className="bento-icon-container">
-              <Recycle size={24} aria-hidden="true" />
+              <Fuel size={24} aria-hidden="true" />
             </div>
             <div className="bento-title">Fatty Acids &amp; Spent Earth</div>
             <p className="bento-body">High-quality fatty acid extracts and eco-friendly spent earth for industrial reuse and biofuel production.</p>
@@ -194,7 +194,7 @@ export default function Home() {
           <h2 className="section-title">Certified for<br />Global Standards</h2>
         </div>
         <div style={{ display: 'flex', justifyContent: 'center', marginTop: '48px' }}>
-          <Image className="certs-img" src="https://2025.abudyog.in/wp-content/uploads/2025/11/certificates-e1763163163535.png" alt="Certifications" width={800} height={200} style={{ filter: 'drop-shadow(0 8px 32px rgba(0, 0, 0, 0.08))', maxWidth: '100%', height: 'auto' }} />
+          <Image className="certs-img" src="https://2025.abudyog.in/wp-content/uploads/2025/11/certificates-e1763163163535.png" alt="Certifications" width={800} height={200} style={{ maxWidth: '100%', height: 'auto' }} />
         </div>
       </section>
 

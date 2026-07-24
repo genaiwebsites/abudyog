@@ -1,8 +1,7 @@
 "use client";
 import Image from 'next/image';
 import React from 'react';
-import Link from 'next/link';
-import { Target, Award, Users, ShieldCheck } from 'lucide-react';
+import { Eye, Target, ShieldCheck, Route, Activity, Leaf } from 'lucide-react';
 import CtaBanner from '@/components/CtaBanner';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
@@ -10,7 +9,7 @@ export default function About() {
   useScrollReveal('.reveal', 0.1);
 
   return (
-    <div>
+    <>
       {/* ══ HERO BANNER ══ */}
       <section className="hero-subpage">
         <div className="hero-bg" style={{ backgroundImage: "url('/hero_rice_paddy.png')", opacity: 0.25 }}></div>
@@ -50,50 +49,67 @@ export default function About() {
         </div>
       </section>
 
-      {/* ══ CORE PILLARS ══ */}
+      {/* ══ VISION & MISSION BENTO ══ */}
+      <section className="bento-section">
+        <h2 className="section-title reveal" style={{ textAlign: 'center', marginBottom: '60px' }}>Our Corporate Principles</h2>
+        <div className="bento-grid responsive-two-col">
+          <div className="bento-card featured reveal" style={{ gridColumn: 'span 1' }}>
+            <div className="bento-icon-container">
+              <Eye size={24} aria-hidden="true" />
+            </div>
+            <div className="bento-title" style={{ fontSize: '32px' }}>Our Corporate Vision</div>
+            <p className="bento-body" style={{ fontSize: '15px', maxWidth: '800px', marginTop: '20px' }}>
+              To be India's most reliable partner for premium agro-products and industrial derivatives. We aim to establish Jeevan Rekha as a household brand for purity and wellness while leading the industry in physical steam refining scaling and zero-waste circular operations.
+            </p>
+          </div>
+          <div className="bento-card reveal" style={{ background: 'var(--green-mid)', color: 'var(--white)', gridColumn: 'span 1' }}>
+            <div className="bento-icon-container">
+              <Target size={24} style={{ color: 'var(--gold-light)' }} aria-hidden="true" />
+            </div>
+            <div className="bento-title" style={{ color: 'var(--gold-light)', fontSize: '32px' }}>Our Operations Mission</div>
+            <p className="bento-body" style={{ color: 'rgba(255,255,255,0.75)', fontSize: '15px', maxWidth: '800px', marginTop: '20px' }}>
+              To maintain strict control over chemical-free refining. We pledge to preserve natural health nutrients, provide high-quality B2B protein animal feeds (AB DORB), and sustain clean extraction lines with strict adherence to national food standards.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ══ PILLARS ══ */}
       <section className="pillars-section">
         <div className="section-header-center">
-          <h2 className="section-title text-white">Our Operational Pillars</h2>
+          <h2 className="section-title reveal" style={{ textAlign: 'center', marginBottom: '40px' }}>Operational Standards</h2>
         </div>
         <div className="pillars-grid">
-          <div className="pillar-card reveal">
-            <div className="pillar-icon">
-              <Target size={24} aria-hidden="true" />
-            </div>
-            <h3 className="pillar-title">Physical Refinement Purity</h3>
-            <p className="pillar-body">Zero chemical treatment. We rely strictly on high-temperature vacuum deodorization and physical steam distillation to retain natural Gamma Oryzanol.</p>
+          <div className="pillar reveal">
+            <div className="pillar-icon"><ShieldCheck size={26} aria-hidden="true" /></div>
+            <div className="pillar-name">Purity</div>
+            <p className="pillar-text">By physical steam refining, we scrub free fatty acids at high temperatures, completely bypassing chemical caustic washes to keep oils clean and natural.</p>
           </div>
-          <div className="pillar-card reveal">
-            <div className="pillar-icon">
-              <Award size={24} aria-hidden="true" />
-            </div>
-            <h3 className="pillar-title">FSSC 22000 Compliance</h3>
-            <p className="pillar-body">Our Kolkata processing facility adheres to strict global food safety standards, guaranteeing hazard-free processing for consumer food and animal feed lines.</p>
+          <div className="pillar reveal">
+            <div className="pillar-icon"><Route size={26} aria-hidden="true" /></div>
+            <div className="pillar-name">Traceability</div>
+            <p className="pillar-text">From sourcing fresh rice bran at local mills to continuous processing and bottling, our batch control ensures absolute traceability.</p>
           </div>
-          <div className="pillar-card reveal">
-            <div className="pillar-icon">
-              <Users size={24} aria-hidden="true" />
-            </div>
-            <h3 className="pillar-title">Farm Community Sourcing</h3>
-            <p className="pillar-body">Partnering with regional rice mills across West Bengal's agricultural belt to source fresh raw bran within hours of milling, empowering regional farming economics.</p>
+          <div className="pillar reveal">
+            <div className="pillar-icon"><Activity size={26} aria-hidden="true" /></div>
+            <div className="pillar-name">Consistency</div>
+            <p className="pillar-text">Our high-tech continuous processing machinery runs non-stop, producing consistent oil clarity, pungency, and protein-packed feed qualities.</p>
           </div>
-          <div className="pillar-card reveal">
-            <div className="pillar-icon">
-              <ShieldCheck size={24} aria-hidden="true" />
-            </div>
-            <h3 className="pillar-title">Zero-Waste By-Product Loop</h3>
-            <p className="pillar-body">Every byproduct of extraction is processed into commercial value — DORB for animal feed, refined wax for cosmetics, and lecithin for food emulsification.</p>
+          <div className="pillar reveal">
+            <div className="pillar-icon"><Leaf size={26} aria-hidden="true" /></div>
+            <div className="pillar-name">Sustainability</div>
+            <p className="pillar-text">We process every byproduct of the bran—converting waxes for cosmetics, gums for emulsifiers, spent clay for reuse, and acid oils for biofuel.</p>
           </div>
         </div>
       </section>
 
       {/* ══ CTA BANNER ══ */}
       <CtaBanner 
-        title={<>Explore Our Industrial &amp;<br />Retail Product Portfolio</>}
-        subtitle="Partner with Eastern India's premier physically refined oil and DORB producer."
-        btnText="View All Products"
-        btnLink="/products"
+        title={<>Let&apos;s Build a<br />Long-Term Business Partnership</>}
+        subtitle="Learn more about our trade terms, export capacity, and bulk delivery."
+        btnText="Partner With Us"
+        btnLink="/contact?ref=about"
       />
-    </div>
+    </>
   );
 }

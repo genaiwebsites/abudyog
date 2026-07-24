@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import React from 'react';
 import Link from 'next/link';
-import { Layers, Settings, Activity, Recycle } from 'lucide-react';
+import { Sparkles, FlaskConical, Microscope, Fuel } from 'lucide-react';
 import CtaBanner from '@/components/CtaBanner';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
@@ -77,7 +77,7 @@ export default function Products() {
         <div className="bento-grid" style={{ marginTop: '36px' }}>
           <div className="bento-card featured reveal grid-span-2">
             <div className="bento-icon-container">
-              <Layers size={24} aria-hidden="true" />
+              <Sparkles size={24} aria-hidden="true" />
             </div>
             <div className="bento-title">Rice Bran Wax</div>
             <p className="bento-body">Premium natural wax used in cosmetics, polishes, and food applications — offering excellent binding and structural properties.</p>
@@ -85,7 +85,7 @@ export default function Products() {
           </div>
           <div className="bento-card reveal">
             <div className="bento-icon-container">
-              <Settings size={24} aria-hidden="true" />
+              <FlaskConical size={24} aria-hidden="true" />
             </div>
             <div className="bento-title">Rice Bran Gums</div>
             <p className="bento-body">Versatile emulsifying and stabilizing agent widely utilized in the food and pharmaceutical industries.</p>
@@ -93,7 +93,7 @@ export default function Products() {
           </div>
           <div className="bento-card reveal">
             <div className="bento-icon-container">
-              <Activity size={24} aria-hidden="true" />
+              <Microscope size={24} aria-hidden="true" />
             </div>
             <div className="bento-title">Rice Bran Lecithin</div>
             <p className="bento-body">Natural emulsifier and antioxidant ideal for bakery, confectionery, and nutraceutical formulations.</p>
@@ -101,7 +101,7 @@ export default function Products() {
           </div>
           <div className="bento-card reveal grid-span-2">
             <div className="bento-icon-container">
-              <Recycle size={24} aria-hidden="true" />
+              <Fuel size={24} aria-hidden="true" />
             </div>
             <div className="bento-title">Fatty Acids &amp; Spent Earth</div>
             <p className="bento-body">High-quality fatty acid extracts and eco-friendly spent earth for industrial reuse and biofuel production.</p>

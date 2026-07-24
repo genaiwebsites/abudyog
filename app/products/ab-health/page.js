@@ -88,6 +88,7 @@ export default function AbHealthPage() {
             width={500}
             height={460}
             style={{ width: '100%', maxWidth: '460px', height: 'auto' }}
+            priority
             unoptimized
           />
         </LightPanel>
@@ -101,7 +102,7 @@ export default function AbHealthPage() {
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '36px' }}>
               {['FSSAI Certified', 'FSSC 22000', 'Vit. A & D Fortified'].map(t => (
-                <span key={t} style={{ padding: '5px 14px', border: `1px solid rgba(212,175,55,0.35)`, color: GOLD_L, fontSize: '10px', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase' }}>{t}</span>
+                <span key={t} style={{ padding: '5px 14px', border: `1px solid rgba(212,175,55,0.4)`, color: GOLD_L, fontSize: '10px', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', whiteSpace: 'nowrap', boxSizing: 'border-box' }}>{t}</span>
               ))}
             </div>
             <Link href="/about" className="btn-primary" style={{ display: 'inline-block' }}>Know More About Us</Link>
@@ -156,6 +157,7 @@ export default function AbHealthPage() {
             width={480}
             height={520}
             style={{ width: 'auto', height: 'auto', maxWidth: '380px', maxHeight: '480px' }}
+            priority
             unoptimized
           />
         </LightPanel>
@@ -281,7 +283,7 @@ export default function AbHealthPage() {
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '36px' }}>
               {['FSSAI Certified', 'FSSC 22000'].map(t => (
-                <span key={t} style={{ padding: '7px 18px', border: `1px solid rgba(212,175,55,0.4)`, color: GOLD_L, fontSize: '10px', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase' }}>{t}</span>
+                <span key={t} style={{ padding: '7px 18px', border: `1px solid rgba(212,175,55,0.4)`, color: GOLD_L, fontSize: '10px', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', whiteSpace: 'nowrap', boxSizing: 'border-box' }}>{t}</span>
               ))}
             </div>
             <Link href="/contact?ref=ab-health" className="btn-primary" style={{ display: 'inline-block' }}>Get a Quote</Link>

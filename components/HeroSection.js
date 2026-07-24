@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Factory, Leaf, Award } from "lucide-react";
+import { ArrowRight, Factory, Leaf, ShieldCheck } from "lucide-react";
 import { motion } from "framer-motion";
 
 const ease = [0.16, 1, 0.3, 1];
@@ -26,10 +26,10 @@ const wordVariant = {
   },
 };
 
-const STATS = [
-  { num: "300+", label: "TPD Solvent Extraction", icon: Factory },
-  { num: "150+", label: "TPD Physical Refinery",  icon: Leaf   },
-  { num: "30+",  label: "Years Manufacturing",   icon: Award  },
+const CAPACITY_SPECS = [
+  { val: "300 TPD", label: "Solvent Extraction Capacity", icon: Factory },
+  { val: "150 TPD", label: "Physical Oil Refinery",      icon: Leaf    },
+  { val: "10,000+ PPM", label: "Gamma Oryzanol Retention", icon: ShieldCheck },
 ];
 
 export default function HeroSection() {
@@ -87,30 +87,53 @@ export default function HeroSection() {
           </Link>
         </motion.div>
 
-        {/* Stats row */}
+        {/* Grounded Industrial Refinery Spec Bar (Space Mono) */}
         <motion.div
-          className="hero-stats-row"
-          initial="hidden"
-          animate="show"
-          variants={{
-            hidden: {},
-            show: { transition: { staggerChildren: 0.12, delayChildren: 0.8 } },
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease, delay: 0.8 }}
+          style={{
+            marginTop: "56px",
+            background: "rgba(18, 42, 28, 0.75)",
+            backdropFilter: "blur(12px)",
+            border: "1px solid rgba(212, 175, 55, 0.3)",
+            padding: "24px 32px",
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gap: "24px",
+            textAlign: "left",
           }}
-          style={{ marginTop: "52px" }}
         >
-          {STATS.map(({ num, label, icon: Icon }) => (
-            <motion.div
-              key={label}
-              className="hero-stat-card"
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                show: { opacity: 1, y: 0, transition: { duration: 0.5, ease } },
-              }}
-            >
-              <Icon size={16} className="hero-stat-icon" />
-              <div className="hero-stat-num">{num}</div>
-              <div className="hero-stat-label">{label}</div>
-            </motion.div>
+          {CAPACITY_SPECS.map(({ val, label, icon: Icon }) => (
+            <div key={label} style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+              <Icon size={22} style={{ color: "var(--gold)", flexShrink: 0 }} />
+              <div>
+                <div
+                  className="font-mono-specs"
+                  style={{
+                    color: "var(--gold-light)",
+                    fontSize: "18px",
+                    fontWeight: 700,
+                    letterSpacing: "0.05em",
+                    lineHeight: 1.2,
+                  }}
+                >
+                  {val}
+                </div>
+                <div
+                  style={{
+                    color: "rgba(255, 255, 255, 0.75)",
+                    fontSize: "11px",
+                    fontWeight: 600,
+                    letterSpacing: "0.08em",
+                    textTransform: "uppercase",
+                    marginTop: "4px",
+                  }}
+                >
+                  {label}
+                </div>
+              </div>
+            </div>
           ))}
         </motion.div>
 

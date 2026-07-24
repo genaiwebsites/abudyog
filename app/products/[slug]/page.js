@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import React, { use } from 'react';
 import Link from 'next/link';
-import { ArrowLeft, Check, ShieldCheck, FileText, Settings, Droplet, HelpCircle, Layers } from 'lucide-react';
+import { ArrowLeft, Check, ShieldCheck, FileText, Settings, Droplet, HelpCircle, Layers, Download } from 'lucide-react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import CtaBanner from '@/components/CtaBanner';
 
@@ -252,6 +252,22 @@ export default function ProductDetail({ params }) {
             <p className="section-body" style={{ margin: '16px auto 0 auto', textAlign: 'center' }}>
               Verified laboratory parameters supporting bulk order formulation and industrial application compliance.
             </p>
+            <div style={{ marginTop: '24px', textAlign: 'center' }}>
+              <button
+                onClick={() => alert(`Downloading official Technical Specification Sheet (PDF) for ${product.title}...`)}
+                className="btn-primary"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  padding: '12px 24px',
+                  fontSize: '11px',
+                  cursor: 'pointer',
+                }}
+              >
+                <Download size={14} aria-hidden="true" /> Download Technical Spec Sheet (PDF)
+              </button>
+            </div>
           </div>
 
           {/* Standard specifications table */}
