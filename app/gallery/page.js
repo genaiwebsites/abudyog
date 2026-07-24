@@ -243,31 +243,27 @@ export default function Gallery() {
             onClick={(e) => e.stopPropagation()}
             style={{
               display: 'flex',
-              flexDirection: 'column',
               alignItems: 'center',
-              maxWidth: '900px',
-              width: '100%',
+              justifyContent: 'center',
+              maxWidth: '90vw',
+              maxHeight: '85vh',
               zIndex: 10001,
-              marginTop: '40px',
-              marginBottom: '40px'
             }}
           >
-            <div style={{
-              position: 'relative',
-              width: '100%',
-              aspectRatio: '4/3',
-              borderRadius: '0',
-              overflow: 'hidden',
-              boxShadow: 'none',
-              border: '1px solid rgba(200, 153, 42, 0.25)'
-            }}>
-              <Image
-                src={galleryItems[lightboxIndex].src}
-                alt={galleryItems[lightboxIndex].title}
-                fill
-                style={{ objectFit: 'contain', background: '#000' }}
-              />
-            </div>
+            <img
+              src={galleryItems[lightboxIndex].src}
+              alt={galleryItems[lightboxIndex].title}
+              style={{
+                maxWidth: '90vw',
+                maxHeight: '85vh',
+                width: 'auto',
+                height: 'auto',
+                objectFit: 'contain',
+                display: 'block',
+                border: '1px solid rgba(212, 175, 55, 0.4)',
+                background: 'transparent',
+              }}
+            />
           </div>
         </div>
       )}
