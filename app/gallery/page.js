@@ -122,12 +122,8 @@ export default function Gallery() {
         <div className="hero-bg" style={{ backgroundImage: "url('/healthy_cooking_bg.png')", opacity: 0.18 }}></div>
         <div className="hero-accent"></div>
         <div className="hero-content" style={{ textAlign: 'center', margin: '0 auto', maxWidth: '800px' }}>
-          <div className="hero-eyebrow" style={{ justifyContent: 'center' }}>
-            <span>Visual Archive</span>
-          </div>
           <h1 className="hero-title" style={{ margin: '0 auto' }}>
-            Refinery &amp;<br />
-            <em>Infrastructure.</em>
+            Refinery &amp; Infrastructure
           </h1>
           <p className="hero-subtitle" style={{ margin: '24px auto 0 auto', maxWidth: '600px' }}>
             A photographic showcase of our steam refinery plants, testing laboratories, raw material sourcing, and specialized industrial derivative facilities.

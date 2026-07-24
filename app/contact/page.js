@@ -26,12 +26,8 @@ export default function Contact() {
         <div className="hero-bg" style={{ backgroundImage: "url('/quality_lab.png')", opacity: 0.25 }}></div>
         <div className="hero-accent"></div>
         <div className="hero-content" style={{ textAlign: 'center', margin: '0 auto', maxWidth: '800px' }}>
-          <div className="hero-eyebrow" style={{ justifyContent: 'center' }}>
-            <span>Connect With Us</span>
-          </div>
           <h1 className="hero-title" style={{ margin: '0 auto' }}>
-            Partner for<br />
-            <em>Excellence.</em>
+            Partner for Excellence
           </h1>
           <p className="hero-subtitle" style={{ margin: '24px auto 0 auto', maxWidth: '600px' }}>
             Whether you are looking for distributorship, bulk orders of edible oils, or premium animal feed, our team is ready to assist you.
@@ -111,9 +107,8 @@ export default function Contact() {
 
           {/* Form Side */}
           <div className="contact-form-card">
-            <span className="eyebrow-minimal">Direct Inquiry</span>
-            <h3 style={{ fontFamily: "var(--font-cormorant), serif", fontSize: '40px', color: 'var(--green-deep)', marginBottom: '32px', lineHeight: 1.1 }}>
-              Send us a Message
+            <h3 style={{ fontFamily: "var(--font-heading)", fontSize: '36px', fontWeight: 700, color: 'var(--green-deep)', marginBottom: '32px', lineHeight: 1.1 }}>
+              Send Us a Message
             </h3>
             
             {submitted ? (

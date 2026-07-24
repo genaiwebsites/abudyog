@@ -24,18 +24,6 @@ const Row = ({ k, v }) => (
   </div>
 );
 
-/* ─── section-level eyebrow (gold, centered) ─────────────────────── */
-const Eyebrow = ({ children, light = false }) => {
-  const textColor = light ? GOLD_L : GOLD_DARK;
-  return (
-    <p style={{ fontFamily: 'var(--font-body)', fontSize: '10px', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: textColor, marginBottom: '14px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-      <span style={{ display: 'block', width: '24px', height: '1px', background: textColor, flexShrink: 0 }} />
-      {children}
-      <span style={{ display: 'block', width: '24px', height: '1px', background: textColor, flexShrink: 0 }} />
-    </p>
-  );
-};
-
 /* ─── dark text panel (reused for About, Products, Commitment) ───── */
 const DarkPanel = ({ children }) => (
   <div style={{ background: G, padding: 'clamp(48px, 6vw, 88px) clamp(32px, 5vw, 72px)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
@@ -80,11 +68,8 @@ export default function AbHealthPage() {
         <div className="hero-bg" style={{ backgroundImage: "url('https://abudyog.in/wp-content/uploads/2025/11/RAJA8723-scaled.jpg')", backgroundPosition: 'center 30%', opacity: 0.15 }} />
         <div className="hero-accent" />
         <div className="hero-content" style={{ textAlign: 'center', margin: '0 auto' }}>
-          <div className="hero-eyebrow" style={{ justifyContent: 'center' }}>
-            <span>Consumer Brand &middot; AB Udyog Pvt. Ltd.</span>
-          </div>
           <h1 className="hero-title" style={{ margin: '0 auto' }}>
-            AB Health<br /><em>Edible Oils</em>
+            AB Health Edible Oils
           </h1>
           <p className="hero-subtitle" style={{ margin: '20px auto 0', maxWidth: '520px' }}>
             Purity-first edible oils — fortified, certified, and formulated for modern Indian kitchens.
@@ -108,7 +93,6 @@ export default function AbHealthPage() {
         </LightPanel>
         <DarkPanel>
           <div className="reveal">
-            <Eyebrow light>Who We Are</Eyebrow>
             <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 700, color: 'var(--white)', lineHeight: 1.15, marginBottom: '20px' }}>
               About AB Health
             </h2>
@@ -131,9 +115,8 @@ export default function AbHealthPage() {
       <div id="products" className="ab-split">
         <DarkPanel>
           <div className="reveal">
-            <Eyebrow light>Product 01</Eyebrow>
             <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.8rem, 2.8vw, 2.6rem)', fontWeight: 700, color: 'var(--white)', lineHeight: 1.15, marginBottom: '6px' }}>
-              AB Health<br />Soyabean Oil
+              AB Health Soyabean Oil
             </h2>
             <p style={{ color: GOLD_L, fontSize: '10px', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', marginBottom: '20px' }}>
               For special occasions &amp; everyday meals
@@ -178,9 +161,8 @@ export default function AbHealthPage() {
         </LightPanel>
         <DarkPanel>
           <div className="reveal">
-            <Eyebrow light>Product 02</Eyebrow>
             <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.8rem, 2.8vw, 2.6rem)', fontWeight: 700, color: 'var(--white)', lineHeight: 1.15, marginBottom: '6px' }}>
-              AB Health<br />Rice Bran Oil
+              AB Health Rice Bran Oil
             </h2>
             <p style={{ color: GOLD_L, fontSize: '10px', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', marginBottom: '20px' }}>
               Heart Smart · Naturally Refined
@@ -204,7 +186,6 @@ export default function AbHealthPage() {
       ════════════════════════════════════════════════════════════ */}
       <section style={{ background: G, padding: '88px 8%' }}>
         <div style={{ textAlign: 'center', marginBottom: '56px' }}>
-          <Eyebrow light>Our Advantage</Eyebrow>
           <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2rem, 3.5vw, 3rem)', fontWeight: 700, color: 'var(--white)', lineHeight: 1.15 }}>
             Why Choose AB Health
           </h2>
@@ -244,8 +225,7 @@ export default function AbHealthPage() {
       <section style={{ background: CREAM, padding: '100px 8%' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '52px', flexWrap: 'wrap', gap: '24px', maxWidth: '1200px', margin: '0 auto 52px' }}>
           <div>
-            <Eyebrow>Why It Matters</Eyebrow>
-            <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2rem, 3.5vw, 3rem)', fontWeight: 700, color: G, lineHeight: 1.15, marginTop: '8px' }}>Health Benefits</h2>
+            <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2rem, 3.5vw, 3rem)', fontWeight: 700, color: G, lineHeight: 1.15 }}>Health Benefits</h2>
           </div>
           <p style={{ color: MUTED, fontSize: '15px', lineHeight: 1.75, maxWidth: '340px', margin: 0 }}>
             Oils that do more than just cook — they nourish every meal.
@@ -293,7 +273,6 @@ export default function AbHealthPage() {
         </div>
         <DarkPanel>
           <div className="reveal">
-            <Eyebrow light>Our Promise</Eyebrow>
             <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 700, color: 'var(--white)', lineHeight: 1.15, marginBottom: '20px' }}>
               Our Commitment
             </h2>
@@ -314,7 +293,7 @@ export default function AbHealthPage() {
           CTA BANNER
       ════════════════════════════════════════════════════════════ */}
       <CtaBanner
-        title={<>Make the Healthier<br />Choice Today</>}
+        title="Make the Healthier Choice Today"
         subtitle="Switch to AB Health oils for better cooking and better living. Contact our team for bulk orders and trade enquiries."
         btnText="Contact Us"
         btnLink="/contact?ref=ab-health"

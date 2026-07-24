@@ -168,11 +168,8 @@ export default function ProductDetail({ params }) {
         <div className="hero-bg" style={{ backgroundImage: `url('${product.image}')`, opacity: 0.25 }}></div>
         <div className="hero-accent"></div>
         <div className="hero-content" style={{ textAlign: 'center', margin: '0 auto' }}>
-          <div className="hero-eyebrow" style={{ justifyContent: 'center' }}>
-            <span>Commercial Derivative</span>
-          </div>
           <h1 className="hero-title" style={{ margin: '0 auto' }}>
-            <em>{product.title}</em>
+            {product.title}
           </h1>
           <p className="hero-subtitle" style={{ margin: '20px auto 0 auto' }}>
             {product.desc}
@@ -190,8 +187,7 @@ export default function ProductDetail({ params }) {
 
         <div className="about-grid">
           <div className="about-text reveal" style={{ paddingLeft: '0' }}>
-            <span className="eyebrow-minimal">Product Overview</span>
-            <h2 className="section-title">{product.shortName} <br/><em>Specifications</em></h2>
+            <h2 className="section-title">{product.shortName} Specifications</h2>
             <br />
             <p className="section-body">
               {product.fullDesc}
@@ -252,8 +248,7 @@ export default function ProductDetail({ params }) {
       <section id="spec-table" style={{ background: 'var(--white)', padding: '80px 8%', borderTop: '1px solid var(--border)' }}>
         <div className="reveal" style={{ maxWidth: '800px', margin: '0 auto' }}>
           <div className="section-header-center" style={{ marginBottom: '48px' }}>
-            <span className="eyebrow-minimal" style={{ display: 'flex', justifyContent: 'center', marginBottom: '16px' }}>B2B Quality Assurance</span>
-            <h2 className="section-title">Technical <em>Specifications</em></h2>
+            <h2 className="section-title">Technical Specifications</h2>
             <p className="section-body" style={{ margin: '16px auto 0 auto', textAlign: 'center' }}>
               Verified laboratory parameters supporting bulk order formulation and industrial application compliance.
             </p>

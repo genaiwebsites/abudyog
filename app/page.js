@@ -15,52 +15,19 @@ export default function Home() {
       {/* ══ HERO (ANIMATED — FRAMER MOTION) ══ */}
       <HeroSection />
 
-      {/* ══ TICKER ══ */}
-      <div className="ticker">
-        <div className="ticker-track">
-          <div className="ticker-item">ISO Certified <span className="ticker-dot"></span></div>
-          <div className="ticker-item">FSSAI Compliant <span className="ticker-dot"></span></div>
-          <div className="ticker-item">Rice Bran Oil <span className="ticker-dot"></span></div>
-          <div className="ticker-item">Mustard Oil <span className="ticker-dot"></span></div>
-          <div className="ticker-item">DORB <span className="ticker-dot"></span></div>
-          <div className="ticker-item">Rice Bran Wax <span className="ticker-dot"></span></div>
-          <div className="ticker-item">Rice Bran Lecithin <span className="ticker-dot"></span></div>
-          <div className="ticker-item">Fatty Acids <span className="ticker-dot"></span></div>
-          <div className="ticker-item">300 TPD Capacity <span className="ticker-dot"></span></div>
-          <div className="ticker-item">Eastern India's Finest <span className="ticker-dot"></span></div>
-          {/* duplicate for seamless loop */}
-          <div className="ticker-item">ISO Certified <span className="ticker-dot"></span></div>
-          <div className="ticker-item">FSSAI Compliant <span className="ticker-dot"></span></div>
-          <div className="ticker-item">Rice Bran Oil <span className="ticker-dot"></span></div>
-          <div className="ticker-item">Mustard Oil <span className="ticker-dot"></span></div>
-          <div className="ticker-item">DORB <span className="ticker-dot"></span></div>
-          <div className="ticker-item">Rice Bran Wax <span className="ticker-dot"></span></div>
-          <div className="ticker-item">Rice Bran Lecithin <span className="ticker-dot"></span></div>
-          <div className="ticker-item">Fatty Acids <span className="ticker-dot"></span></div>
-          <div className="ticker-item">300 TPD Capacity <span className="ticker-dot"></span></div>
-          <div className="ticker-item">Eastern India's Finest <span className="ticker-dot"></span></div>
-        </div>
-      </div>
-
       {/* ══ ABOUT ══ */}
       <section id="about">
         <div className="about-grid">
           <div className="about-img-wrap reveal">
-            <div className="about-frame"></div>
             <Image className="about-img-main" src="/factory1.webp" alt="AB Udyog Facility" width={800} height={600} style={{ objectFit: 'cover' }} />
-            <div className="about-img-badge">
-              <div className="about-badge-num">30+</div>
-              <div className="about-badge-label">Years of<br />Excellence</div>
-            </div>
           </div>
           <div className="about-text reveal">
-            <span className="eyebrow-minimal">Our Legacy</span>
-            <h2 className="section-title">A Legacy Forged in<br /><em>Purity &amp; Progress</em></h2>
+            <h2 className="section-title">A Legacy Forged in<br />Purity &amp; Progress</h2>
             <br />
             <p className="section-body">
               Founded with a mission to bring healthier cooking solutions to every household, AB Udyog Pvt. Ltd. has evolved into one of Eastern India's leading producers of rice bran oil and value-added by-products. With a 300 TPD solvent-extraction unit and a 150 TPD refinery, we combine traditional values with cutting-edge technology.
             </p>
-            <div className="about-tags">
+            <div className="about-tags" style={{ marginTop: '24px' }}>
               <span className="about-tag">Purity</span>
               <span className="about-tag">Innovation</span>
               <span className="about-tag">Integrity</span>
@@ -79,8 +46,7 @@ export default function Home() {
         <div className="parallax-window-grid">
           <div className="parallax-window-spacer" />
           <div className="parallax-window-panel">
-            <span className="eyebrow-minimal">Regional Sourcing</span>
-            <h2 className="section-title">Sourced from the<br /><em>Bengal Rice Belt</em></h2>
+            <h2 className="section-title">Sourced from the<br />Bengal Rice Belt</h2>
             <p className="section-body">
               We operate at the core of India's most fertile rice-growing valleys. Sourcing fresh raw bran directly from regional rice mills within hours of milling preserves crucial nutrients, ensures absolute freshness, and supports local farm livelihoods.
             </p>
@@ -110,8 +76,7 @@ export default function Home() {
       <section className="products-section" id="products">
         <div className="products-header">
           <div>
-            <span className="eyebrow-minimal">Our Portfolio</span>
-            <h2 className="section-title reveal">From <em>Field to Table</em>,<br />Purely Refined</h2>
+            <h2 className="section-title reveal">From Field to Table,<br />Purely Refined</h2>
           </div>
           <p className="section-body reveal" style={{ margin: 0, maxWidth: '340px' }}>
             Three distinct product lines spanning edible oils, animal nutrition, and premium industrial derivatives.
@@ -151,8 +116,7 @@ export default function Home() {
 
       {/* ══ BYPRODUCTS BENTO ══ */}
       <section className="bento-section" id="byproducts">
-        <div className="section-eyebrow reveal">Commercial Derivatives</div>
-        <h2 className="section-title reveal">Commercial-Grade<br /><em>Bran Derivatives</em></h2>
+        <h2 className="section-title reveal">Commercial-Grade<br />Bran Derivatives</h2>
         <div className="bento-grid">
           <div className="bento-card featured reveal">
             <div className="bento-icon-container">
@@ -198,8 +162,7 @@ export default function Home() {
         <div className="parallax-window-grid">
           <div className="parallax-window-spacer" />
           <div className="parallax-window-panel">
-            <span className="eyebrow-minimal">Infrastructure Scale</span>
-            <h2 className="section-title">Built at<br /><em>Industrial Scale</em></h2>
+            <h2 className="section-title">Built at<br />Industrial Scale</h2>
             <p className="section-body">
               At AB Udyog, our integrated solvent-extraction and physical refining facility operates continuously to output premium oils and high-protein feeds. Our on-site labs and fully certified processes verify product purity at scale.
             </p>
@@ -225,13 +188,10 @@ export default function Home() {
         </div>
       </section>
 
-
-
       {/* ══ CERTS ══ */}
       <section className="certs-section reveal">
         <div className="section-header-center">
-          <span className="eyebrow-minimal" style={{ display: 'flex', justifyContent: 'center', marginBottom: '16px' }}>Compliance &amp; Trust</span>
-          <h2 className="section-title">Certified for<br /><em>Global Standards</em></h2>
+          <h2 className="section-title">Certified for<br />Global Standards</h2>
         </div>
         <div style={{ display: 'flex', justifyContent: 'center', marginTop: '48px' }}>
           <Image className="certs-img" src="https://2025.abudyog.in/wp-content/uploads/2025/11/certificates-e1763163163535.png" alt="Certifications" width={800} height={200} style={{ filter: 'drop-shadow(0 8px 32px rgba(0, 0, 0, 0.08))', maxWidth: '100%', height: 'auto' }} />

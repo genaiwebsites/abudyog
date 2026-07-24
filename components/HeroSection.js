@@ -6,20 +6,18 @@ import { motion } from "framer-motion";
 
 const ease = [0.16, 1, 0.3, 1];
 
-// Stagger children container
 const container = {
   hidden: {},
   show: {
     transition: {
       staggerChildren: 0.12,
-      delayChildren: 0.3,
+      delayChildren: 0.2,
     },
   },
 };
 
-// Each animated word/line — blur + slide up
 const wordVariant = {
-  hidden: { opacity: 0, y: 40, filter: "blur(8px)" },
+  hidden: { opacity: 0, y: 30, filter: "blur(6px)" },
   show: {
     opacity: 1,
     y: 0,
@@ -29,48 +27,28 @@ const wordVariant = {
 };
 
 const STATS = [
-  { num: "300+", label: "TPD Extraction", icon: Factory },
-  { num: "150+", label: "TPD Refinery",   icon: Leaf   },
-  { num: "30+",  label: "Years Legacy",   icon: Award  },
+  { num: "300+", label: "TPD Solvent Extraction", icon: Factory },
+  { num: "150+", label: "TPD Physical Refinery",  icon: Leaf   },
+  { num: "30+",  label: "Years Manufacturing",   icon: Award  },
 ];
 
 export default function HeroSection() {
   return (
     <section className="hero-home" id="hero">
-      {/* Background image */}
       <div className="hero-bg" />
-
-      {/* Radial gold glow */}
-      <div className="hero-glow" />
 
       <div className="hero-content">
 
-        {/* Animated eyebrow badge pill */}
-        <motion.div
-          className="hero-badge-pill"
-          initial={{ opacity: 0, scale: 0.85, y: -10 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.7, ease, delay: 0.1 }}
-        >
-          <span className="hero-badge-dot" />
-          Since 1994 · Eastern India&apos;s Finest
-        </motion.div>
-
-        {/* Title with staggered word blur-in */}
+        {/* Title */}
         <motion.div
           variants={container}
           initial="hidden"
           animate="show"
-          style={{ margin: "28px 0 24px" }}
+          style={{ margin: "24px 0" }}
         >
           <motion.div variants={wordVariant}>
             <h1 className="hero-title" style={{ margin: 0 }}>
-              Rooted in Quality,
-            </h1>
-          </motion.div>
-          <motion.div variants={wordVariant}>
-            <h1 className="hero-title" style={{ margin: 0 }}>
-              <em>Driven by Innovation</em>
+              Rooted in Quality, Driven by Innovation
             </h1>
           </motion.div>
         </motion.div>
@@ -80,7 +58,7 @@ export default function HeroSection() {
           className="hero-subtitle"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease, delay: 0.7 }}
+          transition={{ duration: 0.7, ease, delay: 0.4 }}
         >
           A fully integrated rice bran processing facility delivering consistent,
           high-grade products to households and industries at scale.
@@ -91,7 +69,7 @@ export default function HeroSection() {
           className="hero-actions"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease, delay: 0.9 }}
+          transition={{ duration: 0.7, ease, delay: 0.6 }}
         >
           <Link
             href="/products"
@@ -116,7 +94,7 @@ export default function HeroSection() {
           animate="show"
           variants={{
             hidden: {},
-            show: { transition: { staggerChildren: 0.12, delayChildren: 1.1 } },
+            show: { transition: { staggerChildren: 0.12, delayChildren: 0.8 } },
           }}
           style={{ marginTop: "52px" }}
         >
@@ -125,8 +103,8 @@ export default function HeroSection() {
               key={label}
               className="hero-stat-card"
               variants={{
-                hidden: { opacity: 0, y: 24 },
-                show: { opacity: 1, y: 0, transition: { duration: 0.6, ease } },
+                hidden: { opacity: 0, y: 20 },
+                show: { opacity: 1, y: 0, transition: { duration: 0.5, ease } },
               }}
             >
               <Icon size={16} className="hero-stat-icon" />
@@ -137,17 +115,6 @@ export default function HeroSection() {
         </motion.div>
 
       </div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        className="hero-scroll"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.6 }}
-      >
-        <div className="scroll-line" />
-        <span>Scroll</span>
-      </motion.div>
     </section>
   );
 }
