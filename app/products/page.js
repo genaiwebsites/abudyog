@@ -53,7 +53,7 @@ export default function ProductsHub() {
               <span className="about-tag">Cold Pressed</span>
             </div>
             <br /><br />
-            <Link href="/products/jeevan-rekha" className="btn-primary" style={{ background: 'var(--green-deep)', color: 'var(--white)' }}>View Jeevan Rekha Products</Link>
+            <Link href="https://jeevanrekhafoods.com/products" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ background: 'var(--green-deep)', color: 'var(--white)' }}>View Jeevan Rekha Products</Link>
           </div>
         </div>
       </section>

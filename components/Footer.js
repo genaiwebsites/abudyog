@@ -57,8 +57,8 @@ export default function Footer() {
         <div className="footer-col">
           <h4>Consumer Brands</h4>
           <ul>
-            <li><Link href="/products/jeevan-rekha">Jeevan Rekha Rice Bran Oil</Link></li>
-            <li><Link href="/products/jeevan-rekha#mustard">Jeevan Rekha Mustard Oil</Link></li>
+            <li><Link href="https://jeevanrekhafoods.com/products/rice-bran-oil" target="_blank" rel="noopener noreferrer">Jeevan Rekha Rice Bran Oil</Link></li>
+            <li><Link href="https://jeevanrekhafoods.com/products/mustard-oil" target="_blank" rel="noopener noreferrer">Jeevan Rekha Mustard Oil</Link></li>
             <li><Link href="/products/ab-health">AB Health Gamma Oryzanol</Link></li>
           </ul>
         </div>

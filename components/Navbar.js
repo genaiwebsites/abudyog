@@ -42,8 +42,8 @@ export default function Navbar() {
             <div className="dropdown-menu two-col">
               <div className="dropdown-col">
                 <div className="dropdown-group-title">Consumer</div>
-                <Link href="/products/jeevan-rekha">Jeevan Rekha Rice Bran Oil</Link>
-                <Link href="/products/jeevan-rekha#mustard">Jeevan Rekha Mustard Oil</Link>
+                <Link href="https://jeevanrekhafoods.com/products/rice-bran-oil" target="_blank" rel="noopener noreferrer">Jeevan Rekha Rice Bran Oil</Link>
+                <Link href="https://jeevanrekhafoods.com/products/mustard-oil" target="_blank" rel="noopener noreferrer">Jeevan Rekha Mustard Oil</Link>
                 <Link href="/products/ab-health">AB Health Gamma Oryzanol</Link>
               </div>
               <div className="dropdown-col">
@@ -106,8 +106,8 @@ export default function Navbar() {
             <Link href="/products" onClick={() => setMobileOpen(false)} style={{ color: 'var(--gold-light)' }}>VIEW ALL PRODUCTS</Link>
             
             <div className="mobile-group-title">CONSUMER</div>
-            <Link href="/products/jeevan-rekha" onClick={() => setMobileOpen(false)}>JEEVAN REKHA RICE BRAN OIL</Link>
-            <Link href="/products/jeevan-rekha#mustard" onClick={() => setMobileOpen(false)}>JEEVAN REKHA MUSTARD OIL</Link>
+            <Link href="https://jeevanrekhafoods.com/products/rice-bran-oil" target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}>JEEVAN REKHA RICE BRAN OIL</Link>
+            <Link href="https://jeevanrekhafoods.com/products/mustard-oil" target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}>JEEVAN REKHA MUSTARD OIL</Link>
             <Link href="/products/ab-health" onClick={() => setMobileOpen(false)}>AB HEALTH</Link>
             
             <div className="mobile-group-title">INDUSTRIAL</div>

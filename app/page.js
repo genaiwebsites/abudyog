@@ -119,7 +119,7 @@ export default function Home() {
         </div>
 
         <div className="products-grid">
-          <Link href="/products/jeevan-rekha" className="product-card reveal">
+          <Link href="https://jeevanrekhafoods.com/products" target="_blank" rel="noopener noreferrer" className="product-card reveal">
             <Image className="product-img" src="/jr_oil_combo.png" alt="Jeevan Rekha Rice Bran & Mustard Oil" width={600} height={800} style={{ objectFit: 'cover' }} />
             <div className="product-overlay">
               <div className="product-tag">Jeevan Rekha Foods</div>
