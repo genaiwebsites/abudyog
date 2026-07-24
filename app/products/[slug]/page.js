@@ -4,6 +4,7 @@ import React, { use } from 'react';
 import Link from 'next/link';
 import { ArrowLeft, Check, ShieldCheck, FileText, Settings, Droplet, HelpCircle, Layers } from 'lucide-react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import CtaBanner from '@/components/CtaBanner';
 
 const productData = {
   'ab-health': {
@@ -335,8 +336,8 @@ export default function ProductDetail({ params }) {
             </div>
           )}
 
-          <div style={{ marginTop: '40px', padding: '24px', background: 'var(--cream)', borderLeft: '3px solid var(--gold)', borderRadius: '0 4px 4px 0' }}>
-            <h4 style={{ fontFamily: "'Outfit', sans-serif", fontSize: '14px', fontWeight: 600, color: 'var(--green-deep)', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+          <div style={{ marginTop: '40px', padding: '24px', background: 'var(--cream)', borderLeft: '3px solid var(--gold)', borderRadius: '0' }}>
+            <h4 style={{ fontFamily: 'inherit', fontSize: '14px', fontWeight: 600, color: 'var(--green-deep)', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '6px' }}>
               <Settings size={16} aria-hidden="true" /> Batch Certification (COA)
             </h4>
             <p className="section-body" style={{ margin: 0, fontSize: '13px' }}>
@@ -347,15 +348,13 @@ export default function ProductDetail({ params }) {
       </section>
 
       {/* ══ CTA BANNER ══ */}
-      <div className="cta-banner">
-        <div className="cta-text">
-          <h2>Partner With Us for<br />Premium Rice-Bran Products</h2>
-          <p>Delivered globally with reliability, traceability, and scale.</p>
-        </div>
-        <div className="cta-action">
-          <Link href="/contact" className="btn-dark">Contact Our Team</Link>
-        </div>
-      </div>
+      {/* ══ CTA BANNER ══ */}
+      <CtaBanner 
+        title={<>Request Technical Specifications<br />&amp; Samples</>}
+        subtitle="Get full Certificate of Analysis (COA) sheets and sample containers for your industry."
+        btnText="Request Sample"
+        btnLink="/contact?ref=derivative"
+      />
     </>
   );
 }

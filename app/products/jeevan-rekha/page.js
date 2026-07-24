@@ -3,6 +3,7 @@ import Image from 'next/image';
 import React from 'react';
 import Link from 'next/link';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import CtaBanner from '@/components/CtaBanner';
 
 export default function JeevanRekha() {
   useScrollReveal('.reveal', 0.1);
@@ -98,15 +99,12 @@ export default function JeevanRekha() {
       </section>
 
       {/* ══ CTA BANNER ══ */}
-      <div className="cta-banner">
-        <div className="cta-text">
-          <h2>Partner With Us for<br />Premium Rice-Bran Products</h2>
-          <p>Delivered globally with reliability, traceability, and scale.</p>
-        </div>
-        <div className="cta-action">
-          <Link href="/contact" className="btn-dark">Contact Our Team</Link>
-        </div>
-      </div>
+      <CtaBanner 
+        title={<>Become a Distributor for<br />Jeevan Rekha Foods</>}
+        subtitle="Expand your portfolio with Eastern India's premium edible oil brand."
+        btnText="Apply for Distributorship"
+        btnLink="/contact?ref=jeevan-rekha"
+      />
     </>
   );
 }

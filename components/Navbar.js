@@ -28,24 +28,6 @@ export default function Navbar() {
       {/* Desktop Links */}
       <ul className="nav-links">
         <li><Link href="/">Home</Link></li>
-        
-        <li>
-          <div className="nav-item-dropdown">
-            <button 
-              style={{ fontSize: '12px', fontWeight: 500, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(255, 255, 255, 0.7)', transition: 'color 0.25s', display: 'flex', alignItems: 'center', gap: '4px', height: '100%', background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'inherit', padding: 0 }} 
-              className="dropdown-trigger"
-              aria-haspopup="true"
-              aria-expanded="false"
-              aria-label="Toggle About Us dropdown"
-            >
-              About Us <ChevronDown size={14} />
-            </button>
-            <div className="dropdown-menu">
-              <Link href="/about">Company Profile</Link>
-              <Link href="/csr">CSR</Link>
-            </div>
-          </div>
-        </li>
 
         <li>
           <div className="nav-item-dropdown">
@@ -59,13 +41,13 @@ export default function Navbar() {
             </Link>
             <div className="dropdown-menu two-col">
               <div className="dropdown-col">
-                <div className="dropdown-group-title">Retail Brands</div>
+                <div className="dropdown-group-title">Consumer</div>
                 <Link href="/products/jeevan-rekha">Jeevan Rekha Rice Bran Oil</Link>
                 <Link href="/products/jeevan-rekha#mustard">Jeevan Rekha Mustard Oil</Link>
                 <Link href="/products/ab-health">AB Health Gamma Oryzanol</Link>
               </div>
               <div className="dropdown-col">
-                <div className="dropdown-group-title">Industrial Derivatives</div>
+                <div className="dropdown-group-title">Industrial</div>
                 <Link href="/products/de-oiled-rice-bran">De-Oiled Rice Bran (DORB)</Link>
                 <Link href="/products/rice-bran-gums">Rice Bran Gums</Link>
                 <Link href="/products/rice-bran-wax">Rice Bran Wax</Link>
@@ -76,13 +58,32 @@ export default function Navbar() {
           </div>
         </li>
 
-        <li><Link href="/manufacturing">Infra &amp; Quality</Link></li>
+        <li><Link href="/manufacturing">Infrastructure</Link></li>
         <li><Link href="/gallery">Gallery</Link></li>
+
+        <li>
+          <div className="nav-item-dropdown">
+            <button 
+              style={{ fontSize: '12px', fontWeight: 500, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(255, 255, 255, 0.7)', transition: 'color 0.25s', display: 'flex', alignItems: 'center', gap: '4px', height: '100%', background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'inherit', padding: 0 }} 
+              className="dropdown-trigger"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-label="Toggle About dropdown"
+            >
+              About <ChevronDown size={14} />
+            </button>
+            <div className="dropdown-menu">
+              <Link href="/about">Company</Link>
+              <Link href="/csr">Sustainability</Link>
+            </div>
+          </div>
+        </li>
+
         <li><Link href="/contact">Contact</Link></li>
       </ul>
 
       {/* Desktop Call to Action */}
-      <a href="mailto:info@abudyog.in" className="nav-cta">Partner With Us</a>
+      <Link href="/contact?ref=nav" className="nav-cta">Partner With Us</Link>
 
       {/* Hamburger button for mobile */}
       <button 
@@ -96,16 +97,6 @@ export default function Navbar() {
       {/* Mobile Links Drawer */}
       <ul className={`nav-links-mobile ${mobileOpen ? 'open' : ''}`}>
         <li><Link href="/" onClick={() => setMobileOpen(false)}>HOME</Link></li>
-        
-        <li className="mobile-dropdown-wrapper">
-          <button className="mobile-dropdown-trigger" onClick={() => setAboutOpen(!aboutOpen)}>
-            ABOUT US <ChevronDown size={16} className={`chevron ${aboutOpen ? 'open' : ''}`} />
-          </button>
-          <div className={`mobile-dropdown-menu ${aboutOpen ? 'open' : ''}`}>
-            <Link href="/about" onClick={() => setMobileOpen(false)}>COMPANY PROFILE</Link>
-            <Link href="/csr" onClick={() => setMobileOpen(false)}>CSR</Link>
-          </div>
-        </li>
 
         <li className="mobile-dropdown-wrapper">
           <button className="mobile-dropdown-trigger" onClick={() => setProductsOpen(!productsOpen)}>
@@ -114,7 +105,7 @@ export default function Navbar() {
           <div className={`mobile-dropdown-menu ${productsOpen ? 'open' : ''}`}>
             <Link href="/products" onClick={() => setMobileOpen(false)} style={{ color: 'var(--gold-light)' }}>VIEW ALL PRODUCTS</Link>
             
-            <div className="mobile-group-title">RETAIL BRANDS</div>
+            <div className="mobile-group-title">CONSUMER</div>
             <Link href="/products/jeevan-rekha" onClick={() => setMobileOpen(false)}>JEEVAN REKHA RICE BRAN OIL</Link>
             <Link href="/products/jeevan-rekha#mustard" onClick={() => setMobileOpen(false)}>JEEVAN REKHA MUSTARD OIL</Link>
             <Link href="/products/ab-health" onClick={() => setMobileOpen(false)}>AB HEALTH</Link>
@@ -128,11 +119,22 @@ export default function Navbar() {
           </div>
         </li>
 
-        <li><Link href="/manufacturing" onClick={() => setMobileOpen(false)}>INFRA & QUALITY</Link></li>
+        <li><Link href="/manufacturing" onClick={() => setMobileOpen(false)}>INFRASTRUCTURE</Link></li>
         <li><Link href="/gallery" onClick={() => setMobileOpen(false)}>GALLERY</Link></li>
+
+        <li className="mobile-dropdown-wrapper">
+          <button className="mobile-dropdown-trigger" onClick={() => setAboutOpen(!aboutOpen)}>
+            ABOUT <ChevronDown size={16} className={`chevron ${aboutOpen ? 'open' : ''}`} />
+          </button>
+          <div className={`mobile-dropdown-menu ${aboutOpen ? 'open' : ''}`}>
+            <Link href="/about" onClick={() => setMobileOpen(false)}>COMPANY</Link>
+            <Link href="/csr" onClick={() => setMobileOpen(false)}>SUSTAINABILITY</Link>
+          </div>
+        </li>
+
         <li><Link href="/contact" onClick={() => setMobileOpen(false)}>CONTACT</Link></li>
         <li>
-          <a href="mailto:info@abudyog.in" className="btn-dark" onClick={() => setMobileOpen(false)} style={{ padding: '12px 24px', fontSize: '11px', marginTop: '24px' }}>PARTNER WITH US</a>
+          <Link href="/contact?ref=nav-mobile" className="btn-dark" onClick={() => setMobileOpen(false)} style={{ padding: '12px 24px', fontSize: '11px', marginTop: '24px', textAlign: 'center', display: 'block' }}>PARTNER WITH US</Link>
         </li>
       </ul>
     </nav>

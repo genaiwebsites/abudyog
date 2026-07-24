@@ -1,4 +1,4 @@
-import { Cormorant_Garamond, Outfit } from 'next/font/google';
+import { Cormorant_Garamond, Outfit, Archivo, Plus_Jakarta_Sans, Space_Mono } from 'next/font/google';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import "./globals.css";
@@ -15,6 +15,27 @@ const outfit = Outfit({
   subsets: ['latin'],
   weight: ['200', '300', '400', '500', '600'],
   variable: '--font-outfit',
+  display: 'swap',
+});
+
+const archivo = Archivo({
+  subsets: ['latin'],
+  weight: ['400', '600', '700', '800'],
+  variable: '--font-archivo',
+  display: 'swap',
+});
+
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-plus-jakarta',
+  display: 'swap',
+});
+
+const spaceMono = Space_Mono({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-space-mono',
   display: 'swap',
 });
 
@@ -78,7 +99,7 @@ export default function RootLayout({ children }) {
   };
 
   return (
-    <html lang="en" suppressHydrationWarning className={`${cormorant.variable} ${outfit.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${cormorant.variable} ${outfit.variable} ${archivo.variable} ${plusJakarta.variable} ${spaceMono.variable}`}>
       <head>
         <script
           type="application/ld+json"

@@ -12,7 +12,7 @@ export default function Footer() {
             </Link>
           </div>
           <p className="footer-tagline">
-            A committed group delivering excellence across edible oils and rice-bran based business verticals since 1994.
+            Eastern India's premium physical refining and solvent extraction complex since 1994.
           </p>
           <div className="footer-social">
             <a href="https://www.instagram.com/jeevanrekhafoods/" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Instagram">
@@ -44,35 +44,33 @@ export default function Footer() {
         </div>
         
         <div className="footer-col">
-          <h4>Navigate</h4>
+          <h4>Company</h4>
           <ul>
-            <li><Link href="/">Home</Link></li>
-            <li><Link href="/about">About Us</Link></li>
-            <li><Link href="/csr">CSR</Link></li>
-            <li><Link href="/products">Products</Link></li>
-            <li><Link href="/manufacturing">Infra &amp; Quality</Link></li>
-            <li><Link href="/contact">Contact</Link></li>
+            <li><Link href="/about">Company Story</Link></li>
+            <li><Link href="/csr">Sustainability &amp; ESG</Link></li>
+            <li><Link href="/manufacturing">Plant Infrastructure</Link></li>
+            <li><Link href="/gallery">Facility Gallery</Link></li>
+            <li><Link href="/contact">Contact Us</Link></li>
           </ul>
         </div>
 
         <div className="footer-col">
-          <h4>Products</h4>
+          <h4>Consumer Brands</h4>
           <ul>
-            <li><Link href="/products/jeevan-rekha">Jeevan Rekha RBO</Link></li>
-            <li><Link href="/products/jeevan-rekha#mustard">Mustard Oil</Link></li>
-            <li><Link href="/products/de-oiled-rice-bran">AB DORB</Link></li>
-            <li><Link href="/products/ab-health">AB Health</Link></li>
+            <li><Link href="/products/jeevan-rekha">Jeevan Rekha Rice Bran Oil</Link></li>
+            <li><Link href="/products/jeevan-rekha#mustard">Jeevan Rekha Mustard Oil</Link></li>
+            <li><Link href="/products/ab-health">AB Health Gamma Oryzanol</Link></li>
           </ul>
         </div>
 
         <div className="footer-col">
-          <h4>By-Products</h4>
+          <h4>Industrial Products</h4>
           <ul>
-            <li><Link href="/products/de-oiled-rice-bran">Rice Bran DORB</Link></li>
-            <li><Link href="/products/rice-bran-wax">Rice Bran Wax</Link></li>
-            <li><Link href="/products/rice-bran-gums">Rice Bran Gums</Link></li>
+            <li><Link href="/products/de-oiled-rice-bran">De-Oiled Rice Bran (DORB)</Link></li>
+            <li><Link href="/products/rice-bran-wax">Premium Rice Bran Wax</Link></li>
+            <li><Link href="/products/rice-bran-gums">Stabilized Rice Bran Gums</Link></li>
             <li><Link href="/products/rice-bran-lecithin">Rice Bran Lecithin</Link></li>
-            <li><Link href="/products/fatty-acids-spent-earth">Fatty Acids & Spent Earth</Link></li>
+            <li><Link href="/products/fatty-acids-spent-earth">Industrial Fatty Acids &amp; Spent Earth</Link></li>
           </ul>
         </div>
       </div>

@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Layers, Settings, Activity, Recycle } from 'lucide-react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import CtaBanner from '@/components/CtaBanner';
 
 export default function ProductsHub() {
   useScrollReveal('.reveal', 0.1);
@@ -123,15 +124,13 @@ export default function ProductsHub() {
       </section>
 
       {/* ══ CTA BANNER ══ */}
-      <div className="cta-banner">
-        <div className="cta-text">
-          <h2>Partner With Us for<br />Premium Rice-Bran Products</h2>
-          <p>Delivered globally with reliability, traceability, and scale.</p>
-        </div>
-        <div className="cta-action">
-          <Link href="/contact" className="btn-dark">Contact Our Team</Link>
-        </div>
-      </div>
+      {/* ══ CTA BANNER ══ */}
+      <CtaBanner 
+        title={<>Need Custom Formulations<br />or Bulk Sourcing?</>}
+        subtitle="We manufacture derivatives and refined oils to exact client specifications."
+        btnText="Get Bulk Quote"
+        btnLink="/contact?ref=products"
+      />
     </>
   );
 }

@@ -206,7 +206,7 @@ export default function Gallery() {
               color: 'var(--white)',
               width: '44px',
               height: '44px',
-              borderRadius: '50%',
+              borderRadius: '0',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -257,9 +257,9 @@ export default function Gallery() {
               position: 'relative',
               width: '100%',
               aspectRatio: '4/3',
-              borderRadius: '8px',
+              borderRadius: '0',
               overflow: 'hidden',
-              boxShadow: '0 30px 60px rgba(0,0,0,0.6)',
+              boxShadow: 'none',
               border: '1px solid rgba(200, 153, 42, 0.25)'
             }}>
               <Image

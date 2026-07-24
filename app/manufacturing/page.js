@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Package, Settings, Flame, HeartPulse, ClipboardList } from 'lucide-react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import CtaBanner from '@/components/CtaBanner';
 
 export default function Manufacturing() {
   useScrollReveal('.reveal', 0.1);
@@ -156,15 +157,13 @@ export default function Manufacturing() {
       </section>
 
       {/* ══ CTA BANNER ══ */}
-      <div className="cta-banner">
-        <div className="cta-text">
-          <h2>Partner With Us for<br />Premium Rice-Bran Products</h2>
-          <p>Delivered globally with reliability, traceability, and scale.</p>
-        </div>
-        <div className="cta-action">
-          <Link href="/contact" className="btn-dark">Contact Our Team</Link>
-        </div>
-      </div>
+      {/* ══ CTA BANNER ══ */}
+      <CtaBanner 
+        title={<>Request a Facility Tour<br />or Quality Audit</>}
+        subtitle="See our continuous solvent extraction and physical refining plant in action."
+        btnText="Request Audit Info"
+        btnLink="/contact?ref=infra"
+      />
     </>
   );
 }

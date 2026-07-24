@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Settings, Sprout, Layers, Activity, Recycle } from 'lucide-react';
 import HeroSection from '@/components/HeroSection';
+import CtaBanner from '@/components/CtaBanner';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 export default function Home() {
@@ -68,6 +69,39 @@ export default function Home() {
             </div>
             <br /><br />
             <Link href="/about" className="btn-primary">Know More About Us</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ══ SUSTAINABLE SOURCING PARALLAX ══ */}
+      <section className="parallax-window-section panel-left" id="sourcing">
+        <div className="parallax-window-bg" style={{ backgroundImage: "url('/hero_rice_paddy.png')" }} />
+        <div className="parallax-window-grid">
+          <div className="parallax-window-spacer" />
+          <div className="parallax-window-panel">
+            <span className="eyebrow-minimal">Regional Sourcing</span>
+            <h2 className="section-title">Sourced from the<br /><em>Bengal Rice Belt</em></h2>
+            <p className="section-body">
+              We operate at the core of India's most fertile rice-growing valleys. Sourcing fresh raw bran directly from regional rice mills within hours of milling preserves crucial nutrients, ensures absolute freshness, and supports local farm livelihoods.
+            </p>
+            <div className="parallax-window-stats">
+              <div className="parallax-window-stat">
+                <div className="parallax-window-stat-num">100<span className="parallax-window-stat-unit">%</span></div>
+                <div className="parallax-window-stat-label">Traceable Farm-to-Refinery Loop</div>
+              </div>
+              <div className="parallax-window-stat">
+                <div className="parallax-window-stat-num">3k<span className="parallax-window-stat-unit">+</span></div>
+                <div className="parallax-window-stat-label">Farmers Integrated in Network</div>
+              </div>
+              <div className="parallax-window-stat">
+                <div className="parallax-window-stat-num">Zero<span className="parallax-window-stat-unit">Waste</span></div>
+                <div className="parallax-window-stat-label">Eco-Friendly Circular Value Chain</div>
+              </div>
+              <div className="parallax-window-stat">
+                <div className="parallax-window-stat-num">Fresh<span className="parallax-window-stat-unit">Bran</span></div>
+                <div className="parallax-window-stat-label">Processed Within Hours of Milling</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -158,35 +192,38 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ══ METRICS ══ */}
-      <div className="metrics-section">
-        <Image className="metrics-img" src="/DJI_0140.jpg" alt="AB Udyog Infrastructure" width={900} height={675} style={{ objectFit: 'cover' }} />
-        <div className="metrics-content reveal">
-          <span className="eyebrow-minimal">Infrastructure</span>
-          <h2 className="section-title">Built at<br /><em>Industrial Scale</em></h2>
-          <p className="section-body" style={{ marginTop: '20px' }}>
-            At AB Udyog, our integrated facilities deliver high-volume, consistent output. On-site labs and certified processes ensure every batch meets global food-safety standards.
-          </p>
-          <div className="metrics-grid">
-            <div className="metric-item">
-              <div className="metric-num">300<span className="metric-unit">+</span></div>
-              <div className="metric-label">TPD Solvent Extraction</div>
-            </div>
-            <div className="metric-item">
-              <div className="metric-num">150<span className="metric-unit">+</span></div>
-              <div className="metric-label">TPD Physical Refinery</div>
-            </div>
-            <div className="metric-item">
-              <div className="metric-num">30<span className="metric-unit">+</span></div>
-              <div className="metric-label">Years of Operation</div>
-            </div>
-            <div className="metric-item">
-              <div className="metric-num">5<span className="metric-unit">+</span></div>
-              <div className="metric-label">Certified By-Product Lines</div>
+      {/* ══ INDUSTRIAL INFRASTRUCTURE PARALLAX ══ */}
+      <section className="parallax-window-section" id="infrastructure">
+        <div className="parallax-window-bg" style={{ backgroundImage: "url('/DJI_0140.jpg')" }} />
+        <div className="parallax-window-grid">
+          <div className="parallax-window-spacer" />
+          <div className="parallax-window-panel">
+            <span className="eyebrow-minimal">Infrastructure Scale</span>
+            <h2 className="section-title">Built at<br /><em>Industrial Scale</em></h2>
+            <p className="section-body">
+              At AB Udyog, our integrated solvent-extraction and physical refining facility operates continuously to output premium oils and high-protein feeds. Our on-site labs and fully certified processes verify product purity at scale.
+            </p>
+            <div className="parallax-window-stats">
+              <div className="parallax-window-stat">
+                <div className="parallax-window-stat-num">300<span className="parallax-window-stat-unit">TPD</span></div>
+                <div className="parallax-window-stat-label">Solvent Extraction Capacity</div>
+              </div>
+              <div className="parallax-window-stat">
+                <div className="parallax-window-stat-num">150<span className="parallax-window-stat-unit">TPD</span></div>
+                <div className="parallax-window-stat-label">Physical Refining Capacity</div>
+              </div>
+              <div className="parallax-window-stat">
+                <div className="parallax-window-stat-num">30<span className="parallax-window-stat-unit">Yrs</span></div>
+                <div className="parallax-window-stat-label">Refinement legacy in East India</div>
+              </div>
+              <div className="parallax-window-stat">
+                <div className="parallax-window-stat-num">5<span className="parallax-window-stat-unit">Lines</span></div>
+                <div className="parallax-window-stat-label">Certified By-Product Lines</div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
 
 
@@ -202,15 +239,12 @@ export default function Home() {
       </section>
 
       {/* ══ CTA BANNER ══ */}
-      <div className="cta-banner">
-        <div className="cta-text">
-          <h2>Partner With Us for<br />Premium Rice-Bran Products</h2>
-          <p>Delivered globally with reliability, traceability, and scale.</p>
-        </div>
-        <div className="cta-action">
-          <Link href="/contact" className="btn-dark">Contact Our Team</Link>
-        </div>
-      </div>
+      <CtaBanner 
+        title={<>Partner With Us for<br />Premium Rice-Bran Products</>}
+        subtitle="Delivered globally with reliability, traceability, and scale."
+        btnText="Contact Our Team"
+        btnLink="/contact"
+      />
     </>
   );
 }

@@ -3,6 +3,7 @@ import Image from 'next/image';
 import React from 'react';
 import Link from 'next/link';
 import { Eye, Target, ShieldCheck, Route, Activity, Leaf } from 'lucide-react';
+import CtaBanner from '@/components/CtaBanner';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 export default function About() {
@@ -117,15 +118,13 @@ export default function About() {
 
 
       {/* ══ CTA BANNER ══ */}
-      <div className="cta-banner">
-        <div className="cta-text">
-          <h2>Partner With Us for<br />Premium Rice-Bran Products</h2>
-          <p>Delivered globally with reliability, traceability, and scale.</p>
-        </div>
-        <div className="cta-action">
-          <Link href="/contact" className="btn-dark">Contact Our Team</Link>
-        </div>
-      </div>
+      {/* ══ CTA BANNER ══ */}
+      <CtaBanner 
+        title={<>Let&apos;s Build a<br />Long-Term Business Partnership</>}
+        subtitle="Learn more about our trade terms, export capacity, and bulk delivery."
+        btnText="Partner With Us"
+        btnLink="/contact?ref=about"
+      />
     </>
   );
 }
