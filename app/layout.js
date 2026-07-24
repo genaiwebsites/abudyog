@@ -75,6 +75,9 @@ export const viewport = {
 };
 
 
+import WhatsAppWidget from '../components/WhatsAppWidget';
+import ConsoleGreeting from '../components/ConsoleGreeting';
+
 export default function RootLayout({ children }) {
   // Structured data markup (JSON-LD) for SEO
   const jsonLd = {
@@ -107,10 +110,13 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
+        <ConsoleGreeting />
         <Navbar />
         {children}
+        <WhatsAppWidget />
         <Footer />
       </body>
     </html>
   );
 }
+

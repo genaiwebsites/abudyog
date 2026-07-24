@@ -10,6 +10,7 @@ import { ShieldCheck, Flame, Droplets, Package, Award, UtensilsCrossed, Heart, A
 const G = '#122A1C';       // deep forest green
 const GOLD = '#D4AF37';
 const GOLD_L = '#E8BE5A';
+const GOLD_DARK = '#8A6A10'; // Dark gold for high contrast on light backgrounds (WCAG AA compliant)
 const CREAM = '#F9F9F6';
 const CREAM_W = '#F2EFE9';
 const BORDER = '#E2E2DC';
@@ -19,18 +20,21 @@ const MUTED = '#4F5450';
 const Row = ({ k, v }) => (
   <div style={{ display: 'flex', gap: '0', padding: '13px 0', borderBottom: `1px solid rgba(255,255,255,0.07)` }}>
     <span style={{ color: GOLD, fontSize: '10px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', width: '120px', flexShrink: 0, paddingTop: '2px' }}>{k}</span>
-    <span style={{ color: 'rgba(255,255,255,0.72)', fontSize: '13px', lineHeight: 1.6 }}>{v}</span>
+    <span className="font-mono-specs" style={{ color: 'rgba(255,255,255,0.72)', fontSize: '13px', lineHeight: 1.6 }}>{v}</span>
   </div>
 );
 
 /* ─── section-level eyebrow (gold, centered) ─────────────────────── */
-const Eyebrow = ({ children, light = false }) => (
-  <p style={{ fontFamily: 'var(--font-body)', fontSize: '10px', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: light ? GOLD_L : GOLD, marginBottom: '14px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-    <span style={{ display: 'block', width: '24px', height: '1px', background: light ? GOLD_L : GOLD, flexShrink: 0 }} />
-    {children}
-    <span style={{ display: 'block', width: '24px', height: '1px', background: light ? GOLD_L : GOLD, flexShrink: 0 }} />
-  </p>
-);
+const Eyebrow = ({ children, light = false }) => {
+  const textColor = light ? GOLD_L : GOLD_DARK;
+  return (
+    <p style={{ fontFamily: 'var(--font-body)', fontSize: '10px', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: textColor, marginBottom: '14px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+      <span style={{ display: 'block', width: '24px', height: '1px', background: textColor, flexShrink: 0 }} />
+      {children}
+      <span style={{ display: 'block', width: '24px', height: '1px', background: textColor, flexShrink: 0 }} />
+    </p>
+  );
+};
 
 /* ─── dark text panel (reused for About, Products, Commitment) ───── */
 const DarkPanel = ({ children }) => (
@@ -91,7 +95,7 @@ export default function AbHealthPage() {
       {/* ════════════════════════════════════════════════════════════
           ABOUT — brand SVG left | dark text right
       ════════════════════════════════════════════════════════════ */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
+      <div className="ab-split">
         <LightPanel bg={CREAM_W}>
           <Image
             src="https://abudyog.in/wp-content/uploads/2026/05/AB-HEALTH-Page-05.svg"
@@ -124,7 +128,7 @@ export default function AbHealthPage() {
       {/* ════════════════════════════════════════════════════════════
           PRODUCT 01 — dark text left | Soyabean Oil image right
       ════════════════════════════════════════════════════════════ */}
-      <div id="products" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
+      <div id="products" className="ab-split">
         <DarkPanel>
           <div className="reveal">
             <Eyebrow light>Product 01</Eyebrow>
@@ -161,7 +165,7 @@ export default function AbHealthPage() {
       {/* ════════════════════════════════════════════════════════════
           PRODUCT 02 — Rice Bran Oil image left | dark text right
       ════════════════════════════════════════════════════════════ */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
+      <div className="ab-split">
         <LightPanel bg={CREAM_W}>
           <Image
             src="https://abudyog.in/wp-content/uploads/2026/05/AB-HEALTH-Page-04.svg"
@@ -262,7 +266,7 @@ export default function AbHealthPage() {
               onMouseEnter={e => e.currentTarget.style.background = CREAM_W}
               onMouseLeave={e => e.currentTarget.style.background = 'var(--white)'}
             >
-              <span style={{ color: GOLD, display: 'block', marginBottom: '20px' }}>{item.icon}</span>
+              <span style={{ color: GOLD_DARK, display: 'block', marginBottom: '20px' }}>{item.icon}</span>
               <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '20px', fontWeight: 700, color: G, marginBottom: '10px', lineHeight: 1.2 }}>
                 {item.title}
               </h3>
@@ -275,7 +279,7 @@ export default function AbHealthPage() {
       {/* ════════════════════════════════════════════════════════════
           COMMITMENT — plant photo left | dark text right
       ════════════════════════════════════════════════════════════ */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', minHeight: '500px' }}>
+      <div className="ab-split" style={{ minHeight: '500px' }}>
         {/* Photo — fixed height, cover */}
         <div style={{ position: 'relative', minHeight: '500px', overflow: 'hidden' }}>
           <Image

@@ -36,7 +36,25 @@ body {
   background: var(--cream);
   color: var(--charcoal);
   overflow-x: hidden;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
+
+/* ── HARDENING & OVERFLOW RESILIENCE ── */
+button, input, select, textarea {
+  font-family: inherit;
+}
+.flex-item, .grid-item, div {
+  min-width: 0;
+}
+
+/* ── ACCESSIBILITY FOCUS INDICATORS ── */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+
 
 /* ── NAV ── */
 nav {
@@ -2657,5 +2675,36 @@ h1 em, h2 em, h3 em, h4 em, em {
   font-weight: 700 !important;
   letter-spacing: -0.03em !important;
 }
+
+/* ── RESPONSIVE AB-SPLIT GRID ── */
+.ab-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+@media (max-width: 900px) {
+  .ab-split {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── STRICT SWISS INDUSTRIAL SHAPE POLISH (0px corners & 0 shadows) ── */
+*,
+.about-img-main,
+.product-card,
+.bento-card,
+.contact-card-premium,
+.contact-form-card,
+.contact-map-card,
+.gallery-card,
+.gallery-img-container,
+.hero-badge-pill,
+.btn-primary,
+.btn-ghost,
+.btn-light-ghost {
+  border-radius: 0px !important;
+  box-shadow: none !important;
+}
+
+
 
 

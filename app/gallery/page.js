@@ -179,6 +179,9 @@ export default function Gallery() {
       {lightboxIndex !== null && (
         <div 
           className="lightbox-overlay"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Image gallery lightbox"
           style={{
             position: 'fixed',
             inset: 0,

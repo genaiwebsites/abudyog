@@ -1,10 +1,23 @@
 "use client";
-import React from 'react';
-import { MapPin, Mail, Phone, Clock, ArrowRight } from 'lucide-react';
+import React, { useState } from 'react';
+import { MapPin, Mail, Phone, Clock, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 export default function Contact() {
   useScrollReveal('.reveal', 0.1);
+  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [refId, setRefId] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      setSubmitted(true);
+      setRefId(`ABU-${Math.floor(100000 + Math.random() * 900000)}`);
+    }, 600);
+  };
 
   return (
     <div style={{ background: 'var(--cream)' }}>
@@ -99,48 +112,106 @@ export default function Contact() {
           {/* Form Side */}
           <div className="contact-form-card">
             <span className="eyebrow-minimal">Direct Inquiry</span>
-            <h3 style={{ fontFamily: "var(--font-cormorant), serif", fontSize: '40px', color: 'var(--green-deep)', marginBottom: '32px', lineHeight: 1.1 }}>Send us a Message</h3>
+            <h3 style={{ fontFamily: "var(--font-cormorant), serif", fontSize: '40px', color: 'var(--green-deep)', marginBottom: '32px', lineHeight: 1.1 }}>
+              Send us a Message
+            </h3>
             
-            <form>
-              <div className="contact-form-row">
-                <div>
-                  <label htmlFor="first-name">First Name</label>
-                  <input type="text" id="first-name" placeholder="John" required />
+            {submitted ? (
+              <div
+                role="status"
+                aria-live="polite"
+                style={{
+                  background: 'var(--green-deep)',
+                  color: 'var(--white)',
+                  padding: '36px',
+                  border: '1px solid var(--gold)',
+                  textAlign: 'center',
+                }}
+              >
+                <CheckCircle2 size={48} style={{ color: 'var(--gold)', marginBottom: '16px' }} />
+                <h4 style={{ fontFamily: 'var(--font-heading)', fontSize: '24px', fontWeight: 700, marginBottom: '8px' }}>
+                  Inquiry Received
+                </h4>
+                <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '14px', lineHeight: 1.6, marginBottom: '20px' }}>
+                  Thank you for reaching out. Our procurement sales desk will review your message and contact you within 24 hours.
+                </p>
+                <div style={{
+                  fontFamily: 'var(--font-space-mono), monospace',
+                  fontSize: '12px',
+                  color: 'var(--gold)',
+                  background: 'rgba(255,255,255,0.05)',
+                  padding: '10px 16px',
+                  border: '1px solid rgba(212,175,55,0.3)',
+                  display: 'inline-block',
+                }}>
+                  Reference ID: {refId}
+                </div>
+                <button
+                  onClick={() => setSubmitted(false)}
+                  style={{
+                    display: 'block',
+                    margin: '24px auto 0',
+                    background: 'none',
+                    border: '1px solid var(--gold)',
+                    color: 'var(--gold)',
+                    fontSize: '11px',
+                    fontWeight: 700,
+                    letterSpacing: '0.12em',
+                    textTransform: 'uppercase',
+                    padding: '10px 24px',
+                    cursor: 'pointer',
+                  }}
+                >
+                  Send Another Inquiry
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit}>
+                <div className="contact-form-row">
+                  <div>
+                    <label htmlFor="first-name">First Name</label>
+                    <input type="text" id="first-name" placeholder="John" maxLength={80} required />
+                  </div>
+                  <div>
+                    <label htmlFor="last-name">Last Name</label>
+                    <input type="text" id="last-name" placeholder="Doe" maxLength={80} required />
+                  </div>
+                </div>
+                <div className="contact-form-row">
+                  <div>
+                    <label htmlFor="email-address">Email Address</label>
+                    <input type="email" id="email-address" placeholder="john.doe@example.com" maxLength={120} required />
+                  </div>
+                  <div>
+                    <label htmlFor="phone-number">Phone Number</label>
+                    <input type="tel" id="phone-number" placeholder="+91 98765 43210" maxLength={25} pattern="[\+]?[0-9\s\-]+" required />
+                  </div>
                 </div>
                 <div>
-                  <label htmlFor="last-name">Last Name</label>
-                  <input type="text" id="last-name" placeholder="Doe" required />
+                  <label htmlFor="inquiry-type">Inquiry Type</label>
+                  <select id="inquiry-type" defaultValue="" required>
+                    <option value="" disabled>Select Inquiry Type</option>
+                    <option value="distributorship">Distributorship</option>
+                    <option value="bulk-order">Bulk Edible Oil Order</option>
+                    <option value="animal-feed">Animal Feed (DORB)</option>
+                    <option value="other">Other Inquiry</option>
+                  </select>
                 </div>
-              </div>
-              <div className="contact-form-row">
                 <div>
-                  <label htmlFor="email-address">Email Address</label>
-                  <input type="email" id="email-address" placeholder="john.doe@example.com" required />
+                  <label htmlFor="message-body">Your Message</label>
+                  <textarea id="message-body" placeholder="Describe your inquiry details..." rows={4} maxLength={2000} required></textarea>
                 </div>
-                <div>
-                  <label htmlFor="phone-number">Phone Number</label>
-                  <input type="tel" id="phone-number" placeholder="+91 98765 43210" required />
-                </div>
-              </div>
-              <div>
-                <label htmlFor="inquiry-type">Inquiry Type</label>
-                <select id="inquiry-type" defaultValue="" required>
-                  <option value="" disabled>Select Inquiry Type</option>
-                  <option value="distributorship">Distributorship</option>
-                  <option value="bulk-order">Bulk Edible Oil Order</option>
-                  <option value="animal-feed">Animal Feed (DORB)</option>
-                  <option value="other">Other Inquiry</option>
-                </select>
-              </div>
-              <div>
-                <label htmlFor="message-body">Your Message</label>
-                <textarea id="message-body" placeholder="Describe your inquiry details..." rows="4" required></textarea>
-              </div>
-              
-              <button type="submit" className="btn-primary" style={{ marginTop: '8px', padding: '18px 32px', fontSize: '13px', width: '100%', textAlign: 'center', cursor: 'pointer' }}>
-                Submit Inquiry
-              </button>
-            </form>
+                
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="btn-primary"
+                  style={{ marginTop: '8px', padding: '18px 32px', fontSize: '13px', width: '100%', textAlign: 'center', cursor: 'pointer' }}
+                >
+                  {loading ? 'Submitting Inquiry...' : 'Submit Inquiry'}
+                </button>
+              </form>
+            )}
           </div>
 
         </div>

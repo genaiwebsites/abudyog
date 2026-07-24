@@ -18,7 +18,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={scrolled ? 'scrolled' : ''}>
+    <nav className={scrolled ? 'scrolled' : ''} aria-label="Main Navigation">
       <div className="nav-logo">
         <Link href="/">
           <img src="/logo.png" alt="AB Udyog Pvt. Ltd." />

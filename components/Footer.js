@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer id="contact">
+    <footer id="contact" aria-label="Site Footer">
       <div className="footer-grid">
         <div>
           <div className="footer-logo">

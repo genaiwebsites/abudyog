@@ -229,8 +229,15 @@ export default function ProductDetail({ params }) {
             </div>
             
             <br /><br />
-            <div style={{ display: 'flex', gap: '16px' }}>
+            <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
               <Link href="/contact" className="btn-primary">Inquire Now</Link>
+              <a
+                href="#spec-table"
+                className="btn-ghost"
+                style={{ fontSize: '11px', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase' }}
+              >
+                View Technical Specs
+              </a>
             </div>
           </div>
           
@@ -242,7 +249,7 @@ export default function ProductDetail({ params }) {
       </section>
 
       {/* ══ B2B SPECIFICATIONS TABLES ══ */}
-      <section style={{ background: 'var(--white)', padding: '80px 8%', borderTop: '1px solid var(--border)' }}>
+      <section id="spec-table" style={{ background: 'var(--white)', padding: '80px 8%', borderTop: '1px solid var(--border)' }}>
         <div className="reveal" style={{ maxWidth: '800px', margin: '0 auto' }}>
           <div className="section-header-center" style={{ marginBottom: '48px' }}>
             <span className="eyebrow-minimal" style={{ display: 'flex', justifyContent: 'center', marginBottom: '16px' }}>B2B Quality Assurance</span>
