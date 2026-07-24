@@ -28,13 +28,12 @@ export default function Manufacturing() {
       <div className="metrics-section">
         <Image
           className="metrics-img"
-          src="https://2025.abudyog.in/wp-content/uploads/2025/11/RAJA8723-scaled.jpg"
-          alt="AB Udyog Infrastructure"
+          src="/kolkata_solvent_extraction_refinery_plant.png"
+          alt="AB Udyog high-capacity continuous solvent extraction plant and physical refinery facility in Kolkata"
           width={1200}
           height={800}
           style={{ objectFit: 'cover' }}
           priority
-          unoptimized
         />
         <div className="metrics-content reveal">
           <h2 className="section-title">Continuous Refinement</h2>

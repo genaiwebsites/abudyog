@@ -82,9 +82,6 @@ export default function Navbar() {
         <li><Link href="/contact">Contact</Link></li>
       </ul>
 
-      {/* Desktop Call to Action */}
-      <Link href="/contact?ref=nav" className="nav-cta">Partner With Us</Link>
-
       {/* Hamburger button for mobile */}
       <button 
         className="mobile-menu-btn" 
@@ -133,9 +130,6 @@ export default function Navbar() {
         </li>
 
         <li><Link href="/contact" onClick={() => setMobileOpen(false)}>CONTACT</Link></li>
-        <li>
-          <Link href="/contact?ref=nav-mobile" className="btn-dark" onClick={() => setMobileOpen(false)} style={{ padding: '12px 24px', fontSize: '11px', marginTop: '24px', textAlign: 'center', display: 'block' }}>PARTNER WITH US</Link>
-        </li>
       </ul>
     </nav>
   );

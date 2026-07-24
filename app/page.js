@@ -42,7 +42,7 @@ export default function Home() {
 
       {/* ══ SUSTAINABLE SOURCING PARALLAX ══ */}
       <section className="parallax-window-section panel-left" id="sourcing">
-        <div className="parallax-window-bg" style={{ backgroundImage: "url('/hero_rice_paddy.png')" }} />
+        <div className="parallax-window-bg" style={{ backgroundImage: "url('/bengal_rice_belt_paddy_fields_refinery_sourcing.png')" }} />
         <div className="parallax-window-grid">
           <div className="parallax-window-spacer" />
           <div className="parallax-window-panel">
