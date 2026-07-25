@@ -1,7 +1,7 @@
 "use client";
 import Image from 'next/image';
 import React from 'react';
-import { Package, Factory, Flame, ShieldCheck, HeartPulse, ClipboardList } from 'lucide-react';
+import { Package, Factory, Flame, ShieldCheck, HeartPulse, ClipboardList, Cpu, Activity, Gauge } from 'lucide-react';
 import CtaBanner from '@/components/CtaBanner';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
@@ -12,7 +12,7 @@ export default function Manufacturing() {
     <>
       {/* ══ HERO BANNER ══ */}
       <section className="hero-subpage">
-        <div className="hero-bg" style={{ backgroundImage: "url('/refinery_plant.png')", opacity: 0.35 }} />
+        <div className="hero-bg" style={{ backgroundImage: "url('/ab_udyog_physical_refinery_pumping_pipeline_manifold.png')", opacity: 0.35 }} />
         <div className="hero-accent" />
         <div className="hero-content" style={{ textAlign: 'center', margin: '0 auto', maxWidth: '800px' }}>
           <h1 className="hero-title">
@@ -52,6 +52,96 @@ export default function Manufacturing() {
           </div>
         </div>
       </div>
+
+      {/* ══ INDUSTRIAL FACILITY SHOWCASE GRID ══ */}
+      <section className="bg-white" style={{ padding: '88px 8%' }}>
+        <div className="section-header-center" style={{ marginBottom: '48px', textAlign: 'center' }}>
+          <h2 className="section-title reveal">State-of-the-Art Production Units</h2>
+          <p className="section-body reveal" style={{ maxWidth: '640px', margin: '16px auto 0' }}>
+            Take an inside look at our Kolkata refinery complex, combining continuous solvent extraction, high-temperature physical refining, and automated PLC control.
+          </p>
+        </div>
+
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+          gap: '32px',
+          maxWidth: '1280px',
+          margin: '0 auto'
+        }}>
+          {/* Card 1: Extraction Hall (from image4.png) */}
+          <div className="reveal" style={{ border: '1px solid var(--color-border)', background: 'var(--cream)', overflow: 'hidden' }}>
+            <div style={{ position: 'relative', width: '100%', height: '240px', overflow: 'hidden' }}>
+              <Image
+                src="/ab_udyog_continuous_solvent_extraction_hall.png"
+                alt="AB Udyog continuous solvent extraction hall and heavy processing machinery in Kolkata"
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                style={{ objectFit: 'cover' }}
+              />
+            </div>
+            <div style={{ padding: '24px' }}>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--gold-dark)', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '8px' }}>
+                300 TPD Extraction Hall
+              </div>
+              <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '20px', fontWeight: 700, color: 'var(--green-deep)', marginBottom: '8px' }}>
+                Solvent Extraction Hall
+              </h3>
+              <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.6' }}>
+                Heavy-duty industrial extraction hall equipped with continuous counter-current extractors and automated vapor recovery blowers.
+              </p>
+            </div>
+          </div>
+
+          {/* Card 2: Pumping Station & Manifold (from image5.png) */}
+          <div className="reveal" style={{ border: '1px solid var(--color-border)', background: 'var(--cream)', overflow: 'hidden' }}>
+            <div style={{ position: 'relative', width: '100%', height: '240px', overflow: 'hidden' }}>
+              <Image
+                src="/ab_udyog_physical_refinery_pumping_pipeline_manifold.png"
+                alt="Physical refinery distillation piping manifold and fluid pumping station at AB Udyog"
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                style={{ objectFit: 'cover' }}
+              />
+            </div>
+            <div style={{ padding: '24px' }}>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--gold-dark)', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '8px' }}>
+                150 TPD Physical Refining
+              </div>
+              <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '20px', fontWeight: 700, color: 'var(--green-deep)', marginBottom: '8px' }}>
+                Distillation Pumping Station
+              </h3>
+              <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.6' }}>
+                High-pressure fluid pumping manifold and steam distillation piping designed for chemical-free oil purification.
+              </p>
+            </div>
+          </div>
+
+          {/* Card 3: Control Room PLC (from image3.png) */}
+          <div className="reveal" style={{ border: '1px solid var(--color-border)', background: 'var(--cream)', overflow: 'hidden' }}>
+            <div style={{ position: 'relative', width: '100%', height: '240px', overflow: 'hidden' }}>
+              <Image
+                src="/ab_udyog_refinery_control_room_plc_automation.png"
+                alt="Plant engineer operating automated PLC control panels and valve manifolds at AB Udyog refinery"
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                style={{ objectFit: 'cover' }}
+              />
+            </div>
+            <div style={{ padding: '24px' }}>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--gold-dark)', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '8px' }}>
+                PLC Automated Control
+              </div>
+              <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '20px', fontWeight: 700, color: 'var(--green-deep)', marginBottom: '8px' }}>
+                Automated Control Room
+              </h3>
+              <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.6' }}>
+                Real-time SCADA and PLC control room allowing plant operators to monitor temperatures, flow rates, and safety parameters continuously.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ══ 3-PHASE PROCESS GRID ══ */}
       <section className="pillars-section bg-cream-warm" style={{ padding: '88px 8%' }}>
@@ -95,7 +185,7 @@ export default function Manufacturing() {
       <section style={{ 
         position: 'relative', 
         padding: '96px 8%', 
-        backgroundImage: "linear-gradient(180deg, rgba(18, 42, 28, 0.88) 0%, rgba(18, 42, 28, 0.82) 100%), url('/quality_lab.png')",
+        backgroundImage: "linear-gradient(180deg, rgba(18, 42, 28, 0.88) 0%, rgba(18, 42, 28, 0.82) 100%), url('/ab_udyog_refinery_control_room_plc_automation.png')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
