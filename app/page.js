@@ -22,7 +22,7 @@ export default function Home() {
             <Image className="about-img-main" src="/ab-udyog-rice-bran-oil-refinery-plant-kolkata.png" alt="AB Udyog Continuous Solvent Extraction & Physical Rice Bran Oil Refinery Plant in Kolkata" width={800} height={600} style={{ objectFit: 'cover' }} />
           </div>
           <div className="about-text reveal">
-            <h2 className="section-title">A Legacy Forged in Purity &amp; Progress</h2>
+            <h2 className="section-title">A Legacy Forged in <em>Purity &amp; Progress</em></h2>
             <br />
             <p className="section-body">
               Founded with a mission to bring healthier cooking solutions to every household, AB Udyog Pvt. Ltd. has evolved into one of Eastern India's leading producers of rice bran oil and value-added by-products. With a 300 TPD solvent-extraction unit and a 150 TPD refinery, we combine traditional values with cutting-edge technology.
@@ -46,7 +46,7 @@ export default function Home() {
         <div className="parallax-window-grid">
           <div className="parallax-window-spacer" />
           <div className="parallax-window-panel">
-            <h2 className="section-title">Sourced from the Bengal Rice Belt</h2>
+            <h2 className="section-title">Sourced from the <em>Bengal Rice Belt</em></h2>
             <p className="section-body">
               We operate at the core of India's most fertile rice-growing valleys. Sourcing fresh raw bran directly from regional rice mills within hours of milling preserves crucial nutrients, ensures absolute freshness, and supports local farm livelihoods.
             </p>
@@ -76,7 +76,7 @@ export default function Home() {
       <section className="products-section" id="products">
         <div className="products-header">
           <div>
-            <h2 className="section-title reveal">From Field to Table, Purely Refined</h2>
+            <h2 className="section-title reveal">From Field to Table, <em>Purely Refined</em></h2>
           </div>
           <p className="section-body reveal" style={{ margin: 0, maxWidth: '340px' }}>
             Three distinct product lines spanning edible oils, animal nutrition, and premium industrial derivatives.
@@ -116,7 +116,7 @@ export default function Home() {
 
       {/* ══ BYPRODUCTS BENTO ══ */}
       <section className="bento-section" id="byproducts">
-        <h2 className="section-title reveal">Commercial-Grade Bran Derivatives</h2>
+        <h2 className="section-title reveal">Commercial-Grade <em>Bran Derivatives</em></h2>
         <div className="bento-grid">
           <div className="bento-card featured reveal">
             <div className="bento-icon-container">
@@ -162,7 +162,7 @@ export default function Home() {
         <div className="parallax-window-grid">
           <div className="parallax-window-spacer" />
           <div className="parallax-window-panel">
-            <h2 className="section-title">Built at Industrial Scale</h2>
+            <h2 className="section-title">Built at <em>Industrial Scale</em></h2>
             <p className="section-body">
               At AB Udyog, our integrated solvent-extraction and physical refining facility operates continuously to output premium oils and high-protein feeds. Our on-site labs and fully certified processes verify product purity at scale.
             </p>
@@ -191,7 +191,7 @@ export default function Home() {
       {/* ══ CERTS ══ */}
       <section className="certs-section reveal">
         <div className="section-header-center">
-          <h2 className="section-title">Certified for Global Standards</h2>
+          <h2 className="section-title">Certified for <em>Global Standards</em></h2>
         </div>
         <div style={{ display: 'flex', justifyContent: 'center', marginTop: '48px' }}>
           <Image className="certs-img" src="https://2025.abudyog.in/wp-content/uploads/2025/11/certificates-e1763163163535.png" alt="Certifications" width={800} height={200} style={{ maxWidth: '100%', height: 'auto' }} />

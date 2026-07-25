@@ -713,9 +713,40 @@ h2.section-title {
   text-wrap: balance;
   max-width: 800px;
 }
-h2.section-title em {
+h1.hero-title em,
+h2.section-title em,
+.section-title em,
+.hero-title em,
+.bento-title em,
+.cta-text h2 em {
   font-style: italic;
-  color: var(--green-light);
+  color: var(--gold-dark); /* Rich Gold accent on light background per DESIGN.md */
+}
+
+/* On dark green backgrounds */
+.bg-green-deep h2.section-title,
+.bg-green-deep .section-title,
+.products-section .section-title,
+.hero-subpage .hero-title,
+.bg-green-mid .section-title,
+.text-white .section-title,
+.section-title.text-white,
+.text-white h2,
+.text-white h1 {
+  color: var(--white) !important;
+}
+
+.bg-green-deep h2.section-title em,
+.bg-green-deep .section-title em,
+.products-section .section-title em,
+.hero-subpage .hero-title em,
+.bg-green-mid .section-title em,
+.text-white .section-title em,
+.section-title.text-white em,
+.text-white h2 em,
+.text-white h1 em {
+  font-style: italic;
+  color: var(--gold-light) !important; /* Vibrant Gold accent on dark green background per DESIGN.md */
 }
 .section-body {
   font-size: 16px;
