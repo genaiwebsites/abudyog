@@ -867,11 +867,11 @@ h2.section-title em {
 .product-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(13, 43, 26, 0.98) 0%, rgba(13, 43, 26, 0.85) 30%, transparent 70%);
+  background: linear-gradient(to top, rgba(13, 43, 26, 0.98) 0%, rgba(13, 43, 26, 0.85) 45%, rgba(13, 43, 26, 0.4) 75%, transparent 100%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 40px 32px;
+  padding: 36px 32px;
 }
 .product-tag {
   font-size: 10px;
@@ -888,20 +888,13 @@ h2.section-title em {
   color: var(--white);
   line-height: 1.15;
   margin-bottom: 12px;
-  min-height: 66px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
 }
 .product-desc {
   font-size: 14px;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.85);
   line-height: 1.6;
-  margin-bottom: 24px;
-  min-height: 68px;
-  display: flex;
-  align-items: flex-start;
+  margin-bottom: 16px;
 }
 .product-link {
   display: inline-flex;
@@ -914,7 +907,7 @@ h2.section-title em {
   color: var(--gold-light);
   text-decoration: none;
   transition: gap 0.2s;
-  margin-top: auto;
+  margin-top: 4px;
 }
 .product-link:hover {
   gap: 14px;
