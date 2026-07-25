@@ -3,7 +3,7 @@ import Image from 'next/image';
 import React from 'react';
 import { Package, Factory, Flame, ShieldCheck, HeartPulse, ClipboardList, Cpu, Activity, Gauge } from 'lucide-react';
 import CtaBanner from '@/components/CtaBanner';
-import TrustBadgeSection from '@/components/TrustBadgeSection';
+import InfrastructureAccreditations from '@/components/InfrastructureAccreditations';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 export default function Manufacturing() {
@@ -206,9 +206,6 @@ export default function Manufacturing() {
         </div>
       </section>
 
-      {/* ══ ASSOCIATIONS, CERTIFICATIONS & MARKETPLACES ══ */}
-      <TrustBadgeSection />
-
       {/* ══ LAB STANDARDS ══ */}
       <section className="pillars-section bg-cream" style={{ padding: '88px 8%' }}>
         <div className="section-header-center" style={{ marginBottom: '48px' }}>
@@ -234,6 +231,9 @@ export default function Manufacturing() {
           </div>
         </div>
       </section>
+
+      {/* ══ INDUSTRIAL COMPLIANCE & TRADE ACCREDITATIONS ══ */}
+      <InfrastructureAccreditations />
 
       {/* ══ CTA BANNER ══ */}
       <CtaBanner 

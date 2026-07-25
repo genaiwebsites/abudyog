@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import HeroSection from '@/components/HeroSection';
 import CtaBanner from '@/components/CtaBanner';
-import TrustBadgeSection from '@/components/TrustBadgeSection';
+import HomeTrustBar from '@/components/HomeTrustBar';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { Wheat, Sparkles, FlaskConical, Microscope, Fuel } from 'lucide-react';
 
@@ -15,6 +15,9 @@ export default function Home() {
     <>
       {/* ══ HERO (ANIMATED — FRAMER MOTION) ══ */}
       <HeroSection />
+
+      {/* ══ TRUST & RETAIL AVAILABILITY BAR ══ */}
+      <HomeTrustBar />
 
       {/* ══ ABOUT OVERVIEW ══ */}
       <section className="about-overview-section" id="about">
@@ -186,9 +189,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* ══ ASSOCIATIONS, CERTIFICATIONS & MARKETPLACES ══ */}
-      <TrustBadgeSection />
 
       {/* ══ CTA BANNER ══ */}
       <CtaBanner 
