@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -9,7 +8,7 @@ export default function Footer() {
         <div>
           <div className="footer-logo">
             <Link href="/" aria-label="AB Udyog Pvt. Ltd. Homepage">
-              <Image src="/logo.png" alt="AB Udyog Pvt. Ltd. Logo" width={160} height={48} style={{ height: 'auto', width: 'auto' }} />
+              <img src="/logo.png" alt="AB Udyog Pvt. Ltd." />
             </Link>
           </div>
           <p className="footer-tagline">
@@ -48,8 +47,8 @@ export default function Footer() {
           <h4>Company</h4>
           <ul>
             <li><Link href="/about" title="Company Overview & History">Company Story</Link></li>
-            <li><Link href="/csr" title="Sustainability & ESG Pledge">Sustainability &amp; ESG</Link></li>
-            <li><Link href="/manufacturing" title="Solvent Extraction & Physical Refinery Infrastructure">Plant Infrastructure</Link></li>
+            <li><Link href="/sustainability" title="Sustainability & ESG Pledge">Sustainability &amp; ESG</Link></li>
+            <li><Link href="/infrastructure" title="Solvent Extraction & Physical Refinery Infrastructure">Plant Infrastructure</Link></li>
             <li><Link href="/gallery" title="Refinery & Plant Facility Gallery">Facility Gallery</Link></li>
             <li><Link href="/contact" title="Contact Sales & B2B Trade Desk">Contact Us</Link></li>
           </ul>

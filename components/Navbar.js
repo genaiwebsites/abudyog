@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { ChevronDown, Menu, X } from 'lucide-react';
 
 export default function Navbar() {
@@ -22,7 +21,7 @@ export default function Navbar() {
     <nav className={scrolled ? 'scrolled' : ''} aria-label="Main Navigation">
       <div className="nav-logo">
         <Link href="/" aria-label="AB Udyog Pvt. Ltd. Homepage">
-          <Image src="/logo.png" alt="AB Udyog Pvt. Ltd. Logo" width={160} height={48} style={{ height: 'auto', width: 'auto' }} priority />
+          <img src="/logo.png" alt="AB Udyog Pvt. Ltd." />
         </Link>
       </div>
 
@@ -59,7 +58,7 @@ export default function Navbar() {
           </div>
         </li>
 
-        <li><Link href="/manufacturing" title="Industrial Infrastructure">Infrastructure</Link></li>
+        <li><Link href="/infrastructure" title="Industrial Infrastructure">Infrastructure</Link></li>
         <li><Link href="/gallery" title="Refinery & Infrastructure Gallery">Gallery</Link></li>
 
         <li>
@@ -75,7 +74,7 @@ export default function Navbar() {
             </button>
             <div className="dropdown-menu">
               <Link href="/about" title="Company History & Overview">Company</Link>
-              <Link href="/csr" title="Sustainability & Corporate Social Responsibility">Sustainability</Link>
+              <Link href="/sustainability" title="Sustainability & Corporate Social Responsibility">Sustainability</Link>
             </div>
           </div>
         </li>
@@ -117,7 +116,7 @@ export default function Navbar() {
           </div>
         </li>
 
-        <li><Link href="/manufacturing" onClick={() => setMobileOpen(false)}>INFRASTRUCTURE</Link></li>
+        <li><Link href="/infrastructure" onClick={() => setMobileOpen(false)}>INFRASTRUCTURE</Link></li>
         <li><Link href="/gallery" onClick={() => setMobileOpen(false)}>GALLERY</Link></li>
 
         <li className="mobile-dropdown-wrapper">
@@ -126,7 +125,7 @@ export default function Navbar() {
           </button>
           <div className={`mobile-dropdown-menu ${aboutOpen ? 'open' : ''}`}>
             <Link href="/about" onClick={() => setMobileOpen(false)}>COMPANY</Link>
-            <Link href="/csr" onClick={() => setMobileOpen(false)}>SUSTAINABILITY</Link>
+            <Link href="/sustainability" onClick={() => setMobileOpen(false)}>SUSTAINABILITY</Link>
           </div>
         </li>
 
