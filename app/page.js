@@ -19,7 +19,7 @@ export default function Home() {
       <section id="about">
         <div className="about-grid">
           <div className="about-img-wrap reveal">
-            <Image className="about-img-main" src="/factory1.webp" alt="AB Udyog Facility" width={800} height={600} style={{ objectFit: 'cover' }} />
+            <Image className="about-img-main" src="/ab-udyog-rice-bran-oil-refinery-plant-kolkata.png" alt="AB Udyog Continuous Solvent Extraction & Physical Rice Bran Oil Refinery Plant in Kolkata" width={800} height={600} style={{ objectFit: 'cover' }} />
           </div>
           <div className="about-text reveal">
             <h2 className="section-title">A Legacy Forged in<br />Purity &amp; Progress</h2>
@@ -89,7 +89,7 @@ export default function Home() {
             <div className="product-overlay">
               <div className="product-tag">Jeevan Rekha Foods</div>
               <div className="product-name">Rice Bran<br />&amp; Mustard Oil</div>
-              <div className="product-desc">Physically refined Rice Bran Oil and cold-pressed Kachhi Ghani Mustard Oil — crafted for purity, flavor, and healthier everyday living.</div>
+              <div className="product-desc">Physically refined Rice Bran Oil &amp; cold-pressed Mustard Oil — crafted for purity, flavor, and daily health.</div>
               <span className="product-link">Explore Foods</span>
             </div>
           </Link>
@@ -97,8 +97,8 @@ export default function Home() {
             <Image className="product-img" src="/abu_dorb_combo.svg" alt="AB DORB" width={600} height={800} style={{ objectFit: 'cover' }} />
             <div className="product-overlay">
               <div className="product-tag">Animal Feed · DORB</div>
-              <div className="product-name">AB DORB</div>
-              <div className="product-desc">High-protein de-oiled rice bran — wholesome nutrition for fish, poultry, cattle, and swine.</div>
+              <div className="product-name">AB DORB<br />Animal Feed</div>
+              <div className="product-desc">High-protein de-oiled rice bran — wholesome, nutrient-rich feed for fish, poultry, cattle, and swine.</div>
               <span className="product-link">About DORB</span>
             </div>
           </Link>
@@ -107,7 +107,7 @@ export default function Home() {
             <div className="product-overlay">
               <div className="product-tag">Industrial</div>
               <div className="product-name">Bran<br />Derivatives</div>
-              <div className="product-desc">Wax, lecithin, gums, and fatty acids — premium by-products for food, pharma, and industrial use.</div>
+              <div className="product-desc">Refined wax, lecithin, gums, &amp; fatty acids — premium industrial by-products for food, pharma, and energy.</div>
               <span className="product-link">View All</span>
             </div>
           </Link>

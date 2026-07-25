@@ -26,14 +26,14 @@ const Row = ({ k, v }) => (
 
 /* ─── dark text panel (reused for About, Products, Commitment) ───── */
 const DarkPanel = ({ children }) => (
-  <div style={{ background: G, padding: 'clamp(48px, 6vw, 88px) clamp(32px, 5vw, 72px)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+  <div style={{ background: G, padding: 'clamp(56px, 6vw, 92px) clamp(32px, 5vw, 72px)', display: 'flex', flexDirection: 'column', justifyContent: 'center', minHeight: 'clamp(480px, 55vh, 580px)' }}>
     {children}
   </div>
 );
 
-/* ─── light image panel ──────────────────────────────────────────── */
-const LightPanel = ({ bg = CREAM, children }) => (
-  <div style={{ background: bg, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 'clamp(40px, 5vw, 72px)' }}>
+/* ─── full image panel (edge-to-edge, zero whitespace margins, responsive) ───── */
+const FullImagePanel = ({ children }) => (
+  <div style={{ position: 'relative', width: '100%', minHeight: 'clamp(480px, 55vh, 580px)', overflow: 'hidden' }}>
     {children}
   </div>
 );
@@ -80,18 +80,18 @@ export default function AbHealthPage() {
       {/* ════════════════════════════════════════════════════════════
           ABOUT — brand SVG left | dark text right
       ════════════════════════════════════════════════════════════ */}
-      <div className="ab-split">
-        <LightPanel bg={CREAM_W}>
+      <div className="ab-split" style={{ minHeight: 'clamp(480px, 55vh, 580px)' }}>
+        <FullImagePanel>
           <Image
             src="https://abudyog.in/wp-content/uploads/2026/05/AB-HEALTH-Page-05.svg"
             alt="AB Health brand visual"
-            width={500}
-            height={460}
-            style={{ width: '100%', maxWidth: '460px', height: 'auto' }}
+            fill
+            sizes="(max-width: 900px) 100vw, 50vw"
+            style={{ objectFit: 'cover', objectPosition: 'center' }}
             priority
             unoptimized
           />
-        </LightPanel>
+        </FullImagePanel>
         <DarkPanel>
           <div className="reveal">
             <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 700, color: 'var(--white)', lineHeight: 1.15, marginBottom: '20px' }}>
@@ -113,7 +113,7 @@ export default function AbHealthPage() {
       {/* ════════════════════════════════════════════════════════════
           PRODUCT 01 — dark text left | Soyabean Oil image right
       ════════════════════════════════════════════════════════════ */}
-      <div id="products" className="ab-split">
+      <div id="products" className="ab-split" style={{ minHeight: 'clamp(480px, 55vh, 580px)' }}>
         <DarkPanel>
           <div className="reveal">
             <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.8rem, 2.8vw, 2.6rem)', fontWeight: 700, color: 'var(--white)', lineHeight: 1.15, marginBottom: '6px' }}>
@@ -134,33 +134,34 @@ export default function AbHealthPage() {
             <Link href="/contact?ref=soyabean-oil" className="btn-primary" style={{ display: 'inline-block' }}>Enquire Now</Link>
           </div>
         </DarkPanel>
-        <LightPanel bg={CREAM}>
+        <FullImagePanel>
           <Image
             src="https://abudyog.in/wp-content/uploads/2026/05/AB-HEALTH-Page-03.svg"
             alt="AB Health Soyabean Oil — 1L pouch"
-            width={480}
-            height={520}
-            style={{ width: 'auto', height: 'auto', maxWidth: '380px', maxHeight: '480px' }}
+            fill
+            sizes="(max-width: 900px) 100vw, 50vw"
+            style={{ objectFit: 'cover', objectPosition: 'center' }}
+            priority
             unoptimized
           />
-        </LightPanel>
+        </FullImagePanel>
       </div>
 
       {/* ════════════════════════════════════════════════════════════
           PRODUCT 02 — Rice Bran Oil image left | dark text right
       ════════════════════════════════════════════════════════════ */}
-      <div className="ab-split">
-        <LightPanel bg={CREAM_W}>
+      <div className="ab-split" style={{ minHeight: 'clamp(480px, 55vh, 580px)' }}>
+        <FullImagePanel>
           <Image
             src="https://abudyog.in/wp-content/uploads/2026/05/AB-HEALTH-Page-04.svg"
             alt="AB Health Rice Bran Oil — 1L pouch"
-            width={480}
-            height={520}
-            style={{ width: 'auto', height: 'auto', maxWidth: '380px', maxHeight: '480px' }}
+            fill
+            sizes="(max-width: 900px) 100vw, 50vw"
+            style={{ objectFit: 'cover', objectPosition: 'center' }}
             priority
             unoptimized
           />
-        </LightPanel>
+        </FullImagePanel>
         <DarkPanel>
           <div className="reveal">
             <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.8rem, 2.8vw, 2.6rem)', fontWeight: 700, color: 'var(--white)', lineHeight: 1.15, marginBottom: '6px' }}>
@@ -184,16 +185,19 @@ export default function AbHealthPage() {
       </div>
 
       {/* ════════════════════════════════════════════════════════════
-          WHY CHOOSE — 3×2 bordered icon grid on deep green
+          WHY CHOOSE — 3×2 grid on Soft Champagne Gold (#F5E9C6 / secondary-container) per DESIGN.md
       ════════════════════════════════════════════════════════════ */}
-      <section style={{ background: G, padding: '88px 8%' }}>
-        <div style={{ textAlign: 'center', marginBottom: '56px' }}>
-          <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2rem, 3.5vw, 3rem)', fontWeight: 700, color: 'var(--white)', lineHeight: 1.15 }}>
+      <section style={{ background: '#F5E9C6', padding: '96px 8%', borderTop: '1px solid rgba(212, 175, 55, 0.35)', borderBottom: '1px solid rgba(212, 175, 55, 0.35)' }}>
+        <div style={{ textAlign: 'center', marginBottom: '52px' }}>
+          <span style={{ color: '#745c00', fontSize: '10px', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', display: 'block', marginBottom: '12px' }}>
+            Unmatched Quality Standards
+          </span>
+          <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2rem, 3.5vw, 3rem)', fontWeight: 700, color: G, lineHeight: 1.15 }}>
             Why Choose AB Health
           </h2>
         </div>
-        {/* 3-col × 2-row grid — no overflow possible */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', border: `1px solid rgba(255,255,255,0.1)`, maxWidth: '900px', margin: '0 auto' }}>
+        {/* 3-col × 2-row grid — sharp 0px corners, white cards, champagne gold border */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', border: `1px solid rgba(212, 175, 55, 0.4)`, maxWidth: '920px', margin: '0 auto', background: '#FFFFFF', borderRadius: 0, boxShadow: '0 4px 20px rgba(116, 92, 0, 0.05)' }}>
           {ADVANTAGES.map((item, i) => (
             <div
               key={i}
@@ -203,17 +207,23 @@ export default function AbHealthPage() {
                 flexDirection: 'column',
                 alignItems: 'center',
                 textAlign: 'center',
-                padding: '48px 28px',
-                gap: '18px',
-                borderRight: (i + 1) % 3 !== 0 ? `1px solid rgba(255,255,255,0.1)` : 'none',
-                borderBottom: i < 3 ? `1px solid rgba(255,255,255,0.1)` : 'none',
-                transition: 'background 0.25s',
+                padding: '44px 24px',
+                gap: '16px',
+                borderRight: (i + 1) % 3 !== 0 ? `1px solid rgba(212, 175, 55, 0.25)` : 'none',
+                borderBottom: i < 3 ? `1px solid rgba(212, 175, 55, 0.25)` : 'none',
+                transition: 'all 0.25s ease',
               }}
-              onMouseEnter={e => e.currentTarget.style.background = 'rgba(212,175,55,0.06)'}
-              onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
+              onMouseEnter={e => {
+                e.currentTarget.style.background = 'rgba(245, 233, 198, 0.4)';
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.background = '#FFFFFF';
+              }}
             >
-              <span style={{ color: GOLD }}>{item.icon}</span>
-              <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '10px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', lineHeight: 1.7, margin: 0, whiteSpace: 'pre-line' }}>
+              <div style={{ width: '48px', height: '48px', borderRadius: 0, background: 'rgba(212, 175, 55, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#745c00', flexShrink: 0 }}>
+                {item.icon}
+              </div>
+              <p style={{ color: G, fontSize: '11px', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', lineHeight: 1.6, margin: 0, whiteSpace: 'pre-line' }}>
                 {item.label}
               </p>
             </div>
@@ -222,18 +232,21 @@ export default function AbHealthPage() {
       </section>
 
       {/* ════════════════════════════════════════════════════════════
-          HEALTH BENEFITS — 2×2 bordered grid
+          HEALTH BENEFITS — 2×2 grid on Alabaster White (#F9F9F6)
       ════════════════════════════════════════════════════════════ */}
       <section style={{ background: CREAM, padding: '100px 8%' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '52px', flexWrap: 'wrap', gap: '24px', maxWidth: '1200px', margin: '0 auto 52px' }}>
-          <div>
-            <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2rem, 3.5vw, 3rem)', fontWeight: 700, color: G, lineHeight: 1.15 }}>Health Benefits</h2>
-          </div>
-          <p style={{ color: MUTED, fontSize: '15px', lineHeight: 1.75, maxWidth: '340px', margin: 0 }}>
+        <div style={{ textAlign: 'center', marginBottom: '52px', maxWidth: '640px', margin: '0 auto 52px' }}>
+          <span style={{ color: GOLD_DARK, fontSize: '10px', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', display: 'block', marginBottom: '10px' }}>
+            Nourishment In Every Drop
+          </span>
+          <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2rem, 3.5vw, 3rem)', fontWeight: 700, color: G, lineHeight: 1.15, marginBottom: '14px' }}>
+            Health Benefits
+          </h2>
+          <p style={{ color: MUTED, fontSize: '15px', lineHeight: 1.7, margin: '0 auto' }}>
             Oils that do more than just cook — they nourish every meal.
           </p>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', border: `1px solid ${BORDER}`, maxWidth: '1000px', margin: '0 auto' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', border: `1px solid ${BORDER}`, maxWidth: '1000px', margin: '0 auto', background: '#FFFFFF', borderRadius: 0 }}>
           {BENEFITS.map((item, i) => (
             <div
               key={i}
@@ -242,11 +255,11 @@ export default function AbHealthPage() {
                 padding: '52px 48px',
                 borderRight: i % 2 === 0 ? `1px solid ${BORDER}` : 'none',
                 borderBottom: i < 2 ? `1px solid ${BORDER}` : 'none',
-                background: 'var(--white)',
-                transition: 'background 0.25s',
+                background: '#FFFFFF',
+                transition: 'background 0.25s ease',
               }}
               onMouseEnter={e => e.currentTarget.style.background = CREAM_W}
-              onMouseLeave={e => e.currentTarget.style.background = 'var(--white)'}
+              onMouseLeave={e => e.currentTarget.style.background = '#FFFFFF'}
             >
               <span style={{ color: GOLD_DARK, display: 'block', marginBottom: '20px' }}>{item.icon}</span>
               <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '20px', fontWeight: 700, color: G, marginBottom: '10px', lineHeight: 1.2 }}>
@@ -261,18 +274,18 @@ export default function AbHealthPage() {
       {/* ════════════════════════════════════════════════════════════
           COMMITMENT — plant photo left | dark text right
       ════════════════════════════════════════════════════════════ */}
-      <div className="ab-split" style={{ minHeight: '500px' }}>
+      <div className="ab-split" style={{ minHeight: 'clamp(480px, 55vh, 580px)' }}>
         {/* Photo — fixed height, cover */}
-        <div style={{ position: 'relative', minHeight: '500px', overflow: 'hidden' }}>
+        <FullImagePanel>
           <Image
-            src="https://abudyog.in/wp-content/uploads/2025/11/RAJA8723-scaled.jpg"
-            alt="AB Udyog manufacturing plant"
+            src="/ab_udyog_refinery_control_room_plc_automation.png"
+            alt="AB Udyog plant engineer operating automated PLC refinery control systems"
             fill
-            sizes="50vw"
+            sizes="(max-width: 900px) 100vw, 50vw"
             style={{ objectFit: 'cover', objectPosition: 'center' }}
-            unoptimized
+            priority
           />
-        </div>
+        </FullImagePanel>
         <DarkPanel>
           <div className="reveal">
             <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 700, color: 'var(--white)', lineHeight: 1.15, marginBottom: '20px' }}>

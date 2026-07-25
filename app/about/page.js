@@ -28,7 +28,7 @@ export default function About() {
       <section id="story">
         <div className="about-grid">
           <div className="about-img-wrap reveal">
-            <Image className="about-img-main" src="/factory1.webp" alt="Kolkata physical refinement refinery plant" width={800} height={600} style={{ objectFit: 'cover' }} />
+            <Image className="about-img-main" src="/ab-udyog-rice-bran-oil-refinery-plant-kolkata.png" alt="AB Udyog Continuous Solvent Extraction & Physical Rice Bran Oil Refinery Plant in Kolkata" width={800} height={600} style={{ objectFit: 'cover' }} />
           </div>
           <div className="about-text reveal">
             <h2 className="section-title">An Engineering Standard in Food Manufacturing</h2>
