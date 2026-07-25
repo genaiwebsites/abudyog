@@ -74,11 +74,9 @@ export default function Home() {
 
       {/* ══ PRODUCTS ══ */}
       <section className="products-section" id="products">
-        <div className="products-header">
-          <div>
-            <h2 className="section-title reveal">From Field to Table, <em>Purely Refined</em></h2>
-          </div>
-          <p className="section-body reveal" style={{ margin: 0, maxWidth: '340px' }}>
+        <div className="section-header-center reveal" style={{ marginBottom: '56px' }}>
+          <h2 className="section-title">From Field to Table, <em>Purely Refined</em></h2>
+          <p className="section-body" style={{ margin: '16px auto 0 auto', maxWidth: '640px' }}>
             Three distinct product lines spanning edible oils, animal nutrition, and premium industrial derivatives.
           </p>
         </div>
