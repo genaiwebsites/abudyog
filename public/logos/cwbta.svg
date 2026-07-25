@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 70" fill="none">
-  <g transform="translate(10, 5)">
-    <circle cx="30" cy="30" r="25" fill="#2B6CB0"/>
-    <path d="M 10 38 L 15 32 L 20 35 L 25 28 L 30 35 L 35 25 L 40 33 L 45 30 L 50 38 Z" fill="#FFFFFF"/>
-    <path d="M 12 42 C 20 46, 40 46, 48 42" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
-  </g>
-  <text x="75" y="34" font-family="'Archivo', sans-serif" font-weight="800" font-size="22" fill="#2B6CB0" letter-spacing="0.04em">CWBTA</text>
-  <text x="75" y="48" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="8" fill="#4F5450" letter-spacing="0.03em">CONFEDERATION OF W.B. TRADE ASSOC.</text>
-</svg>
