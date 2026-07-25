@@ -65,7 +65,7 @@ export default function AbHealthPage() {
           HERO — centered, dark green, no CTA buttons
       ════════════════════════════════════════════════════════════ */}
       <section className="hero-subpage">
-        <div className="hero-bg" style={{ backgroundImage: "url('https://abudyog.in/wp-content/uploads/2025/11/RAJA8723-scaled.jpg')", backgroundPosition: 'center 30%', opacity: 0.15 }} />
+        <div className="hero-bg" style={{ backgroundImage: "url('/ab-health-edible-oils-rice-bran-soyabean-oil-kolkata.svg')", backgroundPosition: 'center 30%', opacity: 0.2 }} />
         <div className="hero-accent" />
         <div className="hero-content" style={{ textAlign: 'center', margin: '0 auto' }}>
           <h1 className="hero-title" style={{ margin: '0 auto' }}>
@@ -83,17 +83,23 @@ export default function AbHealthPage() {
       <div className="ab-split" style={{ minHeight: 'clamp(480px, 55vh, 580px)' }}>
         <FullImagePanel>
           <Image
-            src="https://abudyog.in/wp-content/uploads/2026/05/AB-HEALTH-Page-05.svg"
-            alt="AB Health brand visual"
+            src="/ab-health-edible-oils-brand-showcase-kolkata.svg"
+            alt="AB Health Edible Oils Brand Showcase — Rice Bran & Soyabean Oil"
             fill
             sizes="(max-width: 900px) 100vw, 50vw"
             style={{ objectFit: 'cover', objectPosition: 'center' }}
             priority
-            unoptimized
           />
         </FullImagePanel>
         <DarkPanel>
           <div className="reveal">
+            <Image
+              src="/ab-health-brand-logo-vector.svg"
+              alt="AB Health Brand Logo"
+              width={160}
+              height={50}
+              style={{ height: 'auto', width: 'auto', maxWidth: '160px', marginBottom: '16px' }}
+            />
             <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 700, color: 'var(--white)', lineHeight: 1.15, marginBottom: '20px' }}>
               About AB Health
             </h2>
@@ -136,13 +142,12 @@ export default function AbHealthPage() {
         </DarkPanel>
         <FullImagePanel>
           <Image
-            src="https://abudyog.in/wp-content/uploads/2026/05/AB-HEALTH-Page-03.svg"
-            alt="AB Health Soyabean Oil — 1L pouch"
+            src="/ab-health-refined-soyabean-oil-pouch-1l.svg"
+            alt="AB Health Refined Soyabean Oil 1L Pouch"
             fill
             sizes="(max-width: 900px) 100vw, 50vw"
             style={{ objectFit: 'cover', objectPosition: 'center' }}
             priority
-            unoptimized
           />
         </FullImagePanel>
       </div>
@@ -153,13 +158,12 @@ export default function AbHealthPage() {
       <div className="ab-split" style={{ minHeight: 'clamp(480px, 55vh, 580px)' }}>
         <FullImagePanel>
           <Image
-            src="https://abudyog.in/wp-content/uploads/2026/05/AB-HEALTH-Page-04.svg"
-            alt="AB Health Rice Bran Oil — 1L pouch"
+            src="/ab-health-physically-refined-rice-bran-oil-tin-15l.svg"
+            alt="AB Health Physically Refined Rice Bran Oil 15L Tin"
             fill
             sizes="(max-width: 900px) 100vw, 50vw"
             style={{ objectFit: 'cover', objectPosition: 'center' }}
             priority
-            unoptimized
           />
         </FullImagePanel>
         <DarkPanel>
