@@ -16,7 +16,7 @@ export default function About() {
         <div className="hero-accent"></div>
         <div className="hero-content">
           <h1 className="hero-title">
-            Rooted in Agriculture, Refined for Progress
+            Rooted in Agriculture, <em>Refined for Progress</em>
           </h1>
           <p className="hero-subtitle">
             Discover how AB Udyog Pvt. Ltd. evolved over four decades from Eastern India's premium solvent extraction facility into a pioneering agro-based food manufacturer.
@@ -31,7 +31,7 @@ export default function About() {
             <Image className="about-img-main" src="/ab-udyog-rice-bran-oil-refinery-plant-kolkata.png" alt="AB Udyog Continuous Solvent Extraction & Physical Rice Bran Oil Refinery Plant in Kolkata" width={800} height={600} style={{ objectFit: 'cover' }} />
           </div>
           <div className="about-text reveal">
-            <h2 className="section-title">An Engineering Standard in Food Manufacturing</h2>
+            <h2 className="section-title">An Engineering Standard in <em>Food Manufacturing</em></h2>
             <br />
             <p className="section-body">
               AB Udyog Pvt. Ltd. operates a high-capacity continuous solvent extraction and physical refining complex in Kolkata, West Bengal. Established with a mission of structural purity and agro-based progress, we have spent four decades processing agricultural crops into food items and value-added derivatives.
@@ -51,13 +51,15 @@ export default function About() {
 
       {/* ══ VISION & MISSION BENTO ══ */}
       <section className="bento-section">
-        <h2 className="section-title reveal" style={{ textAlign: 'center', marginBottom: '60px' }}>Our Corporate Principles</h2>
+        <div className="section-header-center reveal" style={{ marginBottom: '60px' }}>
+          <h2 className="section-title">Our Corporate <em>Principles</em></h2>
+        </div>
         <div className="bento-grid responsive-two-col">
           <div className="bento-card featured reveal" style={{ gridColumn: 'span 1' }}>
             <div className="bento-icon-container">
               <Eye size={24} aria-hidden="true" />
             </div>
-            <div className="bento-title" style={{ fontSize: '32px' }}>Our Corporate Vision</div>
+            <div className="bento-title" style={{ fontSize: '28px' }}>Our Corporate <em>Vision</em></div>
             <p className="bento-body" style={{ fontSize: '15px', maxWidth: '800px', marginTop: '20px' }}>
               To be India's most reliable partner for premium agro-products and industrial derivatives. We aim to establish Jeevan Rekha as a household brand for purity and wellness while leading the industry in physical steam refining scaling and zero-waste circular operations.
             </p>
@@ -66,7 +68,7 @@ export default function About() {
             <div className="bento-icon-container">
               <Target size={24} style={{ color: 'var(--gold-light)' }} aria-hidden="true" />
             </div>
-            <div className="bento-title" style={{ color: 'var(--gold-light)', fontSize: '32px' }}>Our Operations Mission</div>
+            <div className="bento-title" style={{ color: 'var(--gold-light)', fontSize: '28px' }}>Our Operations <em>Mission</em></div>
             <p className="bento-body" style={{ color: 'rgba(255,255,255,0.75)', fontSize: '15px', maxWidth: '800px', marginTop: '20px' }}>
               To maintain strict control over chemical-free refining. We pledge to preserve natural health nutrients, provide high-quality B2B protein animal feeds (AB DORB), and sustain clean extraction lines with strict adherence to national food standards.
             </p>
@@ -76,8 +78,8 @@ export default function About() {
 
       {/* ══ PILLARS ══ */}
       <section className="pillars-section">
-        <div className="section-header-center">
-          <h2 className="section-title reveal" style={{ textAlign: 'center', marginBottom: '40px' }}>Operational Standards</h2>
+        <div className="section-header-center reveal" style={{ marginBottom: '40px' }}>
+          <h2 className="section-title">Our Operational <em>Standards</em></h2>
         </div>
         <div className="pillars-grid">
           <div className="pillar reveal">

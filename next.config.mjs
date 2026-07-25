@@ -1,14 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: '2025.abudyog.in',
-        pathname: '/**',
-      },
-    ],
-  },
+  /* Config options here */
 };
 
 export default nextConfig;
