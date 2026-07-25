@@ -194,7 +194,7 @@ export default function Home() {
           <h2 className="section-title">Certified for <em>Global Standards</em></h2>
         </div>
         <div style={{ display: 'flex', justifyContent: 'center', marginTop: '48px' }}>
-          <Image className="certs-img" src="https://2025.abudyog.in/wp-content/uploads/2025/11/certificates-e1763163163535.png" alt="Certifications" width={800} height={200} style={{ maxWidth: '100%', height: 'auto' }} />
+          <Image className="certs-img" src="/ab-udyog-certifications-iso-fssai-fssc.png" alt="AB Udyog Certifications — ISO, FSSAI, FSSC 22000" width={800} height={200} style={{ maxWidth: '100%', height: 'auto' }} />
         </div>
       </section>
 

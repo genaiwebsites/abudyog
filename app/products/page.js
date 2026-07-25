@@ -13,7 +13,7 @@ export default function Products() {
     <div>
       {/* ══ HERO BANNER ══ */}
       <section className="hero-subpage">
-        <div className="hero-bg" style={{ backgroundImage: "url('https://2025.abudyog.in/wp-content/uploads/2025/11/RAJA8723-scaled.jpg')", opacity: 0.25 }}></div>
+        <div className="hero-bg" style={{ backgroundImage: "url('/ab-udyog-plant-machinery-refinery.jpg')", opacity: 0.25 }}></div>
         <div className="hero-accent"></div>
         <div className="hero-content">
           <h1 className="hero-title">

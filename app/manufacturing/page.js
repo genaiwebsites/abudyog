@@ -216,12 +216,11 @@ export default function Manufacturing() {
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           <Image
             className="certs-img"
-            src="https://2025.abudyog.in/wp-content/uploads/2025/11/certificates-e1763163163535.png"
-            alt="Certifications"
+            src="/ab-udyog-certifications-iso-fssai-fssc.png"
+            alt="AB Udyog Certifications — ISO, FSSAI, FSSC 22000"
             width={800}
             height={200}
             style={{ maxWidth: '100%', height: 'auto' }}
-            unoptimized
           />
         </div>
       </section>
