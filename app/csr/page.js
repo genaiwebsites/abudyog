@@ -46,12 +46,7 @@ export default function CSRPage() {
           </div>
           
           <div className="about-img-wrap reveal">
-            <div className="about-frame" style={{ borderColor: 'var(--gold)' }}></div>
             <Image className="about-img-main" src="/ab-udyog-jeevan-rekha-csr-community-worker-welfare-kolkata.png" alt="AB Udyog Jeevan Rekha factory team and workers engaged in community edible oil distribution in Kolkata" width={800} height={600} style={{ objectFit: 'cover' }} />
-            <div className="about-img-badge">
-              <div className="about-badge-num">100%</div>
-              <div className="about-badge-label">Community &amp;<br />Worker Welfare</div>
-            </div>
           </div>
         </div>
       </section>

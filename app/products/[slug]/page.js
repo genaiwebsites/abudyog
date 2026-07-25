@@ -238,7 +238,6 @@ export default function ProductDetail({ params }) {
           </div>
           
           <div className="about-img-wrap reveal">
-            <div className="about-frame" style={{ borderColor: 'var(--gold)' }}></div>
             <Image className="about-img-main" src={product.image} alt={product.title} width={800} height={600} style={{ objectFit: 'cover' }} />
           </div>
         </div>

@@ -562,11 +562,7 @@ nav.scrolled {
   color: var(--gold-light);
 }
 .hero-subpage .hero-eyebrow::before, .hero-subpage .hero-eyebrow::after {
-  content: '';
-  display: block;
-  width: 28px;
-  height: 1px;
-  background: var(--gold);
+  display: none !important;
 }
 
 @keyframes heroIn {
@@ -705,11 +701,7 @@ section {
   color: var(--gold-dark);
 }
 .section-eyebrow::before, .section-eyebrow::after {
-  content: '';
-  display: block;
-  width: 20px;
-  height: 1px;
-  background: var(--gold);
+  display: none !important;
 }
 h2.section-title {
   font-family: var(--font-cormorant), serif;
@@ -752,42 +744,10 @@ h2.section-title em {
   transform: scale(1.03);
 }
 .about-img-badge {
-  position: absolute;
-  bottom: -24px;
-  right: -24px;
-  width: 140px;
-  height: 140px;
-  background: var(--gold);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.about-badge-num {
-  font-family: var(--font-cormorant), serif;
-  font-size: 42px;
-  font-weight: 300;
-  color: var(--green-deep);
-  line-height: 1;
-}
-.about-badge-label {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--green-deep);
-  margin-top: 4px;
-  text-align: center;
+  display: none !important;
 }
 .about-frame {
-  position: absolute;
-  top: -16px;
-  left: -16px;
-  right: 16px;
-  bottom: 16px;
-  border: 1px solid rgba(200, 153, 42, 0.3);
-  pointer-events: none;
-  z-index: -1;
+  display: none !important;
 }
 .about-text {
   padding-left: 24px;
@@ -2413,28 +2373,10 @@ footer {
   gap: 10px;
 }
 .eyebrow-minimal::before, .eyebrow-minimal::after {
-  content: '';
-  display: block;
-  width: 20px;
-  height: 1px;
-  background: currentColor;
-}
-.eyebrow-large {
-  font-family: var(--font-cormorant), serif;
-  font-size: 22px;
-  font-style: italic;
-  color: var(--gold-dark);
-  margin-bottom: 12px;
-  display: inline-flex;
-  align-items: center;
-  gap: 14px;
+  display: none !important;
 }
 .eyebrow-large::before, .eyebrow-large::after {
-  content: '';
-  display: block;
-  width: 30px;
-  height: 1px;
-  background: currentColor;
+  display: none !important;
 }
 
 /* Helper backgrounds for Theme cleanup */
@@ -2865,6 +2807,34 @@ svg,
     padding: 8px 12px !important;
     font-size: 10px !important;
   }
+}
+
+/* ── REMOVE ARTIFICIAL DECORATIONS (EYEBROW LINES, INCOMPLETE BORDER FRAMES, OVERLAPPING IMAGE BADGES) ── */
+.hero-subpage .hero-eyebrow::before,
+.hero-subpage .hero-eyebrow::after,
+.section-eyebrow::before,
+.section-eyebrow::after,
+.eyebrow-minimal::before,
+.eyebrow-minimal::after,
+.eyebrow-large::before,
+.eyebrow-large::after,
+.products-section .section-eyebrow::before,
+.products-section .section-eyebrow::after,
+.section-header-center .section-eyebrow::before,
+.section-header-center .section-eyebrow::after {
+  display: none !important;
+  content: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: none !important;
+}
+
+.about-frame,
+.about-img-badge {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
 
 
