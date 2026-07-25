@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ChevronDown, Menu, X } from 'lucide-react';
 
 export default function Navbar() {
@@ -20,8 +21,8 @@ export default function Navbar() {
   return (
     <nav className={scrolled ? 'scrolled' : ''} aria-label="Main Navigation">
       <div className="nav-logo">
-        <Link href="/">
-          <img src="/logo.png" alt="AB Udyog Pvt. Ltd." />
+        <Link href="/" aria-label="AB Udyog Pvt. Ltd. Homepage">
+          <Image src="/logo.png" alt="AB Udyog Pvt. Ltd. Logo" width={160} height={48} style={{ height: 'auto', width: 'auto' }} priority />
         </Link>
       </div>
 
@@ -35,31 +36,31 @@ export default function Navbar() {
               href="/products"
               style={{ fontSize: '12px', fontWeight: 500, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(255, 255, 255, 0.7)', transition: 'color 0.25s', display: 'flex', alignItems: 'center', gap: '4px', height: '100%', background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'inherit', padding: 0, textDecoration: 'none' }} 
               className="dropdown-trigger"
-              aria-label="Products page and dropdown"
+              aria-label="Products portfolio and categories"
             >
-              Products <ChevronDown size={14} />
+              Products <ChevronDown size={14} aria-hidden="true" />
             </Link>
             <div className="dropdown-menu two-col">
               <div className="dropdown-col">
                 <div className="dropdown-group-title">Consumer</div>
-                <Link href="https://jeevanrekhafoods.com/products/rice-bran-oil" target="_blank" rel="noopener noreferrer">Jeevan Rekha Rice Bran Oil</Link>
-                <Link href="https://jeevanrekhafoods.com/products/mustard-oil" target="_blank" rel="noopener noreferrer">Jeevan Rekha Mustard Oil</Link>
-                <Link href="/products/ab-health">AB Health Edible Oils</Link>
+                <a href="https://jeevanrekhafoods.com/products/rice-bran-oil" target="_blank" rel="noopener noreferrer" title="Jeevan Rekha Rice Bran Oil">Jeevan Rekha Rice Bran Oil</a>
+                <a href="https://jeevanrekhafoods.com/products/mustard-oil" target="_blank" rel="noopener noreferrer" title="Jeevan Rekha Mustard Oil">Jeevan Rekha Mustard Oil</a>
+                <Link href="/products/ab-health" title="AB Health Edible Oils">AB Health Edible Oils</Link>
               </div>
               <div className="dropdown-col">
                 <div className="dropdown-group-title">Industrial</div>
-                <Link href="/products/de-oiled-rice-bran">De-Oiled Rice Bran (DORB)</Link>
-                <Link href="/products/rice-bran-gums">Rice Bran Gums</Link>
-                <Link href="/products/rice-bran-wax">Rice Bran Wax</Link>
-                <Link href="/products/rice-bran-lecithin">Rice Bran Lecithin</Link>
-                <Link href="/products/fatty-acids-spent-earth">Fatty Acids &amp; Spent Earth</Link>
+                <Link href="/products/de-oiled-rice-bran" title="De-Oiled Rice Bran (DORB)">De-Oiled Rice Bran (DORB)</Link>
+                <Link href="/products/rice-bran-gums" title="Rice Bran Gums">Rice Bran Gums</Link>
+                <Link href="/products/rice-bran-wax" title="Rice Bran Wax">Rice Bran Wax</Link>
+                <Link href="/products/rice-bran-lecithin" title="Rice Bran Lecithin">Rice Bran Lecithin</Link>
+                <Link href="/products/fatty-acids-spent-earth" title="Fatty Acids & Spent Earth">Fatty Acids &amp; Spent Earth</Link>
               </div>
             </div>
           </div>
         </li>
 
-        <li><Link href="/manufacturing">Infrastructure</Link></li>
-        <li><Link href="/gallery">Gallery</Link></li>
+        <li><Link href="/manufacturing" title="Industrial Infrastructure">Infrastructure</Link></li>
+        <li><Link href="/gallery" title="Refinery & Infrastructure Gallery">Gallery</Link></li>
 
         <li>
           <div className="nav-item-dropdown">
@@ -67,19 +68,19 @@ export default function Navbar() {
               style={{ fontSize: '12px', fontWeight: 500, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(255, 255, 255, 0.7)', transition: 'color 0.25s', display: 'flex', alignItems: 'center', gap: '4px', height: '100%', background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'inherit', padding: 0 }} 
               className="dropdown-trigger"
               aria-haspopup="true"
-              aria-expanded="false"
-              aria-label="Toggle About dropdown"
+              aria-expanded={aboutOpen}
+              aria-label="About company sub-navigation"
             >
-              About <ChevronDown size={14} />
+              About <ChevronDown size={14} aria-hidden="true" />
             </button>
             <div className="dropdown-menu">
-              <Link href="/about">Company</Link>
-              <Link href="/csr">Sustainability</Link>
+              <Link href="/about" title="Company History & Overview">Company</Link>
+              <Link href="/csr" title="Sustainability & Corporate Social Responsibility">Sustainability</Link>
             </div>
           </div>
         </li>
 
-        <li><Link href="/contact">Contact</Link></li>
+        <li><Link href="/contact" title="Contact Trade Desk & Sales">Contact</Link></li>
       </ul>
 
       {/* Hamburger button for mobile */}
@@ -88,7 +89,7 @@ export default function Navbar() {
         onClick={() => setMobileOpen(!mobileOpen)} 
         aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
       >
-        {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+        {mobileOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
       </button>
 
       {/* Mobile Links Drawer */}
@@ -97,14 +98,14 @@ export default function Navbar() {
 
         <li className="mobile-dropdown-wrapper">
           <button className="mobile-dropdown-trigger" onClick={() => setProductsOpen(!productsOpen)}>
-            PRODUCTS <ChevronDown size={16} className={`chevron ${productsOpen ? 'open' : ''}`} />
+            PRODUCTS <ChevronDown size={16} className={`chevron ${productsOpen ? 'open' : ''}`} aria-hidden="true" />
           </button>
           <div className={`mobile-dropdown-menu ${productsOpen ? 'open' : ''}`}>
             <Link href="/products" onClick={() => setMobileOpen(false)} style={{ color: 'var(--gold-light)' }}>VIEW ALL PRODUCTS</Link>
             
             <div className="mobile-group-title">CONSUMER</div>
-            <Link href="https://jeevanrekhafoods.com/products/rice-bran-oil" target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}>JEEVAN REKHA RICE BRAN OIL</Link>
-            <Link href="https://jeevanrekhafoods.com/products/mustard-oil" target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}>JEEVAN REKHA MUSTARD OIL</Link>
+            <a href="https://jeevanrekhafoods.com/products/rice-bran-oil" target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}>JEEVAN REKHA RICE BRAN OIL</a>
+            <a href="https://jeevanrekhafoods.com/products/mustard-oil" target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}>JEEVAN REKHA MUSTARD OIL</a>
             <Link href="/products/ab-health" onClick={() => setMobileOpen(false)}>AB HEALTH EDIBLE OILS</Link>
             
             <div className="mobile-group-title">INDUSTRIAL</div>
@@ -112,7 +113,7 @@ export default function Navbar() {
             <Link href="/products/rice-bran-gums" onClick={() => setMobileOpen(false)}>RICE BRAN GUMS</Link>
             <Link href="/products/rice-bran-wax" onClick={() => setMobileOpen(false)}>RICE BRAN WAX</Link>
             <Link href="/products/rice-bran-lecithin" onClick={() => setMobileOpen(false)}>RICE BRAN LECITHIN</Link>
-            <Link href="/products/fatty-acids-spent-earth" onClick={() => setMobileOpen(false)}>FATTY ACIDS & SPENT EARTH</Link>
+            <Link href="/products/fatty-acids-spent-earth" onClick={() => setMobileOpen(false)}>FATTY ACIDS &amp; SPENT EARTH</Link>
           </div>
         </li>
 
@@ -121,7 +122,7 @@ export default function Navbar() {
 
         <li className="mobile-dropdown-wrapper">
           <button className="mobile-dropdown-trigger" onClick={() => setAboutOpen(!aboutOpen)}>
-            ABOUT <ChevronDown size={16} className={`chevron ${aboutOpen ? 'open' : ''}`} />
+            ABOUT <ChevronDown size={16} className={`chevron ${aboutOpen ? 'open' : ''}`} aria-hidden="true" />
           </button>
           <div className={`mobile-dropdown-menu ${aboutOpen ? 'open' : ''}`}>
             <Link href="/about" onClick={() => setMobileOpen(false)}>COMPANY</Link>
