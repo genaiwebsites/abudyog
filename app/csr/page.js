@@ -16,9 +16,6 @@ export default function CSRPage() {
         <div className="hero-bg" style={{ backgroundImage: "url('/hero_rice_paddy.png')", opacity: 0.25 }}></div>
         <div className="hero-accent"></div>
         <div className="hero-content">
-          <div className="hero-eyebrow">
-            <span>Social &amp; Environmental Pledge</span>
-          </div>
           <h1 className="hero-title">
             Cultivating Value. <em>Nourishing Communities.</em>
           </h1>
@@ -32,7 +29,6 @@ export default function CSRPage() {
       <section style={{ background: 'var(--cream)', padding: '100px 8%' }}>
         <div className="about-grid">
           <div className="about-text reveal" style={{ paddingLeft: '0' }}>
-            <span className="eyebrow-minimal">Corporate Citizenship</span>
             <h2 className="section-title">A Sustainable Vision for <em>Agro-Based Progress</em></h2>
             <br />
             <p className="section-body">
@@ -53,7 +49,6 @@ export default function CSRPage() {
       {/* ══ IMPACT METRICS BOARD ══ */}
       <section className="bg-green-deep text-white" style={{ padding: '80px 8%' }}>
         <div className="section-header-center reveal" style={{ marginBottom: '60px' }}>
-          <span className="eyebrow-minimal" style={{ color: 'var(--gold-light)', display: 'flex', justifyContent: 'center', marginBottom: '16px' }}>Measuring Progress</span>
           <h2 className="section-title text-white">Our Key Social <em>Metrics</em></h2>
           <p className="section-body" style={{ color: 'rgba(255,255,255,0.7)', margin: '16px auto 0 auto', maxWidth: '600px' }}>
             We back our sustainability commitments with measurable actions that positively impact livelihoods and ecosystems.
@@ -104,7 +99,6 @@ export default function CSRPage() {
       {/* ══ THE FOUR CSR PILLARS ══ */}
       <section className="bg-white" style={{ padding: '100px 8%' }}>
         <div className="section-header-center reveal" style={{ marginBottom: '60px' }}>
-          <span className="eyebrow-minimal" style={{ display: 'flex', justifyContent: 'center', marginBottom: '16px' }}>Key Commitments</span>
           <h2 className="section-title">Pillars of Our <em>CSR Charter</em></h2>
           <p className="section-body" style={{ margin: '16px auto 0 auto', maxWidth: '600px' }}>
             Our corporate citizenship activities are organized under four strategic, long-term programs.
@@ -179,7 +173,6 @@ export default function CSRPage() {
         </div>
       </section>
 
-      {/* ══ CTA BANNER ══ */}
       {/* ══ CTA BANNER ══ */}
       <CtaBanner 
         title="Join Us in Making a Sustainable Impact"
