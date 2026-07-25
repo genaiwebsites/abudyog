@@ -1,89 +1,102 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { X, ChevronLeft, ChevronRight, Eye, Grid } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, Eye } from 'lucide-react';
 
 const galleryItems = [
   {
     id: 1,
-    src: "/refinery_plant.png",
-    title: "Steam Refinery Plant",
+    src: "/ab-udyog-rice-bran-oil-refinery-plant-kolkata.png",
+    title: "Continuous Solvent Extraction Complex",
     category: "Refinery",
-    description: "Continuous physical steam refining facility with a 200 TPD processing capacity, ensuring chemical-free purification."
+    description: "300 TPD continuous solvent extraction facility processing fresh raw rice bran in Kolkata, West Bengal."
   },
   {
     id: 2,
-    src: "/quality_lab.png",
-    title: "Quality Control Laboratory",
-    category: "Laboratory",
-    description: "Fully-equipped in-house analytical lab testing every batch for Gamma Oryzanol potency, moisture, and acid values."
+    src: "/rice_bran_oil_physical_refinery_towers.png",
+    title: "Physical Distillation Towers",
+    category: "Refinery",
+    description: "High-temperature steam distillation towers purifying crude oil without caustic chemicals or acid treatments."
   },
   {
     id: 3,
-    src: "/hero_rice_paddy.png",
-    title: "Sourcing & Paddy Fields",
-    category: "Sourcing",
-    description: "Sustainably cultivated rice paddy fields across West Bengal, ensuring fresh, nutrient-rich raw rice bran."
+    src: "/ab_udyog_refinery_control_room_plc_automation.png",
+    title: "PLC Automation & Control Room",
+    category: "Infrastructure",
+    description: "Centralized DCS & PLC control room monitoring temperature, pressure, and solvent recovery across production lines."
   },
   {
     id: 4,
-    src: "/mustard_oil.png",
-    title: "Cold Press Mustard Extraction",
-    category: "Refinery",
-    description: "Premium mustard seed processing unit retaining natural pungency and essential fatty acids."
+    src: "/ab_udyog_quality_assurance_laboratory_testing.png",
+    title: "Quality Assurance Laboratory",
+    category: "Laboratory",
+    description: "In-house analytical lab testing every batch for Gamma Oryzanol potency, moisture, FFA, and fatty acid profiles."
   },
   {
     id: 5,
-    src: "/ab_health_product.png",
-    title: "Gamma Oryzanol Isolation",
-    category: "Derivatives",
-    description: "Advanced extraction setup dedicated to isolating high-purity natural antioxidant Gamma Oryzanol (AB Health)."
+    src: "/ab_udyog_physical_refinery_pumping_pipeline_manifold.png",
+    title: "Pipeline & Pumping Manifold",
+    category: "Infrastructure",
+    description: "High-grade stainless steel piping manifolds and continuous pumping systems for oil transfer and storage."
   },
   {
     id: 6,
-    src: "/dorb_feed.png",
-    title: "De-Oiled Rice Bran Processing",
-    category: "Derivatives",
-    description: "Processing feed cake into dry, high-protein DORB flakes, suitable for premium poultry and cattle feeds."
+    src: "/ab_udyog_continuous_solvent_extraction_hall.png",
+    title: "Solvent Extraction Processing Hall",
+    category: "Refinery",
+    description: "Heavy-duty counter-current extractor hall processing bran meal to recover raw rice bran oil."
   },
   {
     id: 7,
-    src: "/rice_bran_wax.png",
-    title: "Industrial Wax Refinement",
-    category: "Derivatives",
-    description: "Refinement lines for high-melting-point rice bran wax, serving cosmetics and food packaging sectors."
+    src: "/ab_udyog_kolkata_factory_refinery_entrance.png",
+    title: "Kolkata Plant Entrance & Complex",
+    category: "Infrastructure",
+    description: "Industrial facility entrance and logistics bay handling bulk tanker dispatches and raw material arrival."
   },
   {
     id: 8,
-    src: "/rice_bran_lecithin.png",
-    title: "Lecithin Separation Columns",
-    category: "Derivatives",
-    description: "Centrifugal separation columns separating pure liquid lecithin, a key emulsifier for food and pharmaceutical industries."
+    src: "/DJI_0140.jpg",
+    title: "Plant Storage Silos & Aerial Facility",
+    category: "Infrastructure",
+    description: "Aerial drone perspective of the AB Udyog refinery complex, raw material silos, and logistics grounds."
   },
   {
     id: 9,
-    src: "/premium_cooking_oil.png",
-    title: "Automated Bottling Line",
-    category: "Refinery",
-    description: "Precision automated packaging and bottling systems for Jeevan Rekha Rice Bran Oil, ensuring zero contamination."
+    src: "/bengal_rice_belt_paddy_fields_refinery_sourcing.png",
+    title: "Bengal Rice Belt Raw Sourcing",
+    category: "Sourcing",
+    description: "Integrated sourcing network collecting fresh raw rice bran directly from regional rice mills within hours of milling."
   },
   {
     id: 10,
-    src: "/healthy_cooking_bg.png",
-    title: "Farming Communities",
+    src: "/ab-udyog-jeevan-rekha-csr-community-worker-welfare-kolkata.png",
+    title: "Community Distribution & Welfare",
     category: "Sourcing",
-    description: "Partnering with local agricultural cooperatives to procure raw rice bran directly within 24 hours of milling."
+    description: "AB Udyog factory team and workers distributing vitamin-fortified edible oils to community welfare programs."
+  },
+  {
+    id: 11,
+    src: "/abu_dorb_combo.svg",
+    title: "AB DORB Animal Feed Lines",
+    category: "Derivatives",
+    description: "High-protein de-oiled rice bran (Magik, ABU Platinum, ABU Premium) for fish, poultry, and cattle feed."
+  },
+  {
+    id: 12,
+    src: "/jr_oil_combo.png",
+    title: "Jeevan Rekha Consumer Oils",
+    category: "Refinery",
+    description: "Physically refined Rice Bran Oil & cold-pressed Mustard Oil packaged for daily health and purity."
   }
 ];
 
-const categories = ["All", "Refinery", "Laboratory", "Sourcing", "Derivatives"];
+const categories = ["All", "Refinery", "Laboratory", "Infrastructure", "Sourcing", "Derivatives"];
 
 export default function Gallery() {
   const [lightboxIndex, setLightboxIndex] = useState(null);
 
   // Lightbox controls
   const openLightbox = (index) => {
-    // Find the item within the filtered list
     setLightboxIndex(index);
   };
 
@@ -119,14 +132,14 @@ export default function Gallery() {
       
       {/* ══ HERO BANNER ══ */}
       <section className="hero-subpage" style={{ position: 'relative', overflow: 'hidden' }}>
-        <div className="hero-bg" style={{ backgroundImage: "url('/healthy_cooking_bg.png')", opacity: 0.18 }}></div>
+        <div className="hero-bg" style={{ backgroundImage: "url('/ab_udyog_continuous_solvent_extraction_hall.png')", opacity: 0.18 }}></div>
         <div className="hero-accent"></div>
         <div className="hero-content" style={{ textAlign: 'center', margin: '0 auto', maxWidth: '800px' }}>
           <h1 className="hero-title" style={{ margin: '0 auto' }}>
-            Refinery &amp; Infrastructure
+            Refinery &amp; <em>Infrastructure Gallery</em>
           </h1>
           <p className="hero-subtitle" style={{ margin: '24px auto 0 auto', maxWidth: '600px' }}>
-            A photographic showcase of our steam refinery plants, testing laboratories, raw material sourcing, and specialized industrial derivative facilities.
+            A photographic showcase of our continuous solvent extraction halls, physical distillation towers, analytical testing laboratories, and raw material sourcing network.
           </p>
         </div>
       </section>
