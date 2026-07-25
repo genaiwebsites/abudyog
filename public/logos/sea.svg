@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 70" fill="none">
+  <g transform="translate(10, 5)">
+    <circle cx="30" cy="30" r="24" fill="none" stroke="#D32F2F" stroke-width="4" stroke-dasharray="8 3"/>
+    <circle cx="30" cy="30" r="18" fill="none" stroke="#D32F2F" stroke-width="2"/>
+    <path d="M 25 38 L 35 38 L 32 24 L 32 18 L 28 18 L 28 24 Z" fill="#D32F2F"/>
+    <circle cx="30" cy="34" r="3" fill="#FFFFFF"/>
+  </g>
+  <text x="75" y="34" font-family="'Archivo', sans-serif" font-weight="800" font-size="22" fill="#D32F2F" letter-spacing="0.02em">S.E.A. INDIA</text>
+  <text x="75" y="48" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="8" fill="#151816" letter-spacing="0.03em">SOLVENT EXTRACTORS' ASSOC.</text>
+</svg>

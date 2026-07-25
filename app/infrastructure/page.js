@@ -3,6 +3,7 @@ import Image from 'next/image';
 import React from 'react';
 import { Package, Factory, Flame, ShieldCheck, HeartPulse, ClipboardList, Cpu, Activity, Gauge } from 'lucide-react';
 import CtaBanner from '@/components/CtaBanner';
+import TrustBadgeSection from '@/components/TrustBadgeSection';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 export default function Manufacturing() {
@@ -205,25 +206,8 @@ export default function Manufacturing() {
         </div>
       </section>
 
-      {/* ══ RECOGNITIONS & CERTS ══ */}
-      <section className="certs-section reveal bg-white" style={{ padding: '88px 8%', textAlign: 'center' }}>
-        <div className="section-header-center" style={{ marginBottom: '24px' }}>
-          <h2 className="section-title">Industry Recognitions &amp; Certifications</h2>
-        </div>
-        <p className="section-body" style={{ margin: '0 auto 48px auto', textAlign: 'center', maxWidth: '640px' }}>
-          AB Udyog Pvt. Ltd. operates under stringent food safety regulations. Our facilities are routinely audited to maintain our standing as Eastern India's most trusted solvent extraction plant.
-        </p>
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <Image
-            className="certs-img"
-            src="/ab-udyog-certifications-iso-fssai-fssc.png"
-            alt="AB Udyog Certifications — ISO, FSSAI, FSSC 22000"
-            width={800}
-            height={200}
-            style={{ maxWidth: '100%', height: 'auto' }}
-          />
-        </div>
-      </section>
+      {/* ══ ASSOCIATIONS, CERTIFICATIONS & MARKETPLACES ══ */}
+      <TrustBadgeSection />
 
       {/* ══ LAB STANDARDS ══ */}
       <section className="pillars-section bg-cream" style={{ padding: '88px 8%' }}>

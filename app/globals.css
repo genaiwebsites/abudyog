@@ -2785,6 +2785,19 @@ h1 em, h2 em, h3 em, h4 em, em {
   .ab-split {
     grid-template-columns: 1fr !important;
   }
+  .trust-split-grid {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+  .marketplaces-col {
+    border-left: none !important;
+    padding-left: 0 !important;
+    border-top: 1px solid rgba(13, 43, 26, 0.08);
+    padding-top: 36px !important;
+  }
+  .association-divider {
+    display: none !important;
+  }
 }
 
 /* ── STRICT SWISS INDUSTRIAL SHAPE POLISH (0px corners & 0 shadows) ── */

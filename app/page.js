@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import HeroSection from '@/components/HeroSection';
 import CtaBanner from '@/components/CtaBanner';
+import TrustBadgeSection from '@/components/TrustBadgeSection';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { Wheat, Sparkles, FlaskConical, Microscope, Fuel } from 'lucide-react';
 
@@ -186,15 +187,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ══ CERTS ══ */}
-      <section className="certs-section reveal">
-        <div className="section-header-center">
-          <h2 className="section-title">Certified for <em>Global Standards</em></h2>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '48px' }}>
-          <Image className="certs-img" src="/ab-udyog-certifications-iso-fssai-fssc.png" alt="AB Udyog Certifications — ISO, FSSAI, FSSC 22000" width={800} height={200} style={{ maxWidth: '100%', height: 'auto' }} />
-        </div>
-      </section>
+      {/* ══ ASSOCIATIONS, CERTIFICATIONS & MARKETPLACES ══ */}
+      <TrustBadgeSection />
 
       {/* ══ CTA BANNER ══ */}
       <CtaBanner 

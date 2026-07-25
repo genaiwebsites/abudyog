@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 70" fill="none">
+  <g transform="translate(10, 5)">
+    <path d="M 20 18 Q 30 10 40 18 Q 50 35 40 50 Q 30 55 20 50 Q 10 35 20 18 Z" fill="#A0522D" stroke="#5D2906" stroke-width="2"/>
+    <ellipse cx="30" cy="18" rx="10" ry="4" fill="#E6C280"/>
+    <path d="M 22 26 C 26 22, 34 22, 38 26" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  <text x="68" y="34" font-family="'Cormorant Garamond', serif" font-weight="700" font-size="20" fill="#8B4513">MISHTI UDYOG</text>
+  <text x="68" y="48" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="8" fill="#4F5450" letter-spacing="0.03em">SWEETS &amp; CONFECTIONERY ASSOC.</text>
+</svg>

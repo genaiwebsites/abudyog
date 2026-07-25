@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 70" fill="none">
+  <g transform="translate(10, 10)">
+    <path d="M 10 32 C 15 20, 30 10, 45 15 C 50 10, 60 12, 65 18 C 75 12, 90 15, 95 22 C 105 18, 120 22, 125 30 C 130 25, 140 28, 145 35 C 140 42, 130 45, 120 42 C 110 48, 90 48, 80 44 C 70 48, 50 48, 40 42 C 30 46, 15 42, 10 32 Z" fill="#151816"/>
+    <circle cx="45" cy="28" r="6" fill="#FFFFFF"/>
+    <circle cx="85" cy="30" r="7" fill="#FFFFFF"/>
+    <circle cx="115" cy="33" r="5" fill="#FFFFFF"/>
+    <text x="35" y="32" font-family="'Archivo', sans-serif" font-weight="900" font-size="10" fill="#151816" letter-spacing="0.1em">MAKE IN INDIA</text>
+  </g>
+</svg>

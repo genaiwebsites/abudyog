@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 70" fill="none">
+  <path d="M 20 25 C 40 10, 80 10, 100 25" stroke="#FF9933" stroke-width="4" stroke-linecap="round"/>
+  <path d="M 20 30 C 40 15, 80 15, 100 30" stroke="#138808" stroke-width="3" stroke-linecap="round"/>
+  <text x="22" y="52" font-family="'Archivo', 'Arial Black', sans-serif" font-weight="900" font-size="34" fill="#0D2B1A" letter-spacing="-0.02em">NRAI</text>
+  <text x="22" y="62" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="7" fill="#4F5450" letter-spacing="0.05em">NATIONAL RESTAURANT ASSOCIATION OF INDIA</text>
+</svg>
