@@ -850,30 +850,32 @@ h2.section-title em,
 .product-card {
   position: relative;
   overflow: hidden;
-  background: var(--green-mid);
+  background: #000000;
   aspect-ratio: 4 / 5;
   cursor: pointer;
-  border-radius: 12px;
+  border-radius: 0px;
+  border: none !important;
+  box-shadow: none !important;
 }
 .product-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.7s ease;
-  opacity: 0.7;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 1 !important;
 }
 .product-card:hover .product-img {
-  transform: scale(1.05);
-  opacity: 0.85;
+  transform: scale(1.04);
+  opacity: 1 !important;
 }
 .product-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(13, 43, 26, 0.98) 0%, rgba(13, 43, 26, 0.85) 45%, rgba(13, 43, 26, 0.4) 75%, transparent 100%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.7) 35%, rgba(0, 0, 0, 0.15) 60%, transparent 80%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 36px 32px;
+  padding: 32px 28px;
 }
 .product-tag {
   font-size: 10px;
@@ -936,8 +938,8 @@ h2.section-title em,
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
-  border-radius: 12px;
-  border: 1px solid rgba(13, 43, 26, 0.05);
+  border-radius: 0px;
+  border: 1px solid rgba(13, 43, 26, 0.08);
 }
 .bento-card::before {
   content: '';

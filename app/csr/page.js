@@ -57,7 +57,7 @@ export default function CSRPage() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '32px' }}>
           
-          <div className="bento-card reveal" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', padding: '40px 32px', textAlign: 'center' }}>
+          <div className="bento-card reveal" style={{ background: 'rgba(255,255,255,0.03)', padding: '40px 32px', textAlign: 'center' }}>
             <div style={{ color: 'var(--gold-light)', display: 'flex', justifyContent: 'center', marginBottom: '16px' }}>
               <Users size={32} aria-hidden="true" />
             </div>
@@ -66,7 +66,7 @@ export default function CSRPage() {
             <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.6)', marginTop: '8px', lineHeight: 1.5 }}>Fair trade contracts and agricultural support services across West Bengal.</p>
           </div>
 
-          <div className="bento-card reveal" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', padding: '40px 32px', textAlign: 'center' }}>
+          <div className="bento-card reveal" style={{ background: 'rgba(255,255,255,0.03)', padding: '40px 32px', textAlign: 'center' }}>
             <div style={{ color: 'var(--gold-light)', display: 'flex', justifyContent: 'center', marginBottom: '16px' }}>
               <Leaf size={32} aria-hidden="true" />
             </div>
@@ -75,7 +75,7 @@ export default function CSRPage() {
             <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.6)', marginTop: '8px', lineHeight: 1.5 }}>Refined solely using steam distillation, protecting consumer health and the environment.</p>
           </div>
 
-          <div className="bento-card reveal" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', padding: '40px 32px', textAlign: 'center' }}>
+          <div className="bento-card reveal" style={{ background: 'rgba(255,255,255,0.03)', padding: '40px 32px', textAlign: 'center' }}>
             <div style={{ color: 'var(--gold-light)', display: 'flex', justifyContent: 'center', marginBottom: '16px' }}>
               <GraduationCap size={32} aria-hidden="true" />
             </div>
@@ -84,7 +84,7 @@ export default function CSRPage() {
             <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.6)', marginTop: '8px', lineHeight: 1.5 }}>Funding structural, sanitation, and supply upgrades in rural districts.</p>
           </div>
 
-          <div className="bento-card reveal" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', padding: '40px 32px', textAlign: 'center' }}>
+          <div className="bento-card reveal" style={{ background: 'rgba(255,255,255,0.03)', padding: '40px 32px', textAlign: 'center' }}>
             <div style={{ color: 'var(--gold-light)', display: 'flex', justifyContent: 'center', marginBottom: '16px' }}>
               <Heart size={32} aria-hidden="true" />
             </div>
