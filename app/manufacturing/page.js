@@ -254,7 +254,7 @@ export default function Manufacturing() {
 
       {/* ══ CTA BANNER ══ */}
       <CtaBanner 
-        title={<>Request a Facility Tour<br />or Quality Audit</>}
+        title="Request a Facility Tour or Quality Audit"
         subtitle="See our continuous solvent extraction and physical refining plant in action."
         btnText="Request Audit Info"
         btnLink="/contact?ref=infra"

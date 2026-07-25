@@ -112,7 +112,7 @@ export default function Products() {
 
       {/* ══ CTA BANNER ══ */}
       <CtaBanner 
-        title={<>Partner With Us for<br />Premium Rice-Bran Products</>}
+        title="Partner With Us for Premium Rice-Bran Products"
         subtitle="Delivered globally with reliability, traceability, and scale."
         btnText="Contact Our Team"
         btnLink="/contact"

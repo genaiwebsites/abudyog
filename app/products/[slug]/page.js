@@ -367,7 +367,7 @@ export default function ProductDetail({ params }) {
       {/* ══ CTA BANNER ══ */}
       {/* ══ CTA BANNER ══ */}
       <CtaBanner 
-        title={<>Request Technical Specifications<br />&amp; Samples</>}
+        title="Request Technical Specifications & Samples"
         subtitle="Get full Certificate of Analysis (COA) sheets and sample containers for your industry."
         btnText="Request Sample"
         btnLink="/contact?ref=derivative"

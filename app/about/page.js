@@ -105,7 +105,7 @@ export default function About() {
 
       {/* ══ CTA BANNER ══ */}
       <CtaBanner 
-        title={<>Let&apos;s Build a<br />Long-Term Business Partnership</>}
+        title="Let's Build a Long-Term Business Partnership"
         subtitle="Learn more about our trade terms, export capacity, and bulk delivery."
         btnText="Partner With Us"
         btnLink="/contact?ref=about"

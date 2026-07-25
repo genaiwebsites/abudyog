@@ -20,8 +20,7 @@ export default function CSRPage() {
             <span>Social &amp; Environmental Pledge</span>
           </div>
           <h1 className="hero-title">
-            Cultivating Value.<br />
-            <em>Nourishing Communities.</em>
+            Cultivating Value. <em>Nourishing Communities.</em>
           </h1>
           <p className="hero-subtitle">
             At AB Udyog Pvt. Ltd., our industrial growth is closely aligned with the welfare of local farming networks and the sustainability of regional ecosystems.
@@ -34,7 +33,7 @@ export default function CSRPage() {
         <div className="about-grid">
           <div className="about-text reveal" style={{ paddingLeft: '0' }}>
             <span className="eyebrow-minimal">Corporate Citizenship</span>
-            <h2 className="section-title">A Sustainable Vision <br />for <em>Agro-Based Progress</em></h2>
+            <h2 className="section-title">A Sustainable Vision for <em>Agro-Based Progress</em></h2>
             <br />
             <p className="section-body">
               For over forty years, our operations have integrated with the agricultural communities of West Bengal. We believe that modern manufacturing must build up, rather than deplete, the environments and societies it touches.
@@ -183,7 +182,7 @@ export default function CSRPage() {
       {/* ══ CTA BANNER ══ */}
       {/* ══ CTA BANNER ══ */}
       <CtaBanner 
-        title={<>Join Us in Making a<br />Sustainable Impact</>}
+        title="Join Us in Making a Sustainable Impact"
         subtitle="Partner with our trust for green initiatives, education, and community welfare."
         btnText="Collaborate With Us"
         btnLink="/contact?ref=csr"
