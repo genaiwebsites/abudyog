@@ -2844,6 +2844,28 @@ svg,
   filter: none !important;
 }
 
+/* ── COMPACT FLOATING TRADE DESK WIDGET ── */
+.trade-desk-btn {
+  transition: all 0.25s ease;
+}
+
+.trade-desk-btn:hover {
+  background: #1A3424 !important;
+  border-color: #E8BE5A !important;
+  color: #E8BE5A !important;
+}
+
+@media (max-width: 768px) {
+  .trade-desk-container {
+    bottom: 16px !important;
+    right: 16px !important;
+  }
+  .trade-desk-btn {
+    padding: 8px 12px !important;
+    font-size: 10px !important;
+  }
+}
+
 
 
 
