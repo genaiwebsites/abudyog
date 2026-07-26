@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-import { MapPin, Mail, Phone, Clock, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { MapPin, Mail, Phone, Clock, Building2, Factory, CheckCircle2 } from 'lucide-react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 export default function Contact() {
@@ -23,94 +23,170 @@ export default function Contact() {
     <div style={{ background: 'var(--cream)' }}>
       {/* ══ HERO BANNER ══ */}
       <section className="hero-subpage">
-        <div className="hero-bg" style={{ backgroundImage: "url('/quality_lab.png')", opacity: 0.25 }}></div>
-        <div className="hero-accent"></div>
-        <div className="hero-content" style={{ textAlign: 'center', margin: '0 auto', maxWidth: '800px' }}>
+        <div className="hero-bg" style={{ backgroundImage: "url('/ab_udyog_physical_refinery_pumping_pipeline_manifold.png')", opacity: 0.3 }} />
+        <div className="hero-accent" />
+        <div className="hero-content" style={{ textAlign: 'center', margin: '0 auto', maxWidth: '840px' }}>
+          <span style={{ 
+            color: 'var(--gold-light)', 
+            fontSize: '11px', 
+            fontWeight: 700, 
+            letterSpacing: '0.22em', 
+            textTransform: 'uppercase', 
+            display: 'inline-block',
+            marginBottom: '12px',
+            padding: '4px 14px',
+            border: '1px solid rgba(212, 175, 55, 0.4)',
+            background: 'rgba(212, 175, 55, 0.08)'
+          }}>
+            Commercial &amp; Trade Desk
+          </span>
           <h1 className="hero-title" style={{ margin: '0 auto' }}>
-            Partner for Excellence
+            B2B Trade Desk &amp; Corporate Contact
           </h1>
-          <p className="hero-subtitle" style={{ margin: '24px auto 0 auto', maxWidth: '600px' }}>
-            Whether you are looking for distributorship, bulk orders of edible oils, or premium animal feed, our team is ready to assist you.
+          <p className="hero-subtitle" style={{ margin: '20px auto 0 auto', maxWidth: '640px' }}>
+            Direct channels for bulk edible oil procurement, distributorship applications, animal feed sourcing, and refinery logistics inquiries.
           </p>
         </div>
       </section>
 
-      {/* ══ CONTACT DETAILS GRID ══ */}
-      <section style={{ padding: '56px 8%', position: 'relative', background: 'var(--cream)' }}>
-        <div className="contact-cards-container">
-          
-          <div className="contact-card-premium reveal">
-            <div className="contact-card-icon-container">
-              <MapPin size={26} aria-hidden="true" />
-            </div>
-            <h3 className="contact-card-title">Corporate Office</h3>
-            <p className="contact-card-body">
-              11A, Rawdon Street,<br />
-              Kolkata - 700017,<br />
-              West Bengal, India
-            </p>
-            <a href="https://maps.google.com/?q=AB+Udyog+11A+Rawdon+Street+Kolkata" target="_blank" rel="noopener noreferrer" className="contact-card-link">
-              Get Directions <ArrowRight size={14} aria-hidden="true" />
-            </a>
-          </div>
-
-          <div className="contact-card-premium reveal">
-            <div className="contact-card-icon-container">
-              <Mail size={26} aria-hidden="true" />
-            </div>
-            <h3 className="contact-card-title">Email Address</h3>
-            <p className="contact-card-body">
-              Connect with our procurement or corporate sales office directly via email.
-              <br /><br />
-              <strong style={{ color: 'var(--green-deep)' }}>General:</strong> info@abudyog.in
-            </p>
-            <a href="mailto:info@abudyog.in" className="contact-card-link">
-              Send Email <ArrowRight size={14} aria-hidden="true" />
-            </a>
-          </div>
-
-          <div className="contact-card-premium reveal">
-            <div className="contact-card-icon-container">
-              <Phone size={26} aria-hidden="true" />
-            </div>
-            <h3 className="contact-card-title">Phone Support</h3>
-            <p className="contact-card-body">
-              Speak directly with our distributor desks and bulk dispatch support teams.
-              <br /><br />
-              <strong style={{ color: 'var(--green-deep)' }}>Sales:</strong> +91 74392 89709
-            </p>
-            <a href="tel:+917439289709" className="contact-card-link">
-              Call Now <ArrowRight size={14} aria-hidden="true" />
-            </a>
-          </div>
-
-        </div>
-
-        {/* ══ SPLIT FORM & MAP ══ */}
-        <div className="contact-split-grid reveal">
-          
-          {/* Map Side */}
-          <div className="contact-map-card">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.5!2d88.35!3d22.54!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDMyJzI0LjAiTiA4OMKwMjEnMDAuMCJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" 
-              width="100%" 
-              height="100%" 
-              allowFullScreen="" 
-              loading="lazy"
-              title="AB Udyog Corporate Office Location Map">
-            </iframe>
-            <div className="contact-map-badge">
-              <h4 style={{ fontFamily: "var(--font-outfit), sans-serif", fontSize: '14px', fontWeight: 600, color: 'var(--green-deep)' }}>AB Udyog Pvt. Ltd.</h4>
-              <p style={{ fontSize: '12px', color: 'var(--muted)', marginTop: '4px' }}>Rawdon Street, Kolkata</p>
-            </div>
-          </div>
-
-          {/* Form Side */}
-          <div className="contact-form-card">
-            <h3 style={{ fontFamily: "var(--font-heading)", fontSize: '36px', fontWeight: 700, color: 'var(--green-deep)', marginBottom: '32px', lineHeight: 1.1 }}>
-              Send Us a Message
-            </h3>
+      {/* ══ MAIN INTEGRATED CONTACT COMMAND MATRIX ══ */}
+      <section style={{ padding: '80px 8%', background: 'var(--cream)' }}>
+        <div 
+          className="reveal"
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(420px, 1fr))',
+            gap: '40px',
+            maxWidth: '1280px',
+            margin: '0 auto',
+            alignItems: 'start'
+          }}
+        >
+          {/* ── LEFT COLUMN: CORPORATE & REFINERY DIRECTORY ── */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
             
+            {/* Corporate Directory Dossier */}
+            <div style={{ 
+              background: '#FFFFFF', 
+              border: '1px solid var(--color-border)', 
+              borderTop: '4px solid var(--green-deep)',
+              padding: '36px' 
+            }}>
+              <span style={{ color: 'var(--gold-dark)', fontSize: '10px', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', display: 'block', marginBottom: '12px' }}>
+                Official Facility Directory
+              </span>
+              <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '26px', fontWeight: 700, color: 'var(--green-deep)', marginBottom: '24px', lineHeight: 1.2 }}>
+                AB Udyog Pvt. Ltd. Operations
+              </h2>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+                {/* Corporate Office */}
+                <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+                  <div style={{ padding: '10px', background: 'rgba(18, 42, 28, 0.05)', color: 'var(--green-deep)', flexShrink: 0 }}>
+                    <Building2 size={22} aria-hidden="true" />
+                  </div>
+                  <div>
+                    <h4 style={{ fontFamily: 'var(--font-heading)', fontSize: '16px', fontWeight: 700, color: 'var(--green-deep)', marginBottom: '4px' }}>
+                      Registered Corporate Office
+                    </h4>
+                    <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: 1.6, margin: 0 }}>
+                      11A, Rawdon Street, Kolkata – 700017,<br />
+                      West Bengal, India
+                    </p>
+                  </div>
+                </div>
+
+                {/* Refinery Plant */}
+                <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', paddingTop: '20px', borderTop: '1px solid var(--color-border)' }}>
+                  <div style={{ padding: '10px', background: 'rgba(18, 42, 28, 0.05)', color: 'var(--green-deep)', flexShrink: 0 }}>
+                    <Factory size={22} aria-hidden="true" />
+                  </div>
+                  <div>
+                    <h4 style={{ fontFamily: 'var(--font-heading)', fontSize: '16px', fontWeight: 700, color: 'var(--green-deep)', marginBottom: '4px' }}>
+                      Refinery &amp; Solvent Extraction Plant
+                    </h4>
+                    <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: 1.6, margin: 0 }}>
+                      Village &amp; P.O. Par Dankuni, Hooghly – 712310,<br />
+                      West Bengal, India
+                    </p>
+                  </div>
+                </div>
+
+                {/* Direct Communications */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', paddingTop: '20px', borderTop: '1px solid var(--color-border)' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '8px' }}>
+                    <span style={{ fontSize: '13px', color: 'var(--muted)' }}>General &amp; Corporate Mail:</span>
+                    <a href="mailto:info@abudyog.in" style={{ fontFamily: 'var(--font-space-mono), monospace', fontSize: '13px', fontWeight: 700, color: 'var(--green-deep)', textDecoration: 'none' }}>
+                      info@abudyog.in
+                    </a>
+                  </div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '8px' }}>
+                    <span style={{ fontSize: '13px', color: 'var(--muted)' }}>Distributor &amp; Bulk Sales Line:</span>
+                    <a href="tel:+917439289709" style={{ fontFamily: 'var(--font-space-mono), monospace', fontSize: '13px', fontWeight: 700, color: 'var(--green-deep)', textDecoration: 'none' }}>
+                      +91 74392 89709
+                    </a>
+                  </div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '8px' }}>
+                    <span style={{ fontSize: '13px', color: 'var(--muted)' }}>Dispatch &amp; Operations Desk:</span>
+                    <span style={{ fontFamily: 'var(--font-space-mono), monospace', fontSize: '13px', fontWeight: 700, color: 'var(--gold-dark)' }}>
+                      Mon – Sat: 09:00 – 18:00 IST
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Embedded Verified Location Map */}
+            <div style={{ 
+              background: '#FFFFFF', 
+              border: '1px solid var(--color-border)', 
+              overflow: 'hidden',
+              height: '320px',
+              position: 'relative'
+            }}>
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.5!2d88.35!3d22.54!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDMyJzI0LjAiTiA4OMKwMjEnMDAuMCJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" 
+                width="100%" 
+                height="100%" 
+                allowFullScreen="" 
+                loading="lazy"
+                style={{ border: 0 }}
+                title="AB Udyog Corporate Office Location Map">
+              </iframe>
+              <div style={{
+                position: 'absolute',
+                bottom: '16px',
+                left: '16px',
+                background: 'rgba(18, 42, 28, 0.92)',
+                color: 'var(--white)',
+                padding: '10px 16px',
+                borderLeft: '4px solid var(--gold)',
+                backdropFilter: 'blur(6px)'
+              }}>
+                <h4 style={{ fontSize: '13px', fontWeight: 700, margin: 0, color: 'var(--white)' }}>Corporate HQ Map</h4>
+                <p style={{ fontSize: '11px', color: 'var(--gold-light)', margin: '2px 0 0 0' }}>11A, Rawdon Street, Kolkata</p>
+              </div>
+            </div>
+
+          </div>
+
+          {/* ── RIGHT COLUMN: FORMAL B2B TRADE DESK FORM ── */}
+          <div style={{ 
+            background: '#FFFFFF', 
+            border: '1px solid var(--color-border)', 
+            borderTop: '4px solid var(--gold)',
+            padding: '40px' 
+          }}>
+            <span style={{ color: 'var(--gold-dark)', fontSize: '10px', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', display: 'block', marginBottom: '12px' }}>
+              Commercial Desk Inquiry
+            </span>
+            <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '28px', fontWeight: 700, color: 'var(--green-deep)', marginBottom: '8px', lineHeight: 1.15 }}>
+              Submit Business Inquiry
+            </h3>
+            <p style={{ fontSize: '14px', color: 'var(--muted)', marginBottom: '32px', lineHeight: 1.6 }}>
+              Fill out the parameters below to route your inquiry directly to our sales, procurement, or export department.
+            </p>
+
             {submitted ? (
               <div
                 role="status"
@@ -118,92 +194,181 @@ export default function Contact() {
                 style={{
                   background: 'var(--green-deep)',
                   color: 'var(--white)',
-                  padding: '36px',
+                  padding: '40px 32px',
                   border: '1px solid var(--gold)',
                   textAlign: 'center',
                 }}
               >
-                <CheckCircle2 size={48} style={{ color: 'var(--gold)', marginBottom: '16px' }} />
+                <CheckCircle2 size={48} style={{ color: 'var(--gold-light)', margin: '0 auto 16px auto' }} />
                 <h4 style={{ fontFamily: 'var(--font-heading)', fontSize: '24px', fontWeight: 700, marginBottom: '8px' }}>
-                  Inquiry Received
+                  Commercial Inquiry Received
                 </h4>
-                <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '14px', lineHeight: 1.6, marginBottom: '20px' }}>
-                  Thank you for reaching out. Our procurement sales desk will review your message and contact you within 24 hours.
+                <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '14px', lineHeight: 1.65, marginBottom: '24px' }}>
+                  Thank you for your submission. Our B2B trade desk manager will review your technical specifications and contact your organization within 24 hours.
                 </p>
                 <div style={{
                   fontFamily: 'var(--font-space-mono), monospace',
                   fontSize: '12px',
-                  color: 'var(--gold)',
-                  background: 'rgba(255,255,255,0.05)',
-                  padding: '10px 16px',
-                  border: '1px solid rgba(212,175,55,0.3)',
+                  fontWeight: 700,
+                  color: 'var(--gold-light)',
+                  background: 'rgba(255,255,255,0.06)',
+                  padding: '12px 20px',
+                  border: '1px solid rgba(212,175,55,0.4)',
                   display: 'inline-block',
                 }}>
-                  Reference ID: {refId}
+                  Reference Track ID: {refId}
                 </div>
+                <br />
                 <button
                   onClick={() => setSubmitted(false)}
+                  className="btn-primary"
                   style={{
-                    display: 'block',
-                    margin: '24px auto 0',
-                    background: 'none',
+                    marginTop: '28px',
+                    background: 'transparent',
                     border: '1px solid var(--gold)',
-                    color: 'var(--gold)',
+                    color: 'var(--gold-light)',
                     fontSize: '11px',
                     fontWeight: 700,
                     letterSpacing: '0.12em',
                     textTransform: 'uppercase',
-                    padding: '10px 24px',
+                    padding: '12px 28px',
                     cursor: 'pointer',
                   }}
                 >
-                  Send Another Inquiry
+                  Submit Another Inquiry
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                 <div className="contact-form-row">
                   <div>
-                    <label htmlFor="first-name">First Name</label>
-                    <input type="text" id="first-name" placeholder="John" maxLength={80} required />
+                    <label htmlFor="full-name" style={{ fontSize: '12px', fontWeight: 600, color: 'var(--green-deep)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '6px', display: 'block' }}>
+                      Full Name *
+                    </label>
+                    <input 
+                      type="text" 
+                      id="full-name" 
+                      placeholder="e.g. Rajesh Sharma" 
+                      maxLength={100} 
+                      required 
+                      style={{ width: '100%', padding: '12px 14px', border: '1px solid var(--color-border)', background: 'var(--cream)', fontSize: '14px', outline: 'none' }}
+                    />
                   </div>
                   <div>
-                    <label htmlFor="last-name">Last Name</label>
-                    <input type="text" id="last-name" placeholder="Doe" maxLength={80} required />
+                    <label htmlFor="company-name" style={{ fontSize: '12px', fontWeight: 600, color: 'var(--green-deep)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '6px', display: 'block' }}>
+                      Company / Organization Name *
+                    </label>
+                    <input 
+                      type="text" 
+                      id="company-name" 
+                      placeholder="e.g. Apex Foods Pvt. Ltd." 
+                      maxLength={120} 
+                      required 
+                      style={{ width: '100%', padding: '12px 14px', border: '1px solid var(--color-border)', background: 'var(--cream)', fontSize: '14px', outline: 'none' }}
+                    />
                   </div>
                 </div>
+
                 <div className="contact-form-row">
                   <div>
-                    <label htmlFor="email-address">Email Address</label>
-                    <input type="email" id="email-address" placeholder="john.doe@example.com" maxLength={120} required />
+                    <label htmlFor="email-address" style={{ fontSize: '12px', fontWeight: 600, color: 'var(--green-deep)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '6px', display: 'block' }}>
+                      Corporate Email Address *
+                    </label>
+                    <input 
+                      type="email" 
+                      id="email-address" 
+                      placeholder="name@company.com" 
+                      maxLength={120} 
+                      required 
+                      style={{ width: '100%', padding: '12px 14px', border: '1px solid var(--color-border)', background: 'var(--cream)', fontSize: '14px', outline: 'none' }}
+                    />
                   </div>
                   <div>
-                    <label htmlFor="phone-number">Phone Number</label>
-                    <input type="tel" id="phone-number" placeholder="+91 98765 43210" maxLength={25} pattern="[\+]?[0-9\s\-]+" required />
+                    <label htmlFor="phone-number" style={{ fontSize: '12px', fontWeight: 600, color: 'var(--green-deep)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '6px', display: 'block' }}>
+                      Phone / Mobile Number *
+                    </label>
+                    <input 
+                      type="tel" 
+                      id="phone-number" 
+                      placeholder="+91 98765 43210" 
+                      maxLength={25} 
+                      pattern="[\+]?[0-9\s\-]+" 
+                      required 
+                      style={{ width: '100%', padding: '12px 14px', border: '1px solid var(--color-border)', background: 'var(--cream)', fontSize: '14px', outline: 'none' }}
+                    />
                   </div>
                 </div>
+
                 <div>
-                  <label htmlFor="inquiry-type">Inquiry Type</label>
-                  <select id="inquiry-type" defaultValue="" required>
-                    <option value="" disabled>Select Inquiry Type</option>
-                    <option value="distributorship">Distributorship</option>
-                    <option value="bulk-order">Bulk Edible Oil Order</option>
-                    <option value="animal-feed">Animal Feed (DORB)</option>
-                    <option value="other">Other Inquiry</option>
+                  <label htmlFor="product-category" style={{ fontSize: '12px', fontWeight: 600, color: 'var(--green-deep)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '6px', display: 'block' }}>
+                    Product Interest Category *
+                  </label>
+                  <select 
+                    id="product-category" 
+                    defaultValue="" 
+                    required
+                    style={{ width: '100%', padding: '12px 14px', border: '1px solid var(--color-border)', background: 'var(--cream)', fontSize: '14px', outline: 'none' }}
+                  >
+                    <option value="" disabled>Select Product Line / Inquiry Type</option>
+                    <option value="ab-health">AB Health Edible Oils (Soyabean &amp; Rice Bran Oil)</option>
+                    <option value="jeevan-rekha">Jeevan Rekha Consumer Line</option>
+                    <option value="ab-dorb">AB DORB Animal Feed (Magik / Platinum / Premium)</option>
+                    <option value="industrial-wax">Rice Bran Wax</option>
+                    <option value="industrial-gums">Rice Bran Gums</option>
+                    <option value="industrial-lecithin">Rice Bran Lecithin</option>
+                    <option value="industrial-fatty-acid">Rice Bran Fatty Acid</option>
+                    <option value="industrial-spent-earth">Spent Bleaching Earth</option>
+                    <option value="distributorship">Distributorship / Agency Application</option>
                   </select>
                 </div>
+
                 <div>
-                  <label htmlFor="message-body">Your Message</label>
-                  <textarea id="message-body" placeholder="Describe your inquiry details..." rows={4} maxLength={2000} required></textarea>
+                  <label htmlFor="order-volume" style={{ fontSize: '12px', fontWeight: 600, color: 'var(--green-deep)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '6px', display: 'block' }}>
+                    Estimated Order Volume / Dispatch Requirements
+                  </label>
+                  <input 
+                    type="text" 
+                    id="order-volume" 
+                    placeholder="e.g. 20 Metric Tons / Tanker Load / Retail Cases" 
+                    maxLength={100} 
+                    style={{ width: '100%', padding: '12px 14px', border: '1px solid var(--color-border)', background: 'var(--cream)', fontSize: '14px', outline: 'none' }}
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="message-body" style={{ fontSize: '12px', fontWeight: 600, color: 'var(--green-deep)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '6px', display: 'block' }}>
+                    Commercial Details &amp; Specifications *
+                  </label>
+                  <textarea 
+                    id="message-body" 
+                    placeholder="Provide details regarding target delivery date, quality parameters, or packaging preferences..." 
+                    rows={4} 
+                    maxLength={2000} 
+                    required
+                    style={{ width: '100%', padding: '12px 14px', border: '1px solid var(--color-border)', background: 'var(--cream)', fontSize: '14px', outline: 'none' }}
+                  ></textarea>
                 </div>
                 
                 <button
                   type="submit"
                   disabled={loading}
                   className="btn-primary"
-                  style={{ marginTop: '8px', padding: '18px 32px', fontSize: '13px', width: '100%', textAlign: 'center', cursor: 'pointer' }}
+                  style={{ 
+                    marginTop: '8px', 
+                    padding: '16px 32px', 
+                    fontSize: '12px', 
+                    fontWeight: 700,
+                    letterSpacing: '0.14em',
+                    textTransform: 'uppercase',
+                    width: '100%', 
+                    textAlign: 'center', 
+                    cursor: 'pointer',
+                    background: 'var(--green-deep)',
+                    color: 'var(--white)',
+                    border: 'none'
+                  }}
                 >
-                  {loading ? 'Submitting Inquiry...' : 'Submit Inquiry'}
+                  {loading ? 'Submitting Commercial Inquiry...' : 'Submit Commercial Inquiry'}
                 </button>
               </form>
             )}
@@ -214,3 +379,4 @@ export default function Contact() {
     </div>
   );
 }
+
