@@ -46,6 +46,7 @@ export default function Footer() {
         <div className="footer-col">
           <h4>Company</h4>
           <ul>
+            <li><Link href="/products" title="Explore All AB Udyog Consumer & Industrial Products">All Products</Link></li>
             <li><Link href="/about" title="Company Overview & History">Company Story</Link></li>
             <li><Link href="/sustainability" title="Sustainability & ESG Pledge">Sustainability &amp; ESG</Link></li>
             <li><Link href="/infrastructure" title="Solvent Extraction & Physical Refinery Infrastructure">Plant Infrastructure</Link></li>
@@ -70,7 +71,8 @@ export default function Footer() {
             <li><Link href="/products/rice-bran-wax" title="Refined Rice Bran Wax">Premium Rice Bran Wax</Link></li>
             <li><Link href="/products/rice-bran-gums" title="Emulsifying Rice Bran Gums">Stabilized Rice Bran Gums</Link></li>
             <li><Link href="/products/rice-bran-lecithin" title="Natural Rice Bran Lecithin">Rice Bran Lecithin</Link></li>
-            <li><Link href="/products/fatty-acids-spent-earth" title="Industrial Fatty Acids & Spent Earth">Industrial Fatty Acids &amp; Spent Earth</Link></li>
+            <li><Link href="/products/rice-bran-fatty-acid" title="Distilled Rice Bran Fatty Acid">Rice Bran Fatty Acid</Link></li>
+            <li><Link href="/products/spent-bleaching-earth" title="Eco-Friendly Spent Bleaching Earth">Spent Bleaching Earth</Link></li>
           </ul>
         </div>
       </div>

@@ -19,9 +19,17 @@ const productData = {
     title: 'Rice Bran Lecithin',
     desc: 'Premium natural emulsifier and antioxidant.',
   },
+  'rice-bran-fatty-acid': {
+    title: 'Rice Bran Fatty Acid',
+    desc: 'Distilled semi-solid fatty acid distillate for soap, oleochemicals, and biofuel manufacturing.',
+  },
+  'spent-bleaching-earth': {
+    title: 'Spent Bleaching Earth',
+    desc: 'Eco-friendly clay residue enriched with residual oil for cement kiln auxiliary fuel and soil conditioning.',
+  },
   'fatty-acids-spent-earth': {
-    title: 'Fatty Acids & Spent Earth',
-    desc: 'Eco-friendly derivatives for industrial use.',
+    title: 'Rice Bran Fatty Acid',
+    desc: 'Distilled semi-solid fatty acid distillate for industrial applications.',
   }
 };
 

@@ -69,7 +69,7 @@ const productData = {
     shortName: 'Bran Wax',
     desc: 'Hard, crystalline natural vegetable wax.',
     fullDesc: 'Rice Bran Wax is a by-product of rice bran oil production. It is a naturally hard, crystalline vegetable wax. Crude rice bran oil is first gently heated and then cooled until the waxy fraction solidifies, allowing it to be filtered out using vegetable ethanol. Widely utilized in cosmetics, skincare, and hair care, formulators view it as an excellent thickener, binder, plasticizer, and gelling agent that restores moisture, softens hair, and provides a protective skin-conditioning barrier.',
-    image: '/rice_bran_wax.png',
+    image: '/rice_bran_wax_product.png',
     features: ['High Melting Point (76-82°C)', 'Non-sticky & Hard', 'Excellent Binding Agent', 'Restores Moisture & Softness'],
     applications: ['Cosmetics & Lipsticks', 'Skincare & Conditioning', 'Hair Gels & Softeners', 'Fruit Coatings & Polishes'],
     specifications: [
@@ -86,7 +86,7 @@ const productData = {
     shortName: 'Bran Gums',
     desc: 'Natural emulsifier derived during oil degumming.',
     fullDesc: 'Rice Bran Gums consist of complex phospholipids and glycolipids recovered during the early hydration and degumming stages of vegetable oil refining. Widely used as a natural emulsifying, stabilizing, and binding agent, they are essential for feed binders, industrial emulsions, and textile sizing.',
-    image: '/quality_lab.png',
+    image: '/rice_bran_gums_product.png',
     features: ['Natural Emulsification', 'High Viscosity Binder', 'Active Phosphatides', 'Stabilizing Agent'],
     applications: ['Animal Feed Binder', 'Industrial Emulsions', 'Textile Sizing', 'Leather Processing'],
     specifications: [
@@ -103,7 +103,7 @@ const productData = {
     shortName: 'Lecithin',
     desc: 'Premium natural emulsifier and antioxidant.',
     fullDesc: 'Rice Bran Lecithin exhibits an excellent, well-balanced fatty acid profile and contains key micronutrients and natural antioxidants. It serves as a premium, appealing alternative for manufacturers seeking non-genetically modified (non-GMO) lecithin over soybean and sunflower alternatives. Highly valuable for cosmetic, nutraceutical, and personal care formulations due to its high unsaponifiable matter.',
-    image: '/rice_bran_lecithin.png',
+    image: '/rice_bran_lecithin_product.png',
     features: ['Non-GMO Alternative', 'Micronutrient Rich', 'Excellent Emulsifier', 'High Unsaponifiables'],
     applications: ['Bakery & Confectionery', 'Chocolate Manufacturing', 'Nutraceuticals', 'Personal Care & Cosmetics'],
     specifications: [
@@ -113,37 +113,47 @@ const productData = {
       { parameter: 'Acid Value', value: '50' }
     ]
   },
-  'fatty-acids-spent-earth': {
-    title: 'Fatty Acids & Spent Earth',
-    shortName: 'Industrial Derivatives',
-    desc: 'Eco-friendly derivatives for industrial use.',
-    fullDesc: 'Our physical steam refining and bleaching processes yield valuable industrial-grade circular derivatives. Rice Bran Fatty Acid is a distilled semi-solid distillate widely used in soaps and bio-diesel. Spent Bleaching Earth is the safe clay residue from the activated earth decolorization step, widely reused as fuel in boilers, cement manufacturing, and soil conditioners.',
-    image: '/refinery_plant.png',
-    features: ['High Fatty Matter', 'Zero Waste Circularity', 'Eco-Safe Disposal', 'Alternative Boiler Fuel'],
-    applications: ['Soap Manufacturing', 'Bio-Diesel Production', 'Cement Manufacturing', 'Boiler Fuel & Soil Conditioning'],
-    subproducts: [
-      {
-        name: 'Rice Bran Fatty Acid',
-        specs: [
-          { parameter: 'Colour & Appearance', value: 'White and semi-solid' },
-          { parameter: 'Acid Value (mg KOH/gm)', value: '180 - 185' },
-          { parameter: 'Saponification Value (mg KOH/gm)', value: '192 – 198' },
-          { parameter: 'Moisture & Impurities (% wt)', value: '0.2 Max' },
-          { parameter: 'Total Fatty Matter (% wt)', value: '99.5 Max' },
-          { parameter: 'Other Impurities', value: 'Free from mineral acids and extraneous matter' }
-        ]
-      },
-      {
-        name: 'Rice Bran Spent Earth',
-        specs: [
-          { parameter: 'Moisture', value: '10.0%' },
-          { parameter: 'Oil Content', value: '20.0%' },
-          { parameter: 'Properties', value: 'Safe for landfills, cement manufacturing, or as a fuel in boilers' }
-        ]
-      }
+  'rice-bran-fatty-acid': {
+    title: 'Rice Bran Fatty Acid',
+    shortName: 'Fatty Acid',
+    desc: 'Distilled semi-solid fatty acid distillate for soap, oleochemicals, and biofuel manufacturing.',
+    fullDesc: 'Rice Bran Fatty Acid is a high-grade circular by-product obtained during the physical steam refining and deodorization of crude rice bran oil. High in total fatty matter and free from mineral acids, it serves as an essential raw material for soap manufacturing, oleochemical formulations, cosmetics, and bio-diesel production.',
+    image: '/rice_bran_fatty_acid_product.png',
+    features: ['High Total Fatty Matter (99.5% Min)', 'Zero Mineral Acids', 'Superior Saponification Value', 'Distilled Semi-Solid Form'],
+    applications: ['Soap Manufacturing & Detergents', 'Bio-Diesel Feedstock', 'Oleochemical Formulations', 'Industrial Lubricants & Resins'],
+    specifications: [
+      { parameter: 'Colour & Appearance', value: 'White to off-white semi-solid' },
+      { parameter: 'Acid Value (mg KOH/gm)', value: '180 - 185' },
+      { parameter: 'Saponification Value (mg KOH/gm)', value: '192 – 198' },
+      { parameter: 'Moisture & Impurities (% wt)', value: '0.2% Max' },
+      { parameter: 'Total Fatty Matter (% wt)', value: '99.5% Min' },
+      { parameter: 'Other Impurities', value: 'Free from mineral acids and extraneous matter' }
+    ]
+  },
+  'spent-bleaching-earth': {
+    title: 'Spent Bleaching Earth',
+    shortName: 'Spent Earth',
+    desc: 'Eco-friendly clay residue enriched with residual oil for cement kiln auxiliary fuel and soil conditioning.',
+    fullDesc: 'Spent Bleaching Earth (SBE) is an eco-friendly clay by-product generated during the activated earth bleaching and decolorization stage of crude rice bran oil refining. Containing 20% residual oil content, it serves as a high-calorific auxiliary fuel for cement kilns, industrial boilers, clay brick manufacturing, and agricultural soil conditioning.',
+    image: '/spent_bleaching_earth_product.png',
+    features: ['20% Residual Oil Content', 'High Calorific Eco-Fuel', 'Zero Waste Circular Derivative', 'Landfill Safe & Soil Enriched'],
+    applications: ['Cement Kiln Auxiliary Fuel', 'Industrial Boiler Energy Sourcing', 'Clay Brick Manufacturing', 'Agricultural Soil Conditioning'],
+    specifications: [
+      { parameter: 'Moisture Content', value: '10.0% Max' },
+      { parameter: 'Residual Oil Content', value: '20.0% Min' },
+      { parameter: 'Physical Texture', value: 'Fine Clay Powder / Granules' },
+      { parameter: 'Environmental Safety', value: 'Safe for landfills, cement manufacturing, or boiler fuel' },
+      { parameter: 'Calorific Value', value: 'High energy value from retained vegetable oil' }
     ]
   }
 };
+
+// Aliases for alternate slug routes & backwards compatibility
+productData['fatty-acid'] = productData['rice-bran-fatty-acid'];
+productData['fatty-acids'] = productData['rice-bran-fatty-acid'];
+productData['spent-earth'] = productData['spent-bleaching-earth'];
+productData['fatty-acids-spent-earth'] = productData['rice-bran-fatty-acid'];
+
 
 export default function ProductDetail({ params }) {
   const unwrappedParams = use(params);

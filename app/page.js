@@ -89,7 +89,7 @@ export default function Home() {
           <Link href="https://jeevanrekhafoods.com/products" target="_blank" rel="noopener noreferrer" className="product-card reveal">
             <Image className="product-img" src="/jr_oil_combo.png" alt="Jeevan Rekha Rice Bran & Mustard Oil" width={600} height={800} style={{ objectFit: 'cover' }} />
             <div className="product-overlay">
-              <div className="product-tag">Jeevan Rekha Foods</div>
+              <div className="product-tag">Jeevan Rekha</div>
               <div className="product-name">Rice Bran &amp; Mustard Oil</div>
               <div className="product-desc">Physically refined Rice Bran Oil &amp; cold-pressed Mustard Oil — crafted for purity, flavor, and daily health.</div>
               <span className="product-link">Explore Foods</span>
@@ -105,7 +105,7 @@ export default function Home() {
             </div>
           </Link>
           <Link href="/products" className="product-card reveal">
-            <Image className="product-img" src="/rice_bran_wax.png" alt="Derivatives" width={600} height={800} style={{ objectFit: 'cover' }} />
+            <Image className="product-img" src="/rice_bran_wax_product.png" alt="Industrial Bran Derivatives" width={600} height={800} style={{ objectFit: 'cover' }} />
             <div className="product-overlay">
               <div className="product-tag">Industrial</div>
               <div className="product-name">Bran Derivatives</div>
@@ -116,45 +116,193 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ══ BYPRODUCTS BENTO ══ */}
-      <section className="bento-section" id="byproducts">
-        <h2 className="section-title reveal">Commercial-Grade <em>Bran Derivatives</em></h2>
-        <div className="bento-grid">
-          <div className="bento-card featured reveal">
-            <div className="bento-icon-container">
-              <Wheat size={24} aria-hidden="true" />
-            </div>
-            <div className="bento-title">De-Oiled Rice Bran (DORB)</div>
-            <p className="bento-body" style={{ marginTop: '12px', maxWidth: '480px' }}>Magik, ABU Platinum &amp; ABU Premium DORB — protein-rich, low-fat nutrition designed to enhance growth, feed conversion, and overall performance for fish, pig, poultry, and cattle. Trusted by farmers, season after season.</p>
-          </div>
-          <div className="bento-card reveal">
-            <div className="bento-icon-container">
-              <Sparkles size={24} aria-hidden="true" />
-            </div>
-            <div className="bento-title">Rice Bran Wax</div>
-            <p className="bento-body">Premium natural wax used in cosmetics, polishes, and food applications — offering excellent binding and structural properties.</p>
-          </div>
-          <div className="bento-card reveal">
-            <div className="bento-icon-container">
-              <FlaskConical size={24} aria-hidden="true" />
-            </div>
-            <div className="bento-title">Rice Bran Gums</div>
-            <p className="bento-body">Versatile emulsifying and stabilizing agent widely utilized in the food and pharmaceutical industries.</p>
-          </div>
-          <div className="bento-card reveal">
-            <div className="bento-icon-container">
-              <Microscope size={24} aria-hidden="true" />
-            </div>
-            <div className="bento-title">Rice Bran Lecithin</div>
-            <p className="bento-body">Natural emulsifier and antioxidant ideal for bakery, confectionery, and nutraceutical formulations.</p>
-          </div>
-          <div className="bento-card reveal">
-            <div className="bento-icon-container">
-              <Fuel size={24} aria-hidden="true" />
-            </div>
-            <div className="bento-title">Fatty Acids &amp; Spent Earth</div>
-            <p className="bento-body">High-quality fatty acid extracts and eco-friendly spent earth for industrial reuse and biofuel production.</p>
-          </div>
+      {/* ══ CIRCULAR VALUE CHAIN — INDUSTRIAL DERIVATIVES MATRIX ══ */}
+      <section 
+        id="byproducts"
+        style={{ 
+          background: 'var(--cream)', 
+          padding: '96px 8%',
+          borderTop: '1px solid var(--color-border)',
+          borderBottom: '1px solid var(--color-border)'
+        }}
+      >
+        <div className="section-header-center reveal" style={{ marginBottom: '56px', textAlign: 'center' }}>
+          <span style={{ 
+            color: 'var(--gold-dark)', 
+            fontSize: '11px', 
+            fontWeight: 700, 
+            letterSpacing: '0.22em', 
+            textTransform: 'uppercase', 
+            display: 'inline-block',
+            marginBottom: '12px',
+            padding: '4px 14px',
+            border: '1px solid rgba(212, 175, 55, 0.4)',
+            background: 'rgba(212, 175, 55, 0.08)'
+          }}>
+            Zero-Waste Circular Value Chain
+          </span>
+          <h2 className="section-title" style={{ color: 'var(--green-deep)', maxWidth: '820px', margin: '0 auto' }}>
+            Commercial-Grade <em>Bran Derivatives &amp; Feeds</em>
+          </h2>
+          <p className="section-body" style={{ color: 'var(--muted)', margin: '16px auto 0 auto', maxWidth: '640px', textAlign: 'center' }}>
+            High-purity bio-nutrients and technical by-products recovered during physical refining and continuous solvent extraction.
+          </p>
+        </div>
+
+        {/* 6-Card Symmetrical Grid — Crisp White Cards, Zero Image Overlays */}
+        <div 
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gap: '24px',
+            maxWidth: '1280px',
+            margin: '0 auto'
+          }}
+        >
+          {[
+            {
+              slug: 'de-oiled-rice-bran',
+              title: 'De-Oiled Rice Bran (DORB)',
+              category: 'ANIMAL NUTRITION',
+              metric: '16.0% MIN PROTEIN',
+              desc: 'Magik, ABU Platinum & Premium DORB — protein-rich feed enhancing growth for aquaculture, poultry, and cattle.',
+              image: '/abu_dorb_combo.svg',
+              link: '/products/de-oiled-rice-bran'
+            },
+            {
+              slug: 'rice-bran-wax',
+              title: 'Rice Bran Wax',
+              category: 'COSMETICS & POLISHES',
+              metric: '76°C MELTING POINT',
+              desc: 'Hard, crystalline natural vegetable wax offering binding, thickener, and moisture barrier properties.',
+              image: '/rice_bran_wax_product.png',
+              link: '/products/rice-bran-wax'
+            },
+            {
+              slug: 'rice-bran-gums',
+              title: 'Rice Bran Gums',
+              category: 'INDUSTRIAL EMULSIONS',
+              metric: 'ACTIVE PHOSPHATIDES',
+              desc: 'Versatile emulsifying and stabilizing phosphatide agent for animal feed binders and industrial sizing.',
+              image: '/rice_bran_gums_product.png',
+              link: '/products/rice-bran-gums'
+            },
+            {
+              slug: 'rice-bran-lecithin',
+              title: 'Rice Bran Lecithin',
+              category: 'FOOD & NUTRACEUTICALS',
+              metric: 'NON-GMO ALTERNATIVE',
+              desc: 'Natural non-GMO emulsifier and antioxidant ideal for bakery, confectionery, and personal care.',
+              image: '/rice_bran_lecithin_product.png',
+              link: '/products/rice-bran-lecithin'
+            },
+            {
+              slug: 'rice-bran-fatty-acid',
+              title: 'Rice Bran Fatty Acid',
+              category: 'BIOFUELS & SOAPS',
+              metric: '99.5% FATTY MATTER',
+              desc: 'High-purity distilled semi-solid fatty acid distillate for soap manufacturing and bio-diesel feedstock.',
+              image: '/rice_bran_fatty_acid_product.png',
+              link: '/products/rice-bran-fatty-acid'
+            },
+            {
+              slug: 'spent-bleaching-earth',
+              title: 'Spent Bleaching Earth',
+              category: 'KILN FUEL & SOIL',
+              metric: '20.0% RESIDUAL OIL',
+              desc: 'Eco-friendly clay residue enriched with residual oil for high-calorific cement kiln fuel and soil conditioning.',
+              image: '/spent_bleaching_earth_product.png',
+              link: '/products/spent-bleaching-earth'
+            }
+          ].map((item, idx) => (
+            <Link
+              key={idx}
+              href={item.link}
+              className="reveal"
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                background: '#FFFFFF',
+                border: '1px solid var(--color-border)',
+                textDecoration: 'none',
+                overflow: 'hidden',
+                transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
+                position: 'relative'
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.borderColor = 'var(--gold-dark)';
+                e.currentTarget.style.transform = 'translateY(-6px)';
+                e.currentTarget.style.boxShadow = '0 16px 36px rgba(18, 42, 28, 0.12)';
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.borderColor = 'var(--color-border)';
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = 'none';
+              }}
+            >
+              {/* Product Thumbnail Banner — Pure Crisp Image, Zero Overlay */}
+              <div style={{ position: 'relative', width: '100%', height: '190px', background: '#F9F9F6', overflow: 'hidden' }}>
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  style={{ objectFit: 'cover', transition: 'transform 0.6s ease' }}
+                />
+                
+                {/* Technical Metric pill */}
+                <div style={{
+                  position: 'absolute',
+                  top: '12px',
+                  right: '12px',
+                  background: 'rgba(18, 42, 28, 0.92)',
+                  backdropFilter: 'blur(6px)',
+                  border: '1px solid var(--gold)',
+                  padding: '4px 10px',
+                  color: 'var(--gold-light)',
+                  fontFamily: 'var(--font-mono, monospace)',
+                  fontSize: '10px',
+                  fontWeight: 700,
+                  letterSpacing: '0.1em'
+                }}>
+                  {item.metric}
+                </div>
+              </div>
+
+              {/* Card Body */}
+              <div style={{ padding: '24px', display: 'flex', flexDirection: 'column', flexGrow: 1, justifyContent: 'space-between' }}>
+                <div>
+                  <div style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.15em', color: 'var(--gold-dark)', textTransform: 'uppercase', marginBottom: '8px' }}>
+                    {item.category}
+                  </div>
+                  <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '20px', fontWeight: 700, color: 'var(--green-deep)', marginBottom: '10px', lineHeight: 1.25 }}>
+                    {item.title}
+                  </h3>
+                  <p style={{ fontSize: '13.5px', color: 'var(--muted)', lineHeight: 1.65, margin: 0 }}>
+                    {item.desc}
+                  </p>
+                </div>
+
+                {/* Card CTA Link Footer */}
+                <div style={{
+                  marginTop: '20px',
+                  paddingTop: '16px',
+                  borderTop: '1px solid var(--color-border)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justify: 'space-between',
+                  color: 'var(--green-deep)',
+                  fontSize: '11px',
+                  fontWeight: 700,
+                  letterSpacing: '0.12em',
+                  textTransform: 'uppercase'
+                }}>
+                  <span>Technical Specs &amp; COA</span>
+                  <span style={{ fontSize: '14px', color: 'var(--gold-dark)', transition: 'transform 0.25s ease' }}>→</span>
+                </div>
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
 

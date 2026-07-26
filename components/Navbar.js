@@ -52,7 +52,8 @@ export default function Navbar() {
                 <Link href="/products/rice-bran-gums" title="Rice Bran Gums">Rice Bran Gums</Link>
                 <Link href="/products/rice-bran-wax" title="Rice Bran Wax">Rice Bran Wax</Link>
                 <Link href="/products/rice-bran-lecithin" title="Rice Bran Lecithin">Rice Bran Lecithin</Link>
-                <Link href="/products/fatty-acids-spent-earth" title="Fatty Acids & Spent Earth">Fatty Acids &amp; Spent Earth</Link>
+                <Link href="/products/rice-bran-fatty-acid" title="Rice Bran Fatty Acid">Rice Bran Fatty Acid</Link>
+                <Link href="/products/spent-bleaching-earth" title="Spent Bleaching Earth">Spent Bleaching Earth</Link>
               </div>
             </div>
           </div>
@@ -112,7 +113,8 @@ export default function Navbar() {
             <Link href="/products/rice-bran-gums" onClick={() => setMobileOpen(false)}>RICE BRAN GUMS</Link>
             <Link href="/products/rice-bran-wax" onClick={() => setMobileOpen(false)}>RICE BRAN WAX</Link>
             <Link href="/products/rice-bran-lecithin" onClick={() => setMobileOpen(false)}>RICE BRAN LECITHIN</Link>
-            <Link href="/products/fatty-acids-spent-earth" onClick={() => setMobileOpen(false)}>FATTY ACIDS &amp; SPENT EARTH</Link>
+            <Link href="/products/rice-bran-fatty-acid" onClick={() => setMobileOpen(false)}>RICE BRAN FATTY ACID</Link>
+            <Link href="/products/spent-bleaching-earth" onClick={() => setMobileOpen(false)}>SPENT BLEACHING EARTH</Link>
           </div>
         </li>
 
