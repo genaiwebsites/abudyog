@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Sparkles, FlaskConical, Microscope, Fuel } from 'lucide-react';
 import CtaBanner from '@/components/CtaBanner';
+import ProductsHeroSlider from '@/components/ProductsHeroSlider';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 export default function Products() {
@@ -11,19 +12,8 @@ export default function Products() {
 
   return (
     <div>
-      {/* ══ HERO BANNER ══ */}
-      <section className="hero-subpage">
-        <div className="hero-bg" style={{ backgroundImage: "url('/ab-udyog-plant-machinery-refinery.jpg')", opacity: 0.25 }}></div>
-        <div className="hero-accent"></div>
-        <div className="hero-content" style={{ textAlign: 'center', margin: '0 auto' }}>
-          <h1 className="hero-title" style={{ margin: '0 auto' }}>
-            From Field to Table, Purely Refined
-          </h1>
-          <p className="hero-subtitle" style={{ margin: '20px auto 0', maxWidth: '680px' }}>
-            Four distinct product lines spanning flagship consumer edible oils, traditional consumer foods, high-protein animal nutrition, and commercial-grade industrial derivatives.
-          </p>
-        </div>
-      </section>
+      {/* ══ HERO BANNER CAROUSEL ══ */}
+      <ProductsHeroSlider />
 
       {/* ══ 01. FLAGSHIP CONSUMER EDIBLE OILS — JEEVAN REKHA ══ */}
       <section style={{ background: 'var(--cream)', padding: '80px 8%' }}>

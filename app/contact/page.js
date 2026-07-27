@@ -106,7 +106,7 @@ export default function Contact() {
                       Refinery &amp; Solvent Extraction Plant
                     </h4>
                     <p style={{ fontSize: '13.5px', color: 'var(--muted)', lineHeight: 1.5, margin: 0 }}>
-                      Village &amp; P.O. Par Dankuni, Hooghly – 712310,<br />
+                      Uchalan, Purba Burdwan – 713427,<br />
                       West Bengal, India
                     </p>
                   </div>
