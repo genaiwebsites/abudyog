@@ -56,40 +56,40 @@ export default function Contact() {
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(420px, 1fr))',
-            gap: '40px',
+            gap: '32px',
             maxWidth: '1280px',
             margin: '0 auto',
-            alignItems: 'start'
+            alignItems: 'stretch'
           }}
         >
           {/* ── LEFT COLUMN: CORPORATE & REFINERY DIRECTORY ── */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', height: '100%' }}>
             
             {/* Corporate Directory Dossier */}
             <div style={{ 
               background: '#FFFFFF', 
               border: '1px solid var(--color-border)', 
               borderTop: '4px solid var(--green-deep)',
-              padding: '36px' 
+              padding: '32px' 
             }}>
               <span style={{ color: 'var(--gold-dark)', fontSize: '10px', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', display: 'block', marginBottom: '12px' }}>
                 Official Facility Directory
               </span>
-              <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '26px', fontWeight: 700, color: 'var(--green-deep)', marginBottom: '24px', lineHeight: 1.2 }}>
+              <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '24px', fontWeight: 700, color: 'var(--green-deep)', marginBottom: '20px', lineHeight: 1.2 }}>
                 AB Udyog Pvt. Ltd. Operations
               </h2>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                 {/* Corporate Office */}
-                <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
-                  <div style={{ padding: '10px', background: 'rgba(18, 42, 28, 0.05)', color: 'var(--green-deep)', flexShrink: 0 }}>
-                    <Building2 size={22} aria-hidden="true" />
+                <div style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                  <div style={{ padding: '8px', background: 'rgba(18, 42, 28, 0.05)', color: 'var(--green-deep)', flexShrink: 0 }}>
+                    <Building2 size={20} aria-hidden="true" />
                   </div>
                   <div>
-                    <h4 style={{ fontFamily: 'var(--font-heading)', fontSize: '16px', fontWeight: 700, color: 'var(--green-deep)', marginBottom: '4px' }}>
+                    <h4 style={{ fontFamily: 'var(--font-heading)', fontSize: '15px', fontWeight: 700, color: 'var(--green-deep)', marginBottom: '3px' }}>
                       Registered Corporate Office
                     </h4>
-                    <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: 1.6, margin: 0 }}>
+                    <p style={{ fontSize: '13.5px', color: 'var(--muted)', lineHeight: 1.5, margin: 0 }}>
                       11A, Rawdon Street, Kolkata – 700017,<br />
                       West Bengal, India
                     </p>
@@ -97,15 +97,15 @@ export default function Contact() {
                 </div>
 
                 {/* Refinery Plant */}
-                <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', paddingTop: '20px', borderTop: '1px solid var(--color-border)' }}>
-                  <div style={{ padding: '10px', background: 'rgba(18, 42, 28, 0.05)', color: 'var(--green-deep)', flexShrink: 0 }}>
-                    <Factory size={22} aria-hidden="true" />
+                <div style={{ display: 'flex', gap: '14px', alignItems: 'flex-start', paddingTop: '16px', borderTop: '1px solid var(--color-border)' }}>
+                  <div style={{ padding: '8px', background: 'rgba(18, 42, 28, 0.05)', color: 'var(--green-deep)', flexShrink: 0 }}>
+                    <Factory size={20} aria-hidden="true" />
                   </div>
                   <div>
-                    <h4 style={{ fontFamily: 'var(--font-heading)', fontSize: '16px', fontWeight: 700, color: 'var(--green-deep)', marginBottom: '4px' }}>
+                    <h4 style={{ fontFamily: 'var(--font-heading)', fontSize: '15px', fontWeight: 700, color: 'var(--green-deep)', marginBottom: '3px' }}>
                       Refinery &amp; Solvent Extraction Plant
                     </h4>
-                    <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: 1.6, margin: 0 }}>
+                    <p style={{ fontSize: '13.5px', color: 'var(--muted)', lineHeight: 1.5, margin: 0 }}>
                       Village &amp; P.O. Par Dankuni, Hooghly – 712310,<br />
                       West Bengal, India
                     </p>
@@ -113,7 +113,7 @@ export default function Contact() {
                 </div>
 
                 {/* Direct Communications */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', paddingTop: '20px', borderTop: '1px solid var(--color-border)' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', paddingTop: '16px', borderTop: '1px solid var(--color-border)' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '8px' }}>
                     <span style={{ fontSize: '13px', color: 'var(--muted)' }}>General &amp; Corporate Mail:</span>
                     <a href="mailto:info@abudyog.in" style={{ fontFamily: 'var(--font-space-mono), monospace', fontSize: '13px', fontWeight: 700, color: 'var(--green-deep)', textDecoration: 'none' }}>
@@ -136,12 +136,13 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Embedded Verified Location Map */}
+            {/* Embedded Verified Location Map — flex: 1 for equal column height */}
             <div style={{ 
               background: '#FFFFFF', 
               border: '1px solid var(--color-border)', 
               overflow: 'hidden',
-              height: '320px',
+              flex: 1,
+              minHeight: '260px',
               position: 'relative'
             }}>
               <iframe 
@@ -150,7 +151,7 @@ export default function Contact() {
                 height="100%" 
                 allowFullScreen="" 
                 loading="lazy"
-                style={{ border: 0 }}
+                style={{ border: 0, width: '100%', height: '100%' }}
                 title="AB Udyog Corporate Office Location Map">
               </iframe>
               <div style={{
@@ -175,7 +176,12 @@ export default function Contact() {
             background: '#FFFFFF', 
             border: '1px solid var(--color-border)', 
             borderTop: '4px solid var(--gold)',
-            padding: '40px' 
+            padding: '36px',
+            display: 'flex',
+            flexDirection: 'column',
+            justify: 'space-between',
+            height: '100%',
+            boxSizing: 'border-box'
           }}>
             <span style={{ color: 'var(--gold-dark)', fontSize: '10px', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', display: 'block', marginBottom: '12px' }}>
               Commercial Desk Inquiry

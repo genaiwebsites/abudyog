@@ -990,6 +990,28 @@ h2.section-title em,
 .bento-card.featured .bento-body {
   color: rgba(255, 255, 255, 0.85);
 }
+.bento-card .btn-light-ghost {
+  color: var(--green-deep) !important;
+  border: 1px solid rgba(18, 42, 28, 0.25) !important;
+  background: rgba(18, 42, 28, 0.04) !important;
+  font-weight: 700 !important;
+}
+.bento-card .btn-light-ghost:hover {
+  background: var(--green-deep) !important;
+  color: var(--gold-light) !important;
+  border-color: var(--green-deep) !important;
+}
+.bento-card.featured .btn-light-ghost {
+  color: var(--gold-light) !important;
+  border: 1px solid rgba(212, 175, 55, 0.4) !important;
+  background: rgba(212, 175, 55, 0.1) !important;
+  font-weight: 700 !important;
+}
+.bento-card.featured .btn-light-ghost:hover {
+  background: var(--gold) !important;
+  color: var(--green-deep) !important;
+  border-color: var(--gold) !important;
+}
 
 /* ── METRICS SECTION (Used in /manufacturing) ── */
 .metrics-section {
