@@ -166,7 +166,7 @@ export default function Home() {
               category: 'ANIMAL NUTRITION',
               metric: '16.0% MIN PROTEIN',
               desc: 'Magik, ABU Platinum & Premium DORB — protein-rich feed enhancing growth for aquaculture, poultry, and cattle.',
-              image: '/abu_dorb_combo.svg',
+              image: '/banners/products/ab-dorb-podium-feed-showcase-banner-desktop.svg',
               link: '/products/de-oiled-rice-bran'
             },
             {

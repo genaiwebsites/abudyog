@@ -26,20 +26,6 @@ export default function Contact() {
         <div className="hero-bg" style={{ backgroundImage: "url('/ab_udyog_physical_refinery_pumping_pipeline_manifold.png')", opacity: 0.3 }} />
         <div className="hero-accent" />
         <div className="hero-content" style={{ textAlign: 'center', margin: '0 auto', maxWidth: '840px' }}>
-          <span style={{ 
-            color: 'var(--gold-light)', 
-            fontSize: '11px', 
-            fontWeight: 700, 
-            letterSpacing: '0.22em', 
-            textTransform: 'uppercase', 
-            display: 'inline-block',
-            marginBottom: '12px',
-            padding: '4px 14px',
-            border: '1px solid rgba(212, 175, 55, 0.4)',
-            background: 'rgba(212, 175, 55, 0.08)'
-          }}>
-            Commercial &amp; Trade Desk
-          </span>
           <h1 className="hero-title" style={{ margin: '0 auto' }}>
             B2B Trade Desk &amp; Corporate Contact
           </h1>
@@ -317,13 +303,14 @@ export default function Contact() {
                   >
                     <option value="" disabled>Select Product Line / Inquiry Type</option>
                     <option value="ab-health">AB Health Edible Oils (Soyabean &amp; Rice Bran Oil)</option>
-                    <option value="jeevan-rekha">Jeevan Rekha Consumer Line</option>
+                    <option value="jeevan-rekha">Jeevan Rekha (Rice Bran &amp; Mustard Oil)</option>
                     <option value="ab-dorb">AB DORB Animal Feed (Magik / Platinum / Premium)</option>
                     <option value="industrial-wax">Rice Bran Wax</option>
                     <option value="industrial-gums">Rice Bran Gums</option>
                     <option value="industrial-lecithin">Rice Bran Lecithin</option>
                     <option value="industrial-fatty-acid">Rice Bran Fatty Acid</option>
                     <option value="industrial-spent-earth">Spent Bleaching Earth</option>
+                    <option value="bulk-packaging">Bulk Packaging / Co-Packing Services</option>
                     <option value="distributorship">Distributorship / Agency Application</option>
                   </select>
                 </div>
