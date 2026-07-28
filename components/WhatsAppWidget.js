@@ -42,9 +42,9 @@ export default function WhatsAppWidget() {
           border: '1px solid #D4AF37',
           padding: '18px 20px',
           width: '270px',
-          marginBottom: '10px',
-          boxShadow: '0 12px 36px rgba(0, 0, 0, 0.35)',
-          borderRadius: 0,
+          marginBottom: '12px',
+          boxShadow: '0 12px 36px rgba(0, 0, 0, 0.45), 0 0 16px rgba(212, 175, 55, 0.2)',
+          borderRadius: '8px',
         }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
             <span style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#D4AF37' }}>
@@ -71,12 +71,12 @@ export default function WhatsAppWidget() {
               background: '#D4AF37',
               color: '#0D2B1A',
               fontSize: '10px',
-              fontWeight: 700,
+              fontWeight: 800,
               letterSpacing: '0.12em',
               textTransform: 'uppercase',
               padding: '10px 14px',
               textDecoration: 'none',
-              borderRadius: 0,
+              borderRadius: '4px',
             }}
           >
             Chat on WhatsApp
@@ -84,27 +84,28 @@ export default function WhatsAppWidget() {
         </div>
       )}
 
+      {/* Rich Premium Circular Floating Trade Desk Icon Button */}
       <button
         onClick={() => setOpen(!open)}
         className="trade-desk-btn"
         aria-label="Toggle WhatsApp Trade Desk"
+        title="B2B Trade Desk & Daily Rates"
         style={{
-          background: '#0D2B1A',
-          color: '#D4AF37',
-          border: '1px solid #D4AF37',
-          padding: '10px 16px',
-          fontSize: '11px',
-          fontWeight: 700,
-          letterSpacing: '0.1em',
-          textTransform: 'uppercase',
+          background: open ? '#D4AF37' : '#0D2B1A',
+          color: open ? '#0D2B1A' : '#D4AF37',
+          border: '1.5px solid #D4AF37',
+          width: '52px',
+          height: '52px',
+          borderRadius: '50%',
           cursor: 'pointer',
-          display: 'inline-flex',
+          display: 'flex',
           alignItems: 'center',
-          gap: '8px',
-          borderRadius: 0,
+          justifyContent: 'center',
+          boxShadow: '0 6px 20px rgba(0, 0, 0, 0.4), 0 0 14px rgba(212, 175, 55, 0.25)',
+          transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
         }}
       >
-        <MessageSquare size={15} /> Trade Desk
+        {open ? <X size={22} /> : <MessageSquare size={22} />}
       </button>
     </div>
   );
