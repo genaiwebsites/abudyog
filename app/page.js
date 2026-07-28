@@ -76,131 +76,261 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ══ PRODUCTS (STRUCTURED 2-TIER CARDS: TOP IMAGE AREA & BOTTOM CONTENT AREA) ══ */}
+      {/* ══ CORE BRANDS & MANUFACTURING VERTICALS ══ */}
       <section className="products-section" id="products">
-        <div className="section-header-center reveal" style={{ marginBottom: '48px' }}>
-          <h2 className="section-title">From Field to Table, <em>Purely Refined</em></h2>
-          <p className="section-body" style={{ margin: '16px auto 0 auto', maxWidth: '680px' }}>
-            Four distinct product lines spanning consumer cooking oils, health wellness, animal nutrition, and industrial derivatives.
+        <div className="section-header-center reveal" style={{ marginBottom: '48px', textAlign: 'center' }}>
+          <div style={{ 
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '8px',
+            color: '#FFD700', 
+            fontFamily: 'var(--font-mono, monospace)',
+            fontSize: '11px', 
+            fontWeight: 700, 
+            letterSpacing: '0.18em', 
+            textTransform: 'uppercase', 
+            marginBottom: '12px'
+          }}>
+            <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#FFD700', display: 'inline-block' }}></span>
+            OUR BRANDS &amp; PRODUCTS
+          </div>
+          <h2 className="section-title">Refining Excellence for <em>Home &amp; Industry</em></h2>
+          <p className="section-body" style={{ margin: '16px auto 0 auto', maxWidth: '640px' }}>
+            From daily consumer cooking oils to high-protein feeds and refined industrial by-products.
           </p>
         </div>
 
-        <div className="products-grid">
-          {/* 1. Jeevan Rekha */}
+        {/* 4 Distinct Elevated Card Boxes Grid */}
+        <div 
+          style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', 
+            gap: '24px', 
+            maxWidth: '1280px', 
+            margin: '0 auto' 
+          }}
+        >
+          {/* Card 1: Jeevan Rekha */}
           <Link 
             href="https://jeevanrekhafoods.com/products" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="product-card-split reveal"
+            className="reveal"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              background: '#0B2316',
+              border: '1px solid rgba(212, 175, 55, 0.3)',
+              textDecoration: 'none',
+              overflow: 'hidden',
+              transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
+              position: 'relative'
+            }}
+            onMouseEnter={e => {
+              e.currentTarget.style.borderColor = '#FFD700';
+              e.currentTarget.style.transform = 'translateY(-6px)';
+              e.currentTarget.style.boxShadow = '0 16px 36px rgba(0, 0, 0, 0.45)';
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.borderColor = 'rgba(212, 175, 55, 0.3)';
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = 'none';
+            }}
           >
-            <div className="product-card-img-wrap">
+            {/* Edge-to-Edge Image Box — Shifted Left (98% Center) so Both Pouches Are Centered */}
+            <div style={{ position: 'relative', width: '100%', height: '220px', background: '#0B2316', overflow: 'hidden' }}>
               <Image 
-                src="/jr_oil_combo.png" 
+                src="/banners/products/jeevan-rekha-rice-bran-mustard-oil-banner-desktop.svg" 
                 alt="Jeevan Rekha Rice Bran & Mustard Oil" 
                 fill 
-                sizes="(max-width: 768px) 100vw, 25vw"
-                style={{ objectFit: 'contain', padding: '14px' }} 
+                unoptimized
+                sizes="(max-width: 768px) 100vw, 25vw" 
+                style={{ objectFit: 'cover', objectPosition: '98% center', padding: 0 }} 
               />
             </div>
-            <div className="product-card-body">
+            {/* Bottom Card Body */}
+            <div style={{ padding: '24px 20px', display: 'flex', flexDirection: 'column', flexGrow: 1, justifyContent: 'space-between', background: '#0B2316' }}>
               <div>
-                <div className="product-card-tag">Jeevan Rekha</div>
-                <h3 className="product-card-title">Rice Bran &amp; Mustard Oil</h3>
-                <p className="product-card-desc">
+                <div style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#FFD700', marginBottom: '8px' }}>
+                  Jeevan Rekha
+                </div>
+                <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '20px', fontWeight: 700, color: '#FFFFFF', marginBottom: '10px', lineHeight: 1.25 }}>
+                  Rice Bran &amp; Mustard Oil
+                </h3>
+                <p style={{ fontFamily: 'var(--font-outfit)', fontSize: '13px', color: 'rgba(255, 255, 255, 0.82)', lineHeight: 1.55, margin: 0 }}>
                   Physically refined Rice Bran Oil &amp; cold-pressed Mustard Oil — crafted for purity, flavor, and daily health.
                 </p>
               </div>
-              <div className="product-card-footer">
+              <div style={{ marginTop: '20px', paddingTop: '16px', borderTop: '1px solid rgba(255, 255, 255, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', color: '#FFD700', fontFamily: 'var(--font-mono, monospace)', fontSize: '11px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' }}>
                 <span>Explore Foods</span>
-                <span className="arrow">→</span>
+                <span style={{ fontSize: '14px' }}>→</span>
               </div>
             </div>
           </Link>
 
-          {/* 2. AB Health */}
+          {/* Card 2: AB Health */}
           <Link 
             href="/products/ab-health" 
-            className="product-card-split reveal"
+            className="reveal"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              background: '#0B2316',
+              border: '1px solid rgba(212, 175, 55, 0.3)',
+              textDecoration: 'none',
+              overflow: 'hidden',
+              transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
+              position: 'relative'
+            }}
+            onMouseEnter={e => {
+              e.currentTarget.style.borderColor = '#FFD700';
+              e.currentTarget.style.transform = 'translateY(-6px)';
+              e.currentTarget.style.boxShadow = '0 16px 36px rgba(0, 0, 0, 0.45)';
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.borderColor = 'rgba(212, 175, 55, 0.3)';
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = 'none';
+            }}
           >
-            <div className="product-card-img-wrap">
+            {/* Edge-to-Edge Image Box — Zero Padding */}
+            <div style={{ position: 'relative', width: '100%', height: '220px', background: '#0B2316', overflow: 'hidden' }}>
               <Image 
                 src="/ab-health-edible-oils-brand-showcase-kolkata.svg" 
                 alt="AB Health Oils" 
                 fill 
                 unoptimized
-                sizes="(max-width: 768px) 100vw, 25vw"
-                style={{ objectFit: 'contain', padding: '10px' }} 
+                sizes="(max-width: 768px) 100vw, 25vw" 
+                style={{ objectFit: 'cover', padding: 0 }} 
               />
             </div>
-            <div className="product-card-body">
+            {/* Bottom Card Body */}
+            <div style={{ padding: '24px 20px', display: 'flex', flexDirection: 'column', flexGrow: 1, justifyContent: 'space-between', background: '#0B2316' }}>
               <div>
-                <div className="product-card-tag">AB Health</div>
-                <h3 className="product-card-title">AB Health Oils</h3>
-                <p className="product-card-desc">
+                <div style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#FFD700', marginBottom: '8px' }}>
+                  AB Health
+                </div>
+                <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '20px', fontWeight: 700, color: '#FFFFFF', marginBottom: '10px', lineHeight: 1.25 }}>
+                  AB Health Oils
+                </h3>
+                <p style={{ fontFamily: 'var(--font-outfit)', fontSize: '13px', color: 'rgba(255, 255, 255, 0.82)', lineHeight: 1.55, margin: 0 }}>
                   100% physically refined rice bran &amp; health oil blends — rich in natural Oryzanol for active family wellness.
                 </p>
               </div>
-              <div className="product-card-footer">
+              <div style={{ marginTop: '20px', paddingTop: '16px', borderTop: '1px solid rgba(255, 255, 255, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', color: '#FFD700', fontFamily: 'var(--font-mono, monospace)', fontSize: '11px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' }}>
                 <span>Explore AB Health</span>
-                <span className="arrow">→</span>
+                <span style={{ fontSize: '14px' }}>→</span>
               </div>
             </div>
           </Link>
 
-          {/* 3. AB DORB */}
+          {/* Card 3: AB DORB */}
           <Link 
             href="/products/de-oiled-rice-bran" 
-            className="product-card-split reveal"
+            className="reveal"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              background: '#0B2316',
+              border: '1px solid rgba(212, 175, 55, 0.3)',
+              textDecoration: 'none',
+              overflow: 'hidden',
+              transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
+              position: 'relative'
+            }}
+            onMouseEnter={e => {
+              e.currentTarget.style.borderColor = '#FFD700';
+              e.currentTarget.style.transform = 'translateY(-6px)';
+              e.currentTarget.style.boxShadow = '0 16px 36px rgba(0, 0, 0, 0.45)';
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.borderColor = 'rgba(212, 175, 55, 0.3)';
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = 'none';
+            }}
           >
-            <div className="product-card-img-wrap">
+            {/* Top Image Box — /abu_dorb_combo.svg Filled Edge-to-Edge Without Margins */}
+            <div style={{ position: 'relative', width: '100%', height: '220px', background: '#0B2316', overflow: 'hidden' }}>
               <Image 
                 src="/abu_dorb_combo.svg" 
                 alt="AB DORB Animal Feed" 
                 fill 
-                sizes="(max-width: 768px) 100vw, 25vw"
-                style={{ objectFit: 'contain', padding: '12px' }} 
+                unoptimized
+                sizes="(max-width: 768px) 100vw, 25vw" 
+                style={{ objectFit: 'cover', padding: 0 }} 
               />
             </div>
-            <div className="product-card-body">
+            {/* Bottom Card Body */}
+            <div style={{ padding: '24px 20px', display: 'flex', flexDirection: 'column', flexGrow: 1, justifyContent: 'space-between', background: '#0B2316' }}>
               <div>
-                <div className="product-card-tag">Animal Feed · DORB</div>
-                <h3 className="product-card-title">AB DORB Animal Feed</h3>
-                <p className="product-card-desc">
+                <div style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#FFD700', marginBottom: '8px' }}>
+                  Animal Feed · DORB
+                </div>
+                <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '20px', fontWeight: 700, color: '#FFFFFF', marginBottom: '10px', lineHeight: 1.25 }}>
+                  AB DORB Animal Feed
+                </h3>
+                <p style={{ fontFamily: 'var(--font-outfit)', fontSize: '13px', color: 'rgba(255, 255, 255, 0.82)', lineHeight: 1.55, margin: 0 }}>
                   High-protein de-oiled rice bran — wholesome, nutrient-rich feed for fish, poultry, cattle, and swine.
                 </p>
               </div>
-              <div className="product-card-footer">
+              <div style={{ marginTop: '20px', paddingTop: '16px', borderTop: '1px solid rgba(255, 255, 255, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', color: '#FFD700', fontFamily: 'var(--font-mono, monospace)', fontSize: '11px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' }}>
                 <span>About DORB</span>
-                <span className="arrow">→</span>
+                <span style={{ fontSize: '14px' }}>→</span>
               </div>
             </div>
           </Link>
 
-          {/* 4. Industrial Bran Derivatives */}
+          {/* Card 4: Industrial Bran Derivatives */}
           <Link 
             href="/products" 
-            className="product-card-split reveal"
+            className="reveal"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              background: '#0B2316',
+              border: '1px solid rgba(212, 175, 55, 0.3)',
+              textDecoration: 'none',
+              overflow: 'hidden',
+              transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
+              position: 'relative'
+            }}
+            onMouseEnter={e => {
+              e.currentTarget.style.borderColor = '#FFD700';
+              e.currentTarget.style.transform = 'translateY(-6px)';
+              e.currentTarget.style.boxShadow = '0 16px 36px rgba(0, 0, 0, 0.45)';
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.borderColor = 'rgba(212, 175, 55, 0.3)';
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = 'none';
+            }}
           >
-            <div className="product-card-img-wrap">
+            {/* Edge-to-Edge Image Box — Zero Padding */}
+            <div style={{ position: 'relative', width: '100%', height: '220px', background: '#0B2316', overflow: 'hidden' }}>
               <Image 
                 src="/rice_bran_wax_product.png" 
                 alt="Industrial Bran Derivatives" 
                 fill 
-                sizes="(max-width: 768px) 100vw, 25vw"
-                style={{ objectFit: 'contain', padding: '14px' }} 
+                sizes="(max-width: 768px) 100vw, 25vw" 
+                style={{ objectFit: 'cover', padding: 0 }} 
               />
             </div>
-            <div className="product-card-body">
+            {/* Bottom Card Body */}
+            <div style={{ padding: '24px 20px', display: 'flex', flexDirection: 'column', flexGrow: 1, justifyContent: 'space-between', background: '#0B2316' }}>
               <div>
-                <div className="product-card-tag">Industrial</div>
-                <h3 className="product-card-title">Bran Derivatives</h3>
-                <p className="product-card-desc">
+                <div style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#FFD700', marginBottom: '8px' }}>
+                  Industrial
+                </div>
+                <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '20px', fontWeight: 700, color: '#FFFFFF', marginBottom: '10px', lineHeight: 1.25 }}>
+                  Bran Derivatives
+                </h3>
+                <p style={{ fontFamily: 'var(--font-outfit)', fontSize: '13px', color: 'rgba(255, 255, 255, 0.82)', lineHeight: 1.55, margin: 0 }}>
                   Refined wax, lecithin, gums, &amp; fatty acids — premium industrial by-products for food, pharma, and energy.
                 </p>
               </div>
-              <div className="product-card-footer">
+              <div style={{ marginTop: '20px', paddingTop: '16px', borderTop: '1px solid rgba(255, 255, 255, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', color: '#FFD700', fontFamily: 'var(--font-mono, monospace)', fontSize: '11px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' }}>
                 <span>View All</span>
-                <span className="arrow">→</span>
+                <span style={{ fontSize: '14px' }}>→</span>
               </div>
             </div>
           </Link>
@@ -217,21 +347,22 @@ export default function Home() {
           borderBottom: '1px solid var(--color-border)'
         }}
       >
-        <div className="section-header-center reveal" style={{ marginBottom: '56px', textAlign: 'center' }}>
-          <span style={{ 
+        <div className="section-header-center reveal" style={{ marginBottom: '48px', textAlign: 'center' }}>
+          <div style={{ 
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '8px',
             color: 'var(--gold-dark)', 
+            fontFamily: 'var(--font-mono, monospace)',
             fontSize: '11px', 
             fontWeight: 700, 
-            letterSpacing: '0.22em', 
+            letterSpacing: '0.18em', 
             textTransform: 'uppercase', 
-            display: 'inline-block',
-            marginBottom: '12px',
-            padding: '4px 14px',
-            border: '1px solid rgba(212, 175, 55, 0.4)',
-            background: 'rgba(212, 175, 55, 0.08)'
+            marginBottom: '12px'
           }}>
-            Zero-Waste Circular Value Chain
-          </span>
+            <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--gold-dark)', display: 'inline-block' }}></span>
+            ZERO-WASTE VALUE CHAIN
+          </div>
           <h2 className="section-title" style={{ color: 'var(--green-deep)', maxWidth: '820px', margin: '0 auto' }}>
             Commercial-Grade <em>Bran Derivatives &amp; Feeds</em>
           </h2>

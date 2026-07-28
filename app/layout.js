@@ -102,7 +102,7 @@ export default function RootLayout({ children }) {
   };
 
   return (
-    <html lang="en" suppressHydrationWarning className={`${cormorant.variable} ${outfit.variable} ${archivo.variable} ${plusJakarta.variable} ${spaceMono.variable}`}>
+    <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth" className={`${cormorant.variable} ${outfit.variable} ${archivo.variable} ${plusJakarta.variable} ${spaceMono.variable}`}>
       <head>
         <script
           type="application/ld+json"
