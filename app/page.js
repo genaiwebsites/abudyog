@@ -81,7 +81,7 @@ export default function Home() {
         <div className="section-header-center reveal" style={{ marginBottom: '48px' }}>
           <h2 className="section-title">From Field to Table, <em>Purely Refined</em></h2>
           <p className="section-body" style={{ margin: '16px auto 0 auto', maxWidth: '680px' }}>
-            Four distinct product lines spanning consumer edible oils, health wellness, animal nutrition, and industrial derivatives.
+            Four distinct product lines spanning consumer cooking oils, health wellness, animal nutrition, and industrial derivatives.
           </p>
         </div>
 
@@ -99,10 +99,10 @@ export default function Home() {
 
           {/* 2. AB Health */}
           <Link href="/products/ab-health" className="product-card reveal">
-            <Image className="product-img" src="/banners/products/ab-health-podium-showcase-banner-desktop.svg" alt="AB Health Edible Oils" width={600} height={800} style={{ objectFit: 'cover' }} />
+            <Image className="product-img" src="/ab_health_product.png" alt="AB Health Oils" width={600} height={800} style={{ objectFit: 'cover' }} />
             <div className="product-overlay">
               <div className="product-tag">AB Health</div>
-              <div className="product-name">AB Health Edible Oils</div>
+              <div className="product-name">AB Health Oils</div>
               <div className="product-desc">100% physically refined rice bran &amp; health oil blends — rich in natural Oryzanol for active family wellness.</div>
               <span className="product-link">Explore AB Health →</span>
             </div>
@@ -306,7 +306,7 @@ export default function Home() {
                   borderTop: '1px solid var(--color-border)',
                   display: 'flex',
                   alignItems: 'center',
-                  justifyContent: 'space-between',
+                  justify: 'space-between',
                   color: 'var(--green-deep)',
                   fontSize: '11px',
                   fontWeight: 700,
