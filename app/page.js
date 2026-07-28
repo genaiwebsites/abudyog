@@ -76,41 +76,57 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ══ PRODUCTS ══ */}
+      {/* ══ PRODUCTS (ALL 4 IN A SINGLE ROW) ══ */}
       <section className="products-section" id="products">
-        <div className="section-header-center reveal" style={{ marginBottom: '56px' }}>
+        <div className="section-header-center reveal" style={{ marginBottom: '48px' }}>
           <h2 className="section-title">From Field to Table, <em>Purely Refined</em></h2>
-          <p className="section-body" style={{ margin: '16px auto 0 auto', maxWidth: '640px' }}>
-            Three distinct product lines spanning edible oils, animal nutrition, and premium industrial derivatives.
+          <p className="section-body" style={{ margin: '16px auto 0 auto', maxWidth: '680px' }}>
+            Four distinct product lines spanning consumer edible oils, health wellness, animal nutrition, and industrial derivatives.
           </p>
         </div>
 
         <div className="products-grid">
+          {/* 1. Jeevan Rekha */}
           <Link href="https://jeevanrekhafoods.com/products" target="_blank" rel="noopener noreferrer" className="product-card reveal">
             <Image className="product-img" src="/jr_oil_combo.png" alt="Jeevan Rekha Rice Bran & Mustard Oil" width={600} height={800} style={{ objectFit: 'cover' }} />
             <div className="product-overlay">
               <div className="product-tag">Jeevan Rekha</div>
               <div className="product-name">Rice Bran &amp; Mustard Oil</div>
               <div className="product-desc">Physically refined Rice Bran Oil &amp; cold-pressed Mustard Oil — crafted for purity, flavor, and daily health.</div>
-              <span className="product-link">Explore Foods</span>
+              <span className="product-link">Explore Foods →</span>
             </div>
           </Link>
+
+          {/* 2. AB Health */}
+          <Link href="/products/ab-health" className="product-card reveal">
+            <Image className="product-img" src="/banners/products/ab-health-podium-showcase-banner-desktop.svg" alt="AB Health Edible Oils" width={600} height={800} style={{ objectFit: 'cover' }} />
+            <div className="product-overlay">
+              <div className="product-tag">AB Health</div>
+              <div className="product-name">AB Health Edible Oils</div>
+              <div className="product-desc">100% physically refined rice bran &amp; health oil blends — rich in natural Oryzanol for active family wellness.</div>
+              <span className="product-link">Explore AB Health →</span>
+            </div>
+          </Link>
+
+          {/* 3. AB DORB */}
           <Link href="/products/de-oiled-rice-bran" className="product-card reveal">
-            <Image className="product-img" src="/abu_dorb_combo.svg" alt="AB DORB" width={600} height={800} style={{ objectFit: 'cover' }} />
+            <Image className="product-img" src="/abu_dorb_combo.svg" alt="AB DORB Animal Feed" width={600} height={800} style={{ objectFit: 'cover' }} />
             <div className="product-overlay">
               <div className="product-tag">Animal Feed · DORB</div>
               <div className="product-name">AB DORB Animal Feed</div>
               <div className="product-desc">High-protein de-oiled rice bran — wholesome, nutrient-rich feed for fish, poultry, cattle, and swine.</div>
-              <span className="product-link">About DORB</span>
+              <span className="product-link">About DORB →</span>
             </div>
           </Link>
+
+          {/* 4. Industrial Bran Derivatives */}
           <Link href="/products" className="product-card reveal">
             <Image className="product-img" src="/rice_bran_wax_product.png" alt="Industrial Bran Derivatives" width={600} height={800} style={{ objectFit: 'cover' }} />
             <div className="product-overlay">
               <div className="product-tag">Industrial</div>
               <div className="product-name">Bran Derivatives</div>
               <div className="product-desc">Refined wax, lecithin, gums, &amp; fatty acids — premium industrial by-products for food, pharma, and energy.</div>
-              <span className="product-link">View All</span>
+              <span className="product-link">View All →</span>
             </div>
           </Link>
         </div>
@@ -290,7 +306,7 @@ export default function Home() {
                   borderTop: '1px solid var(--color-border)',
                   display: 'flex',
                   alignItems: 'center',
-                  justify: 'space-between',
+                  justifyContent: 'space-between',
                   color: 'var(--green-deep)',
                   fontSize: '11px',
                   fontWeight: 700,
