@@ -17,10 +17,10 @@ export default function Manufacturing() {
         <div className="hero-accent" />
         <div className="hero-content" style={{ textAlign: 'center', margin: '0 auto', maxWidth: '800px' }}>
           <h1 className="hero-title">
-            Built at Industrial Scale
+            Industrial-Scale Edible Oil Refining
           </h1>
-          <p className="hero-subtitle" style={{ margin: '20px auto 0', maxWidth: '600px' }}>
-            Take a look inside our state-of-the-art Kolkata complex, housing a 300 TPD solvent extraction unit and 150 TPD physical refinery.
+          <p className="hero-subtitle" style={{ margin: '20px auto 0', maxWidth: '640px' }}>
+            Inside our integrated Kolkata industrial complex — housing a 300 TPD continuous solvent extraction plant and a 150 TPD physical refinery.
           </p>
         </div>
       </section>
@@ -37,9 +37,9 @@ export default function Manufacturing() {
           priority
         />
         <div className="metrics-content reveal">
-          <h2 className="section-title">Continuous Refinement</h2>
+          <h2 className="section-title">Precision Engineering & Physical Purification</h2>
           <p className="section-body" style={{ marginTop: '16px' }}>
-            Our integrated facilities deliver high-volume, consistent output. We utilize physical steam distillation—completely bypassing chemical caustic treatments—to preserve natural micronutrients in our edible oils.
+            Our integrated Kolkata facility operates on 100% chemical-free physical steam refining — completely eliminating caustic soda washes to preserve vital micronutrients, natural antioxidants, and Oryzanol in our edible oils.
           </p>
           <div className="metrics-grid">
             <div className="metric-item">
@@ -59,7 +59,7 @@ export default function Manufacturing() {
         <div className="section-header-center" style={{ marginBottom: '48px', textAlign: 'center' }}>
           <h2 className="section-title reveal">State-of-the-Art Production Units</h2>
           <p className="section-body reveal" style={{ maxWidth: '640px', margin: '16px auto 0' }}>
-            Take an inside look at our Kolkata refinery complex, combining continuous solvent extraction, high-temperature physical refining, and automated PLC control.
+            Inside our Kolkata complex — engineered for continuous solvent extraction, high-vacuum physical refining, and automated SCADA control.
           </p>
         </div>
 
@@ -70,7 +70,7 @@ export default function Manufacturing() {
           maxWidth: '1280px',
           margin: '0 auto'
         }}>
-          {/* Card 1: Extraction Hall (from image4.png) */}
+          {/* Card 1: Extraction Hall */}
           <div className="reveal" style={{ border: '1px solid var(--color-border)', background: 'var(--cream)', overflow: 'hidden' }}>
             <div style={{ position: 'relative', width: '100%', height: '240px', overflow: 'hidden' }}>
               <Image
@@ -89,12 +89,12 @@ export default function Manufacturing() {
                 Solvent Extraction Hall
               </h3>
               <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.6' }}>
-                Heavy-duty industrial extraction hall equipped with continuous counter-current extractors and automated vapor recovery blowers.
+                Heavy-duty continuous extraction hall equipped with counter-current extractors and automated solvent recovery blowers.
               </p>
             </div>
           </div>
 
-          {/* Card 2: Pumping Station & Manifold (from image5.png) */}
+          {/* Card 2: Pumping Station & Manifold */}
           <div className="reveal" style={{ border: '1px solid var(--color-border)', background: 'var(--cream)', overflow: 'hidden' }}>
             <div style={{ position: 'relative', width: '100%', height: '240px', overflow: 'hidden' }}>
               <Image
@@ -113,12 +113,12 @@ export default function Manufacturing() {
                 Distillation Pumping Station
               </h3>
               <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.6' }}>
-                High-pressure fluid pumping manifold and steam distillation piping designed for chemical-free oil purification.
+                High-pressure fluid pumping manifold and steam distillation piping engineered for chemical-free oil purification.
               </p>
             </div>
           </div>
 
-          {/* Card 3: Control Room PLC (from image3.png) */}
+          {/* Card 3: Control Room PLC */}
           <div className="reveal" style={{ border: '1px solid var(--color-border)', background: 'var(--cream)', overflow: 'hidden' }}>
             <div style={{ position: 'relative', width: '100%', height: '240px', overflow: 'hidden' }}>
               <Image
@@ -137,97 +137,180 @@ export default function Manufacturing() {
                 Automated Control Room
               </h3>
               <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.6' }}>
-                Real-time SCADA and PLC control room allowing plant operators to monitor temperatures, flow rates, and safety parameters continuously.
+                Real-time SCADA and PLC control center allowing plant operators to monitor temperatures, flow rates, and valve parameters.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ══ 3-PHASE PROCESS GRID ══ */}
-      <section className="pillars-section bg-cream-warm" style={{ padding: '88px 8%' }}>
-        <div className="section-header-center" style={{ marginBottom: '56px' }}>
-          <h2 className="section-title reveal" style={{ textAlign: 'center' }}>
-            How We Maintain Purity at Scale
+      {/* ══ CONNECTED INDUSTRIAL PROCESS TIMELINE ══ */}
+      <section style={{ background: '#F7F5F0', padding: '96px 8%', borderTop: '1px solid var(--color-border)' }}>
+        <div className="section-header-center" style={{ marginBottom: '64px', textAlign: 'center' }}>
+          <h2 className="section-title reveal" style={{ textAlign: 'center', fontSize: 'clamp(28px, 3.5vw, 42px)' }}>
+            End-to-End Processing Rigor
           </h2>
         </div>
-        <div className="pillars-grid col-3" style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div className="pillar reveal">
-            <div className="pillar-icon">
-              <Package size={26} aria-hidden="true" />
+
+        <div style={{ maxWidth: '1240px', margin: '0 auto', position: 'relative' }}>
+          {/* Continuous Horizontal Connecting Line (Desktop) */}
+          <div 
+            className="hidden-mobile"
+            style={{
+              position: 'absolute',
+              top: '25px',
+              left: '12%',
+              right: '12%',
+              height: '2px',
+              background: 'linear-gradient(90deg, var(--gold) 0%, var(--green-deep) 50%, var(--gold-dark) 100%)',
+              zIndex: 1
+            }}
+          />
+
+          {/* 3 Step Timeline Nodes */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '40px',
+            position: 'relative',
+            zIndex: 2
+          }}>
+            {/* Node 1 */}
+            <div className="reveal" style={{ textAlign: 'center', padding: '0 12px' }}>
+              <div style={{
+                width: '52px',
+                height: '52px',
+                borderRadius: '50%',
+                background: 'var(--green-deep)',
+                color: 'var(--gold)',
+                border: '3px solid var(--gold)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontFamily: 'var(--font-mono)',
+                fontWeight: 800,
+                fontSize: '16px',
+                margin: '0 auto 24px auto',
+                boxShadow: '0 4px 14px rgba(18, 42, 28, 0.15)'
+              }}>
+                01
+              </div>
+              <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '20px', fontWeight: 700, color: 'var(--green-deep)', marginBottom: '12px' }}>
+                Rapid Sourcing & Stabilization
+              </h3>
+              <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.7', margin: 0 }}>
+                Fresh paddy rice bran is sourced directly from regional rice mills and stabilized within hours of milling to lock in peak natural Oryzanol content before enzymatic degradation occurs.
+              </p>
             </div>
-            <div className="pillar-name">Phase 1: Procurement</div>
-            <p className="pillar-text">
-              We source raw rice bran from local mills immediately after harvest. Fresh bran degrades rapidly due to natural enzymes, so we stabilize and extract it within hours to preserve the crucial 10,000+ PPM of Oryzanol.
-            </p>
-          </div>
-          <div className="pillar reveal">
-            <div className="pillar-icon">
-              <Factory size={26} aria-hidden="true" />
+
+            {/* Node 2 */}
+            <div className="reveal" style={{ textAlign: 'center', padding: '0 12px' }}>
+              <div style={{
+                width: '52px',
+                height: '52px',
+                borderRadius: '50%',
+                background: 'var(--green-deep)',
+                color: 'var(--gold)',
+                border: '3px solid var(--gold)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontFamily: 'var(--font-mono)',
+                fontWeight: 800,
+                fontSize: '16px',
+                margin: '0 auto 24px auto',
+                boxShadow: '0 4px 14px rgba(18, 42, 28, 0.15)'
+              }}>
+                02
+              </div>
+              <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '20px', fontWeight: 700, color: 'var(--green-deep)', marginBottom: '12px' }}>
+                Continuous Solvent Extraction
+              </h3>
+              <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.7', margin: 0 }}>
+                Automated counter-current extractors efficiently separate raw oil from de-oiled bran solids, which are processed into high-protein AB DORB animal feed with zero nutritional waste.
+              </p>
             </div>
-            <div className="pillar-name">Phase 2: Extraction</div>
-            <p className="pillar-text">
-              Using state-of-the-art continuous extraction machinery, we efficiently separate the raw oil from the bran. The remaining high-protein solid becomes our signature AB DORB animal feed, maintaining exceptional nutritional density.
-            </p>
-          </div>
-          <div className="pillar reveal">
-            <div className="pillar-icon">
-              <Flame size={26} aria-hidden="true" />
+
+            {/* Node 3 */}
+            <div className="reveal" style={{ textAlign: 'center', padding: '0 12px' }}>
+              <div style={{
+                width: '52px',
+                height: '52px',
+                borderRadius: '50%',
+                background: 'var(--green-deep)',
+                color: 'var(--gold)',
+                border: '3px solid var(--gold)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontFamily: 'var(--font-mono)',
+                fontWeight: 800,
+                fontSize: '16px',
+                margin: '0 auto 24px auto',
+                boxShadow: '0 4px 14px rgba(18, 42, 28, 0.15)'
+              }}>
+                03
+              </div>
+              <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '20px', fontWeight: 700, color: 'var(--green-deep)', marginBottom: '12px' }}>
+                High-Vacuum Distillation
+              </h3>
+              <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.7', margin: 0 }}>
+                Steam deodorization under high vacuum strips away free fatty acids without chemical caustic washes, keeping natural antioxidants and essential fatty acids fully intact.
+              </p>
             </div>
-            <div className="pillar-name">Phase 3: Refining</div>
-            <p className="pillar-text">
-              Unlike traditional chemical refineries that use caustic washes, we employ physical steam distillation. High-temperature steam strips away free fatty acids while leaving the natural antioxidants (Oryzanol, Tocopherols) intact.
-            </p>
           </div>
         </div>
       </section>
 
-      {/* ══ QUALITY PARALLAX SEPARATOR ══ */}
-      <section style={{ 
-        position: 'relative', 
-        padding: '96px 8%', 
-        backgroundImage: "linear-gradient(180deg, rgba(18, 42, 28, 0.88) 0%, rgba(18, 42, 28, 0.82) 100%), url('/ab_udyog_refinery_control_room_plc_automation.png')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        textAlign: 'center',
-        overflow: 'hidden'
-      }}>
-        <div style={{ position: 'relative', zIndex: 3, maxWidth: '800px', margin: '0 auto' }}>
-          <h2 className="hero-title" style={{ color: 'var(--white)', margin: '0 auto', fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 700, lineHeight: 1.15 }}>
-            Certified for Global Standards
+      {/* ══ LABORATORY SPECIFICATION CARDS (DARK EXECUTIVE UI) ══ */}
+      <section style={{ background: 'var(--green-deep)', color: 'var(--white)', padding: '96px 8%' }}>
+        <div className="section-header-center" style={{ marginBottom: '56px', textAlign: 'center' }}>
+          <h2 className="section-title reveal" style={{ textAlign: 'center', color: 'var(--white)' }}>
+            Certified Excellence at Every Stage
           </h2>
-          <p className="hero-subtitle" style={{ color: 'rgba(255, 255, 255, 0.85)', fontSize: '16px', margin: '20px auto 0 auto', maxWidth: '600px', lineHeight: 1.75 }}>
-            Every batch of our edible oils and animal feeds undergoes strict laboratory testing to guarantee purity, traceability, and nutritional density.
+          <p className="reveal" style={{ color: 'rgba(255, 255, 255, 0.85)', fontSize: '16px', margin: '16px auto 0 auto', maxWidth: '640px', lineHeight: 1.7 }}>
+            Every production batch undergoes continuous laboratory testing for purity, safety, and international export specifications.
           </p>
         </div>
-      </section>
 
-      {/* ══ LAB STANDARDS ══ */}
-      <section className="pillars-section bg-cream" style={{ padding: '88px 8%' }}>
-        <div className="section-header-center" style={{ marginBottom: '48px' }}>
-          <h2 className="section-title reveal" style={{ textAlign: 'center' }}>
-            Strict Verification
-          </h2>
-        </div>
-        <div className="pillars-grid col-3" style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div className="pillar reveal">
-            <div className="pillar-icon"><HeartPulse size={26} aria-hidden="true" /></div>
-            <div className="pillar-name">Oryzanol Retention</div>
-            <p className="pillar-text">Our physical refining process is meticulously monitored to ensure over 10,000 PPM of Oryzanol remains in the final Jeevan Rekha Rice Bran Oil.</p>
+        <div style={{ maxWidth: '1240px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '32px' }}>
+          {/* Spec Card 1 */}
+          <div className="reveal" style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(212, 160, 23, 0.3)', padding: '36px 28px', borderRadius: '4px' }}>
+            <div style={{ display: 'inline-block', background: 'rgba(212, 160, 23, 0.15)', color: 'var(--gold)', fontFamily: 'var(--font-mono)', fontSize: '11px', fontWeight: 700, padding: '4px 10px', borderRadius: '2px', letterSpacing: '0.08em', marginBottom: '20px' }}>
+              10,000+ PPM ORYZANOL
+            </div>
+            <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '20px', fontWeight: 700, color: 'var(--white)', marginBottom: '12px' }}>
+              Micronutrient Retention
+            </h3>
+            <p style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.78)', lineHeight: '1.65', margin: 0 }}>
+              Spectrophotometric testing verifies the retention of 10,000+ PPM natural Oryzanol across our edible Rice Bran Oil portfolio for active heart health benefits.
+            </p>
           </div>
-          <div className="pillar reveal">
-            <div className="pillar-icon"><Flame size={26} aria-hidden="true" /></div>
-            <div className="pillar-name">Free Fatty Acids (FFA)</div>
-            <p className="pillar-text">Through high-temperature steam distillation, we effectively strip out FFA, guaranteeing an exceptionally low acid value and extended shelf life.</p>
+
+          {/* Spec Card 2 */}
+          <div className="reveal" style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(212, 160, 23, 0.3)', padding: '36px 28px', borderRadius: '4px' }}>
+            <div style={{ display: 'inline-block', background: 'rgba(212, 160, 23, 0.15)', color: 'var(--gold)', fontFamily: 'var(--font-mono)', fontSize: '11px', fontWeight: 700, padding: '4px 10px', borderRadius: '2px', letterSpacing: '0.08em', marginBottom: '20px' }}>
+              &lt; 0.1% FFA CONTENT
+            </div>
+            <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '20px', fontWeight: 700, color: 'var(--white)', marginBottom: '12px' }}>
+              Free Fatty Acid Control
+            </h3>
+            <p style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.78)', lineHeight: '1.65', margin: 0 }}>
+              High-vacuum steam distillation reduces free fatty acids to &lt;0.1%, ensuring high smoke points, low peroxide values, and extended commercial shelf stability.
+            </p>
           </div>
-          <div className="pillar reveal">
-            <div className="pillar-icon"><ClipboardList size={26} aria-hidden="true" /></div>
-            <div className="pillar-name">DORB Protein Specs</div>
-            <p className="pillar-text">Every batch of our De-Oiled Rice Bran is analyzed for protein and sand/silica content to ensure it meets premium animal feed standards.</p>
+
+          {/* Spec Card 3 */}
+          <div className="reveal" style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(212, 160, 23, 0.3)', padding: '36px 28px', borderRadius: '4px' }}>
+            <div style={{ display: 'inline-block', background: 'rgba(212, 160, 23, 0.15)', color: 'var(--gold)', fontFamily: 'var(--font-mono)', fontSize: '11px', fontWeight: 700, padding: '4px 10px', borderRadius: '2px', letterSpacing: '0.08em', marginBottom: '20px' }}>
+              EXPORT SPEC FEED
+            </div>
+            <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '20px', fontWeight: 700, color: 'var(--white)', marginBottom: '12px' }}>
+              Feed Protein & Fiber Specs
+            </h3>
+            <p style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.78)', lineHeight: '1.65', margin: 0 }}>
+              Automated wet-chemistry analysis tests every batch of AB DORB for crude protein, moisture, and silica content to meet rigorous international animal feed standards.
+            </p>
           </div>
         </div>
       </section>
