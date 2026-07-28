@@ -99,7 +99,7 @@ export default function Home() {
 
           {/* 2. AB Health */}
           <Link href="/products/ab-health" className="product-card reveal">
-            <Image className="product-img" src="/ab_health_product.png" alt="AB Health Oils" width={600} height={800} style={{ objectFit: 'cover' }} />
+            <Image className="product-img" src="/ab-health-edible-oils-rice-bran-soyabean-oil-hero-banner-desktop.jpg" alt="AB Health Oils" width={600} height={800} style={{ objectFit: 'cover' }} />
             <div className="product-overlay">
               <div className="product-tag">AB Health</div>
               <div className="product-name">AB Health Oils</div>
