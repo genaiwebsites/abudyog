@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import CtaBanner from '@/components/CtaBanner';
+import AbHealthHeroSlider from '@/components/AbHealthHeroSlider';
 import { ShieldCheck, Flame, Droplets, Package, Award, UtensilsCrossed, Heart, Activity, Scale } from 'lucide-react';
 
 /* ─── shared tokens (mirrors globals.css vars) ──────────────────── */
@@ -62,20 +63,9 @@ export default function AbHealthPage() {
   return (
     <>
       {/* ════════════════════════════════════════════════════════════
-          HERO — centered, dark green, no CTA buttons
+          HERO — SEO Banners Slider Carousel
       ════════════════════════════════════════════════════════════ */}
-      <section className="hero-subpage">
-        <div className="hero-bg" style={{ backgroundImage: "url('/ab-health-edible-oils-rice-bran-soyabean-oil-kolkata.svg')", backgroundPosition: 'center 30%', opacity: 0.2 }} />
-        <div className="hero-accent" />
-        <div className="hero-content" style={{ textAlign: 'center', margin: '0 auto' }}>
-          <h1 className="hero-title" style={{ margin: '0 auto' }}>
-            AB Health Edible Oils
-          </h1>
-          <p className="hero-subtitle" style={{ margin: '20px auto 0', maxWidth: '520px' }}>
-            Purity-first edible oils — fortified, certified, and formulated for modern Indian kitchens.
-          </p>
-        </div>
-      </section>
+      <AbHealthHeroSlider />
 
       {/* ════════════════════════════════════════════════════════════
           ABOUT — brand SVG left | dark text right
@@ -98,7 +88,7 @@ export default function AbHealthPage() {
               alt="AB Health Brand Logo"
               width={160}
               height={50}
-              style={{ height: 'auto', width: 'auto', maxWidth: '160px', marginBottom: '16px' }}
+              style={{ width: '160px', height: 'auto', marginBottom: '16px' }}
             />
             <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 700, color: 'var(--white)', lineHeight: 1.15, marginBottom: '20px' }}>
               About AB Health
