@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import React, { use } from 'react';
 import Link from 'next/link';
-import { ArrowLeft, Check, ShieldCheck, FileText, Settings, Droplet, HelpCircle, Layers, Download } from 'lucide-react';
+import { ArrowLeft, Check, ShieldCheck, FileText, Settings, Droplet, HelpCircle, Layers, Download, ExternalLink } from 'lucide-react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import CtaBanner from '@/components/CtaBanner';
 
@@ -27,6 +27,8 @@ const productData = {
     title: 'De-Oiled Rice Bran (DORB)',
     shortName: 'AB DORB',
     desc: 'High-protein, low-fat animal feed foundation.',
+    externalLink: 'https://dorb.vercel.app/',
+    externalLinkLabel: 'Explore Magik DORB',
     fullDesc: 'After crude oil has been extracted from the hard outer brown layer of rice after chaff (rice husk), De-Oiled Rice Bran (DORB) is obtained. DORB is widely used in the manufacture of poultry feed, cattle feed, and fish feed, as well as industrial applications like sodium silicate, silica gel, and insulation bricks. We market it under three premium sub-brands: Magik, ABU Platinum, and ABU Premium.',
     image: '/abu_dorb_combo.svg',
     features: ['High Protein Content', 'Optimized Fiber Grades', 'Excellent Digestibility', 'Rich in Vitamins & Minerals'],
@@ -235,12 +237,33 @@ export default function ProductDetail({ params }) {
             </div>
             
             <br /><br />
-            <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-              <Link href="/contact" className="btn-primary">Inquire Now</Link>
+            <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', alignItems: 'center' }}>
+              {product.externalLink ? (
+                <>
+                  <a
+                    href={product.externalLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary"
+                    style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '12px 18px', fontSize: '11px', whiteSpace: 'nowrap' }}
+                  >
+                    {product.externalLinkLabel || 'Explore Magik DORB'} <ExternalLink size={14} aria-hidden="true" />
+                  </a>
+                  <Link
+                    href="/contact"
+                    className="btn-ghost"
+                    style={{ padding: '12px 18px', fontSize: '11px', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', whiteSpace: 'nowrap' }}
+                  >
+                    Inquire Now
+                  </Link>
+                </>
+              ) : (
+                <Link href="/contact" className="btn-primary">Inquire Now</Link>
+              )}
               <a
                 href="#spec-table"
                 className="btn-ghost"
-                style={{ fontSize: '11px', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase' }}
+                style={{ padding: '12px 18px', fontSize: '11px', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', whiteSpace: 'nowrap' }}
               >
                 View Technical Specs
               </a>
