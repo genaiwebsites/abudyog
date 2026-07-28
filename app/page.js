@@ -76,7 +76,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ══ PRODUCTS (ALL 4 IN A SINGLE ROW) ══ */}
+      {/* ══ PRODUCTS (STRUCTURED 2-TIER CARDS: TOP IMAGE AREA & BOTTOM CONTENT AREA) ══ */}
       <section className="products-section" id="products">
         <div className="section-header-center reveal" style={{ marginBottom: '48px' }}>
           <h2 className="section-title">From Field to Table, <em>Purely Refined</em></h2>
@@ -87,54 +87,121 @@ export default function Home() {
 
         <div className="products-grid">
           {/* 1. Jeevan Rekha */}
-          <Link href="https://jeevanrekhafoods.com/products" target="_blank" rel="noopener noreferrer" className="product-card reveal">
-            <Image className="product-img" src="/jr_oil_combo.png" alt="Jeevan Rekha Rice Bran & Mustard Oil" width={600} height={800} style={{ objectFit: 'cover' }} />
-            <div className="product-overlay">
-              <div className="product-tag">Jeevan Rekha</div>
-              <div className="product-name">Rice Bran &amp; Mustard Oil</div>
-              <div className="product-desc">Physically refined Rice Bran Oil &amp; cold-pressed Mustard Oil — crafted for purity, flavor, and daily health.</div>
-              <span className="product-link">Explore Foods →</span>
+          <Link 
+            href="https://jeevanrekhafoods.com/products" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="product-card-split reveal"
+          >
+            <div className="product-card-img-wrap">
+              <Image 
+                src="/jr_oil_combo.png" 
+                alt="Jeevan Rekha Rice Bran & Mustard Oil" 
+                fill 
+                sizes="(max-width: 768px) 100vw, 25vw"
+                style={{ objectFit: 'contain', padding: '14px' }} 
+              />
+            </div>
+            <div className="product-card-body">
+              <div>
+                <div className="product-card-tag">Jeevan Rekha</div>
+                <h3 className="product-card-title">Rice Bran &amp; Mustard Oil</h3>
+                <p className="product-card-desc">
+                  Physically refined Rice Bran Oil &amp; cold-pressed Mustard Oil — crafted for purity, flavor, and daily health.
+                </p>
+              </div>
+              <div className="product-card-footer">
+                <span>Explore Foods</span>
+                <span className="arrow">→</span>
+              </div>
             </div>
           </Link>
 
           {/* 2. AB Health */}
-          <Link href="/products/ab-health" className="product-card reveal" style={{ background: '#06120B' }}>
-            <Image 
-              className="product-img" 
-              src="/ab-health-edible-oils-brand-showcase-kolkata.svg" 
-              alt="AB Health Oils" 
-              width={1080} 
-              height={850} 
-              unoptimized 
-              style={{ objectFit: 'contain', objectPosition: 'center 35%', padding: '16px', background: '#06120B' }} 
-            />
-            <div className="product-overlay">
-              <div className="product-tag">AB Health</div>
-              <div className="product-name">AB Health Oils</div>
-              <div className="product-desc">100% physically refined rice bran &amp; health oil blends — rich in natural Oryzanol for active family wellness.</div>
-              <span className="product-link">Explore AB Health →</span>
+          <Link 
+            href="/products/ab-health" 
+            className="product-card-split reveal"
+          >
+            <div className="product-card-img-wrap">
+              <Image 
+                src="/ab-health-edible-oils-brand-showcase-kolkata.svg" 
+                alt="AB Health Oils" 
+                fill 
+                unoptimized
+                sizes="(max-width: 768px) 100vw, 25vw"
+                style={{ objectFit: 'contain', padding: '10px' }} 
+              />
+            </div>
+            <div className="product-card-body">
+              <div>
+                <div className="product-card-tag">AB Health</div>
+                <h3 className="product-card-title">AB Health Oils</h3>
+                <p className="product-card-desc">
+                  100% physically refined rice bran &amp; health oil blends — rich in natural Oryzanol for active family wellness.
+                </p>
+              </div>
+              <div className="product-card-footer">
+                <span>Explore AB Health</span>
+                <span className="arrow">→</span>
+              </div>
             </div>
           </Link>
 
           {/* 3. AB DORB */}
-          <Link href="/products/de-oiled-rice-bran" className="product-card reveal">
-            <Image className="product-img" src="/abu_dorb_combo.svg" alt="AB DORB Animal Feed" width={600} height={800} style={{ objectFit: 'cover' }} />
-            <div className="product-overlay">
-              <div className="product-tag">Animal Feed · DORB</div>
-              <div className="product-name">AB DORB Animal Feed</div>
-              <div className="product-desc">High-protein de-oiled rice bran — wholesome, nutrient-rich feed for fish, poultry, cattle, and swine.</div>
-              <span className="product-link">About DORB →</span>
+          <Link 
+            href="/products/de-oiled-rice-bran" 
+            className="product-card-split reveal"
+          >
+            <div className="product-card-img-wrap">
+              <Image 
+                src="/abu_dorb_combo.svg" 
+                alt="AB DORB Animal Feed" 
+                fill 
+                sizes="(max-width: 768px) 100vw, 25vw"
+                style={{ objectFit: 'contain', padding: '12px' }} 
+              />
+            </div>
+            <div className="product-card-body">
+              <div>
+                <div className="product-card-tag">Animal Feed · DORB</div>
+                <h3 className="product-card-title">AB DORB Animal Feed</h3>
+                <p className="product-card-desc">
+                  High-protein de-oiled rice bran — wholesome, nutrient-rich feed for fish, poultry, cattle, and swine.
+                </p>
+              </div>
+              <div className="product-card-footer">
+                <span>About DORB</span>
+                <span className="arrow">→</span>
+              </div>
             </div>
           </Link>
 
           {/* 4. Industrial Bran Derivatives */}
-          <Link href="/products" className="product-card reveal">
-            <Image className="product-img" src="/rice_bran_wax_product.png" alt="Industrial Bran Derivatives" width={600} height={800} style={{ objectFit: 'cover' }} />
-            <div className="product-overlay">
-              <div className="product-tag">Industrial</div>
-              <div className="product-name">Bran Derivatives</div>
-              <div className="product-desc">Refined wax, lecithin, gums, &amp; fatty acids — premium industrial by-products for food, pharma, and energy.</div>
-              <span className="product-link">View All →</span>
+          <Link 
+            href="/products" 
+            className="product-card-split reveal"
+          >
+            <div className="product-card-img-wrap">
+              <Image 
+                src="/rice_bran_wax_product.png" 
+                alt="Industrial Bran Derivatives" 
+                fill 
+                sizes="(max-width: 768px) 100vw, 25vw"
+                style={{ objectFit: 'contain', padding: '14px' }} 
+              />
+            </div>
+            <div className="product-card-body">
+              <div>
+                <div className="product-card-tag">Industrial</div>
+                <h3 className="product-card-title">Bran Derivatives</h3>
+                <p className="product-card-desc">
+                  Refined wax, lecithin, gums, &amp; fatty acids — premium industrial by-products for food, pharma, and energy.
+                </p>
+              </div>
+              <div className="product-card-footer">
+                <span>View All</span>
+                <span className="arrow">→</span>
+              </div>
             </div>
           </Link>
         </div>
