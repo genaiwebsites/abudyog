@@ -137,15 +137,15 @@ export default function Home() {
               e.currentTarget.style.boxShadow = 'none';
             }}
           >
-            {/* Edge-to-Edge Image Box — Shifted Left (98% Center) so Both Pouches Are Centered */}
+            {/* Edge-to-Edge Image Box — Scaled to Clip Outer White PNG Padding Seamlessly */}
             <div style={{ position: 'relative', width: '100%', height: '220px', background: '#0B2316', overflow: 'hidden' }}>
               <Image 
-                src="/banners/products/jeevan-rekha-rice-bran-mustard-oil-banner-desktop.svg" 
-                alt="Jeevan Rekha Rice Bran & Mustard Oil" 
+                src="/jeevan-rekha-rice-bran-mustard-soyabean-oil-variations.png" 
+                alt="Jeevan Rekha Rice Bran Oil, Mustard Oil & Soyabean Oil Range" 
                 fill 
                 unoptimized
                 sizes="(max-width: 768px) 100vw, 25vw" 
-                style={{ objectFit: 'cover', objectPosition: '98% center', padding: 0 }} 
+                style={{ objectFit: 'cover', objectPosition: 'center 75%', transform: 'scale(1.16)', padding: 0 }} 
               />
             </div>
             {/* Bottom Card Body */}
@@ -548,11 +548,11 @@ export default function Home() {
                 <div className="parallax-window-stat-label">Physical Refining Capacity</div>
               </div>
               <div className="parallax-window-stat">
-                <div className="parallax-window-stat-num">30<span className="parallax-window-stat-unit">Yrs</span></div>
+                <div className="parallax-window-stat-num">10+<span className="parallax-window-stat-unit">Yrs</span></div>
                 <div className="parallax-window-stat-label">Refinement legacy in East India</div>
               </div>
               <div className="parallax-window-stat">
-                <div className="parallax-window-stat-num">5<span className="parallax-window-stat-unit">Lines</span></div>
+                <div className="parallax-window-stat-num">6+<span className="parallax-window-stat-unit">Lines</span></div>
                 <div className="parallax-window-stat-label">Certified By-Product Lines</div>
               </div>
             </div>

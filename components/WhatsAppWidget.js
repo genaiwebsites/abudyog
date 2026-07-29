@@ -84,7 +84,7 @@ export default function WhatsAppWidget() {
         </div>
       )}
 
-      {/* Rich Premium Circular Floating Trade Desk Icon Button */}
+      {/* Rich Premium Compact Floating Trade Desk Icon Button */}
       <button
         onClick={() => setOpen(!open)}
         className="trade-desk-btn"
@@ -94,18 +94,18 @@ export default function WhatsAppWidget() {
           background: open ? '#D4AF37' : '#0D2B1A',
           color: open ? '#0D2B1A' : '#D4AF37',
           border: '1.5px solid #D4AF37',
-          width: '52px',
-          height: '52px',
+          width: '40px',
+          height: '40px',
           borderRadius: '50%',
           cursor: 'pointer',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          boxShadow: '0 6px 20px rgba(0, 0, 0, 0.4), 0 0 14px rgba(212, 175, 55, 0.25)',
+          boxShadow: '0 4px 14px rgba(0, 0, 0, 0.4), 0 0 10px rgba(212, 175, 55, 0.2)',
           transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
         }}
       >
-        {open ? <X size={22} /> : <MessageSquare size={22} />}
+        {open ? <X size={18} /> : <MessageSquare size={18} />}
       </button>
     </div>
   );
