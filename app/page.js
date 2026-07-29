@@ -137,15 +137,15 @@ export default function Home() {
               e.currentTarget.style.boxShadow = 'none';
             }}
           >
-            {/* Edge-to-Edge Image Box — Shifted Left (98% Center) so Both Pouches Are Centered */}
-            <div style={{ position: 'relative', width: '100%', height: '220px', background: '#0B2316', overflow: 'hidden' }}>
+            {/* Edge-to-Edge Image Box — Uncropped Product Pouches Display */}
+            <div style={{ position: 'relative', width: '100%', height: '220px', background: '#FFFFFF', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <Image 
-                src="/banners/products/jeevan-rekha-rice-bran-mustard-oil-banner-desktop.svg" 
-                alt="Jeevan Rekha Rice Bran & Mustard Oil" 
+                src="/jeevan-rekha-rice-bran-mustard-soyabean-oil-variations.png" 
+                alt="Jeevan Rekha Rice Bran Oil, Mustard Oil & Soyabean Oil Range" 
                 fill 
                 unoptimized
                 sizes="(max-width: 768px) 100vw, 25vw" 
-                style={{ objectFit: 'cover', objectPosition: '98% center', padding: 0 }} 
+                style={{ objectFit: 'contain', objectPosition: 'center', padding: '12px' }} 
               />
             </div>
             {/* Bottom Card Body */}
