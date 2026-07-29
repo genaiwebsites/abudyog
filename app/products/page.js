@@ -21,8 +21,8 @@ export default function Products() {
           <div className="about-img-wrap reveal">
             <Image 
               className="about-img-main" 
-              src="/jr_oil_combo.png" 
-              alt="Jeevan Rekha Rice Bran & Mustard Oil" 
+              src="/jeevan-rekha-rice-bran-mustard-soyabean-oil-variations.png" 
+              alt="Jeevan Rekha Rice Bran Oil, Mustard Oil & Soyabean Oil Range" 
               width={800} 
               height={600} 
               style={{ objectFit: 'cover', borderRadius: 0 }} 

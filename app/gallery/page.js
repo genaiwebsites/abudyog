@@ -83,7 +83,7 @@ const galleryItems = [
   },
   {
     id: 12,
-    src: "/jr_oil_combo.png",
+    src: "/jeevan-rekha-rice-bran-mustard-soyabean-oil-variations.png",
     title: "Jeevan Rekha Consumer Oils",
     category: "Refinery",
     description: "Physically refined Rice Bran Oil & cold-pressed Mustard Oil packaged for daily health and purity."
