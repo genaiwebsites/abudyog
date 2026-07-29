@@ -34,10 +34,10 @@ const galleryItems = [
   },
   {
     id: 5,
-    src: "/ab_udyog_physical_refinery_pumping_pipeline_manifold.png",
-    title: "Pipeline & Pumping Manifold",
-    category: "Infrastructure",
-    description: "High-grade stainless steel piping manifolds and continuous pumping systems for oil transfer and storage."
+    src: "/jeevan-rekha-rice-bran-mustard-soyabean-oil-variations.png",
+    title: "Jeevan Rekha Consumer Oil Range",
+    category: "Refinery",
+    description: "Physically refined Rice Bran Oil, cold-pressed Mustard Oil & Soyabean Oil formulated for authentic flavor and purity."
   },
   {
     id: 6,
@@ -83,10 +83,10 @@ const galleryItems = [
   },
   {
     id: 12,
-    src: "/jeevan-rekha-rice-bran-mustard-soyabean-oil-variations.png",
-    title: "Jeevan Rekha Consumer Oils",
+    src: "/ab-health-edible-oils-brand-showcase-kolkata.svg",
+    title: "AB Health Edible Oils Range",
     category: "Refinery",
-    description: "Physically refined Rice Bran Oil & cold-pressed Mustard Oil packaged for daily health and purity."
+    description: "Physically refined Rice Bran Oil & Refined Soyabean Oil fortified with Vitamins A & D for daily family health."
   }
 ];
 
