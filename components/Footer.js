@@ -67,7 +67,8 @@ export default function Footer() {
         <div className="footer-col">
           <h4>Industrial Products</h4>
           <ul>
-            <li><Link href="/products/de-oiled-rice-bran" title="De-Oiled Rice Bran Animal Feed">De-Oiled Rice Bran (DORB)</Link></li>
+            <li><Link href="/products/magik-dorb" title="Magik DORB Super Fine Animal Feed Grade">Magik DORB (Super Fine)</Link></li>
+            <li><Link href="/products/de-oiled-rice-bran" title="De-Oiled Rice Bran Animal Feed">Standard De-Oiled Rice Bran</Link></li>
             <li><Link href="/products/rice-bran-wax" title="Refined Rice Bran Wax">Premium Rice Bran Wax</Link></li>
             <li><Link href="/products/rice-bran-gums" title="Emulsifying Rice Bran Gums">Stabilized Rice Bran Gums</Link></li>
             <li><Link href="/products/rice-bran-lecithin" title="Natural Rice Bran Lecithin">Rice Bran Lecithin</Link></li>

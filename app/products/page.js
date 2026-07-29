@@ -102,14 +102,19 @@ export default function Products() {
               High-protein de-oiled rice bran serving as the foundational nutrition block for aquaculture, poultry, and cattle industries. Marketed under the Magik, ABU Platinum, and ABU Premium sub-brands, our DORB provides essential amino acids and energy for superior feed conversion ratios in livestock.
             </p>
             <div className="about-tags" style={{ marginTop: '24px' }}>
-              <span className="about-tag" style={{ borderColor: 'rgba(255,255,255,0.25)', color: 'var(--gold-light)', background: 'rgba(255,255,255,0.05)' }}>Aquaculture</span>
-              <span className="about-tag" style={{ borderColor: 'rgba(255,255,255,0.25)', color: 'var(--gold-light)', background: 'rgba(255,255,255,0.05)' }}>Poultry Feed</span>
+              <span className="about-tag" style={{ borderColor: 'rgba(255,255,255,0.25)', color: 'var(--gold-light)', background: 'rgba(255,255,255,0.05)' }}>Super Fine Magik Grade</span>
+              <span className="about-tag" style={{ borderColor: 'rgba(255,255,255,0.25)', color: 'var(--gold-light)', background: 'rgba(255,255,255,0.05)' }}>Aquaculture &amp; Poultry</span>
               <span className="about-tag" style={{ borderColor: 'rgba(255,255,255,0.25)', color: 'var(--gold-light)', background: 'rgba(255,255,255,0.05)' }}>Cattle &amp; Swine</span>
             </div>
             <br /><br />
-            <Link href="/products/de-oiled-rice-bran" className="btn-primary">
-              Explore AB DORB Feed
-            </Link>
+            <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+              <Link href="/products/magik-dorb" className="btn-primary" style={{ background: 'var(--gold-dark)', color: 'var(--white)' }}>
+                Explore Magik DORB
+              </Link>
+              <Link href="/products/de-oiled-rice-bran" className="btn-primary" style={{ background: 'transparent', border: '1px solid rgba(255,255,255,0.4)', color: 'var(--white)' }}>
+                Standard DORB Specs
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -179,4 +184,3 @@ export default function Products() {
     </div>
   );
 }
-

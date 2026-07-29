@@ -224,9 +224,9 @@ export default function Home() {
             </div>
           </Link>
 
-          {/* Card 3: AB DORB */}
+          {/* Card 3: Magik DORB */}
           <Link 
-            href="/products/de-oiled-rice-bran" 
+            href="/products/magik-dorb" 
             className="reveal"
             style={{
               display: 'flex',
@@ -253,7 +253,7 @@ export default function Home() {
             <div style={{ position: 'relative', width: '100%', height: '220px', background: '#0B2316', overflow: 'hidden' }}>
               <Image 
                 src="/abu_dorb_combo.svg" 
-                alt="AB DORB Animal Feed" 
+                alt="Magik DORB Animal Feed" 
                 fill 
                 unoptimized
                 sizes="(max-width: 768px) 100vw, 25vw" 
@@ -264,17 +264,17 @@ export default function Home() {
             <div style={{ padding: '24px 20px', display: 'flex', flexDirection: 'column', flexGrow: 1, justifyContent: 'space-between', background: '#0B2316' }}>
               <div>
                 <div style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#FFD700', marginBottom: '8px' }}>
-                  Animal Feed · DORB
+                  Super Fine Feed Grade
                 </div>
                 <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '20px', fontWeight: 700, color: '#FFFFFF', marginBottom: '10px', lineHeight: 1.25 }}>
-                  AB DORB Animal Feed
+                  Magik DORB Feed
                 </h3>
                 <p style={{ fontFamily: 'var(--font-outfit)', fontSize: '13px', color: 'rgba(255, 255, 255, 0.82)', lineHeight: 1.55, margin: 0 }}>
-                  High-protein de-oiled rice bran — wholesome, nutrient-rich feed for fish, poultry, cattle, and swine.
+                  Micro-milled, high-protein de-oiled rice bran — wholesome, nutrient-rich feed for fish, poultry, cattle, and swine.
                 </p>
               </div>
               <div style={{ marginTop: '20px', paddingTop: '16px', borderTop: '1px solid rgba(255, 255, 255, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', color: '#FFD700', fontFamily: 'var(--font-mono, monospace)', fontSize: '11px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' }}>
-                <span>About DORB</span>
+                <span>Explore Magik DORB</span>
                 <span style={{ fontSize: '14px' }}>→</span>
               </div>
             </div>
