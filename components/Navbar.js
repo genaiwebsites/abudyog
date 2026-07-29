@@ -1,9 +1,11 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { ChevronDown, Menu, X } from 'lucide-react';
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
@@ -16,6 +18,10 @@ export default function Navbar() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  if (pathname === '/products/magik-dorb') {
+    return null;
+  }
 
   return (
     <nav className={scrolled ? 'scrolled' : ''} aria-label="Main Navigation">

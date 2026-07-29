@@ -27,7 +27,7 @@ const productData = {
     title: 'De-Oiled Rice Bran (DORB)',
     shortName: 'AB DORB',
     desc: 'High-protein, low-fat animal feed foundation.',
-    externalLink: 'https://dorb.vercel.app/',
+    externalLink: '/products/magik-dorb',
     externalLinkLabel: 'Explore Magik DORB',
     fullDesc: 'After crude oil has been extracted from the hard outer brown layer of rice after chaff (rice husk), De-Oiled Rice Bran (DORB) is obtained. DORB is widely used in the manufacture of poultry feed, cattle feed, and fish feed, as well as industrial applications like sodium silicate, silica gel, and insulation bricks. We market it under three premium sub-brands: Magik, ABU Platinum, and ABU Premium.',
     image: '/abu_dorb_combo.svg',
@@ -240,15 +240,25 @@ export default function ProductDetail({ params }) {
             <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', alignItems: 'center' }}>
               {product.externalLink ? (
                 <>
-                  <a
-                    href={product.externalLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-primary"
-                    style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '12px 18px', fontSize: '11px', whiteSpace: 'nowrap' }}
-                  >
-                    {product.externalLinkLabel || 'Explore Magik DORB'} <ExternalLink size={14} aria-hidden="true" />
-                  </a>
+                  {product.externalLink.startsWith('/') ? (
+                    <Link
+                      href={product.externalLink}
+                      className="btn-primary"
+                      style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '12px 18px', fontSize: '11px', whiteSpace: 'nowrap' }}
+                    >
+                      {product.externalLinkLabel || 'Explore Magik DORB'}
+                    </Link>
+                  ) : (
+                    <a
+                      href={product.externalLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary"
+                      style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '12px 18px', fontSize: '11px', whiteSpace: 'nowrap' }}
+                    >
+                      {product.externalLinkLabel || 'Explore Magik DORB'} <ExternalLink size={14} aria-hidden="true" />
+                    </a>
+                  )}
                   <Link
                     href="/contact"
                     className="btn-ghost"
