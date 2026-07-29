@@ -75,7 +75,8 @@ export default function JsonLd({ type = 'Organization', productData }: JsonLdPro
       process.env.NEXT_PUBLIC_TRADEINDIA_URL || 'https://www.tradeindia.com/Seller-AB-Udyog/',
       'https://www.instagram.com/jeevanrekhafoods/',
       'https://www.facebook.com/JeevanRekhaFoods/',
-      'https://www.linkedin.com/company/jeevanrekha/',
+      'https://in.linkedin.com/company/ab-udyog-pvt-ltd',
+      'https://www.youtube.com/channel/UCzz1eldG3F66AHrFLkUXSFQ',
     ].filter(Boolean),
   };
 
