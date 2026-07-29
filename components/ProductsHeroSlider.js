@@ -3,6 +3,40 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 
 const SLIDES = [
   {
+    id: 'ab-udyog-complete-range',
+    titleLine1: 'Integrated Product Range',
+    titleLine2: '',
+    subLine1: 'Physically Refined Oils, Pure Mustard Oils & High-Protein Feeds',
+    subLine2: '',
+    desktopBanner: '/ab-udyog-complete-edible-oils-and-dorb-product-range-white.png',
+    mobileBanner: '/ab-udyog-complete-edible-oils-and-dorb-product-range-white.png',
+    alt: 'AB Udyog Complete Product Master Range — Jeevan Rekha, AB Health Edible Oils & DORB Feeds',
+    textColor: '#0E2417',
+    subColor: 'rgba(14, 36, 23, 0.76)',
+    navColor: '#0E2417',
+    objectPosition: 'center 28%',
+    objectFit: 'cover',
+    customTextWrapStyle: {
+      top: '88px',
+      left: '50%',
+      transform: 'translateX(-50%)',
+      textAlign: 'center',
+      maxWidth: '780px',
+      width: '90%'
+    },
+    customTitleStyle: {
+      fontSize: 'clamp(22px, 2.3vw, 30px)',
+      fontWeight: 700,
+      lineHeight: '1.2',
+      marginBottom: '6px'
+    },
+    customSubStyle: {
+      fontSize: '13.5px',
+      fontWeight: 500,
+      letterSpacing: '0.015em'
+    }
+  },
+  {
     id: 'ab-dorb-nutrition',
     titleLine1: 'High-Protein',
     titleLine2: 'Animal Nutrition',
@@ -80,6 +114,11 @@ export default function ProductsHeroSlider() {
     return () => clearInterval(interval);
   }, [isPaused, nextSlide]);
 
+  useEffect(() => {
+    const isDark = SLIDES[currentIndex].textColor === '#FFFFFF';
+    window.dispatchEvent(new CustomEvent('heroSlideChange', { detail: { isDark } }));
+  }, [currentIndex]);
+
   const handleTouchStart = (e) => {
     touchStartX.current = e.targetTouches[0].clientX;
   };
@@ -109,21 +148,21 @@ export default function ProductsHeroSlider() {
       onTouchEnd={handleTouchEnd}
       aria-label="AB Udyog Product Master Page Hero Banner"
     >
-      {/* ══ SUBTLE TOP GRADIENT SHADER FOR NAVBAR TEXT READABILITY ══ */}
+      {/* ══ SILKY-SMOOTH FLUID FOREST GREEN VIGNETTE FOR NAVBAR READABILITY ══ */}
       <div 
         style={{
           position: 'absolute',
           top: 0,
           left: 0,
           right: 0,
-          height: '95px',
-          background: 'linear-gradient(180deg, rgba(8, 22, 14, 0.65) 0%, rgba(8, 22, 14, 0.18) 60%, transparent 100%)',
+          height: '140px',
+          background: 'linear-gradient(180deg, rgba(13, 43, 26, 0.42) 0%, rgba(13, 43, 26, 0.28) 25%, rgba(13, 43, 26, 0.14) 50%, rgba(13, 43, 26, 0.04) 75%, transparent 100%)',
           zIndex: 20,
           pointerEvents: 'none'
         }}
       />
 
-      {/* ══ 100% EDGE-TO-EDGE FULL-WIDTH SVG BANNER DISPLAY ══ */}
+      {/* ══ 100% EDGE-TO-EDGE FULL-WIDTH BANNER DISPLAY ══ */}
       {SLIDES.map((slide, idx) => {
         const isActive = idx === currentIndex;
         return (
@@ -139,7 +178,7 @@ export default function ProductsHeroSlider() {
               overflow: 'hidden'
             }}
           >
-            {/* 100% Full-Width Continuous SVG Image Display */}
+            {/* 100% Full-Width Continuous Image Display */}
             <picture style={{ width: '100%', height: '100%', display: 'block' }}>
               <source media="(max-width: 768px)" srcSet={slide.mobileBanner} />
               <img
@@ -148,8 +187,10 @@ export default function ProductsHeroSlider() {
                 style={{
                   width: '100%',
                   height: '100%',
-                  objectFit: 'cover',
+                  objectFit: slide.objectFit || 'cover',
                   objectPosition: slide.objectPosition || 'center',
+                  transform: slide.transform || 'none',
+                  transformOrigin: slide.transformOrigin || 'center',
                   display: 'block'
                 }}
               />
@@ -158,26 +199,44 @@ export default function ProductsHeroSlider() {
         );
       })}
 
-      {/* ══ ELEGANT UPWARD-ALIGNED LEFT TYPOGRAPHY ══ */}
-      <div className={`products-hero-text-wrap ${currentSlide.textColor === '#FFFFFF' ? 'dark-theme' : ''}`}>
+      {/* ══ ELEGANT TYPOGRAPHY WITH OPTIONAL EYEBROW & REFINED BRAND SIZING ══ */}
+      <div 
+        className={`products-hero-text-wrap ${currentSlide.textColor === '#FFFFFF' ? 'dark-theme' : ''}`}
+        style={currentSlide.customTextWrapStyle || {}}
+      >
+        {currentSlide.eyebrow && (
+          <div 
+            key={`eyebrow-${currentIndex}`}
+            style={{
+              fontFamily: 'var(--font-mono, monospace)',
+              fontSize: '10px',
+              fontWeight: 700,
+              letterSpacing: '0.18em',
+              textTransform: 'uppercase',
+              color: currentSlide.eyebrowColor || '#9E7B1D',
+              marginBottom: '6px'
+            }}
+          >
+            {currentSlide.eyebrow}
+          </div>
+        )}
+
         <h1 
           key={`title-${currentIndex}`}
           className="products-hero-title"
-          style={{ color: currentSlide.textColor }}
+          style={{ color: currentSlide.textColor, ...(currentSlide.customTitleStyle || {}) }}
         >
           {currentSlide.titleLine1}
-          <br />
-          {currentSlide.titleLine2}
+          {currentSlide.titleLine2 && <><br />{currentSlide.titleLine2}</>}
         </h1>
 
         <p 
           key={`sub-${currentIndex}`}
           className="products-hero-sub"
-          style={{ color: currentSlide.subColor }}
+          style={{ color: currentSlide.subColor, ...(currentSlide.customSubStyle || {}) }}
         >
           {currentSlide.subLine1}
-          <br />
-          {currentSlide.subLine2}
+          {currentSlide.subLine2 && <><br />{currentSlide.subLine2}</>}
         </p>
       </div>
 
