@@ -1,6 +1,10 @@
 import { Cormorant_Garamond, Outfit, Archivo, Plus_Jakarta_Sans, Space_Mono } from 'next/font/google';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import WhatsAppWidget from '../components/WhatsAppWidget';
+import ConsoleGreeting from '../components/ConsoleGreeting';
+import JsonLd from '../components/JsonLd';
+import Analytics from '../components/Analytics';
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -39,14 +43,28 @@ const spaceMono = Space_Mono({
   display: 'swap',
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://abudyog.in';
+
 export const metadata = {
   title: {
     default: "AB Udyog Pvt. Ltd. | Premium Rice Bran Oil & DORB Manufacturer in India",
-    template: "%s | AB Udyog"
+    template: "%s | AB Udyog",
   },
   description: "AB Udyog Pvt. Ltd. is a premier FMCG manufacturer based in Kolkata, India. We produce premium physically refined Jeevan Rekha Rice Bran Oil, Mustard Oil, and value-added industrial derivatives (DORB, Wax, Lecithin, Gums).",
-  keywords: ["Rice Bran Oil", "DORB", "De-Oiled Rice Bran", "AB Udyog", "Jeevan Rekha Oil", "FMCG Manufacturer India", "Kolkata Refinery", "Rice Bran Wax", "Lecithin"],
-  authors: [{ name: "AB Udyog Pvt. Ltd." }],
+  keywords: [
+    "Rice Bran Oil",
+    "DORB",
+    "De-Oiled Rice Bran",
+    "AB Udyog",
+    "Magik DORB",
+    "Jeevan Rekha Oil",
+    "FMCG Manufacturer India",
+    "Kolkata Refinery",
+    "Rice Bran Wax",
+    "Lecithin",
+    "Animal Feed Supplier",
+  ],
+  authors: [{ name: "AB Udyog Pvt. Ltd.", url: siteUrl }],
   creator: "AB Udyog Pvt. Ltd.",
   publisher: "AB Udyog Pvt. Ltd.",
   formatDetection: {
@@ -54,17 +72,48 @@ export const metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://abudyog.in'),
+  metadataBase: new URL(siteUrl),
   alternates: {
     canonical: '/',
   },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+    other: {
+      'msvalidate.01': process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION || '',
+    },
+  },
   openGraph: {
     title: "AB Udyog Pvt. Ltd. | Premium Rice Bran Oil & DORB Manufacturer",
-    description: "Discover Eastern India's leading physical refinement solvent plant. Pure cooking oils (Jeevan Rekha) and high-yield industrial derivatives.",
-    url: 'https://abudyog.in',
+    description: "Discover Eastern India's leading physical refinement solvent plant. Pure cooking oils (Jeevan Rekha) and high-yield industrial derivatives (Magik DORB).",
+    url: siteUrl,
     siteName: 'AB Udyog',
+    images: [
+      {
+        url: `${siteUrl}/ab-udyog-rice-bran-oil-refinery-plant-kolkata.png`,
+        width: 1200,
+        height: 630,
+        alt: 'AB Udyog Physical Refinery & Solvent Extraction Plant Kolkata',
+      },
+    ],
     locale: 'en_US',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AB Udyog Pvt. Ltd. | Premium Rice Bran Oil & DORB Manufacturer',
+    description: "Eastern India's premier physical refining complex since 1994.",
+    images: [`${siteUrl}/ab-udyog-rice-bran-oil-refinery-plant-kolkata.png`],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 
@@ -74,42 +123,25 @@ export const viewport = {
   viewportFit: 'cover',
 };
 
-
-import WhatsAppWidget from '../components/WhatsAppWidget';
-import ConsoleGreeting from '../components/ConsoleGreeting';
-
 export default function RootLayout({ children }) {
-  // Structured data markup (JSON-LD) for SEO
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "AB Udyog Pvt. Ltd.",
-    "url": "https://abudyog.in",
-    "logo": "https://abudyog.in/abu_logo.png",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+91-74392-89709",
-      "contactType": "sales",
-      "areaServed": "IN",
-      "availableLanguage": ["en", "hi", "bn"]
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Kolkata",
-      "addressRegion": "West Bengal",
-      "addressCountry": "IN"
-    }
-  };
-
   return (
-    <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth" className={`${cormorant.variable} ${outfit.variable} ${archivo.variable} ${plusJakarta.variable} ${spaceMono.variable}`}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      data-scroll-behavior="smooth"
+      className={`${cormorant.variable} ${outfit.variable} ${archivo.variable} ${plusJakarta.variable} ${spaceMono.variable}`}
+    >
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        <JsonLd type="Organization" />
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="AB Udyog Corporate & Industrial RSS Feed"
+          href={`${siteUrl}/feed.xml`}
         />
       </head>
       <body>
+        <Analytics />
         <ConsoleGreeting />
         <Navbar />
         {children}
@@ -119,4 +151,3 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
-
