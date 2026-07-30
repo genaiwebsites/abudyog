@@ -720,7 +720,7 @@ export default function AbUdyogPidDiagram() {
         <div className="scada-title-wrap">
           <h2 className="scada-title">10-Stage Bio-Refining &amp; Derivatives SCADA Control</h2>
           <p className="scada-subtitle">
-            Real-time process telemetry showcasing automated continuous solvent extraction, high-vacuum physical refining, and commercial bio-derivative recovery at our Kolkata complex.
+            Real-time process parameters showcasing automated continuous solvent extraction, high-vacuum physical refining, and commercial bio-derivative recovery at our Kolkata complex.
           </p>
         </div>
 
@@ -1006,7 +1006,7 @@ export default function AbUdyogPidDiagram() {
             <div className="scada-telemetry-col">
               <div>
                 <div className="scada-inspector-header">
-                  <span className="scada-badge">STAGE {selectedNodeData.number} TELEMETRY</span>
+                  <span className="scada-badge">STAGE {selectedNodeData.number} PARAMETERS</span>
                   <div className="scada-pills-row">
                     <span className="scada-pill-cyan">TEMP: {selectedNodeData.temp}</span>
                     <span className="scada-pill-cyan">PRESS: {selectedNodeData.pressure}</span>
@@ -1061,7 +1061,7 @@ export default function AbUdyogPidDiagram() {
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', flexWrap: 'wrap', gap: '12px' }}>
             <div>
               <span style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: '#2D6A4F', fontWeight: 800, letterSpacing: '0.12em', textTransform: 'uppercase', display: 'block', marginBottom: '4px' }}>
-                SCADA Verified Laboratory Telemetry
+                SCADA Verified Quality Parameters
               </span>
               <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(18px, 2.2vw, 22px)', fontWeight: 800, color: '#0B2518', margin: 0 }}>
                 NABL Accredited Quality Certificate

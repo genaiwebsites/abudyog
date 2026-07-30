@@ -14,7 +14,7 @@ export default function Manufacturing() {
     <>
       {/* ══ HERO BANNER ══ */}
       <section className="hero-subpage">
-        <div className="hero-bg" style={{ backgroundImage: "url('/ab_udyog_physical_refinery_pumping_pipeline_manifold.png')", opacity: 0.35 }} />
+        <div className="hero-bg" style={{ backgroundImage: "url('/ab-udyog-industrial-oil-refinery-plant.jpg')", opacity: 0.35 }} />
         <div className="hero-accent" />
         <div className="hero-content" style={{ textAlign: 'center', margin: '0 auto', maxWidth: '800px' }}>
           <h1 className="hero-title">
@@ -71,12 +71,12 @@ export default function Manufacturing() {
           maxWidth: '1280px',
           margin: '0 auto'
         }}>
-          {/* Card 1: Extraction Hall */}
+          {/* Card 1: Extraction Plant */}
           <div className="reveal" style={{ border: '1px solid var(--color-border)', background: 'var(--cream)', overflow: 'hidden' }}>
             <div style={{ position: 'relative', width: '100%', height: '240px', overflow: 'hidden' }}>
               <Image
                 src="/ab_udyog_continuous_solvent_extraction_hall.png"
-                alt="AB Udyog continuous solvent extraction hall and heavy processing machinery in Kolkata"
+                alt="AB Udyog continuous solvent extraction plant and heavy processing machinery in Kolkata"
                 fill
                 sizes="(max-width: 768px) 100vw, 33vw"
                 style={{ objectFit: 'cover' }}
@@ -84,13 +84,13 @@ export default function Manufacturing() {
             </div>
             <div style={{ padding: '24px' }}>
               <div style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--gold-dark)', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '8px' }}>
-                300 TPD Extraction Hall
+                300 TPD Extraction Plant
               </div>
               <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '20px', fontWeight: 700, color: 'var(--green-deep)', marginBottom: '8px' }}>
-                Solvent Extraction Hall
+                Solvent Extraction Plant
               </h3>
               <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.6' }}>
-                Heavy-duty continuous extraction hall equipped with counter-current extractors and automated solvent recovery blowers.
+                Heavy-duty continuous extraction facility equipped with counter-current extractors and automated solvent recovery blowers.
               </p>
             </div>
           </div>
