@@ -570,6 +570,163 @@ nav.scrolled {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* ── SUSTAINABILITY HERO BANNER (RESPONSIVE EDITORIAL ARCHITECTURE) ── */
+.sustainability-hero {
+  position: relative;
+  min-height: 52vh;
+  height: clamp(480px, 58vh, 650px);
+  display: flex;
+  align-items: center;
+  background: linear-gradient(110deg, #031007 0%, #061e11 40%, #092a17 100%);
+  overflow: hidden;
+  padding-top: 72px;
+}
+
+.sustainability-hero .hero-bg-graphic-wrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 82%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.sustainability-hero .hero-handshake-graphic-fluid {
+  width: 100%;
+  max-width: 1200px;
+  height: 115%;
+  object-fit: contain;
+  object-position: right center;
+  opacity: 0.9;
+  filter: drop-shadow(-15px 0 40px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 45px rgba(34, 197, 94, 0.22));
+  -webkit-mask-image: linear-gradient(to right, transparent 22%, rgba(0, 0, 0, 0.15) 34%, rgba(0, 0, 0, 0.55) 48%, rgba(0, 0, 0, 0.92) 64%, rgba(0, 0, 0, 1) 85%);
+  mask-image: linear-gradient(to right, transparent 22%, rgba(0, 0, 0, 0.15) 34%, rgba(0, 0, 0, 0.55) 48%, rgba(0, 0, 0, 0.92) 64%, rgba(0, 0, 0, 1) 85%);
+}
+
+.sustainability-hero .hero-gradient-overlay-left {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #031007 0%, #031007 26%, rgba(3, 16, 7, 0.85) 40%, rgba(3, 16, 7, 0.4) 56%, transparent 72%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.sustainability-hero .hero-container-inner {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 4%;
+}
+
+.sustainability-hero .hero-content-left {
+  max-width: clamp(480px, 42vw, 580px);
+  text-align: left;
+  animation: heroIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.sustainability-hero h1.hero-sustainability-title-left {
+  font-family: var(--font-cormorant), serif;
+  font-weight: 300;
+  font-size: clamp(32px, 3.6vw, 50px);
+  line-height: 1.12;
+  color: var(--white);
+  margin-bottom: 18px;
+  text-wrap: balance;
+}
+
+.sustainability-hero h1.hero-sustainability-title-left em {
+  font-style: italic;
+  color: var(--gold-light);
+  font-weight: 400;
+  display: block;
+}
+
+.sustainability-hero .hero-sustainability-subtitle-left {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: clamp(13.5px, 1.05vw, 15.5px);
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+/* ── RESPONSIVE MEDIA QUERIES ── */
+@media (max-width: 1200px) {
+  .sustainability-hero .hero-bg-graphic-wrap {
+    width: 88%;
+  }
+  .sustainability-hero .hero-content-left {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 992px) {
+  .sustainability-hero {
+    height: auto;
+    min-height: 480px;
+    padding: 110px 0 60px;
+  }
+  .sustainability-hero .hero-bg-graphic-wrap {
+    width: 100%;
+  }
+  .sustainability-hero .hero-handshake-graphic-fluid {
+    height: 100%;
+    opacity: 0.45;
+    object-position: right center;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.4) 30%, rgba(0,0,0,1) 80%);
+    mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.4) 30%, rgba(0,0,0,1) 80%);
+  }
+  .sustainability-hero .hero-gradient-overlay-left {
+    background: linear-gradient(90deg, #031007 0%, rgba(3, 16, 7, 0.92) 55%, transparent 100%);
+  }
+  .sustainability-hero .hero-content-left {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .sustainability-hero {
+    padding: 95px 0 45px;
+    min-height: 440px;
+  }
+  .sustainability-hero .hero-container-inner {
+    padding: 0 5%;
+  }
+  .sustainability-hero h1.hero-sustainability-title-left {
+    font-size: clamp(28px, 7.5vw, 36px);
+    margin-bottom: 14px;
+  }
+  .sustainability-hero .hero-sustainability-subtitle-left {
+    font-size: 13.5px;
+    line-height: 1.65;
+  }
+  .sustainability-hero .hero-handshake-graphic-fluid {
+    opacity: 0.35;
+  }
+}
+
+@media (max-width: 768px) {
+  .sustainability-hero {
+    min-height: 460px;
+    height: auto;
+    padding-top: 90px;
+    padding-bottom: 40px;
+  }
+  .sustainability-hero .hero-container-inner {
+    padding: 0 6%;
+  }
+}
+
+
+
 /* BUTTONS */
 .btn-primary {
   padding: 14px 36px;

@@ -12,16 +12,29 @@ export default function CSRPage() {
   return (
     <>
       {/* ══ HERO BANNER ══ */}
-      <section className="hero-subpage">
-        <div className="hero-bg" style={{ backgroundImage: "url('/hero_rice_paddy.png')", opacity: 0.25 }}></div>
-        <div className="hero-accent"></div>
-        <div className="hero-content">
-          <h1 className="hero-title">
-            Cultivating Value. <em>Nourishing Communities.</em>
-          </h1>
-          <p className="hero-subtitle">
-            At AB Udyog Pvt. Ltd., our industrial growth is closely aligned with the welfare of local farming networks and the sustainability of regional ecosystems.
-          </p>
+      <section className="sustainability-hero">
+        <div className="hero-bg-graphic-wrap">
+          <Image
+            src="/ab-udyog-sustainability-green-eco-handshake.png"
+            alt="AB Udyog Sustainability Green Leaf Handshake Graphic"
+            width={1100}
+            height={500}
+            priority
+            className="hero-handshake-graphic-fluid"
+          />
+        </div>
+        <div className="hero-gradient-overlay-left" aria-hidden="true" />
+
+        <div className="hero-container-inner">
+          <div className="hero-content-left">
+            <h1 className="hero-sustainability-title-left">
+              Harmonizing Industry. <em>Nurturing Our Planet.</em>
+            </h1>
+
+            <p className="hero-sustainability-subtitle-left">
+              At AB Udyog, industrial progress goes hand-in-hand with environmental stewardship—pioneering chemical-free physical refining, zero-waste circularity, and long-term prosperity for West Bengal&apos;s farming communities.
+            </p>
+          </div>
         </div>
       </section>
 

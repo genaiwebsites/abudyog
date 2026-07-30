@@ -1,8 +1,9 @@
 export const metadata = {
-  title: 'Corporate Social Responsibility',
-  description: 'At AB Udyog Pvt. Ltd., our industrial growth is closely aligned with the welfare of local farming networks and the sustainability of regional ecosystems.'
+  title: 'Sustainability & ESG Commitment | AB Udyog Pvt. Ltd.',
+  description: 'Explore AB Udyog Pvt. Ltd.\'s commitment to sustainable agro-processing, chemical-free physical oil refining, zero-waste bio-circularity, and farmer empowerment in West Bengal.'
 };
 
 export default function CSRLayout({ children }) {
   return <>{children}</>;
 }
+
