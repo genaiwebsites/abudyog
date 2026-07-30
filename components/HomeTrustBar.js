@@ -10,8 +10,8 @@ export default function HomeTrustBar() {
     },
     { 
       name: "Make in India Initiative", 
-      src: "/logos/make_in_india.png", 
-      height: 34, 
+      src: "/logos/make-in-india-lion-logo.png", 
+      height: 64, 
       url: "https://www.pmindia.gov.in/en/major_initiatives/make-in-india/" 
     },
     { 
@@ -22,9 +22,9 @@ export default function HomeTrustBar() {
     },
     { 
       name: "Hyperpure by Zomato", 
-      src: "/logos/hyperpure.png", 
+      src: "/logos/zomato-hyperpure-logo.png", 
       height: 26, 
-      url: "https://www.hyperpure.com/" 
+      url: "https://www.hyperpure.com/ind/kolkata/jeevan-rekha-rice-bran-oil-1-l-pack-of-12?source=SEARCH_ALL" 
     },
     { 
       name: "Amazon India", 

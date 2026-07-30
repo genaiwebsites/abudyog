@@ -10,7 +10,7 @@ export default function InfrastructureAccreditations() {
     },
     { 
       name: "Mishti Udyog (Sweets & Savouries Entrepreneurs' Assoc. of Bengal)", 
-      src: "/logos/mishti_udyog.png", 
+      src: "/logos/mishti-udyog-logo.png", 
       height: 52, 
       url: "https://mishtiudyog.org/" 
     },
@@ -37,8 +37,8 @@ export default function InfrastructureAccreditations() {
     },
     { 
       name: "Make in India Initiative", 
-      src: "/logos/make_in_india.png", 
-      height: 44, 
+      src: "/logos/make-in-india-lion-logo.png", 
+      height: 80, 
       url: "https://www.pmindia.gov.in/en/major_initiatives/make-in-india/" 
     },
   ];

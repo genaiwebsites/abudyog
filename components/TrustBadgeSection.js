@@ -4,21 +4,27 @@ export default function TrustBadgeSection() {
   const associations = [
     { name: "NRAI (National Restaurant Association of India)", src: "/logos/nrai.png", width: 140, height: 50 },
     { name: "S.E.A. (Solvent Extractors' Association of India)", src: "/logos/sea.png", width: 64, height: 50 },
-    { name: "Mishti Udyog (Sweets & Confectionery Assoc.)", src: "/logos/mishti_udyog.png", width: 64, height: 50 },
+    { name: "Mishti Udyog (Sweets & Confectionery Assoc.)", src: "/logos/mishti-udyog-logo.png", width: 64, height: 50 },
     { name: "P.B.M.A. (Posta Bazar Merchants' Association)", src: "/logos/pbma.png", width: 64, height: 50 },
     { name: "CWBTA (Confederation of West Bengal Trade Assoc.)", src: "/logos/cwbta.png", width: 64, height: 50 },
   ];
 
   const certifications = [
     { name: "FSSAI (Food Safety & Standards Authority of India)", src: "/logos/fssai.png", width: 120, height: 48 },
-    { name: "Make in India", src: "/logos/make_in_india.png", width: 110, height: 48 },
+    { name: "Make in India", src: "/logos/make-in-india-lion-logo.png", width: 170, height: 72 },
   ];
 
   const marketplaces = [
-    { name: "Hyperpure by Zomato", src: "/logos/hyperpure.png", width: 110, height: 40 },
-    { name: "Amazon India", src: "/logos/amazon.png", width: 100, height: 34 },
-    { name: "Flipkart", src: "/logos/flipkart.png", width: 100, height: 36 },
-    { name: "IndiaMART", src: "/logos/indiamart.png", width: 90, height: 42 },
+    { 
+      name: "Hyperpure by Zomato", 
+      src: "/logos/zomato-hyperpure-logo.png", 
+      width: 110, 
+      height: 40,
+      url: "https://www.hyperpure.com/ind/kolkata/jeevan-rekha-rice-bran-oil-1-l-pack-of-12?source=SEARCH_ALL"
+    },
+    { name: "Amazon India", src: "/logos/amazon.png", width: 100, height: 34, url: "https://www.amazon.in/" },
+    { name: "Flipkart", src: "/logos/flipkart.png", width: 100, height: 36, url: "https://www.flipkart.com/" },
+    { name: "IndiaMART", src: "/logos/indiamart.png", width: 90, height: 42, url: "https://www.indiamart.com/ab-udyog/" },
   ];
 
   return (
@@ -63,7 +69,7 @@ export default function TrustBadgeSection() {
         }
 
         .logo-box {
-          height: 56px;
+          min-height: 56px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -183,16 +189,25 @@ export default function TrustBadgeSection() {
               Available &amp; Listed On
             </div>
             <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: '16px 28px' }}>
-              {marketplaces.map((item, idx) => (
-                <div key={idx} className="logo-box" title={item.name} style={{ width: item.width + 'px' }}>
-                  <img 
-                    src={item.src} 
-                    alt={item.name} 
-                    className="logo-img-norm" 
-                    style={{ maxHeight: item.height + 'px' }}
-                  />
-                </div>
-              ))}
+              {marketplaces.map((item, idx) => {
+                const logoBox = (
+                  <div className="logo-box" title={item.name} style={{ width: item.width + 'px' }}>
+                    <img 
+                      src={item.src} 
+                      alt={item.name} 
+                      className="logo-img-norm" 
+                      style={{ maxHeight: item.height + 'px' }}
+                    />
+                  </div>
+                );
+                return item.url ? (
+                  <a key={idx} href={item.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                    {logoBox}
+                  </a>
+                ) : (
+                  <React.Fragment key={idx}>{logoBox}</React.Fragment>
+                );
+              })}
             </div>
           </div>
 
