@@ -13,9 +13,9 @@ export default function Manufacturing() {
   return (
     <>
       {/* ══ HERO BANNER ══ */}
-      <section className="hero-subpage">
-        <div className="hero-bg" style={{ backgroundImage: "url('/ab-udyog-industrial-oil-refinery-plant.jpg')", opacity: 0.35 }} />
-        <div className="hero-accent" />
+      <section className="hero-subpage" style={{ background: '#102014' }}>
+        <div className="hero-bg" style={{ backgroundImage: "url('/ab-udyog-industrial-oil-refinery-plant.jpg')", opacity: 0.42 }} />
+        <div className="hero-accent" style={{ background: 'linear-gradient(180deg, rgba(27, 51, 34, 0.72) 0%, rgba(16, 32, 20, 0.94) 100%)' }} />
         <div className="hero-content" style={{ textAlign: 'center', margin: '0 auto', maxWidth: '800px' }}>
           <h1 className="hero-title">
             Industrial-Scale Edible Oil Refining
