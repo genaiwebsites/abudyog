@@ -1,4 +1,5 @@
 import { Cormorant_Garamond, Outfit, Archivo, Plus_Jakarta_Sans, Space_Mono } from 'next/font/google';
+import { Analytics as VercelAnalytics } from '@vercel/analytics/next';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppWidget from '../components/WhatsAppWidget';
@@ -142,6 +143,7 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <Analytics />
+        <VercelAnalytics />
         <ConsoleGreeting />
         <Navbar />
         {children}
