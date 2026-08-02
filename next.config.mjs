@@ -39,18 +39,13 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/certifications',
+        destination: '/infrastructure',
+        permanent: true,
+      },
+      {
         source: '/csr',
         destination: '/sustainability',
-        permanent: true,
-      },
-      {
-        source: '/quality-assurance',
-        destination: '/quality',
-        permanent: true,
-      },
-      {
-        source: '/certifications',
-        destination: '/quality',
         permanent: true,
       },
       {
