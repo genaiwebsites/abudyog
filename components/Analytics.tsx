@@ -6,7 +6,7 @@ import Script from 'next/script';
 // TELEMETRY CONTAINER CONFIGURATION (In-Code Constants)
 // ═════════════════════════════════════════════════════════════════════════════
 export const GTM_CONTAINER_ID = "GTM-WD4WZBRK";
-export const GA4_MEASUREMENT_ID = "";     // Set when provided
+export const GA4_MEASUREMENT_ID = "G-7X7DN3CD1W";
 export const CLARITY_PROJECT_ID = "";     // Set when provided
 
 export type B2BInquiryType = 'whatsapp' | 'email' | 'call' | 'rfq' | 'spec_sheet';
