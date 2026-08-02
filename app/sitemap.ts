@@ -3,24 +3,31 @@ import { MetadataRoute } from 'next';
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://abudyog.in';
 
-  return [
+  // Product Slugs defined in app/products/[slug]/page.js
+  const productSlugs = [
+    'magik-dorb',
+    'ab-health',
+    'de-oiled-rice-bran',
+    'rice-bran-wax',
+    'rice-bran-gums',
+    'rice-bran-lecithin',
+    'rice-bran-fatty-acid',
+    'spent-bleaching-earth',
+  ];
+
+  const productRoutes: MetadataRoute.Sitemap = productSlugs.map((slug) => ({
+    url: `${baseUrl}/products/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: slug === 'magik-dorb' || slug === 'ab-health' ? 1.0 : 0.9,
+  }));
+
+  const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}`,
       lastModified: new Date(),
       changeFrequency: 'daily',
       priority: 1.0,
-    },
-    {
-      url: `${baseUrl}/products/magik-dorb`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1.0,
-    },
-    {
-      url: `${baseUrl}/products/ab-health`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
     },
     {
       url: `${baseUrl}/products`,
@@ -30,12 +37,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/about`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/quality`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
@@ -65,4 +66,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
   ];
+
+  return [...staticRoutes, ...productRoutes];
 }
