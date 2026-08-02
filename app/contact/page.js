@@ -118,8 +118,8 @@ export default function Contact() {
                       Registered Corporate Office
                     </h4>
                     <p style={{ fontSize: '13.5px', color: 'var(--muted)', lineHeight: 1.5, margin: 0 }}>
-                      11A, Rawdon Street, Kolkata – 700017,<br />
-                      West Bengal, India
+                      3rd floor, 55/1B, Strand Rd, Jorabagan,<br />
+                      Kolkata – 700006, West Bengal, India
                     </p>
                   </div>
                 </div>
@@ -134,8 +134,8 @@ export default function Contact() {
                       Refinery &amp; Solvent Extraction Plant
                     </h4>
                     <p style={{ fontSize: '13.5px', color: 'var(--muted)', lineHeight: 1.5, margin: 0 }}>
-                      Uchalan, Purba Burdwan – 713427,<br />
-                      West Bengal, India
+                      Dighirkon, Bamunia Road, Uchalan,<br />
+                      West Bengal – 713427, India
                     </p>
                   </div>
                 </div>
@@ -193,7 +193,7 @@ export default function Contact() {
                 backdropFilter: 'blur(6px)'
               }}>
                 <h4 style={{ fontSize: '13px', fontWeight: 700, margin: 0, color: 'var(--white)' }}>Corporate HQ Map</h4>
-                <p style={{ fontSize: '11px', color: 'var(--gold-light)', margin: '2px 0 0 0' }}>11A, Rawdon Street, Kolkata</p>
+                <p style={{ fontSize: '11px', color: 'var(--gold-light)', margin: '2px 0 0 0' }}>3rd floor, 55/1B, Strand Rd, Jorabagan, Kolkata</p>
               </div>
             </div>
 

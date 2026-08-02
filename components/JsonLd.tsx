@@ -22,7 +22,7 @@ interface JsonLdProps {
 export default function JsonLd({ type = 'Organization', productData, breadcrumbs }: JsonLdProps): React.ReactElement {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://abudyog.in';
 
-  // 1. Master Organization / Corporation & Entity Graph Schema
+  // 1. Master Corporate HQ Organization Schema
   const orgSchema = {
     '@context': 'https://schema.org',
     '@type': 'Corporation',
@@ -36,16 +36,16 @@ export default function JsonLd({ type = 'Organization', productData, breadcrumbs
     foundingDate: '1994',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '11A, Rawdon Street',
+      streetAddress: '3rd floor, 55/1B, Strand Rd, Jorabagan',
       addressLocality: 'Kolkata',
       addressRegion: 'West Bengal',
-      postalCode: '700017',
+      postalCode: '700006',
       addressCountry: 'IN',
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: '22.5400',
-      longitude: '88.3500',
+      latitude: '22.5855',
+      longitude: '88.3550',
     },
     contactPoint: {
       '@type': 'ContactPoint',
@@ -88,7 +88,7 @@ export default function JsonLd({ type = 'Organization', productData, breadcrumbs
     ].filter(Boolean),
   };
 
-  // 2. Plant Facility LocalBusiness Schema
+  // 2. Refinery & Solvent Extraction Plant Facility LocalBusiness Schema
   const plantSchema = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
@@ -100,23 +100,23 @@ export default function JsonLd({ type = 'Organization', productData, breadcrumbs
     telephone: '+91-74392-89709',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '11A, Rawdon Street',
-      addressLocality: 'Kolkata',
+      streetAddress: 'Dighirkon, Bamunia Road',
+      addressLocality: 'Uchalan',
       addressRegion: 'West Bengal',
-      postalCode: '700017',
+      postalCode: '713427',
       addressCountry: 'IN',
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: '22.5400',
-      longitude: '88.3500',
+      latitude: '23.1170',
+      longitude: '87.9400',
     },
     parentOrganization: {
       '@id': `${baseUrl}/#organization`,
     },
   };
 
-  // 3. B2B Product Rich Snippet Schema (Google Merchant & Rich Results Compliant)
+  // 3. B2B Product Rich Snippet Schema
   const productSchema = productData
     ? {
         '@context': 'https://schema.org',
