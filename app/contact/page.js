@@ -1,22 +1,64 @@
 "use client";
 import React, { useState } from 'react';
-import { MapPin, Mail, Phone, Clock, Building2, Factory, CheckCircle2 } from 'lucide-react';
+import { MapPin, Mail, Phone, Clock, Building2, Factory, CheckCircle2, AlertCircle } from 'lucide-react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { trackB2BConversion } from '@/components/Analytics';
 
 export default function Contact() {
   useScrollReveal('.reveal', 0.1);
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
   const [refId, setRefId] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
+    setErrorMsg('');
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const payload = {
+      fname: formData.get('fname'),
+      company: formData.get('company'),
+      email: formData.get('email'),
+      phone: formData.get('phone'),
+      product: formData.get('product'),
+      volume: formData.get('volume'),
+      message: formData.get('message'),
+      website_url: formData.get('website_url'), // Honeypot trap field
+    };
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await res.json();
+
+      if (!res.ok || result.error) {
+        setErrorMsg(result.error || 'Failed to submit commercial inquiry. Please try again.');
+        setLoading(false);
+        return;
+      }
+
       setLoading(false);
       setSubmitted(true);
-      setRefId(`ABU-${Math.floor(100000 + Math.random() * 900000)}`);
-    }, 600);
+      const generatedRef = `ABU-${Math.floor(100000 + Math.random() * 900000)}`;
+      setRefId(generatedRef);
+
+      // Track B2B Telemetry Conversion Event
+      trackB2BConversion('email', payload.product || 'general');
+
+      form.reset();
+    } catch (err) {
+      console.error('Contact submit network error:', err);
+      setErrorMsg('Network connectivity issue. Please check your connection and try again.');
+      setLoading(false);
+    }
   };
 
   return (
@@ -165,7 +207,7 @@ export default function Contact() {
             padding: '36px',
             display: 'flex',
             flexDirection: 'column',
-            justify: 'space-between',
+            justifyContent: 'space-between',
             height: '100%',
             boxSizing: 'border-box'
           }}>
@@ -175,9 +217,16 @@ export default function Contact() {
             <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '28px', fontWeight: 700, color: 'var(--green-deep)', marginBottom: '8px', lineHeight: 1.15 }}>
               Submit Business Inquiry
             </h3>
-            <p style={{ fontSize: '14px', color: 'var(--muted)', marginBottom: '32px', lineHeight: 1.6 }}>
+            <p style={{ fontSize: '14px', color: 'var(--muted)', marginBottom: '24px', lineHeight: 1.6 }}>
               Fill out the parameters below to route your inquiry directly to our sales, procurement, or export department.
             </p>
+
+            {errorMsg && (
+              <div style={{ background: '#fdf2f2', border: '1px solid #f8b4b4', color: '#9b1c1c', padding: '12px 16px', marginBottom: '20px', borderRadius: '4px', fontSize: '13px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <AlertCircle size={16} flexShrink={0} />
+                <span>{errorMsg}</span>
+              </div>
+            )}
 
             {submitted ? (
               <div
@@ -232,6 +281,11 @@ export default function Contact() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                {/* 🍯 Honeypot Trap Field (Hidden from real visitors, catches automated spambots) */}
+                <div style={{ display: 'none', visibility: 'hidden' }} aria-hidden="true">
+                  <input type="text" id="website_url" name="website_url" tabIndex={-1} autoComplete="off" />
+                </div>
+
                 <div className="contact-form-row">
                   <div>
                     <label htmlFor="full-name" style={{ fontSize: '12px', fontWeight: 600, color: 'var(--green-deep)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '6px', display: 'block' }}>
@@ -240,6 +294,7 @@ export default function Contact() {
                     <input 
                       type="text" 
                       id="full-name" 
+                      name="fname"
                       placeholder="e.g. Rajesh Sharma" 
                       maxLength={100} 
                       required 
@@ -253,6 +308,7 @@ export default function Contact() {
                     <input 
                       type="text" 
                       id="company-name" 
+                      name="company"
                       placeholder="e.g. Apex Foods Pvt. Ltd." 
                       maxLength={120} 
                       required 
@@ -269,6 +325,7 @@ export default function Contact() {
                     <input 
                       type="email" 
                       id="email-address" 
+                      name="email"
                       placeholder="name@company.com" 
                       maxLength={120} 
                       required 
@@ -282,6 +339,7 @@ export default function Contact() {
                     <input 
                       type="tel" 
                       id="phone-number" 
+                      name="phone"
                       placeholder="+91 98765 43210" 
                       maxLength={25} 
                       pattern="[\+]?[0-9\s\-]+" 
@@ -297,6 +355,7 @@ export default function Contact() {
                   </label>
                   <select 
                     id="product-category" 
+                    name="product"
                     defaultValue="" 
                     required
                     style={{ width: '100%', padding: '12px 14px', border: '1px solid var(--color-border)', background: 'var(--cream)', fontSize: '14px', outline: 'none' }}
@@ -322,6 +381,7 @@ export default function Contact() {
                   <input 
                     type="text" 
                     id="order-volume" 
+                    name="volume"
                     placeholder="e.g. 20 Metric Tons / Tanker Load / Retail Cases" 
                     maxLength={100} 
                     style={{ width: '100%', padding: '12px 14px', border: '1px solid var(--color-border)', background: 'var(--cream)', fontSize: '14px', outline: 'none' }}
@@ -334,6 +394,7 @@ export default function Contact() {
                   </label>
                   <textarea 
                     id="message-body" 
+                    name="message"
                     placeholder="Provide details regarding target delivery date, quality parameters, or packaging preferences..." 
                     rows={4} 
                     maxLength={2000} 
@@ -372,4 +433,3 @@ export default function Contact() {
     </div>
   );
 }
-

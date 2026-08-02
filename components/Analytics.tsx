@@ -2,6 +2,13 @@
 import React from 'react';
 import Script from 'next/script';
 
+// ═════════════════════════════════════════════════════════════════════════════
+// TELEMETRY CONTAINER CONFIGURATION (In-Code Constants)
+// ═════════════════════════════════════════════════════════════════════════════
+export const GTM_CONTAINER_ID = "GTM-WD4WZBRK";
+export const GA4_MEASUREMENT_ID = "";     // Set when provided
+export const CLARITY_PROJECT_ID = "";     // Set when provided
+
 export type B2BInquiryType = 'whatsapp' | 'email' | 'call' | 'rfq' | 'spec_sheet';
 
 export function trackB2BConversion(inquiryType: B2BInquiryType, productSlug?: string): void {
@@ -30,10 +37,26 @@ export function trackB2BConversion(inquiryType: B2BInquiryType, productSlug?: st
   console.log('[Analytics] B2B Telemetry Event Tracked:', eventPayload);
 }
 
+export function GtmNoScript(): React.ReactElement | null {
+  const gtmId = GTM_CONTAINER_ID.trim();
+  if (!gtmId) return null;
+
+  return (
+    <noscript>
+      <iframe
+        src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
+        height="0"
+        width="0"
+        style={{ display: 'none', visibility: 'hidden' }}
+      />
+    </noscript>
+  );
+}
+
 export default function Analytics(): React.ReactElement | null {
-  const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
-  const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
-  const clarityId = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID;
+  const gtmId = GTM_CONTAINER_ID.trim();
+  const gaId = GA4_MEASUREMENT_ID.trim();
+  const clarityId = CLARITY_PROJECT_ID.trim();
 
   return (
     <>

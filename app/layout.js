@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 import WhatsAppWidget from '../components/WhatsAppWidget';
 import ConsoleGreeting from '../components/ConsoleGreeting';
 import JsonLd from '../components/JsonLd';
-import Analytics from '../components/Analytics';
+import Analytics, { GtmNoScript } from '../components/Analytics';
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -90,20 +90,47 @@ export const metadata = {
     siteName: 'AB Udyog',
     images: [
       {
-        url: `${siteUrl}/ab-udyog-rice-bran-oil-refinery-plant-kolkata.png`,
+        url: `${siteUrl}/og/og_homepage.jpg`,
+        secureUrl: `${siteUrl}/og/og_homepage.jpg`,
         width: 1200,
         height: 630,
-        alt: 'AB Udyog Physical Refinery & Solvent Extraction Plant Kolkata',
+        type: 'image/jpeg',
+        alt: 'AB Udyog Physical Refinery & Solvent Extraction Plant Kolkata Wide Banner',
+      },
+      {
+        url: `${siteUrl}/og/square/sq_homepage.jpg`,
+        secureUrl: `${siteUrl}/og/square/sq_homepage.jpg`,
+        width: 800,
+        height: 800,
+        type: 'image/jpeg',
+        alt: 'AB Udyog Physical Refinery Square Thumbnail',
       },
     ],
-    locale: 'en_US',
+    locale: 'en_IN',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'AB Udyog Pvt. Ltd. | Premium Rice Bran Oil & DORB Manufacturer',
     description: "Eastern India's premier physical refining complex since 1994.",
-    images: [`${siteUrl}/ab-udyog-rice-bran-oil-refinery-plant-kolkata.png`],
+    images: [
+      {
+        url: `${siteUrl}/og/og_homepage.jpg`,
+        secureUrl: `${siteUrl}/og/og_homepage.jpg`,
+        width: 1200,
+        height: 630,
+        type: 'image/jpeg',
+        alt: 'AB Udyog Physical Refinery Wide Banner',
+      },
+      {
+        url: `${siteUrl}/og/square/sq_homepage.jpg`,
+        secureUrl: `${siteUrl}/og/square/sq_homepage.jpg`,
+        width: 800,
+        height: 800,
+        type: 'image/jpeg',
+        alt: 'AB Udyog Physical Refinery Square Thumbnail',
+      },
+    ],
   },
   robots: {
     index: true,
@@ -142,6 +169,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
+        <GtmNoScript />
         <Analytics />
         <VercelAnalytics />
         <ConsoleGreeting />
