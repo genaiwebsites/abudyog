@@ -8,19 +8,19 @@ import CtaBanner from '@/components/CtaBanner';
 
 const productData = {
   'ab-health': {
-    title: 'AB Health Gamma Oryzanol',
+    title: 'AB Health Edible Oils',
     shortName: 'AB Health',
-    desc: 'Concentrated Gamma Oryzanol nutraceutical supplements.',
-    fullDesc: 'AB Health is our B2C wellness division product line, offering concentrated phytosterols and Gamma Oryzanol lipids extracted directly from fresh rice bran. Processed under strict WHO-GMP standards at our Kolkata complex, these active bio-nutrients support cardiovascular health, metabolic protection, and cell recovery.',
-    image: '/ab_health_product.png',
-    features: ['Cholesterol Management', 'Powerful Antioxidant', 'Endocrine Support', '100% Non-GMO Base'],
-    applications: ['Daily Wellness Capsule', 'Cardiovascular Support', 'Oxidative Stress Reduction', 'Sports Nutrition Recovery'],
+    desc: 'Physically refined Rice Bran Oil & Soyabean Oil fortified with Vitamins A & D.',
+    fullDesc: 'AB Health consumer edible oils feature physically refined Rice Bran Oil and refined Soyabean Oil fortified with Vitamins A & D and enriched with natural Oryzanol. Formulated for high-temperature stability, zero trans fats, cholesterol control, and heart-smart daily family nutrition.',
+    image: '/ab-health-edible-oils-rice-bran-soyabean-oil-hero-banner-desktop.jpg',
+    features: ['Vit. A & D Fortified', 'Natural Oryzanol Enriched', 'Zero Trans Fat', 'FSSAI & FSSC 22000 Certified'],
+    applications: ['Daily Family Cooking', 'Deep Frying & Sautéing', 'Heart-Smart Cholesterol Management', 'Consumer Retail Packaging'],
     specifications: [
-      { parameter: 'Active Ingredient', value: 'Gamma Oryzanol (98.5% Min)' },
-      { parameter: 'Physical Form', value: 'Fine Crystalline Powder / Veg Capsules' },
-      { parameter: 'Sourcing Base', value: 'Oryza Sativa (Native Rice Bran)' },
-      { parameter: 'Heavy Metals', value: 'Complies with pharmacopoeia (Less than 10 PPM)' },
-      { parameter: 'Moisture Content', value: '0.5% Max' }
+      { parameter: 'Free Fatty Acids (FFA)', value: '0.15% Max (as Oleic)' },
+      { parameter: 'Oryzanol Content', value: '10,000 PPM Min' },
+      { parameter: 'Trans Fat', value: 'Zero (0g)' },
+      { parameter: 'Fortification', value: 'Vitamin A (25 IU/g) & Vitamin D2 (4.5 IU/g)' },
+      { parameter: 'Smoke Point', value: '232°C (450°F) High Thermal Stability' }
     ]
   },
   'de-oiled-rice-bran': {
@@ -105,7 +105,7 @@ const productData = {
     shortName: 'Lecithin',
     desc: 'Premium natural emulsifier and antioxidant.',
     fullDesc: 'Rice Bran Lecithin exhibits an excellent, well-balanced fatty acid profile and contains key micronutrients and natural antioxidants. It serves as a premium, appealing alternative for manufacturers seeking non-genetically modified (non-GMO) lecithin over soybean and sunflower alternatives. Highly valuable for cosmetic, nutraceutical, and personal care formulations due to its high unsaponifiable matter.',
-    image: '/rice_bran_lecithin_product.png',
+    image: '/ab_udyog_quality_assurance_laboratory_testing.png',
     features: ['Non-GMO Alternative', 'Micronutrient Rich', 'Excellent Emulsifier', 'High Unsaponifiables'],
     applications: ['Bakery & Confectionery', 'Chocolate Manufacturing', 'Nutraceuticals', 'Personal Care & Cosmetics'],
     specifications: [

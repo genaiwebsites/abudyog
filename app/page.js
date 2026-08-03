@@ -415,7 +415,7 @@ export default function Home() {
               category: 'FOOD & NUTRACEUTICALS',
               metric: 'NON-GMO ALTERNATIVE',
               desc: 'Natural non-GMO emulsifier and antioxidant ideal for bakery, confectionery, and personal care.',
-              image: '/rice_bran_lecithin_product.png',
+              image: '/ab_udyog_quality_assurance_laboratory_testing.png',
               link: '/products/rice-bran-lecithin'
             },
             {
