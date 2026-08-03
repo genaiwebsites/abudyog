@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://abudyog.in';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.abudyog.in';
 
   // Product Slugs defined in app/products/[slug]/page.js
   const productSlugs = [

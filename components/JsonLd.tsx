@@ -20,7 +20,7 @@ interface JsonLdProps {
 }
 
 export default function JsonLd({ type = 'Organization', productData, breadcrumbs }: JsonLdProps): React.ReactElement {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://abudyog.in';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.abudyog.in';
 
   // 1. Master Corporate HQ Organization Schema
   const orgSchema = {

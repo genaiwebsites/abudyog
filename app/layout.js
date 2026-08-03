@@ -44,7 +44,7 @@ const spaceMono = Space_Mono({
   display: 'swap',
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://abudyog.in';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.abudyog.in';
 
 export const metadata = {
   title: {
@@ -75,7 +75,7 @@ export const metadata = {
   },
   metadataBase: new URL(siteUrl),
   alternates: {
-    canonical: '/',
+    canonical: './',
   },
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,

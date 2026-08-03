@@ -3558,6 +3558,119 @@ img.ab-health-banner-img {
   }
 }
 
+/* ── INDUSTRIAL INFRASTRUCTURE PARALLAX SECTION ── */
+.parallax-window-section {
+  position: relative;
+  width: 100%;
+  min-height: 85vh;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--green-deep);
+}
+
+.parallax-window-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.parallax-window-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  min-height: 85vh;
+}
+
+.parallax-window-spacer {
+  display: block;
+}
+
+.parallax-window-panel {
+  background: rgba(11, 35, 22, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-left: 1px solid rgba(212, 175, 55, 0.3);
+  padding: 96px 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #FFFFFF;
+}
+
+.parallax-window-panel .section-title {
+  color: #FFFFFF;
+  font-size: clamp(32px, 3.5vw, 48px);
+  margin-bottom: 20px;
+}
+
+.parallax-window-panel .section-title em {
+  color: var(--gold);
+  font-style: normal;
+}
+
+.parallax-window-panel .section-body {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.parallax-window-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px 24px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.parallax-window-stat-num {
+  font-family: var(--font-heading);
+  font-size: clamp(36px, 3vw, 48px);
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1;
+}
+
+.parallax-window-stat-unit {
+  font-size: 16px;
+  color: var(--gold);
+  margin-left: 4px;
+}
+
+.parallax-window-stat-label {
+  font-family: var(--font-outfit);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.75);
+  margin-top: 6px;
+}
+
+@media (max-width: 900px) {
+  .parallax-window-section, .parallax-window-grid {
+    min-height: auto;
+  }
+  .parallax-window-grid {
+    grid-template-columns: 1fr;
+  }
+  .parallax-window-spacer {
+    display: none;
+  }
+  .parallax-window-panel {
+    border-left: none;
+    padding: 60px 6%;
+  }
+}
+
 
 
 
