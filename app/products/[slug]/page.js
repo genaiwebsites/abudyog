@@ -12,7 +12,7 @@ const productData = {
     shortName: 'AB Health',
     desc: 'Physically refined Rice Bran Oil & Soyabean Oil fortified with Vitamins A & D.',
     fullDesc: 'AB Health consumer edible oils feature physically refined Rice Bran Oil and refined Soyabean Oil fortified with Vitamins A & D and enriched with natural Oryzanol. Formulated for high-temperature stability, zero trans fats, cholesterol control, and heart-smart daily family nutrition.',
-    image: '/ab-health-edible-oils-rice-bran-soyabean-oil-hero-banner-desktop.jpg',
+    image: '/ab-health-edible-oils-brand-showcase-kolkata.svg',
     features: ['Vit. A & D Fortified', 'Natural Oryzanol Enriched', 'Zero Trans Fat', 'FSSAI & FSSC 22000 Certified'],
     applications: ['Daily Family Cooking', 'Deep Frying & Sautéing', 'Heart-Smart Cholesterol Management', 'Consumer Retail Packaging'],
     specifications: [
