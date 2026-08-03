@@ -76,6 +76,7 @@ def create_square_thumbnail(src_path, out_path, is_text_or_packshot=False):
 
 # Asset mapping: (wide_name, wide_src, sq_name, sq_src, is_packshot)
 PAGE_ASSET_MAP = [
+    ('og_homepage.jpg', 'ab-udyog-complete-edible-oils-and-dorb-product-range-white.png', 'sq_homepage.jpg', 'logo.png', True),
     ('og_about.jpg', 'ab_udyog_kolkata_factory_refinery_entrance.png', 'sq_about.jpg', 'ab_udyog_kolkata_factory_refinery_entrance.png', False),
     ('og_products.jpg', 'ab-udyog-complete-edible-oils-and-dorb-product-range-white.png', 'sq_products.jpg', 'ab-udyog-complete-edible-oils-and-dorb-product-range-white.png', True),
     ('og_ab_health.jpg', 'ab-health-edible-oils-brand-showcase-kolkata.svg', 'sq_ab_health.jpg', 'ab_health_logo_square.png', True),
