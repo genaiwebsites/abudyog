@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server';
 
 export async function GET(): Promise<NextResponse> {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.abudyog.in';
+  const rawBaseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.abudyog.in';
+  const baseUrl = rawBaseUrl.replace(/^https?:\/\/(www\.)?abudyog\.in/, 'https://www.abudyog.in');
 
   const rssXml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
