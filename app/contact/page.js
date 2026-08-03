@@ -78,28 +78,13 @@ export default function Contact() {
       </section>
 
       {/* ══ MAIN INTEGRATED CONTACT COMMAND MATRIX ══ */}
-      <section style={{ padding: '80px 8%', background: 'var(--cream)' }}>
-        <div 
-          className="reveal"
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(420px, 1fr))',
-            gap: '32px',
-            maxWidth: '1280px',
-            margin: '0 auto',
-            alignItems: 'stretch'
-          }}
-        >
+      <section className="contact-main-section">
+        <div className="reveal contact-grid">
           {/* ── LEFT COLUMN: CORPORATE & REFINERY DIRECTORY ── */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', height: '100%' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', height: '100%', minWidth: 0, width: '100%' }}>
             
             {/* Corporate Directory Dossier */}
-            <div style={{ 
-              background: '#FFFFFF', 
-              border: '1px solid var(--color-border)', 
-              borderTop: '4px solid var(--green-deep)',
-              padding: '32px' 
-            }}>
+            <div className="contact-card-box" style={{ borderTop: '4px solid var(--green-deep)' }}>
               <span style={{ color: 'var(--gold-dark)', fontSize: '10px', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', display: 'block', marginBottom: '12px' }}>
                 Official Facility Directory
               </span>
@@ -200,11 +185,8 @@ export default function Contact() {
           </div>
 
           {/* ── RIGHT COLUMN: FORMAL B2B TRADE DESK FORM ── */}
-          <div style={{ 
-            background: '#FFFFFF', 
-            border: '1px solid var(--color-border)', 
+          <div className="contact-card-box" style={{ 
             borderTop: '4px solid var(--gold)',
-            padding: '36px',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'space-between',
