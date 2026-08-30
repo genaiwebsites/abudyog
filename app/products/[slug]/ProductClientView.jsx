@@ -133,7 +133,14 @@ export default function ProductClientView({ product }) {
                 className="btn-primary"
                 style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '12px 18px', fontSize: '11px', whiteSpace: 'nowrap' }}
               >
-                Request Commercial Quote
+                Request Factory Quote &amp; TDS
+              </Link>
+              <Link 
+                href={`/contact?ref=${product.slug}&type=sample`} 
+                className="btn-ghost"
+                style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '12px 18px', fontSize: '11px', whiteSpace: 'nowrap', borderColor: 'rgba(13, 43, 26, 0.25)', color: 'var(--green-deep)' }}
+              >
+                Request 500g Lab Sample
               </Link>
             </div>
           </div>

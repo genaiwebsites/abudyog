@@ -152,6 +152,8 @@ export const viewport = {
   viewportFit: 'cover',
 };
 
+import MobileQuickBar from '../components/MobileQuickBar';
+
 export default function RootLayout({ children }) {
   return (
     <html
@@ -177,6 +179,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         {children}
         <WhatsAppWidget />
+        <MobileQuickBar />
         <Footer />
       </body>
     </html>
