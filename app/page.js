@@ -57,7 +57,7 @@ export default function Home() {
             <div className="parallax-window-stats">
               <div className="parallax-window-stat">
                 <div className="parallax-window-stat-num">100<span className="parallax-window-stat-unit">%</span></div>
-                <div className="parallax-window-stat-label">Traceable Farm-to-Refinery Loop</div>
+                <div className="parallax-window-stat-label">Farm-to-Refinery Loop</div>
               </div>
               <div className="parallax-window-stat">
                 <div className="parallax-window-stat-num">3k<span className="parallax-window-stat-unit">+</span></div>
@@ -100,16 +100,8 @@ export default function Home() {
           </p>
         </div>
 
-        {/* 4 Distinct Elevated Card Boxes Grid */}
-        <div 
-          style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', 
-            gap: '24px', 
-            maxWidth: '1280px', 
-            margin: '0 auto' 
-          }}
-        >
+        {/* 4 Distinct Elevated Card Boxes Grid — 4 Columns in 1 Row */}
+        <div className="products-grid">
           {/* Card 1: Jeevan Rekha */}
           <Link 
             href="https://jeevanrekhafoods.com/products" 
@@ -342,9 +334,7 @@ export default function Home() {
         id="byproducts"
         style={{ 
           background: 'var(--cream)', 
-          padding: '96px 8%',
-          borderTop: '1px solid var(--color-border)',
-          borderBottom: '1px solid var(--color-border)'
+          padding: '96px 8%'
         }}
       >
         <div className="section-header-center reveal" style={{ marginBottom: '48px', textAlign: 'center' }}>
@@ -471,24 +461,6 @@ export default function Home() {
                   sizes="(max-width: 768px) 100vw, 33vw"
                   style={{ objectFit: 'cover', transition: 'transform 0.6s ease' }}
                 />
-                
-                {/* Technical Metric pill */}
-                <div style={{
-                  position: 'absolute',
-                  top: '12px',
-                  right: '12px',
-                  background: 'rgba(18, 42, 28, 0.92)',
-                  backdropFilter: 'blur(6px)',
-                  border: '1px solid var(--gold)',
-                  padding: '4px 10px',
-                  color: 'var(--gold-light)',
-                  fontFamily: 'var(--font-mono, monospace)',
-                  fontSize: '10px',
-                  fontWeight: 700,
-                  letterSpacing: '0.1em'
-                }}>
-                  {item.metric}
-                </div>
               </div>
 
               {/* Card Body */}
@@ -548,12 +520,12 @@ export default function Home() {
                 <div className="parallax-window-stat-label">Physical Refining Capacity</div>
               </div>
               <div className="parallax-window-stat">
-                <div className="parallax-window-stat-num">10+<span className="parallax-window-stat-unit">Yrs</span></div>
-                <div className="parallax-window-stat-label">Refinement legacy in East India</div>
+                <div className="parallax-window-stat-num">7+<span className="parallax-window-stat-unit">Yrs</span></div>
+                <div className="parallax-window-stat-label">Refinement Legacy in East India</div>
               </div>
               <div className="parallax-window-stat">
-                <div className="parallax-window-stat-num">6+<span className="parallax-window-stat-unit">Lines</span></div>
-                <div className="parallax-window-stat-label">Certified By-Product Lines</div>
+                <div className="parallax-window-stat-num">10,000<span className="parallax-window-stat-unit">+ PPM</span></div>
+                <div className="parallax-window-stat-label">Natural Active Oryzanol Retained</div>
               </div>
             </div>
           </div>

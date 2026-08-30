@@ -51,8 +51,8 @@ export default function HomeTrustBar() {
       <style>{`
         .home-trust-bar {
           background: #FAF8F5;
-          border-top: 1px solid rgba(18, 42, 28, 0.08);
-          border-bottom: 1px solid rgba(18, 42, 28, 0.08);
+          border-top: none;
+          border-bottom: none;
           padding: 24px 5%;
         }
 
