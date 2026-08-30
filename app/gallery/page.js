@@ -7,7 +7,7 @@ const galleryItems = [
   {
     id: 1,
     src: "/ab-udyog-rice-bran-oil-refinery-plant-kolkata.png",
-    title: "Continuous Solvent Extraction Complex",
+    title: "Continuous Solvent Extraction Facility",
     category: "Refinery",
     description: "300 TPD continuous solvent extraction facility processing fresh raw rice bran in Kolkata, West Bengal."
   },
@@ -49,7 +49,7 @@ const galleryItems = [
   {
     id: 7,
     src: "/ab_udyog_kolkata_factory_refinery_entrance.png",
-    title: "Kolkata Plant Entrance & Complex",
+    title: "Kolkata Plant Entrance & Facility",
     category: "Infrastructure",
     description: "Industrial facility entrance and logistics bay handling bulk tanker dispatches and raw material arrival."
   },
@@ -58,7 +58,7 @@ const galleryItems = [
     src: "/DJI_0140.jpg",
     title: "Plant Storage Silos & Aerial Facility",
     category: "Infrastructure",
-    description: "Aerial drone perspective of the AB Udyog refinery complex, raw material silos, and logistics grounds."
+    description: "Aerial drone perspective of the AB Udyog refinery facility, raw material silos, and logistics grounds."
   },
   {
     id: 9,

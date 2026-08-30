@@ -12,7 +12,7 @@ export default function Footer() {
             </Link>
           </div>
           <p className="footer-tagline">
-            Eastern India's premium physical refining and solvent extraction complex since 1994.
+            Backed by nearly four decades of industry heritage, operating Eastern India&apos;s premier physical refining and solvent extraction facility.
           </p>
           <div className="footer-social">
             <a href="https://www.instagram.com/jeevanrekhafoods/" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Instagram" title="AB Udyog on Instagram">

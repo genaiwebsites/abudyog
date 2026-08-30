@@ -45,7 +45,7 @@ export default function HeroSection() {
           >
             <h1 className="hero-title">
               Eastern India&apos;s Premier Agro-Refinery<br />
-              <span className="hero-title-accent">&amp; Bio-Derivatives Complex</span>
+              <span className="hero-title-accent">&amp; Bio-Derivatives Facility</span>
             </h1>
           </motion.div>
 
