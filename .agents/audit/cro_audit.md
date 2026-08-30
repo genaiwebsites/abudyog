@@ -1,104 +1,123 @@
-# AB Udyog Pvt. Ltd. — Conversion Rate Optimization (CRO) Audit Report
+# Comprehensive Conversion Rate Optimization (CRO) Audit Report
 
-**Date**: August 3, 2026  
-**Target Codebase**: `c:\Projects\AB Udyog\app`  
-**Framework**: Next.js 16.2 (App Router)  
-**Business Model**: Dual B2B Industrial Wholesale (Refinery & Solvent Extraction) + B2C Consumer Brands (AB Health / Jeevan Rekha)  
+**Target Codebase**: `C:\Projects\AB Udyog` (Next.js 16.2.4 App Router)  
+**Production Domain**: `https://www.abudyog.in`  
+**Audit Date**: August 30, 2026  
+**Auditor**: Lead CRO & B2B Funnel Strategist  
+**Skill Framework**: `cro` v2.0.0 (Value Prop Clarity, Form Friction Heuristics, B2B Telemetry, Mobile Conversion & ICE Prioritization)
 
 ---
 
-## 🏆 Overall CRO Audit Score: 94 / 100
+## 1. Executive Summary & CRO Health Scorecard
 
-| CRO Dimension | Score | Status | Key Highlights |
+A thorough heuristic and code-level conversion rate optimization audit was conducted across the AB Udyog marketing funnel. The audit evaluates the dual conversion paths: **B2B Industrial Buyers** (Feed Millers, Soap Manufacturers, Oleochemical Distillers, Wax Formulators) and **Consumer Brand Distributors** (Jeevan Rekha, AB Health).
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│ OVERALL CRO SCORE: 74 / 100 (HIGH AESTHETICS, FORM & MOBILE FRICTION) │
+│                                                                        │
+│ • Visual Authority & Trust Signals: 94/100 (NABL lab, 300 TPD proof)  │
+│ • Value Proposition Clarity:        88/100 (Clear factory positioning) │
+│ • CTA Hierarchy & Microcopy:        68/100 (Passive buttons, no TDS)   │
+│ • Form Friction & Lead Capture:     62/100 (No URL pre-fill, rigid req)│
+│ • Mobile Conversion Readiness:      58/100 (No sticky WhatsApp/Call)   │
+│ • Objection Handling & Specs:       82/100 (Good tables, no live calc) │
+└────────────────────────────────────────────────────────────────────────┘
+```
+
+### Critical Heuristic Findings:
+| Dimension | Score | Status | Findings & Friction Points |
 | :--- | :---: | :---: | :--- |
-| **Value Proposition Clarity** | **94 / 100** | 🟢 Excellent | Clear positioning as East India's premier 300 TPD physical refinery complex since 1994. |
-| **Headline & Messaging Impact** | **95 / 100** | 🟢 Excellent | Outcome-focused copy highlighting purity, capacity, and zero-chemical physical refining. |
-| **CTA Hierarchy & Placement** | **92 / 100** | 🟡 Strong | Persistent header CTA ("Request B2B Quote"), clear product-level conversion paths. |
-| **Visual Hierarchy & Scannability** | **96 / 100** | 🟢 Exceptional | High-contrast cards, authentic NABL lab photography, 4K Retina product showcase imagery. |
-| **Trust Signals & Proof Points** | **96 / 100** | 🟢 Exceptional | NABL Accreditation, FSSAI, FSSC 22000, 300 TPD capacity badges, 30+ years manufacturing history. |
-| **Objection Handling & Friction** | **91 / 100** | 🟡 Strong | Detailed chemical/physical specification tables for B2B buyers; minor form friction. |
-| **Form & Lead Capture Optimization** | **93 / 100** | 🟢 Excellent | Clean B2B RFQ form with product selection dropdown and contact options. |
+| **1. Value Proposition (5-Sec Test)** | **88 / 100** | PASS | Clear positioning (*"Eastern India's premier physical refining & solvent extraction facility"*). Differentiates physical steam refining from caustic chemical refining. |
+| **2. CTA Microcopy & Intent Match** | **68 / 100** | **WARNING** | Buttons use passive copy (*"Contact Us"*, *"Explore Range"*) instead of high-intent B2B conversion triggers (*"Get Factory Price Quote"*, *"Download Technical Data Sheet"*). |
+| **3. Form Friction (`app/contact/page.js`)** | **62 / 100** | **CRITICAL** | **No URL Query Auto-Selection**: Clicking *"Request Quote"* on `/products/rice-bran-wax` does not auto-select *"Rice Bran Wax"* in the contact dropdown. **Over-Required Fields**: The `message` textarea is strictly required, causing form abandonment. |
+| **4. Mobile Conversion (78% of Traffic)** | **58 / 100** | **CRITICAL** | GSC data confirms **78.1% of search impressions are mobile**. There is **zero sticky floating quick-connect bar** (WhatsApp Direct / One-Tap Phone Call) for Indian B2B commodity buyers. |
+| **5. Technical Trust & Proof Points** | **94 / 100** | **PASS** | Authentic NABL laboratory photography, 300 TPD solvent extraction metrics, FSSAI, and 4-decade industry heritage provide institutional trust. |
+| **6. Spec Sheets & Objection Handling** | **82 / 100** | **MODERATE** | Comprehensive specification tables, but lacks a 1-click **"Download TDS PDF"** button for industrial chemists and procurement officers. |
 
 ---
 
-## 1. 🔍 Comprehensive CRO Evaluation by Dimension
+## 2. Granular Funnel & Friction Analysis
 
-### A. Value Proposition Clarity (Score: 94/100)
-- **Strengths**:
-  - Visitors immediately grasp AB Udyog's scale within 3 seconds: *"Eastern India's Premier Physical Refining & Solvent Extraction Complex Since 1994."*
-  - Clear separation between **B2B Industrial Bulk Derivatives** (DORB, Rice Bran Wax, Gums, Lecithin, Fatty Acids) and **B2C Consumer Edible Oils** (AB Health, Jeevan Rekha).
-- **Opportunity**:
-  - Add explicit "Minimum Order Quantity (MOQ)" or "Bulk Tanker & Container Packaging Options" directly near the top of B2B product pages to immediately answer buyer logistical questions.
+### A. Contact Form Friction Heuristic (`app/contact/page.js`)
+* **Vulnerability 1: Missing URL Parameter Auto-Selection**:
+  - When users navigate from `/products/magik-dorb` to `/contact?ref=ab-dorb`, the dropdown (`<select id="product-category">`) remains on default `"Select Product Line"`.
+  - **Friction**: The user must manually find and select the product again.
+  - **Fix**: Use Next.js `useSearchParams()` to automatically populate `defaultValue` based on the query string.
 
-### B. Headline Effectiveness (Score: 95/100)
-- **Homepage Hero**: *"Purity in Every Drop, Excellence in Every Grain"* — Strong, memorable, brand-focused.
-- **Product Pages**: Outcome-focused technical headlines (*"Physically Refined Rice Bran Oil Fortified with Vitamins A & D & 10,000 PPM Natural Oryzanol"*).
-
-### C. CTA Placement, Copy, and Hierarchy (Score: 92/100)
-- **Primary Header CTA**: `Request B2B Quote` → Links directly to `/contact`.
-- **Product Card CTAs**: `Explore Product Range` / `Request Bulk Commercial Quote`.
-- **Quick Win**: Update button copy on industrial product pages from generic *"Contact Us"* to high-intent B2B action copy: *"Get Bulk Wholesale Quote & Spec Sheet"*.
-
-### D. Visual Hierarchy & Scannability (Score: 96/100)
-- **Typography & Contrast**: Clean typography scale, high contrast cards (#745C00 gold accents on dark green & crisp white backgrounds).
-- **Real Imagery**: 0 fake stock supplement images. Uses authentic NABL Quality Assurance Laboratory photography and 4K Retina product showcase graphics.
-
-### E. Trust Signals & Proof Points (Score: 96/100)
-- **Certifications**: FSSAI, FSSC 22000, NABL Laboratory Accreditation.
-- **Scale Indicators**: 300 Metric Tons Per Day (TPD) processing capacity, 30+ Years Operational Legacy (Est. 1994, Kolkata).
-- **Quality Proof**: NABL Lab Testing cards embedded on products, infrastructure, and gallery pages.
-
-### F. Objection Handling & Friction Points (Score: 91/100)
-- **B2B Specification Tables**: Comprehensive technical parameters (Free Fatty Acid %, Moisture %, Oryzanol PPM, Melting Point, Smoke Point) directly address B2B chemist/procurement buyer objections.
+* **Vulnerability 2: Rigid Required Fields (`textarea` Required)**:
+  - Line 383: `textarea required id="message-body"`.
+  - **Friction**: In B2B procurement, buyers who already filled in Name, Company, Phone, Product, and Volume often abandon when forced to type a custom paragraph.
+  - **Fix**: Make `message` optional or provide clickable chip presets (*"Need Bulk Rate"*, *"Need Sample"*, *"Request TDS"*).
 
 ---
 
-## 2. ⚡ Conversion Action Plan
+### B. Mobile Lead Capture Gap (78.1% of Search Impressions)
+According to Google Search Console performance data:
+- **Mobile**: **7,383 impressions**, 138 clicks, Avg Position 6.69.
+- **Desktop**: 2,013 impressions, 113 clicks, Avg Position 17.07.
 
-### 🚀 Quick Wins (Implement Immediately)
+**The Reality of Indian B2B Procurement**:
+Feed millers, brokers, and wholesale distributors searching on mobile devices in India rarely fill out 6-field web forms; they convert via **direct phone calls or WhatsApp Business chats**.
 
-1. **Dynamic Form Pre-Filling via URL Parameters**:
-   - Pass `?product=rice-bran-wax` when clicking *"Request Quote"* on product pages so the `/contact` form automatically pre-selects the product.
-2. **High-Intent CTA Button Microcopy**:
-   - Change generic CTA buttons from *"Submit Inquiry"* to *"Get Instant B2B Commercial Price Quote"*.
-3. **WhatsApp / Phone Quick-Connect**:
-   - Add a direct WhatsApp Business click-to-chat button (`+91 XXX-XXX-XXXX`) alongside the RFQ form for instant B2B buyer inquiries.
+```mermaid
+graph TD
+    A[Mobile Searcher: 78.1% Traffic] --> B{Conversion Choice}
+    B -->|Current Path: 6-Field Form| C[High Abandonment on Mobile Keyboards]
+    B -->|Missing Path: 1-Tap Floating Bar| D[Instant WhatsApp Quote / Direct Call]
+    D --> E[Immediate Factory Lead Capture]
+```
 
-### 📈 High-Impact Enhancements (Prioritize for Q3)
-
-1. **Interactive Spec Sheet Download Button**:
-   - Add a 1-click *"Download Technical Data Sheet (TDS) PDF"* button on industrial derivative subpages (`/products/rice-bran-wax`, `/products/rice-bran-lecithin`).
-2. **MOQ & Commercial Packaging Badges**:
-   - Display commercial packaging badges (*50kg Bags*, *200kg HDPE Drums*, *10L/15L Tins*, *Flexi-Tankers*) on product cards.
-3. **Interactive B2B Quantity Calculator**:
-   - Add a bulk tonnage calculator on `/products/magik-dorb` to help feed millers estimate truckload requirements.
-
----
-
-## 3. 🎯 CRO Recommendations by Page Type
-
-### 🏠 Homepage (`/`)
-- **Hero Area**: Keep the dual path visible: **B2B Industrial Bulk Buyers** vs. **B2C Consumer & Retail Distributors**.
-- **Social Proof Strip**: Feature ISO / FSSAI / NABL certification logos immediately below the hero banner.
-
-### 📦 Products Hub (`/products`)
-- **Filter Tabs**: Add pill filters (`All Products`, `B2C Food Oils`, `Animal Feed`, `Industrial Oleochemicals`) for 1-click filtering.
-- **Direct RFQ Buttons**: Ensure every product card has a prominent *"Get Bulk Price"* button.
-
-### 🏭 B2B Product Pages (`/products/[slug]`, `/products/magik-dorb`)
-- **Above-the-Fold Specs**: Ensure technical parameter tables are visible without excessive scrolling.
-- **Trust Badge**: Add NABL Lab Tested badge right next to product technical parameters.
-
-### 🛒 B2C Brand Page (`/products/ab-health`)
-- **Consumer Benefit Callouts**: Highlight Vit. A & D Fortification, 10,000 PPM Oryzanol, and Zero Trans Fat.
-- **Distributor Inquiry CTA**: Feature a dedicated *"Become a Regional Distributor"* callout box.
+**Fix**: Deploy a responsive floating action bar on mobile (`z-index: 999`) with:
+1. `Call Sales Desk (+91 74392 89709)`
+2. `Chat on WhatsApp (Pre-filled product message)`
 
 ---
 
-## 4. 🧪 A/B Test Hypotheses
+### C. CTA Microcopy Engineering
 
-| Test ID | Element | Control (Current) | Variant (Hypothesis) | Expected Impact |
+| Location | Current Weak CTA | High-Converting Alternative | Behavioral Trigger |
+| :--- | :--- | :--- | :--- |
+| **Hero Section Primary** | `Explore Products` | `Request Factory Quote` | Direct commercial intent |
+| **Product Detail Top** | `Contact Sales` | `Get Instant Bulk Rates & TDS` | Specific value exchange |
+| **Industrial Derivatives** | `Inquire Now` | `Request 500g Lab Sample` | Lowers commitment threshold |
+| **Contact Form Submit** | `Submit Commercial Inquiry` | `Send RFQ & Lock Factory Price` | Outcome-driven assurance |
+
+---
+
+## 3. Page-by-Page CRO Breakdown
+
+### 1. Homepage (`/`)
+* **5-Second Value Clarity**: Pass. Clear statement of 300 TPD processing capacity and physical refining.
+* **Missing Element**: A dedicated 1-click **"B2B Fast-Track RFQ"** modal or quick-quote widget for repeat industrial procurement managers.
+
+### 2. Product Hub (`/products`)
+* **Scannability**: Clean presentation of the 3 business divisions (Jeevan Rekha, AB Health, Industrial Byproducts).
+* **Opportunity**: Add commercial packaging tags directly on the card (*"Available in Flexi-Tanks, 50kg HDPE, 15L Tins"*).
+
+### 3. B2B Product Subpages (`/products/[slug]`)
+* **Strengths**: Clear parameter tables (Protein $\ge 16\%$, Melting Point $76^\circ\text{C}$, FFA $0.15\%$).
+* **Friction Point**: No 1-click PDF download for Technical Data Sheets (TDS) or Certificate of Analysis (CoA) templates.
+
+---
+
+## 4. A/B Testing Hypotheses & Experiment Backlog
+
+| Test ID | Hypothesis | Control (A) | Variant (B) | Primary Metric |
 | :--- | :--- | :--- | :--- | :--- |
-| **TEST-01** | Primary CTA Copy | *"Request B2B Quote"* | *"Get Wholesale Bulk Quote"* | +14% increase in RFQ form clicks |
-| **TEST-02** | Contact Form | Single-column 6 fields | 2-Step Form (Step 1: Product & Quantity, Step 2: Contact Info) | +18% form completion rate |
-| **TEST-03** | Trust Proof | Certification list at bottom | Floating Certification & Capacity Badge near CTA | +9% lead conversion |
+| **CRO-01** | Adding a sticky mobile WhatsApp + Call bar will increase mobile inquiries by >35%. | Standard footer links | Sticky bottom quick-connect bar on `<768px` viewports | Inbound WhatsApp & Phone clicks |
+| **CRO-02** | Making the `message` field optional and auto-selecting product from URL will reduce form drop-off. | Hardcoded required form | Auto-selected dropdown + optional message | Form completion rate (CR%) |
+| **CRO-03** | Adding a "Request 500g Lab Sample" secondary CTA on industrial derivatives will capture early R&D buyers. | Single "Contact Us" CTA | Primary "Request Bulk Quote" + Secondary "Request Sample" | Total inquiry volume |
+
+---
+
+## 5. Prioritized CRO Action Plan with ICE Scoring
+
+| Optimization Item | Category | Impact (1-10) | Confidence (1-10) | Ease (1-10) | ICE Score | Priority |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: |
+| **Deploy Sticky Mobile Call & WhatsApp Bar** | Mobile CRO | 10 | 10 | 9 | **9.7** | **P0** |
+| **URL Query Auto-Fill on `/contact` (`useSearchParams`)** | Form Friction | 9 | 10 | 10 | **9.7** | **P0** |
+| **Make Message Field Optional & Add Preset Chips** | Form Friction | 8 | 9 | 10 | **9.0** | **P0** |
+| **Upgrade CTA Copy Across Product Pages** | Copywriting | 8 | 9 | 10 | **9.0** | **P1** |
+| **Add Commercial Packaging Badges on Product Cards** | Value Prop | 7 | 8 | 9 | **8.0** | **P1** |
+| **Add 1-Click "Download TDS PDF" on Derivative Pages** | Objection Handling | 8 | 8 | 8 | **8.0** | **P1** |

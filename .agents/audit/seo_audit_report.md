@@ -1,112 +1,157 @@
-# Technical & On-Page SEO Audit Report: AB Udyog Pvt. Ltd.
+# Comprehensive Technical & On-Page SEO Audit Report
 
-**Target Codebase**: `C:\Projects\AB Udyog`  
-**Framework**: Next.js 16.2.4 (App Router, Turbopack, TypeScript/JavaScript)  
-**Production Domain**: `https://www.abudyog.in`  
-**Audit Date**: August 3, 2026  
-**Auditor**: Senior SEO & Next.js Technical Architect  
+**Target Domain**: `https://www.abudyog.in`  
+**Target Codebase**: `C:\Projects\AB Udyog` (Next.js 16.2.4 App Router)  
+**Audit Date**: August 30, 2026  
+**Auditor**: Senior SEO Strategist & Technical Auditor  
+**Audit Skill Framework**: `seo-audit` v2.0.0 (Technical, On-Page, Schema, GSC Data, Site Architecture & ICE Prioritization)
 
 ---
 
-## Executive Summary & Scorecard
+## 1. Executive Summary & Audit Scorecard
 
-An exhaustive technical, structural, and on-page SEO audit was conducted across the AB Udyog Next.js codebase. The application demonstrates strong technical foundations following recent domain unification (`https://www.abudyog.in`), canonical tag fixes (`alternates: { canonical: './' }`), and high-efficiency image payload compression (92.7 MB saved).
+An exhaustive technical, architectural, and on-page SEO audit was conducted across the AB Udyog Next.js codebase, cross-referenced with real **Google Search Console** performance/coverage exports, **Ahrefs Site Audit** (100% crawl), and **Lighthouse** audits.
 
-### Overall SEO Health Score: **94 / 100** (Excellent)
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│ OVERALL SEO HEALTH SCORE: 76 / 100 (SOLID FOUNDATION, CRITICAL FIXES)  │
+│                                                                        │
+│ • Technical Crawlability & Speed: 92/100 (Clean robots, valid CWV)     │
+│ • Indexation & Coverage Health:   55/100 (143 legacy 404s + proto split│
+│ • On-Page Metadata & CTR:         65/100 (Double-branding, bad lengths)│
+│ • Schema & Structured Data:       78/100 (Org/Plant present, dup tags) │
+│ • Internal Linking & Hierarchy:   70/100 (6 orphan derivative pages)   │
+│ • Content & Intent Match:         68/100 (Zero clicks on Pos 1-8 terms)│
+└────────────────────────────────────────────────────────────────────────┘
+```
 
-| Audit Domain | Score | Status | Key Highlights |
+### Critical Findings Matrix:
+| Audit Domain | Score | Status | Critical Findings & Root Causes |
 | :--- | :---: | :---: | :--- |
-| **Technical SEO & Indexability** | **98 / 100** | PASS | Valid `sitemap.xml`, `robots.txt`, `feed.xml`, self-referencing canonicals, zero 3XX sitemap redirects. |
-| **Core Web Vitals & Assets** | **96 / 100** | PASS | 92.7 MB image bandwidth saved, `display: 'swap'` fonts, responsive `next/image` integration. |
-| **Schema & Structured Data** | **95 / 100** | PASS | Comprehensive JSON-LD schemas (`Corporation`, `LocalBusiness`, `Product`, `BreadcrumbList`). |
-| **Content & E-E-A-T** | **92 / 100** | PASS | Strong industrial trust signals (300 TPD capacity, NABL lab, FSSAI, ISO, physical plant coordinates). |
-| **On-Page SEO & Metadata** | **88 / 100** | WARNING | Static metadata on `/products` subroutes; missing explicit `<h1>` on `/products` main landing. |
+| **1. Crawlability & Robots** | **95 / 100** | PASS | `app/robots.ts` allows all bots (`*`), dynamic `app/sitemap.ts` returns clean 200 URLs. |
+| **2. Indexation & 404 Leaks** | **55 / 100** | **CRITICAL** | **143 legacy WordPress URLs return 404 in GSC**. High-impression URLs (`/how-is-rice-bran-oil-made.../` with 845 impressions, `/can-rice-bran-oil-be-used-for-baking/` with 435 impressions) are leaking organic traffic and backlink equity. |
+| **3. Title & Meta Engineering** | **65 / 100** | **FAIL** | **Double-Branding Bug**: `app/products/[slug]/layout.js` appends `| AB Udyog`, which root `app/layout.js` `%s | AB Udyog` doubles into `... | AB Udyog | AB Udyog`. 3 meta descriptions exceed 160 characters. |
+| **4. Internal Link Architecture** | **70 / 100** | **WARNING** | Ahrefs flagged **6 subpages with only 1 incoming dofollow internal link** (Wax, Gums, Lecithin, Fatty Acid, Spent Earth, Magik DORB). They lack contextual links from main navigation hubs. |
+| **5. Semantic Hierarchy** | **75 / 100** | **WARNING** | `/products` main page lacks an explicit `<h1>` element, jumping directly into `<h2>` brand cards. |
+| **6. Schema & Structured Data** | **78 / 100** | **WARNING** | Ahrefs flagged **22 schema validation notices** caused by duplicate `orgSchema` and `plantSchema` injection on every page render. Zero `FAQPage` or `HowTo` schema. |
+| **7. Core Web Vitals** | **98 / 100** | **PASS** | Mobile LCP < 2.5s, CLS < 0.1, INP < 200ms. Zero active CWV failures in GSC. |
 
 ---
 
-## 1. Technical SEO & Crawlability Audit
+## 2. Technical SEO Audit (Crawlability, Indexation & Protocols)
 
-### 1.1 Canonical Architecture & Domain Alignment
-- **Status**: **PASSED** (100/100)
-- **Configuration**: `metadataBase: new URL('https://www.abudyog.in')` and `alternates: { canonical: './' }` configured in [`app/layout.js`](file:///c:/Projects/AB%20Udyog/app/layout.js).
-- **Behavior**:
-  - Homepage: `<link rel="canonical" href="https://www.abudyog.in">`
-  - `/about`: `<link rel="canonical" href="https://www.abudyog.in/about">`
-  - `/infrastructure`: `<link rel="canonical" href="https://www.abudyog.in/infrastructure">`
-  - `/contact?ref=ab-health`: Automatically canonicalizes to `https://www.abudyog.in/contact` (strips tracking query strings).
+### 2.1 Domain & Protocol Fragmentation (GSC Data)
+GSC performance data reveals that search equity and crawl budget are fragmented across 4 different URL variations:
+- `https://www.abudyog.in/`: 173 clicks, 4,820 impressions (Primary Canonical)
+- `http://www.abudyog.in/`: 27 clicks, 2,462 impressions (Unencrypted HTTP index split)
+- `https://abudyog.in/`: 9 clicks, 178 impressions (Non-WWW HTTPS split)
+- `https://2025.abudyog.in/`: 39 impressions (Legacy staging subdomain indexed)
+- **Trailing Slash Inconsistency**: `/contact` vs `/contact/` both getting crawled.
 
-### 1.2 Sitemap & Robots.txt
-- **Status**: **PASSED** (100/100)
-- **Sitemap**: Dynamic route handler at [`app/sitemap.ts`](file:///c:/Projects/AB%20Udyog/app/sitemap.ts) generates 15 clean static and product routes using `https://www.abudyog.in`. All entries return HTTP `200 OK` (zero 3XX redirects).
-- **Robots**: Configured at [`app/robots.ts`](file:///c:/Projects/AB%20Udyog/app/robots.ts) with `allow: '/'`, `disallow: ['/api/', '/_next/', '/private/']`, referencing `https://www.abudyog.in/sitemap.xml`.
-
-### 1.3 Feed & RSS Architecture
-- **Status**: **PASSED** (100/100)
-- **RSS Route**: [`app/feed.xml/route.ts`](file:///c:/Projects/AB%20Udyog/app/feed.xml/route.ts) provides valid RSS 2.0 XML with UTF-8 encoding and proper cache control headers (`Cache-Control: public, s-maxage=3600`).
+**Action Required**: Enforce a strict 301 redirect rule at the server/edge level (e.g. Vercel / Cloudflare / Nginx) routing all `http://`, non-`www`, and staging requests directly to `https://www.abudyog.in`.
 
 ---
 
-## 2. On-Page SEO & Metadata Audit
+### 2.2 Coverage & 404 Recovery (143 URLs Leaking Traffic)
+Search Console's Coverage report shows **143 URLs under "Not Found (404)"**. These are legacy WordPress URLs that held keyword rankings before the Next.js migration.
 
-### 2.1 Metadata Hierarchy & Page Titles
-- **Homepage & Static Pages**:
-  - Master layout template in [`app/layout.js`](file:///c:/Projects/AB%20Udyog/app/layout.js): `%s | AB Udyog`.
-  - [`app/about/layout.js`](file:///c:/Projects/AB%20Udyog/app/about/layout.js): `Our Corporate Story` $\rightarrow$ `Our Corporate Story | AB Udyog`
-  - [`app/contact/layout.js`](file:///c:/Projects/AB%20Udyog/app/contact/layout.js): `Contact Us` $\rightarrow$ `Contact Us | AB Udyog`
-  - [`app/infrastructure/layout.js`](file:///c:/Projects/AB%20Udyog/app/infrastructure/layout.js): `Manufacturing Infrastructure` $\rightarrow$ `Manufacturing Infrastructure | AB Udyog`
-  - [`app/sustainability/layout.js`](file:///c:/Projects/AB%20Udyog/app/sustainability/layout.js): `Sustainability & ESG Commitment` $\rightarrow$ `Sustainability & ESG Commitment | AB Udyog`
-  - [`app/gallery/layout.js`](file:///c:/Projects/AB%20Udyog/app/gallery/layout.js): `Visual Archive` $\rightarrow$ `Visual Archive | AB Udyog`
-
-### 2.2 Findings & Minor Opportunities
-- **Issue #1 (Medium Priority)**: `app/products/layout.js` defines a static title `Product Portfolio`. Because `app/products/[slug]/page.js` is a `"use client"` component, sub-product pages (`/products/magik-dorb`, `/products/de-oiled-rice-bran`, `/products/rice-bran-wax`, etc.) inherit the static title `Product Portfolio | AB Udyog` instead of product-specific titles.
-  - **Fix Recommendation**: Convert `app/products/[slug]/page.js` to a Server Component shell or export dynamic `generateMetadata({ params })` from a nested layout/server entry.
-- **Issue #2 (Low Priority)**: `app/products/page.js` uses `<h2>Jeevan Rekha</h2>` and `<h2>AB Health Edible Oils</h2>` but lacks an explicit `<h1 className="sr-only">`.
-  - **Fix Recommendation**: Add `<h1 className="sr-only">AB Udyog Product Portfolio — Edible Oils, DORB & Industrial Derivatives</h1>` to ensure strict single-H1 compliance.
-
----
-
-## 3. Schema & Structured Data (JSON-LD) Audit
-
-- **Status**: **PASSED** (95/100)
-- **Component**: [`components/JsonLd.tsx`](file:///c:/Projects/AB%20Udyog/components/JsonLd.tsx)
-
-### Implemented Schemas:
-1. **`Corporation` / `Organization`**:
-   - Master HQ entity with legal name, logo, image, address (Strand Rd, Kolkata), geo coordinates (22.5855, 88.3550), contact points, brand links (`Jeevan Rekha`, `AB Health`, `Magik DORB`), and social/marketplace profiles (`sameAs`).
-2. **`LocalBusiness` (Refinery Complex)**:
-   - Uchalan plant facility with full physical address (Dighirkon, Bamunia Rd, Uchalan), geo coordinates (23.1170, 87.9400), phone, and parent organization reference.
-3. **`Product` & `AggregateOffer`**:
-   - Rich product schema for B2B catalog items including MPN, SKU, brand, manufacturer, INR currency, and availability.
-4. **`BreadcrumbList`**:
-   - Hierarchical breadcrumb schema for search engine snippet enhancement.
+#### Priority 301 Redirect Mapping Table (To Add to `next.config.mjs`):
+| Legacy WordPress Slug (404 in GSC) | Impressions | GSC Avg Position | 301 Target (Next.js App Router) |
+| :--- | :---: | :---: | :--- |
+| `/how-is-rice-bran-oil-made-it-is-a-rich-source-of/` | **845** | 10.25 | `/infrastructure` |
+| `/can-rice-bran-oil-be-used-for-baking/` | **435** | 6.91 | `/products/ab-health` |
+| `/rice-bran-oil-vs-soya-bean-oil-which-is-the-better-choice/` | **196** | 7.04 | `/products/ab-health` |
+| `/is-rice-bran-oil-the-best-oil-for-deep-frying/` | **139** | 9.66 | `/products/ab-health` |
+| `/which-oil-is-better-for-cooking-rice-bran-oil-or-mustard-oil-4/` | **104** | 13.40 | `/products` |
+| `/rice-bran-oil-is-best-for-childrens-health-and-growth/` | **70** | 6.20 | `/products/ab-health` |
+| `/why-smoke-point-of-the-cooking-oil-matter/` | **67** | 25.79 | `/products/ab-health` |
+| `/is-rice-bran-oil-gluten-free/` | **64** | 10.41 | `/products/ab-health` |
+| `/abu-dorb/` | **56** | 8.68 | `/products/de-oiled-rice-bran` |
+| `/jeevan-rekha-rice-bran-oil-your-ultimate-antidote-to-cholesterol/` | **46** | 8.76 | `/products/ab-health` |
+| `/utilization-of-cooking-oil-before-its-expire/` | **39** | 51.97 | `/sustainability` |
 
 ---
 
-## 4. Site Speed, Core Web Vitals & Asset Audit
+## 3. On-Page SEO & Content Quality Audit
 
-- **Status**: **PASSED** (96/100)
-
-### 4.1 Asset Optimization Achievements
-- **Image Compression**: All public photography, product range PNGs, and SVG banners reduced by **92.7 MB**.
-  - `DJI_0140.jpg` (Aerial Photo): Reduced from 18.42 MB to 0.43 MB (97.6% reduction).
-  - SVG Banners: Embedded base64 rasters compressed from ~6.9 MB to ~0.3 MB.
-- **Next.js `<Image />` Component**: Used across product cards and heroes with proper `sizes` attributes (`sizes="(max-width: 768px) 100vw, 25vw"`).
-
-### 4.2 Font & CSS Performance
-- **Google Fonts**: Configured in [`app/layout.js`](file:///c:/Projects/AB%20Udyog/app/layout.js) with `display: 'swap'` across `Cormorant_Garamond`, `Outfit`, `Archivo`, `Plus_Jakarta_Sans`, and `Space_Mono`.
-- **CSS Delivery**: Clean vanilla CSS in [`app/globals.css`](file:///c:/Projects/AB%20Udyog/app/globals.css) without heavy external framework bloat.
+### 3.1 The "Double-Branding" Title Tag Bug
+* **Root Cause in [`app/products/[slug]/layout.js`](file:///c:/Projects/AB%20Udyog/app/products/%5Bslug%5D/layout.js#L6)**:
+  `PRODUCT_META_MAP` includes `| AB Udyog` in each subpage title string. Because [`app/layout.js`](file:///c:/Projects/AB%20Udyog/app/layout.js#L27) defines `template: '%s | AB Udyog'`, Next.js renders:
+  ```html
+  <title>Magik DORB Super Fine Animal Feed | AB Udyog | AB Udyog</title>
+  ```
+* **Impact**: Triggers Ahrefs warning *"Title too long"* (>60 characters) and causes Google to rewrite SERP titles, lowering CTR.
+* **Fix**: Strip `| AB Udyog` from all entries in `PRODUCT_META_MAP`.
 
 ---
 
-## 5. Prioritized Action Plan
-
-| Priority | Action Item | File / Target | Expected Impact |
-| :---: | :--- | :--- | :--- |
-| **P1** | Implement `generateMetadata` for dynamic product titles (`/products/[slug]`) | [`app/products/[slug]`](file:///c:/Projects/AB%20Udyog/app/products/%5Bslug%5D) | High (Improves CTR and keyword targeting on product SERPs) |
-| **P2** | Add screen-reader `<h1>` tag on `/products` main landing page | [`app/products/page.js`](file:///c:/Projects/AB%20Udyog/app/products/page.js) | Medium (Ensures 100% heading hierarchy compliance) |
-| **P3** | Monitor GSC indexation after recent canonical and sitemap updates | Live Domain | High (Accelerates re-indexing of clean `www` URLs) |
+### 3.2 Meta Descriptions Exceeding Pixel Width / 160 Characters
+* **Audit Findings**:
+  - `app/about/layout.js`: **193 characters** (Truncated with `...`)
+  - `app/infrastructure/layout.js`: **188 characters** (Truncated)
+  - `app/gallery/layout.js`: **182 characters** (Truncated)
+* **Optimization**: Rewrite to **145–155 characters** with strong commercial B2B click triggers.
 
 ---
 
-> [!NOTE]
-> This audit confirms that the codebase strictly follows Next.js App Router best practices, maintains 100% functional integrity, and has zero breaking errors.
+### 3.3 Semantic Heading Hierarchy (`<h1>` Compliance)
+* **Violation**: [`app/products/page.js`](file:///c:/Projects/AB%20Udyog/app/products/page.js) starts with `<h2>Jeevan Rekha</h2>` and has no `<h1>`.
+* **Fix**: Insert `<h1 className="sr-only">AB Udyog Product Portfolio — Physically Refined Edible Oils, DORB Feed & Industrial Derivatives</h1>`.
+
+---
+
+## 4. Structured Data & Schema.org Audit
+
+* **File**: [`components/JsonLd.tsx`](file:///c:/Projects/AB%20Udyog/components/JsonLd.tsx)
+* **Ahrefs Audit Finding**: **22 schema.org validation notices**.
+* **Diagnosis**:
+  1. `JsonLd.tsx` renders `orgSchema` and `plantSchema` on every page render.
+  2. When `/products/[slug]` renders `<JsonLd type="Product" />`, the page outputs **multiple duplicate Organization and LocalBusiness schemas** without isolated JSON-LD graph scope.
+* **Missing High-Value Schemas**:
+  - `FAQPage` schema (for rich accordion snippet expansions).
+  - `HowTo` schema (for the physical steam refining distillation process).
+  - `ItemList` schema (for the `/products` catalog).
+
+---
+
+## 5. Site Architecture & Internal Link Graph
+
+### The "6-Orphan" Subpage Bottleneck
+Ahrefs flagged **6 product subpages with only 1 incoming internal link**:
+1. `/products/spent-bleaching-earth`
+2. `/products/rice-bran-wax`
+3. `/products/rice-bran-lecithin`
+4. `/products/rice-bran-gums`
+5. `/products/rice-bran-fatty-acid`
+6. `/products/magik-dorb`
+
+**Architectural Fix**:
+- Cross-link industrial byproducts from [`app/infrastructure/page.js`](file:///c:/Projects/AB%20Udyog/app/infrastructure/page.js) (e.g., under Dewaxing $\to$ link to `/products/rice-bran-wax`; under Degumming $\to$ link to `/products/rice-bran-gums` and `/products/rice-bran-lecithin`).
+- Cross-link circular economy byproducts from [`app/sustainability/page.js`](file:///c:/Projects/AB%20Udyog/app/sustainability/page.js) $\to$ `/products/spent-bleaching-earth`.
+- Cross-link agro-feed from [`app/about/page.js`](file:///c:/Projects/AB%20Udyog/app/about/page.js) $\to$ `/products/magik-dorb`.
+
+---
+
+## 6. High-CTR SERP Title Tag Re-Engineering (Real GSC Data)
+
+| Search Query | GSC Data (Last 3 Mo) | Optimized High-CTR Title (< 60 chars) | Optimized Meta Description (145-155 chars) |
+| :--- | :---: | :--- | :--- |
+| `rice bran oil` | 1,067 Impr, 0 Clicks, Pos 8.7 | `Physically Refined Rice Bran Oil (10,000 PPM Oryzanol)` | `Direct manufacturer of pure physically refined Rice Bran Oil fortified with Vitamins A & D and 10,000+ PPM Gamma Oryzanol. FSSAI certified bulk supply.` |
+| `edible oil manufacturers in west bengal` | 38 Impr, 0 Clicks, **Pos 1.37** | `Top Edible Oil Manufacturer in West Bengal (300 TPD)` | `Leading physical refinery & edible oil manufacturer in West Bengal. 300 TPD capacity producing pure Rice Bran & Mustard Oil. Inquire for factory rates.` |
+| `dorb` / `dorb cattle feed` | 160 Impr, 3 Clicks, Pos 7.0 | `DORB Animal Feed (16% Min Protein) | Wholesale Supplier` | `Wholesale De-Oiled Rice Bran (DORB) in powder & pellet forms. 16% minimum crude protein for cattle, poultry, and aquaculture feed. Inquire for bulk pricing.` |
+| `rice bran wax` | 45 Impr, 2 Clicks, Pos 5.1 | `Refined Rice Bran Wax (76°C MP) | Natural Vegetable Wax` | `High-purity refined Rice Bran Wax with 76°C–82°C melting point. 100% vegetable origin alternative to Carnauba wax for cosmetics, pharma & polishes.` |
+
+---
+
+## 7. Prioritized Action Plan with ICE Scoring
+
+| Task | Category | Impact (1-10) | Confidence (1-10) | Ease (1-10) | ICE Score | Priority |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: |
+| **Fix Double-Branding Title Bug in `[slug]/layout.js`** | On-Page | 9 | 10 | 10 | **9.7** | **P0** |
+| **Add 301 Redirect Map in `next.config.mjs` for 143 404s** | Technical | 10 | 9 | 9 | **9.3** | **P0** |
+| **Fix Oversized Meta Descriptions in About & Infra** | On-Page | 8 | 9 | 10 | **9.0** | **P0** |
+| **Add Screen-Reader `<h1>` to `app/products/page.js`** | Accessibility | 7 | 10 | 10 | **9.0** | **P1** |
+| **Fix Duplicate Schema Injections in `JsonLd.tsx`** | Structured Data | 8 | 9 | 8 | **8.3** | **P1** |
+| **Add Contextual Cross-Links for 6 Orphan Product Pages** | Site Arch | 8 | 8 | 8 | **8.0** | **P1** |
+| **Deploy `public/llms.txt` for AI Answer Engines** | AEO / GEO | 8 | 8 | 9 | **8.3** | **P1** |
+| **Submit Updated Sitemap & Request GSC Validation** | Indexation | 9 | 9 | 9 | **9.0** | **P1** |
