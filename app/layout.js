@@ -49,10 +49,10 @@ const siteUrl = rawSiteUrl.replace(/^https?:\/\/(www\.)?abudyog\.in/, 'https://w
 
 export const metadata = {
   title: {
-    default: "AB Udyog Pvt. Ltd. | Premium Rice Bran Oil & DORB Manufacturer in India",
+    default: "AB Udyog | Leading Edible Oil & DORB Manufacturer in West Bengal, India",
     template: "%s | AB Udyog",
   },
-  description: "AB Udyog Pvt. Ltd. is a premier FMCG manufacturer based in Kolkata, India. We produce premium physically refined Jeevan Rekha Rice Bran Oil, Mustard Oil, and value-added industrial derivatives (DORB, Wax, Lecithin, Gums).",
+  description: "AB Udyog is Eastern India's premier edible oil manufacturer in West Bengal. 300 TPD continuous extraction, 150 TPD physical refinery, and bulk DORB supply.",
   keywords: [
     "Rice Bran Oil",
     "DORB",
@@ -60,11 +60,11 @@ export const metadata = {
     "AB Udyog",
     "Magik DORB",
     "Jeevan Rekha Oil",
-    "FMCG Manufacturer India",
+    "Edible Oil Manufacturer West Bengal",
     "Kolkata Refinery",
     "Rice Bran Wax",
     "Lecithin",
-    "Animal Feed Supplier",
+    "Animal Feed Supplier"
   ],
   authors: [{ name: "AB Udyog Pvt. Ltd.", url: siteUrl }],
   creator: "AB Udyog Pvt. Ltd.",
@@ -85,8 +85,8 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: "AB Udyog Pvt. Ltd. | Premium Rice Bran Oil & DORB Manufacturer",
-    description: "Discover Eastern India's leading physical refinement solvent plant. Pure cooking oils (Jeevan Rekha) and high-yield industrial derivatives (Magik DORB).",
+    title: "AB Udyog | Leading Edible Oil & DORB Manufacturer in West Bengal, India",
+    description: "Eastern India's premier 300 TPD physical refining & solvent extraction complex. Producer of Jeevan Rekha Rice Bran Oil, AB Health, and Magik DORB animal feed.",
     url: siteUrl,
     siteName: 'AB Udyog',
     images: [
@@ -112,8 +112,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AB Udyog Pvt. Ltd. | Premium Rice Bran Oil & DORB Manufacturer',
-    description: "Eastern India's premier physical refining complex since 1994.",
+    title: "AB Udyog | Leading Edible Oil & DORB Manufacturer in West Bengal, India",
+    description: "Eastern India's premier 300 TPD physical refining & solvent extraction complex.",
     images: [
       {
         url: `${siteUrl}/og/og_products.jpg`,
