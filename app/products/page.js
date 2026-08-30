@@ -106,12 +106,11 @@ export default function Products() {
               <span className="about-tag" style={{ borderColor: 'rgba(255,255,255,0.25)', color: 'var(--gold-light)', background: 'rgba(255,255,255,0.05)' }}>Aquaculture &amp; Poultry</span>
               <span className="about-tag" style={{ borderColor: 'rgba(255,255,255,0.25)', color: 'var(--gold-light)', background: 'rgba(255,255,255,0.05)' }}>Cattle &amp; Swine</span>
             </div>
-            <br /><br />
-            <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-              <Link href="/products/magik-dorb" className="btn-primary" style={{ background: 'var(--gold-dark)', color: 'var(--white)' }}>
+            <div className="product-btn-row" style={{ display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap', marginTop: '32px' }}>
+              <Link href="/products/magik-dorb" className="btn-primary" style={{ background: 'var(--gold-dark)', color: 'var(--white)', padding: '13px 20px', fontSize: '11px', whiteSpace: 'nowrap', textAlign: 'center' }}>
                 Explore Magik DORB
               </Link>
-              <Link href="/products/de-oiled-rice-bran" className="btn-primary" style={{ background: 'transparent', border: '1px solid rgba(255,255,255,0.4)', color: 'var(--white)' }}>
+              <Link href="/products/de-oiled-rice-bran" className="btn-primary" style={{ background: 'transparent', border: '1px solid rgba(255,255,255,0.4)', color: 'var(--white)', padding: '13px 20px', fontSize: '11px', whiteSpace: 'nowrap', textAlign: 'center' }}>
                 Standard DORB Specs
               </Link>
             </div>

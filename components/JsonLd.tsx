@@ -5,8 +5,20 @@ export interface BreadcrumbItem {
   url: string;
 }
 
+export interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+export interface HowToStep {
+  name: string;
+  text: string;
+  image?: string;
+}
+
 interface JsonLdProps {
-  type?: 'Organization' | 'Product' | 'Breadcrumb';
+  type?: 'Organization' | 'Product' | 'Breadcrumb' | 'FAQ' | 'HowTo';
+  includeOrg?: boolean;
   productData?: {
     name: string;
     description: string;
@@ -17,11 +29,27 @@ interface JsonLdProps {
     sku?: string;
   };
   breadcrumbs?: BreadcrumbItem[];
+  faqs?: FaqItem[];
+  howTo?: {
+    name: string;
+    description: string;
+    totalTime?: string;
+    steps: HowToStep[];
+  };
 }
 
-export default function JsonLd({ type = 'Organization', productData, breadcrumbs }: JsonLdProps): React.ReactElement {
+export default function JsonLd({
+  type = 'Organization',
+  includeOrg,
+  productData,
+  breadcrumbs,
+  faqs,
+  howTo,
+}: JsonLdProps): React.ReactElement {
   const rawBaseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.abudyog.in';
   const baseUrl = rawBaseUrl.replace(/^https?:\/\/(www\.)?abudyog\.in/, 'https://www.abudyog.in');
+
+  const shouldIncludeOrg = includeOrg !== undefined ? includeOrg : type === 'Organization';
 
   // 1. Master Corporate HQ Organization Schema
   const orgSchema = {
@@ -135,6 +163,7 @@ export default function JsonLd({ type = 'Organization', productData, breadcrumbs
         },
         manufacturer: {
           '@type': 'Organization',
+          '@id': `${baseUrl}/#organization`,
           name: 'AB Udyog Pvt. Ltd.',
           url: baseUrl,
         },
@@ -149,6 +178,7 @@ export default function JsonLd({ type = 'Organization', productData, breadcrumbs
           itemCondition: 'https://schema.org/NewCondition',
           seller: {
             '@type': 'Organization',
+            '@id': `${baseUrl}/#organization`,
             name: 'AB Udyog Pvt. Ltd.',
           },
         },
@@ -169,16 +199,54 @@ export default function JsonLd({ type = 'Organization', productData, breadcrumbs
       }
     : null;
 
+  // 5. FAQPage Rich Snippet Schema (for Google AI Overviews & Accordion SERPs)
+  const faqSchema = faqs && faqs.length > 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((faq) => ({
+          '@type': 'Question',
+          name: faq.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.answer,
+          },
+        })),
+      }
+    : null;
+
+  // 6. HowTo Rich Snippet Schema (for Physical Refining Process)
+  const howToSchema = howTo
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'HowTo',
+        name: howTo.name,
+        description: howTo.description,
+        totalTime: howTo.totalTime || 'PT4H',
+        step: howTo.steps.map((step, idx) => ({
+          '@type': 'HowToStep',
+          position: idx + 1,
+          name: step.name,
+          text: step.text,
+          image: step.image ? `${baseUrl}${step.image}` : undefined,
+        })),
+      }
+    : null;
+
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(plantSchema) }}
-      />
+      {shouldIncludeOrg && (
+        <>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(plantSchema) }}
+          />
+        </>
+      )}
       {productSchema && (
         <script
           type="application/ld+json"
@@ -189,6 +257,18 @@ export default function JsonLd({ type = 'Organization', productData, breadcrumbs
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
+      )}
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+      {howToSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
         />
       )}
     </>

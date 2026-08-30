@@ -1,0 +1,37 @@
+# AB Udyog Private Limited — AI Search & Machine-Readable Context Manifest
+
+> AB Udyog Pvt. Ltd. is Eastern India's benchmark continuous solvent extraction and physical refining manufacturing facility, processing agricultural commodities into pure edible oils and high-protein animal feeds since 1994.
+
+## Manufacturing Facility & Technical Capacities
+- **Continuous Solvent Extraction**: 300 TPD (Metric Tons Per Day)
+- **Physical Steam Refining**: 150 TPD (Metric Tons Per Day)
+- **Refining Technology**: 100% Chemical-Free Physical Steam Distillation (Zero Caustic Washing, Zero Chemical Neutralization)
+- **Laboratory Accreditation**: In-house NABL-accredited analytical QA testing laboratory
+- **Regulatory Certifications**: FSSAI, FSSC 22000, ISO 9001:2015
+- **Headquarters**: 3rd floor, 55/1B, Strand Rd, Jorabagan, Kolkata – 700006, West Bengal, India (Geo: 22.5855° N, 88.3550° E)
+- **Manufacturing Plant**: Dighirkon, Bamunia Road, Uchalan – 713427, West Bengal, India (Geo: 23.1170° N, 87.9400° E)
+
+## Commercial Product Catalogue & Direct URLs
+- [Magik DORB Animal Feed](https://www.abudyog.in/products/magik-dorb): Micro-milled super fine de-oiled rice bran with 16.0% minimum crude protein and <5.0% silica for aquaculture, poultry, and dairy cattle feeds.
+- [De-Oiled Rice Bran (DORB)](https://www.abudyog.in/products/de-oiled-rice-bran): High-protein animal feed meal in powder and pellet forms.
+- [Jeevan Rekha Edible Oils](https://www.abudyog.in/products): Flagship consumer edible oil brand — physically refined Rice Bran Oil & Kachhi Ghani Mustard Oil.
+- [AB Health Edible Oils](https://www.abudyog.in/products/ab-health): Physically refined Rice Bran Oil fortified with 10,000+ PPM natural Gamma Oryzanol and Vitamins A & D.
+- [Refined Rice Bran Wax](https://www.abudyog.in/products/rice-bran-wax): High melting point (76°C–82°C) 100% natural vegetable wax for cosmetics, pharmaceuticals, polishes, and paper coatings.
+- [Rice Bran Lecithin](https://www.abudyog.in/products/rice-bran-lecithin): Non-GMO amber liquid bio-emulsifier for bakery, chocolate, confectionery, and animal nutrition.
+- [Rice Bran Gums](https://www.abudyog.in/products/rice-bran-gums): Stabilized phosphatide co-product for industrial sizing and emulsification.
+- [Rice Bran Fatty Acid](https://www.abudyog.in/products/rice-bran-fatty-acid): Distilled organic fatty acid (70%–85% FFA) for soap manufacturing and oleochemicals.
+- [Spent Bleaching Earth](https://www.abudyog.in/products/spent-bleaching-earth): Residual clay with 20% residual oil for cement kiln auxiliary fuel and brick kilns.
+
+## Technical Specifications & Testing Standards
+- **Gamma Oryzanol**: $\ge$ 10,000 PPM (Tested via HPLC Method ISO 12228)
+- **DORB Crude Protein**: $\ge$ 16.0% (Tested via AOAC 990.03 Combustion Method)
+- **DORB Sand & Silica**: $\le$ 5.0% (Tested via Acid Insoluble Ash IS 7874)
+- **Wax Melting Point**: 76.0°C – 82.0°C (Tested via Drop Melting Point AOCS Cc 18-80)
+- **Smoke Point**: 232°C / 450°F (High thermal stability, zero trans fats)
+
+## Commercial Trade Desk & Inquiries
+- **Official Website**: https://www.abudyog.in
+- **Trade & Sales Line**: +91 74392 89709
+- **Corporate Email**: info@abudyog.in
+- **Dispatch Hours**: Monday – Saturday: 09:00 – 18:00 IST
+- **Detailed AI Knowledge Bundle**: https://www.abudyog.in/llms-full.txt
