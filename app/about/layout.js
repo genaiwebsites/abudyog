@@ -5,10 +5,10 @@ const siteUrl = rawSiteUrl.replace(/^https?:\/\/(www\.)?abudyog\.in/, 'https://w
 
 export const metadata = {
   title: 'Our Corporate Story',
-  description: "Discover how AB Udyog Pvt. Ltd. evolved over four decades from Eastern India's premium solvent extraction facility into a pioneering agro-based food manufacturer.",
+  description: "Discover AB Udyog's 4-decade legacy in edible oil physical refining, 300 TPD solvent extraction, and NABL-certified agro-manufacturing in Eastern India.",
   openGraph: {
     title: 'Our Corporate Story | AB Udyog',
-    description: "Discover how AB Udyog Pvt. Ltd. evolved over four decades from Eastern India's premium solvent extraction facility into a pioneering agro-based food manufacturer.",
+    description: "Discover AB Udyog's 4-decade legacy in edible oil physical refining, 300 TPD solvent extraction, and NABL-certified agro-manufacturing in Eastern India.",
     url: `${siteUrl}/about`,
     siteName: 'AB Udyog',
     locale: 'en_IN',
@@ -35,7 +35,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Our Corporate Story | AB Udyog',
-    description: "Discover how AB Udyog Pvt. Ltd. evolved over four decades from Eastern India's premium solvent extraction facility into a pioneering agro-based food manufacturer.",
+    description: "Discover AB Udyog's 4-decade legacy in edible oil physical refining, 300 TPD solvent extraction, and NABL-certified agro-manufacturing in Eastern India.",
     images: [
       {
         url: `${siteUrl}/og/og_about.jpg`,

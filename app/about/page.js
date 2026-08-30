@@ -1,6 +1,7 @@
 "use client";
 import Image from 'next/image';
 import React from 'react';
+import Link from 'next/link';
 import { Compass, Target, ShieldCheck, Route, Activity, Leaf } from 'lucide-react';
 import CtaBanner from '@/components/CtaBanner';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
@@ -63,7 +64,7 @@ export default function About() {
               Our Corporate <em style={{ color: 'var(--gold)' }}>Vision</em>
             </div>
             <p className="bento-body" style={{ color: 'rgba(255, 255, 255, 0.82)', fontSize: '15px', maxWidth: '800px', marginTop: '16px', lineHeight: 1.75 }}>
-              To be India&apos;s most reliable partner for premium agro-products and industrial derivatives. We aim to establish Jeevan Rekha as a household brand for purity and wellness while leading the industry in physical steam refining scaling and zero-waste circular operations.
+              To be India&apos;s most reliable partner for premium agro-products and industrial derivatives. We aim to establish <Link href="https://jeevanrekhafoods.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--gold-light)', textDecoration: 'underline' }}>Jeevan Rekha</Link> and <Link href="/products/ab-health" style={{ color: 'var(--gold-light)', textDecoration: 'underline' }}>AB Health</Link> as household brands for purity and wellness while leading the industry in physical steam refining scaling and zero-waste circular operations.
             </p>
           </div>
           <div className="bento-card featured reveal" style={{ gridColumn: 'span 1', background: 'var(--green-deep)', border: '1px solid rgba(212, 175, 55, 0.18)', padding: '36px 32px' }}>
@@ -74,7 +75,7 @@ export default function About() {
               Our Operations <em style={{ color: 'var(--gold)' }}>Mission</em>
             </div>
             <p className="bento-body" style={{ color: 'rgba(255, 255, 255, 0.82)', fontSize: '15px', maxWidth: '800px', marginTop: '16px', lineHeight: 1.75 }}>
-              To maintain strict control over chemical-free refining. We pledge to preserve natural health nutrients, provide high-quality B2B protein animal feeds (AB DORB), and sustain clean extraction lines with strict adherence to national food standards.
+              To maintain strict control over chemical-free refining. We pledge to preserve natural health nutrients, provide high-protein animal feeds like <Link href="/products/magik-dorb" style={{ color: 'var(--gold-light)', textDecoration: 'underline' }}>Magik DORB</Link> and <Link href="/products/de-oiled-rice-bran" style={{ color: 'var(--gold-light)', textDecoration: 'underline' }}>De-Oiled Rice Bran</Link>, and sustain clean extraction lines with strict adherence to national food safety standards.
             </p>
           </div>
         </div>

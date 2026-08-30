@@ -12,6 +12,9 @@ export default function Products() {
 
   return (
     <div>
+      {/* ══ ACCESSIBLE H1 HEADING (SEO & Screen Readers) ══ */}
+      <h1 className="sr-only">AB Udyog Commercial Products — Physically Refined Edible Oils, High-Protein DORB Feed &amp; Industrial Bio-Derivatives</h1>
+
       {/* ══ HERO BANNER CAROUSEL ══ */}
       <ProductsHeroSlider />
 

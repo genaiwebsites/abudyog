@@ -140,7 +140,7 @@ export default function CSRPage() {
               <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '24px', color: 'var(--green-deep)', margin: 0 }}>Zero-Waste Circularity</h3>
             </div>
             <p className="bento-body" style={{ fontSize: '13px', color: 'var(--muted)', lineHeight: 1.6 }}>
-              All industrial derivatives from our continuous physical refining plants are directed into secondary circular economies: fatty acids are converted into bio-diesel, rice bran wax is refined for cosmetics, and spent clay is safely repurposed as eco-friendly boiler fuel for cement kilns.
+              All industrial derivatives from our continuous physical refining plants are directed into secondary circular economies: <Link href="/products/rice-bran-fatty-acid" style={{ color: 'var(--gold-dark)', textDecoration: 'underline', fontWeight: 600 }}>fatty acids</Link> are converted into bio-diesel and soaps, <Link href="/products/rice-bran-wax" style={{ color: 'var(--gold-dark)', textDecoration: 'underline', fontWeight: 600 }}>rice bran wax</Link> is refined for cosmetics, and <Link href="/products/spent-bleaching-earth" style={{ color: 'var(--gold-dark)', textDecoration: 'underline', fontWeight: 600 }}>spent bleaching earth</Link> is safely repurposed as eco-friendly boiler fuel for cement kilns.
             </p>
           </div>
 

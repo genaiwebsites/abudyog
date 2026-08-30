@@ -3,10 +3,10 @@ const siteUrl = rawSiteUrl.replace(/^https?:\/\/(www\.)?abudyog\.in/, 'https://w
 
 export const metadata = {
   title: 'Visual Archive',
-  description: 'Visual gallery showcasing AB Udyog\'s solvent extraction plant, NABL accredited testing laboratory, high-speed automated packaging lines, and product range.',
+  description: "Explore photo gallery of AB Udyog's continuous physical refining towers, 300 TPD extraction facility, NABL QA lab, and automated packaging lines.",
   openGraph: {
     title: 'Visual Archive | AB Udyog',
-    description: 'Visual gallery showcasing AB Udyog\'s solvent extraction plant, NABL accredited testing laboratory, high-speed automated packaging lines, and product range.',
+    description: "Explore photo gallery of AB Udyog's continuous physical refining towers, 300 TPD extraction facility, NABL QA lab, and automated packaging lines.",
     url: `${siteUrl}/gallery`,
     siteName: 'AB Udyog',
     locale: 'en_IN',
@@ -33,7 +33,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Visual Archive | AB Udyog',
-    description: 'Visual gallery showcasing AB Udyog\'s solvent extraction plant, NABL accredited testing laboratory, high-speed automated packaging lines, and product range.',
+    description: "Explore photo gallery of AB Udyog's continuous physical refining towers, 300 TPD extraction facility, NABL QA lab, and automated packaging lines.",
     images: [
       {
         url: `${siteUrl}/og/og_gallery.jpg`,
