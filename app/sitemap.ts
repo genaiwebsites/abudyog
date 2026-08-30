@@ -1,26 +1,17 @@
 import { MetadataRoute } from 'next';
+import { getAllProducts } from '@/data/products';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const rawBaseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.abudyog.in';
   const baseUrl = rawBaseUrl.replace(/^https?:\/\/(www\.)?abudyog\.in/, 'https://www.abudyog.in');
 
-  // Product Slugs defined in app/products/[slug]/page.js
-  const productSlugs = [
-    'magik-dorb',
-    'ab-health',
-    'de-oiled-rice-bran',
-    'rice-bran-wax',
-    'rice-bran-gums',
-    'rice-bran-lecithin',
-    'rice-bran-fatty-acid',
-    'spent-bleaching-earth',
-  ];
+  const products = getAllProducts();
 
-  const productRoutes: MetadataRoute.Sitemap = productSlugs.map((slug) => ({
-    url: `${baseUrl}/products/${slug}`,
+  const productRoutes: MetadataRoute.Sitemap = products.map((product) => ({
+    url: `${baseUrl}/products/${product.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: slug === 'magik-dorb' || slug === 'ab-health' ? 1.0 : 0.9,
+    priority: product.slug === 'magik-dorb' || product.slug === 'ab-health' ? 1.0 : 0.9,
   }));
 
   const staticRoutes: MetadataRoute.Sitemap = [
@@ -64,7 +55,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/contact`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.8,
+      priority: 0.7,
     },
   ];
 
