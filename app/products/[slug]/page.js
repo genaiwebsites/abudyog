@@ -105,7 +105,7 @@ const productData = {
     shortName: 'Lecithin',
     desc: 'Premium natural emulsifier and antioxidant.',
     fullDesc: 'Rice Bran Lecithin exhibits an excellent, well-balanced fatty acid profile and contains key micronutrients and natural antioxidants. It serves as a premium, appealing alternative for manufacturers seeking non-genetically modified (non-GMO) lecithin over soybean and sunflower alternatives. Highly valuable for cosmetic, nutraceutical, and personal care formulations due to its high unsaponifiable matter.',
-    image: '/ab_udyog_quality_assurance_laboratory_testing.png',
+    image: '/rice_bran_lecithin_product.png',
     features: ['Non-GMO Alternative', 'Micronutrient Rich', 'Excellent Emulsifier', 'High Unsaponifiables'],
     applications: ['Bakery & Confectionery', 'Chocolate Manufacturing', 'Nutraceuticals', 'Personal Care & Cosmetics'],
     specifications: [

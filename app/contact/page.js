@@ -285,7 +285,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <label htmlFor="company-name" style={{ fontSize: '12px', fontWeight: 600, color: 'var(--green-deep)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '6px', display: 'block' }}>
-                      Company / Organization Name *
+                      Company Name *
                     </label>
                     <input 
                       type="text" 
