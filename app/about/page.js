@@ -1,7 +1,7 @@
 "use client";
 import Image from 'next/image';
 import React from 'react';
-import { Eye, Target, ShieldCheck, Route, Activity, Leaf } from 'lucide-react';
+import { Compass, Target, ShieldCheck, Route, Activity, Leaf } from 'lucide-react';
 import CtaBanner from '@/components/CtaBanner';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
@@ -40,7 +40,7 @@ export default function About() {
             <p className="section-body">
               By processing freshly harvested rice bran within hours of milling, our plant prevents natural oxidation. Our physical refinery bypasses caustic soda and acid treatments completely, employing high-temperature steam distillation to wash raw oil while locking in natural micronutrients.
             </p>
-            <div className="about-tags" style={{ marginTop: '24px' }}>
+            <div className="about-tags-trio" style={{ marginTop: '24px' }}>
               <span className="about-tag">10,000+ PPM Oryzanol</span>
               <span className="about-tag">Zero Caustic Washing</span>
               <span className="about-tag">Physical Steam Distillation</span>
@@ -55,21 +55,25 @@ export default function About() {
           <h2 className="section-title">Our Corporate <em>Principles</em></h2>
         </div>
         <div className="bento-grid responsive-two-col">
-          <div className="bento-card featured reveal" style={{ gridColumn: 'span 1' }}>
-            <div className="bento-icon-container">
-              <Eye size={24} aria-hidden="true" />
+          <div className="bento-card featured reveal" style={{ gridColumn: 'span 1', background: 'var(--green-deep)', border: '1px solid rgba(212, 175, 55, 0.18)', padding: '36px 32px' }}>
+            <div style={{ marginBottom: '20px', color: 'var(--gold-light)', display: 'inline-flex' }}>
+              <Compass size={36} strokeWidth={1.75} aria-hidden="true" />
             </div>
-            <div className="bento-title" style={{ fontSize: '28px' }}>Our Corporate <em>Vision</em></div>
-            <p className="bento-body" style={{ fontSize: '15px', maxWidth: '800px', marginTop: '20px' }}>
-              To be India's most reliable partner for premium agro-products and industrial derivatives. We aim to establish Jeevan Rekha as a household brand for purity and wellness while leading the industry in physical steam refining scaling and zero-waste circular operations.
+            <div className="bento-title" style={{ color: 'var(--gold-light)', fontSize: '28px' }}>
+              Our Corporate <em style={{ color: 'var(--gold)' }}>Vision</em>
+            </div>
+            <p className="bento-body" style={{ color: 'rgba(255, 255, 255, 0.82)', fontSize: '15px', maxWidth: '800px', marginTop: '16px', lineHeight: 1.75 }}>
+              To be India&apos;s most reliable partner for premium agro-products and industrial derivatives. We aim to establish Jeevan Rekha as a household brand for purity and wellness while leading the industry in physical steam refining scaling and zero-waste circular operations.
             </p>
           </div>
-          <div className="bento-card reveal" style={{ background: 'var(--green-mid)', color: 'var(--white)', gridColumn: 'span 1' }}>
-            <div className="bento-icon-container">
-              <Target size={24} style={{ color: 'var(--gold-light)' }} aria-hidden="true" />
+          <div className="bento-card featured reveal" style={{ gridColumn: 'span 1', background: 'var(--green-deep)', border: '1px solid rgba(212, 175, 55, 0.18)', padding: '36px 32px' }}>
+            <div style={{ marginBottom: '20px', color: 'var(--gold-light)', display: 'inline-flex' }}>
+              <Target size={36} strokeWidth={1.75} aria-hidden="true" />
             </div>
-            <div className="bento-title" style={{ color: 'var(--gold-light)', fontSize: '28px' }}>Our Operations <em>Mission</em></div>
-            <p className="bento-body" style={{ color: 'rgba(255,255,255,0.75)', fontSize: '15px', maxWidth: '800px', marginTop: '20px' }}>
+            <div className="bento-title" style={{ color: 'var(--gold-light)', fontSize: '28px' }}>
+              Our Operations <em style={{ color: 'var(--gold)' }}>Mission</em>
+            </div>
+            <p className="bento-body" style={{ color: 'rgba(255, 255, 255, 0.82)', fontSize: '15px', maxWidth: '800px', marginTop: '16px', lineHeight: 1.75 }}>
               To maintain strict control over chemical-free refining. We pledge to preserve natural health nutrients, provide high-quality B2B protein animal feeds (AB DORB), and sustain clean extraction lines with strict adherence to national food standards.
             </p>
           </div>

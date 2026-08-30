@@ -970,6 +970,39 @@ h2.section-title em,
   color: var(--green-mid);
   box-sizing: border-box;
 }
+.about-tags-trio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 24px;
+  width: 100%;
+}
+.about-tags-trio .about-tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8px 6px;
+  font-size: clamp(9px, 0.75vw, 11px);
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  width: 100%;
+}
+@media (max-width: 640px) {
+  .about-tags-trio {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  }
+}
+@media (max-width: 440px) {
+  .about-tags-trio {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .about-tags-trio .about-tag {
+    padding: 9px 12px;
+    font-size: 11px;
+  }
+}
 
 /* ── PRODUCTS ── */
 .products-section {
