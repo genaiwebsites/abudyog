@@ -376,11 +376,12 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 style={{ fontFamily: 'var(--font-heading)', fontSize: '15px', fontWeight: 700, color: 'var(--green-deep)', marginBottom: '3px' }}>
-                      Registered Corporate Office
+                      Registered Corporate Office &amp; HQ
                     </h4>
                     <p style={{ fontSize: '13.5px', color: 'var(--muted)', lineHeight: 1.5, margin: 0 }}>
-                      11A, Rawdon Street, Kolkata – 700017,<br />
-                      West Bengal, India
+                      2nd Floor, Vinayak Complex, 55/1A, Strand Rd,<br />
+                      opp. Mayo Hospital, Jorabagan,<br />
+                      Kolkata, West Bengal – 700006, India
                     </p>
                   </div>
                 </div>
@@ -435,7 +436,7 @@ export default function Contact() {
               position: 'relative'
             }}>
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.5!2d88.35!3d22.54!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDMyJzI0LjAiTiA4OMKwMjEnMDAuMCJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.85!2d88.3550!3d22.5855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277bd2b5b5b5b%3A0x0!2sStrand+Rd%2C+Jorabagan%2C+Kolkata%2C+West+Bengal+700006!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" 
                 width="100%" 
                 height="100%" 
                 allowFullScreen="" 
@@ -454,7 +455,7 @@ export default function Contact() {
                 backdropFilter: 'blur(6px)'
               }}>
                 <h4 style={{ fontSize: '13px', fontWeight: 700, margin: 0, color: 'var(--white)' }}>Corporate HQ Map</h4>
-                <p style={{ fontSize: '11px', color: 'var(--gold-light)', margin: '2px 0 0 0' }}>11A, Rawdon Street, Kolkata</p>
+                <p style={{ fontSize: '11px', color: 'var(--gold-light)', margin: '2px 0 0 0' }}>Vinayak Complex, 55/1A Strand Rd, Kolkata</p>
               </div>
             </div>
 

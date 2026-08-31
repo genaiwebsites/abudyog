@@ -65,7 +65,7 @@ export default function JsonLd({
     foundingDate: '1994',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '3rd floor, 55/1B, Strand Rd, Jorabagan',
+      streetAddress: '2nd Floor, Vinayak Complex, 55/1A, Strand Rd, opp. Mayo Hospital, Jorabagan',
       addressLocality: 'Kolkata',
       addressRegion: 'West Bengal',
       postalCode: '700006',
