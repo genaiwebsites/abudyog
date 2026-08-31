@@ -34,7 +34,7 @@ export interface ProductItem {
   externalLinkLabel?: string;
   features: string[];
   applications: string[];
-  specifications: ProductSpec[];
+  specifications?: ProductSpec[];
   grades?: ProductGrade[];
   testingStandards?: TestingStandard[];
   faqs?: ProductFaq[];
