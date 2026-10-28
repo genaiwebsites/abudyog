@@ -15,7 +15,7 @@
 - [Magik DORB Animal Feed](https://www.abudyog.in/products/magik-dorb): Micro-milled super fine de-oiled rice bran with 16.0% minimum crude protein and <5.0% silica for aquaculture, poultry, and dairy cattle feeds.
 - [De-Oiled Rice Bran (DORB)](https://www.abudyog.in/products/de-oiled-rice-bran): High-protein animal feed meal in powder and pellet forms.
 - [Jeevan Rekha Edible Oils](https://www.abudyog.in/products): Flagship consumer edible oil brand — physically refined Rice Bran Oil & Kachhi Ghani Mustard Oil.
-- [AB Health Edible Oils](https://www.abudyog.in/products/ab-health): Physically refined Rice Bran Oil fortified with 10,000+ PPM natural Gamma Oryzanol and Vitamins A & D.
+- [AB Health Edible Oils](https://www.abudyog.in/products/ab-health): Physically refined Rice Bran Oil fortified with 12,000+ PPM natural Gamma Oryzanol and Vitamins A & D.
 - [Refined Rice Bran Wax](https://www.abudyog.in/products/rice-bran-wax): High melting point (76°C–82°C) 100% natural vegetable wax for cosmetics, pharmaceuticals, polishes, and paper coatings.
 - [Rice Bran Lecithin](https://www.abudyog.in/products/rice-bran-lecithin): Non-GMO amber liquid bio-emulsifier for bakery, chocolate, confectionery, and animal nutrition.
 - [Rice Bran Gums](https://www.abudyog.in/products/rice-bran-gums): Stabilized phosphatide co-product for industrial sizing and emulsification.
@@ -23,7 +23,7 @@
 - [Spent Bleaching Earth](https://www.abudyog.in/products/spent-bleaching-earth): Residual clay with 20% residual oil for cement kiln auxiliary fuel and brick kilns.
 
 ## Technical Specifications & Testing Standards
-- **Gamma Oryzanol**: $\ge$ 10,000 PPM (Tested via HPLC Method ISO 12228)
+- **Gamma Oryzanol**: $\ge$ 12,000 PPM (Tested via HPLC Method ISO 12228)
 - **DORB Crude Protein**: $\ge$ 16.0% (Tested via AOAC 990.03 Combustion Method)
 - **DORB Sand & Silica**: $\le$ 5.0% (Tested via Acid Insoluble Ash IS 7874)
 - **Wax Melting Point**: 76.0°C – 82.0°C (Tested via Drop Melting Point AOCS Cc 18-80)

@@ -145,13 +145,13 @@ export default function ProductClientView({ product }) {
             </div>
           </div>
 
-          <div className="about-img reveal" style={{ position: 'relative', width: '100%', minHeight: '380px' }}>
+          <div className="about-img reveal" style={{ position: 'relative', width: '100%', aspectRatio: '16 / 10.5', minHeight: '320px', borderRadius: '12px', overflow: 'hidden', border: '1px solid rgba(13, 43, 26, 0.08)', boxShadow: '0 12px 32px rgba(18, 42, 28, 0.08)', background: '#F8F7F4' }}>
             <Image
               src={product.image}
               alt={`${product.title} Commercial Specification - AB Udyog`}
               fill
               sizes="(max-width: 768px) 100vw, 45vw"
-              style={{ objectFit: 'contain' }}
+              style={{ objectFit: 'cover', objectPosition: 'center' }}
               priority
             />
           </div>

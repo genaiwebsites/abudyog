@@ -25,7 +25,7 @@ export default function AbUdyogPidDiagram() {
       status: "ACTIVE",
       desc: "Fresh paddy rice bran is received directly from regional rice mills, quality-scanned for moisture and FFA levels, and thermally stabilized to deactivate lipase enzymes within hours of milling.",
       byproduct: null,
-      telemetry: { input: "Raw Paddy Rice Bran", output: "Stabilized Rice Bran", ffa: "1.5% - 3.5%", yield: "100%", retention: "10,000+ PPM Oryzanol" }
+      telemetry: { input: "Raw Paddy Rice Bran", output: "Stabilized Rice Bran", ffa: "1.5% - 3.5%", yield: "100%", retention: "12,000+ PPM Oryzanol" }
     },
     {
       id: 2,
@@ -144,7 +144,7 @@ export default function AbUdyogPidDiagram() {
       temp: "260°C",
       pressure: "2.5 mmHg Ultra-Vacuum",
       status: "ACTIVE",
-      desc: "High-temperature steam distillation under ultra-high vacuum strips free fatty acids and volatile odors without caustic washing, preserving 10,000+ PPM natural Gamma Oryzanol.",
+      desc: "High-temperature steam distillation under ultra-high vacuum strips free fatty acids and volatile odors without caustic washing, preserving 12,000+ PPM natural Gamma Oryzanol.",
       byproduct: { 
         name: "Rice Bran Fatty Acid", 
         link: "/products/rice-bran-fatty-acid", 
@@ -152,7 +152,7 @@ export default function AbUdyogPidDiagram() {
         spec: "FFA Grade: 85% - 95%", 
         desc: "High-purity distilled fatty acid condensate recovered from steam deodorization, ideal for premium soap and oleochemical synthesis." 
       },
-      telemetry: { input: "Dewaxed Oil + Steam", output: "Refined Deodorized Oil", ffaFinal: "< 0.09%", oryzanolRetention: "> 10,000 PPM", smokePoint: "232°C" }
+      telemetry: { input: "Dewaxed Oil + Steam", output: "Refined Deodorized Oil", ffaFinal: "< 0.09%", oryzanolRetention: "> 12,000 PPM", smokePoint: "232°C" }
     },
     {
       id: 9,
@@ -1077,7 +1077,7 @@ export default function AbUdyogPidDiagram() {
             </div>
             <div className="scada-nabl-row">
               <span className="scada-nabl-param"><Sparkles size={15} color="#B8860B" /> Gamma-Oryzanol Retention</span>
-              <span className="scada-nabl-val gold">&gt; 10,000 PPM (1.3%+)</span>
+              <span className="scada-nabl-val gold">&gt; 12,000 PPM (1.3%+)</span>
             </div>
             <div className="scada-nabl-row">
               <span className="scada-nabl-param"><Gauge size={15} color="#2D6A4F" /> Free Fatty Acids (FFA)</span>

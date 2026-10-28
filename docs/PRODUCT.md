@@ -14,13 +14,13 @@ To showcase AB Udyog Pvt. Ltd. as a state-of-the-art, premium FMCG manufacturer 
 
 ## Brand Personality
 - **Premium Editorial**: Sophisticated and elegant, utilizing serif headings, ample whitespace, and clean data tables to feel premium and trustworthy rather than cheap and commercial.
-- **Scientific Integrity**: Focused on actual specs, extraction science (physical vs chemical refining), and on-site lab parameters (10,000+ PPM Oryzanol, gas chromatography checks).
+- **Scientific Integrity**: Focused on actual specs, extraction science (physical vs chemical refining), and on-site lab parameters (12,000+ PPM Oryzanol, gas chromatography checks).
 - **Industrial Scale & Trust**: Bold metrics showing massive, automated capacity (300 TPD solvent plant, 150 TPD refinery in Kolkata) that assure B2B partners of reliable supply.
 
 ## Anti-references
 - **SaaS Clichés**: Mono-tone beige/sand colors, generic abstract shapes, rounded blob buttons, and "AI slop" like tracked tiny kickers/eyebrows above every section.
 - **Monotone Layouts**: Bland gray-on-gray structures, generic icons without text labels, or flat card grids that lack brand identity.
-- **Vague Copy**: Using words like "streamline", "empower", or "supercharge" instead of specific details like "Continuous Physical Refining" and "10,000+ PPM Oryzanol".
+- **Vague Copy**: Using words like "streamline", "empower", or "supercharge" instead of specific details like "Continuous Physical Refining" and "12,000+ PPM Oryzanol".
 
 ## Design Principles
 1. **Scientific Transparency**: Lead with technical specifications, certifications, and manufacturing facts. Technical sheets should be interactive, readable, and feel authoritative.

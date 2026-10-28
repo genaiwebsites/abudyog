@@ -300,8 +300,8 @@ export default function Home() {
             {/* Edge-to-Edge Image Box — Zero Padding */}
             <div style={{ position: 'relative', width: '100%', height: '220px', background: '#0B2316', overflow: 'hidden' }}>
               <Image 
-                src="/rice_bran_wax_product.png" 
-                alt="Industrial Bran Derivatives" 
+                src="/products/ab-udyog-refined-rice-bran-wax.jpg" 
+                alt="AB Udyog Refined Rice Bran Wax & Industrial Derivatives" 
                 fill 
                 sizes="(max-width: 768px) 100vw, 25vw" 
                 style={{ objectFit: 'cover', padding: 0 }} 
@@ -378,7 +378,7 @@ export default function Home() {
               category: 'ANIMAL NUTRITION',
               metric: '16.0% MIN PROTEIN',
               desc: 'Magik, ABU Platinum & Premium DORB — protein-rich feed enhancing growth for aquaculture, poultry, and cattle.',
-              image: '/banners/products/ab-dorb-podium-feed-showcase-banner-desktop.svg',
+              image: '/products/ab-udyog-de-oiled-rice-bran-dorb.jpg',
               link: '/products/de-oiled-rice-bran'
             },
             {
@@ -387,7 +387,7 @@ export default function Home() {
               category: 'COSMETICS & POLISHES',
               metric: '76°C MELTING POINT',
               desc: 'Hard, crystalline natural vegetable wax offering binding, thickener, and moisture barrier properties.',
-              image: '/rice_bran_wax_product.png',
+              image: '/products/ab-udyog-refined-rice-bran-wax.jpg',
               link: '/products/rice-bran-wax'
             },
             {
@@ -396,7 +396,7 @@ export default function Home() {
               category: 'INDUSTRIAL EMULSIONS',
               metric: 'ACTIVE PHOSPHATIDES',
               desc: 'Versatile emulsifying and stabilizing phosphatide agent for animal feed binders and industrial sizing.',
-              image: '/rice_bran_gums_product.png',
+              image: '/products/ab-udyog-stabilized-rice-bran-gums.jpg',
               link: '/products/rice-bran-gums'
             },
             {
@@ -405,7 +405,7 @@ export default function Home() {
               category: 'FOOD & NUTRACEUTICALS',
               metric: 'NON-GMO ALTERNATIVE',
               desc: 'Natural non-GMO emulsifier and antioxidant ideal for bakery, confectionery, and personal care.',
-              image: '/rice_bran_lecithin_product.png',
+              image: '/products/ab-udyog-natural-rice-bran-lecithin.jpg',
               link: '/products/rice-bran-lecithin'
             },
             {
@@ -414,7 +414,7 @@ export default function Home() {
               category: 'BIOFUELS & SOAPS',
               metric: '99.5% FATTY MATTER',
               desc: 'High-purity distilled semi-solid fatty acid distillate for soap manufacturing and bio-diesel feedstock.',
-              image: '/rice_bran_fatty_acid_product.png',
+              image: '/products/ab-udyog-distilled-rice-bran-fatty-acid.jpg',
               link: '/products/rice-bran-fatty-acid'
             },
             {
@@ -423,7 +423,7 @@ export default function Home() {
               category: 'KILN FUEL & SOIL',
               metric: '20.0% RESIDUAL OIL',
               desc: 'Eco-friendly clay residue enriched with residual oil for high-calorific cement kiln fuel and soil conditioning.',
-              image: '/spent_bleaching_earth_product.png',
+              image: '/products/ab-udyog-spent-bleaching-earth.jpg',
               link: '/products/spent-bleaching-earth'
             }
           ].map((item, idx) => (
@@ -452,14 +452,14 @@ export default function Home() {
                 e.currentTarget.style.boxShadow = 'none';
               }}
             >
-              {/* Product Thumbnail Banner — Pure Crisp Image, Zero Overlay */}
-              <div style={{ position: 'relative', width: '100%', height: '190px', background: '#F9F9F6', overflow: 'hidden' }}>
+              {/* Product Thumbnail Banner — Edge-to-Edge Fully Covered & 100% Product Visible */}
+              <div style={{ position: 'relative', width: '100%', aspectRatio: '16 / 10', background: '#F4F2EC', borderBottom: '1px solid rgba(0, 0, 0, 0.06)', overflow: 'hidden' }}>
                 <Image
                   src={item.image}
                   alt={item.title}
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
-                  style={{ objectFit: 'cover', transition: 'transform 0.6s ease' }}
+                  style={{ objectFit: 'cover', objectPosition: 'center', transition: 'transform 0.6s ease' }}
                 />
               </div>
 
@@ -524,7 +524,7 @@ export default function Home() {
                 <div className="parallax-window-stat-label">Refinement Legacy in East India</div>
               </div>
               <div className="parallax-window-stat">
-                <div className="parallax-window-stat-num">10,000<span className="parallax-window-stat-unit">+ PPM</span></div>
+                <div className="parallax-window-stat-num">12,000<span className="parallax-window-stat-unit">+ PPM</span></div>
                 <div className="parallax-window-stat-label">Natural Active Oryzanol Retained</div>
               </div>
             </div>

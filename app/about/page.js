@@ -42,7 +42,7 @@ export default function About() {
               By processing freshly harvested rice bran within hours of milling, our plant prevents natural oxidation. Our physical refinery bypasses caustic soda and acid treatments completely, employing high-temperature steam distillation to wash raw oil while locking in natural micronutrients.
             </p>
             <div className="about-tags-trio" style={{ marginTop: '24px' }}>
-              <span className="about-tag">10,000+ PPM Oryzanol</span>
+              <span className="about-tag">12,000+ PPM Oryzanol</span>
               <span className="about-tag">Zero Caustic Washing</span>
               <span className="about-tag">Physical Steam Distillation</span>
             </div>

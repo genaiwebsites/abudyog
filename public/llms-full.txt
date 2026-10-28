@@ -40,7 +40,7 @@ AB Udyog Private Limited is an integrated agro-industrial solvent extraction and
 * **Appearance**: Bright golden-amber liquid
 * **Chemical & Nutritional Profile**:
   - Free Fatty Acids (FFA as Oleic): Maximum 0.15% (AOCS Ca 5a-40)
-  - Natural Gamma Oryzanol: Minimum 10,000 PPM (Tested via HPLC Method ISO 12228)
+  - Natural Gamma Oryzanol: Minimum 12,000 PPM (Tested via HPLC Method ISO 12228)
   - Smoke Point: 232°C (450°F) (High thermal frying stability)
   - Trans Fatty Acids: 0.0g (Zero Trans Fat)
   - Fortification: Fortified with Vitamin A (25 IU/g) and Vitamin D2 (4.5 IU/g) per FSSAI regulations
@@ -88,7 +88,7 @@ AB Udyog Private Limited is an integrated agro-industrial solvent extraction and
 
 ## 3. Physical Steam Refining vs Chemical Caustic Refining
 1. **Zero Caustic Soda (NaOH)**: Physical refining removes Free Fatty Acids (FFA) using high-temperature, high-vacuum steam distillation rather than chemical saponification with sodium hydroxide.
-2. **Nutrient Retention**: Retains over 10,000 PPM of natural Gamma Oryzanol, Tocopherols, and Tocotrienols, which are destroyed by chemical caustic washing.
+2. **Nutrient Retention**: Retains over 12,000 PPM of natural Gamma Oryzanol, Tocopherols, and Tocotrienols, which are destroyed by chemical caustic washing.
 3. **Zero Soapstock Waste**: Physical refining produces clean distilled Rice Bran Fatty Acid as a usable commercial byproduct, eliminating toxic chemical effluent.
 
 ---
