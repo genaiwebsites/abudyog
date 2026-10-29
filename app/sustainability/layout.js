@@ -3,10 +3,10 @@ const siteUrl = rawSiteUrl.replace(/^https?:\/\/(www\.)?abudyog\.in/, 'https://w
 
 export const metadata = {
   title: 'Sustainability & ESG Commitment',
-  description: 'AB Udyog\'s environmental stewardship: zero-chemical physical refining, 100% biomass thermal power, eco-packaging, and rural community welfare in West Bengal.',
+  description: "AB Udyog's environmental stewardship: physical refining, circular zero-waste by-product recovery, biomass energy utilization, and responsible manufacturing in West Bengal.",
   openGraph: {
     title: 'Sustainability & ESG Commitment | AB Udyog',
-    description: 'AB Udyog\'s environmental stewardship: zero-chemical physical refining, 100% biomass thermal power, eco-packaging, and rural community welfare in West Bengal.',
+    description: "AB Udyog's environmental stewardship: physical refining, circular zero-waste by-product recovery, biomass energy utilization, and responsible manufacturing in West Bengal.",
     url: `${siteUrl}/sustainability`,
     siteName: 'AB Udyog',
     locale: 'en_IN',
@@ -33,7 +33,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Sustainability & ESG Commitment | AB Udyog',
-    description: 'AB Udyog\'s environmental stewardship: zero-chemical physical refining, 100% biomass thermal power, eco-packaging, and rural community welfare in West Bengal.',
+    description: "AB Udyog's environmental stewardship: physical refining, circular zero-waste by-product recovery, biomass energy utilization, and responsible manufacturing in West Bengal.",
     images: [
       {
         url: `${siteUrl}/og/og_sustainability.jpg`,
